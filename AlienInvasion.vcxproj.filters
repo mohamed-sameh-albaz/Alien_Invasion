@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="AlienArmy">
+      <UniqueIdentifier>{f2ab4677-b75f-450b-9766-689e9ab19412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EarthArmy">
+      <UniqueIdentifier>{867e0625-69b8-479b-abb1-6c7453d57ef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DS">
+      <UniqueIdentifier>{404836a3-400f-4d21-80be-88dbfd1c0f21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EarthArmy\EarthArmy.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\EarthTank.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\EarthSoldier.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\EarthGun.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="unit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="randGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\ArrayStack.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\LinkedQueue.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\Node.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\priNode.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\priQueue.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\QueueADT.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\StackADT.h">
+      <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienArmy\AlienArmy.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienArmy\AlienSoldier.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienArmy\monster.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienDrone.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
