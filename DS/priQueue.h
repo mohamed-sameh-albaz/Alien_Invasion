@@ -14,7 +14,7 @@ public:
     ~priQueue() {
         T tmp;
         int p;
-        while (dequeue(tmp,p));
+        while (dequeue(tmp,p ));
     }
 
     //insert the new node in its correct position according to its priority
@@ -51,7 +51,7 @@ public:
         if (isEmpty())
             return false;
 
-        topEntry = head->getItem();
+        topEntry = head->getItem(pri);
         pri = head->getPri();
         return true;
     }

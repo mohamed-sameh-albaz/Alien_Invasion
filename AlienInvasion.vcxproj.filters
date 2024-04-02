@@ -79,5 +79,23 @@
     <ClInclude Include="AlienDrone.h">
       <Filter>AlienArmy</Filter>
     </ClInclude>
+    <ClInclude Include="EarthGunList.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthSoldierList.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthTankList.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlineSoldierList.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterList.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienDroneList.h">
+      <Filter>AlienArmy</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

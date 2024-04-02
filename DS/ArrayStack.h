@@ -14,15 +14,16 @@
 template<typename T>
 class ArrayStack : public StackADT<T>
 {
-	enum { MAX_SIZE = 100 };
 private:
-	T items[MAX_SIZE];		// Array of stack items
+	T *items;		// Array of stack items
 	int top;                   // Index to top of stack
+	const int STACK_SIZE;
 	
 public:
 
-	ArrayStack()
+	ArrayStack(int MaxSize) : STACK_SIZE(MaxSize)
 	{
+		items = new T[STACK_SIZE];
 		top = -1;
 	}  // end default constructor
 
@@ -33,10 +34,11 @@ public:
 
 	bool push(const T& newEntry)
 	{
-		if( top == MAX_SIZE-1 ) return false;	//Stack is FULL
+		if( top == STACK_SIZE-1 ) return false;	//Stack is FULL
 
 		top++;
 		items[top] = newEntry;   
+		//items[++top];
 		return true;
 	}  // end push
 
@@ -46,6 +48,7 @@ public:
 		
 		TopEntry = items[top];		 
 		top--;
+		//TopEntry = items[top--];
 		return true;
 	}  // end pop
 	

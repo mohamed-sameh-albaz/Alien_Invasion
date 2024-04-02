@@ -134,6 +134,8 @@
     <ClInclude Include="AlienArmy\AlienSoldier.h" />
     <ClInclude Include="AlienArmy\monster.h" />
     <ClInclude Include="AlienDrone.h" />
+    <ClInclude Include="AlienDroneList.h" />
+    <ClInclude Include="AlineSoldierList.h" />
     <ClInclude Include="DS\ArrayStack.h" />
     <ClInclude Include="DS\LinkedQueue.h" />
     <ClInclude Include="DS\Node.h" />
@@ -145,7 +147,11 @@
     <ClInclude Include="EarthArmy\EarthGun.h" />
     <ClInclude Include="EarthArmy\EarthSoldier.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
+    <ClInclude Include="EarthGunList.h" />
+    <ClInclude Include="EarthSoldierList.h" />
+    <ClInclude Include="EarthTankList.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="MonsterList.h" />
     <ClInclude Include="randGen.h" />
     <ClInclude Include="unit.h" />
   </ItemGroup>
