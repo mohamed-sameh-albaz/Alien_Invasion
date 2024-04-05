@@ -4,10 +4,12 @@
 #include"DS/ArrayStack.h"
 #include"AlienArmy/AlineDroneList.h"
 #include"AlienArmy/AlienDrone.h"
+#include"AlienArmy/MonsterList.h"
 using namespace std;
 
 
 int main() {
+	/*
 	AlineDroneList a;
 	unit* u1=new AlienDrone ;
 	unit* u2= new AlienDrone;
@@ -25,14 +27,20 @@ int main() {
 	u2->set_power(225);
 	a.enqueue(u1);
 	a.enqueue(u2);
-	/*a.disp();
+	a.disp();
 
 	a.dequeue(u);
 	a.disp();
 	a.enqueue(u);
-	a.disp();*/
+	a.disp();
 	a.dequeueBack(u);
 	a.disp();
-	cout << "test main";
+	*/
+	cout << "test main" << endl;
+	MonsterList m1(5);
+
+	m1.pickMonster();
+
+	
 	return 0;
 }
