@@ -41,6 +41,9 @@
     <ClCompile Include="EarthArmy\EarthTankList.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
+    <ClCompile Include="unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">

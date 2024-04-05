@@ -134,6 +134,7 @@
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlienArmy\AlienArmy.h" />
