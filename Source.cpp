@@ -5,10 +5,22 @@
 #include"AlienArmy/AlineDroneList.h"
 #include"AlienArmy/AlienDrone.h"
 #include"AlienArmy/MonsterList.h"
+#include<fstream>
+#include<string>
 using namespace std;
 
+void inputfn(int& N, int& Es, int& Et, int& Eg, int& As, int& Am, int& Ad, int& Prob) {
+	ifstream f("in1.text");
+	f >> N>>Prob>>Es>>Et>>Eg>>As>>Am>>Ad;
 
+}
 int main() {
+
+	
+	
+	int n, es, et, eg, as, am, ad, prob;
+	inputfn(n,es, et, eg, as, am, ad, prob);
+	cout << n <<endl<< prob << endl << es << endl << et << endl << eg << endl << as << endl << am << endl << ad << endl << endl;
 	/*
 	AlineDroneList a;
 	unit* u1=new AlienDrone ;
@@ -38,7 +50,7 @@ int main() {
 	*/
 	cout << "test main" << endl;
 	MonsterList m1(5);
-
+	
 	m1.pickMonster();
 
 	
