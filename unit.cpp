@@ -66,6 +66,55 @@ int unit::get_attackCap()
 	return attackCap;
 }
 
+void unit::set_atackedTime(int a)
+{
+	tj = a;
+}
+
+void unit::set_distructionTime(int a)
+{ 
+	td = a;
+	df = ta - tj;
+	dd = td - ta;
+	db = df + dd;
+
+}
+
+int unit::get_tj()
+{
+	return tj;
+}
+
+int unit::get_ta()
+{
+	return ta;
+}
+
+int unit::get_td()
+{
+	return td;
+}
+
+int unit::get_df()
+{
+	return df;
+}
+
+int unit::get_dd()
+{
+	return dd;
+}
+
+int unit::get_db()
+{
+	return db;
+}
+
+void unit::set_attackpower(unit*u)
+{
+	attackpower = (power * health / 100) / sqrt(u->get_health());
+}
+
 string unit::get_type()
 {
 	return type;

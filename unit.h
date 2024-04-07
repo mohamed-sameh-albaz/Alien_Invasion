@@ -11,6 +11,7 @@ class unit
 	int health;
 	int power;
 	int attackCap;
+	int tj, ta, td, df, dd, db, attackpower;
 
 public:
 	void disp();
@@ -25,6 +26,17 @@ public:
 	int get_health();
 	int get_power();
 	int get_attackCap();
+	void set_atackedTime(int a);
+	void set_distructionTime(int a);
+	int get_tj();
+	int get_ta();
+	int get_td();
+	int get_df();
+	int get_dd();
+	int get_db();
+	void set_attackpower(unit*u);
+	int get_attackpower();
+
 	string get_type();
 
 	virtual void attack() = 0;
