@@ -5,6 +5,8 @@
 #include"AlienArmy/AlineDroneList.h"
 #include"AlienArmy/AlienDrone.h"
 #include"AlienArmy/MonsterList.h"
+#include"EarthArmy/HL.h"
+#include"EarthArmy/UML.h"
 #include<fstream>
 #include<string>
 using namespace std;
@@ -27,6 +29,7 @@ int main() {
 
 	
 	
+	/*
 	int n, es, et, eg, as, am, ad, prob,epower1,epower2,ehealth1,ehealth2,eattackcap1,eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	inputfn(n,es, et, eg, as, am, ad, prob,epower1, epower2, ehealth1, ehealth2,
@@ -36,7 +39,6 @@ int main() {
 		<< endl << epower2<< endl << ehealth1 << endl << ehealth2<< endl << eattackcap1<< endl << eattackcap2
 		<< endl << apower1<< endl << apower2 <<  endl << ahealth1 << endl << ahealth2 << endl << aattackcap1 << endl << 
 		aattackcap2 <<endl << endl;
-	/*
 	AlineDroneList a;
 	unit* u1=new AlienDrone ;
 	unit* u2= new AlienDrone;
@@ -65,8 +67,18 @@ int main() {
 	*/
 	cout << "test main" << endl;
 	MonsterList m1(5);
-	
-	m1.pickMonster();
+	monster M1, M2, M3,M4;
+	M1.set_id(1);
+	M2.set_id(2);
+	M3.set_id(3);
+	M4.set_id(4);
+
+	m1.addMonster(&M1);
+	m1.addMonster(&M2);
+	m1.addMonster(&M3);
+	m1.addMonster(&M4);
+
+	m1.print();
 
 	
 	return 0;

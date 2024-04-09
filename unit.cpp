@@ -3,8 +3,8 @@
 using namespace std;
 void unit::disp()
 {
-	cout << " ID: " << id <<
-		"\n Health: " << health <<
+	cout << " ID: " << id 
+		<< "\n Health: " << health <<
 		"\n Type: " << type <<
 		"\n Power: " << power<<
 		"\n Atack Capacity: " <<attackCap <<
@@ -24,6 +24,8 @@ void unit::set_joinTime(int a)
 void unit::set_health(int a)
 {
 	health = a;
+	if (initialHealth == 0) initialHealth = a;
+
 }
 
 void unit::set_power(int a)
@@ -54,6 +56,11 @@ int unit::get_joinTime()
 int unit::get_health()
 {
 	return health;
+}
+
+int unit::get_initial_health()
+{
+	return initialHealth;
 }
 
 int unit::get_power()
@@ -113,6 +120,11 @@ int unit::get_db()
 void unit::set_attackpower(unit*u)
 {
 	attackpower = (power * health / 100) / sqrt(u->get_health());
+}
+
+int unit::get_attackpower()
+{
+	return attackpower;
 }
 
 string unit::get_type()

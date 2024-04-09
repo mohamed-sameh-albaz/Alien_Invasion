@@ -5,6 +5,7 @@ using namespace std;
 #pragma once
 class unit
 {
+protected:
 	int id;
 	string type;
 	int joinTime;
@@ -12,6 +13,7 @@ class unit
 	int power;
 	int attackCap;
 	int tj, ta, td, df, dd, db, attackpower;
+	int initialHealth;
 
 public:
 	void disp();
@@ -24,6 +26,7 @@ public:
 	int get_id();
 	int get_joinTime();
 	int get_health();
+	int get_initial_health();
 	int get_power();
 	int get_attackCap();
 	void set_atackedTime(int a);

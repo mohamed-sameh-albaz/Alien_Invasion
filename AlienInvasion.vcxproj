@@ -133,6 +133,8 @@
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
+    <ClCompile Include="EarthArmy\HL.cpp" />
+    <ClCompile Include="EarthArmy\UML.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="unit.cpp" />
   </ItemGroup>
@@ -156,6 +158,9 @@
     <ClInclude Include="EarthArmy\EarthSoldier.h" />
     <ClInclude Include="EarthArmy\EarthSoldierList.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
+    <ClInclude Include="EarthArmy\Healer.h" />
+    <ClInclude Include="EarthArmy\HL.h" />
+    <ClInclude Include="EarthArmy\UML.h" />
     <ClInclude Include="EarthGunList.h" />
     <ClInclude Include="EarthTankList.h" />
     <ClInclude Include="game.h" />
