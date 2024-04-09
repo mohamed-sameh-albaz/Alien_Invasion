@@ -21,17 +21,35 @@ public:
 		else return false;
 	}
 
-	unit* pick() {
+	bool pick(unit*& u) {
 		if (!soldiersToHeal.isEmpty()) {
-			unit* solid;
 			int i;
-			soldiersToHeal.dequeue(solid,i);
-			return solid;
+			soldiersToHeal.dequeue(u, i);
+			return true;
 		}
 		else if (!tanksToHeal.isEmpty()) {
-			unit* tank;
-			tanksToHeal.dequeue(tank);
-			return tank;
+			tanksToHeal.dequeue(u);
+			return true;
+		}
+		else return false;
+	}
+
+	void print() {
+		priQueue<unit*> tmpS = soldiersToHeal;
+		LinkedQueue<unit*> tmpT =tanksToHeal;
+
+		while (!tmpS.isEmpty()) {
+			unit* u = nullptr;
+			int tmp;
+			tmpS.dequeue(u,tmp);
+			u->disp();
+			cout << endl << "---------------------------" << endl;
+		}
+		while (!tmpT.isEmpty()) {
+			unit* u = nullptr;
+			tmpT.dequeue(u);
+			u->disp();
+			cout << endl << "---------------------------" << endl;
 		}
 	}
 };

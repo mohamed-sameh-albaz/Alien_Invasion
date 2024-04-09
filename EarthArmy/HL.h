@@ -3,25 +3,24 @@
 #include "Healer.h"
 class HL
 {
-	const int n;
-	ArrayStack<unit*> Heal;
+	ArrayStack<Healer*> Heal;
 public:
-	bool add(unit* u) {
+	HL() {}
+	bool add(Healer* u) {
 		return (Heal.push(u));
 	}
 
-	unit* pick() {
-		unit* tmp;
-		Heal.pop(tmp);
-		return tmp;
+	 bool pick(Healer*& u) {
+		return Heal.pop(u);
 	}
 
 	void print() {
-		ArrayStack<unit*> tmp = Heal;
+		ArrayStack<Healer*> tmp = Heal;
 		while (!tmp.isEmpty()) {
-			unit* tmpUnit;
+			Healer* tmpUnit;
 			tmp.pop(tmpUnit);
 			tmpUnit->disp();
+			cout << endl << "---------------------------" << endl;
 		}
 	}
 };

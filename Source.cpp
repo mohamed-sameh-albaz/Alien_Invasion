@@ -66,20 +66,31 @@ int main() {
 	a.disp();
 	*/
 	cout << "test main" << endl;
-	MonsterList m1(5);
-	monster M1, M2, M3,M4;
-	M1.set_id(1);
-	M2.set_id(2);
-	M3.set_id(3);
-	M4.set_id(4);
+	MonsterList M(5);
+	monster m1, m2, m3;
+	m1.set_id(1);
+	m2.set_id(2);
+	m3.set_id(3);
 
-	m1.addMonster(&M1);
-	m1.addMonster(&M2);
-	m1.addMonster(&M3);
-	m1.addMonster(&M4);
+	M.addMonster(&m1);
+	M.addMonster(&m2);
+	M.addMonster(&m3);
 
-	m1.print();
+	M.print();
 
-	
+	unit* u = nullptr;
+	M.pickMonster(u);
+
+	cout << endl << "###############" << endl;
+
+	M.print();
+
+	M.pickMonster(u);
+
+	cout << endl << "###############" << endl;
+
+	M.print();
+
+
 	return 0;
 }
