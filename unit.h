@@ -5,6 +5,7 @@ using namespace std;
 #pragma once
 class unit
 {
+protected:
 	int id;
 	string type;
 	int joinTime;
