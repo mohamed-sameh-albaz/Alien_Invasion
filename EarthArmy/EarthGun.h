@@ -3,13 +3,12 @@
 #include"../DS/ArrayStack.h"
 class EarthGun : public unit
 {
+public:
 	EarthGun()
 	{
-		ArrayStack<EarthGun*>gunList(200);
+		set_type("Gunnery");
+		initialHealth = joinTime = health = power = attackCap = id = 9;
 	}
-	void add(EarthGun* gun)
-	{
-		
-	}
+	void attack() {}
 };
 

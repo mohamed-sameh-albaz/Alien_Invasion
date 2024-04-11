@@ -3,8 +3,10 @@
 #include "../unit.h"
 #include"../DS/LinkedQueue.h"
 #include"../DS/Node.h"
+#include"EarthSoldier.h"
 class EarthSoldierList :public LinkedQueue<unit*>
 {
+	
 	void disp() {
 		if (isEmpty())
 			return;
@@ -19,5 +21,5 @@ class EarthSoldierList :public LinkedQueue<unit*>
 		backPtr->getItem()->disp();
 		cout << "\n\n";
 	}
+	
 };
-

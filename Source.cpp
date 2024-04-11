@@ -5,6 +5,8 @@
 #include"AlienArmy/AlineDroneList.h"
 #include"AlienArmy/AlienDrone.h"
 #include"AlienArmy/MonsterList.h"
+#include"EarthArmy/EarthTankList.h"
+#include"EarthArmy/EarthGunList.h"
 #include"EarthArmy/HL.h"
 #include"EarthArmy/UML.h"
 #include<fstream>
@@ -66,31 +68,94 @@ int main() {
 	a.disp();
 	*/
 	cout << "test main" << endl;
-	MonsterList M(5);
-	monster m1, m2, m3;
-	m1.set_id(1);
-	m2.set_id(2);
-	m3.set_id(3);
+	//MonsterList M(5);
+	//monster m1, m2, m3;
+	//m1.set_id(1);
+	//m2.set_id(2);
+	//m3.set_id(3);
 
-	M.addMonster(&m1);
-	M.addMonster(&m2);
-	M.addMonster(&m3);
+	//M.addMonster(&m1);
+	//M.addMonster(&m2);
+	//M.addMonster(&m3);
 
-	M.print();
+	//M.print();
 
+	//unit* u = nullptr;
+	//M.pickMonster(u);
+
+	//cout << endl << "###############" << endl;
+
+	//M.print();
+
+	//M.pickMonster(u);
+
+	//cout << endl << "###############" << endl;
+
+	//M.print();
+	/*
+	/////////////// testing tankList ////////////
+	EarthTankList tankList;
+	EarthTank t1;
+	EarthTank t2;
+	t1.set_id(1);
+	t2.set_id(2);
+	tankList.addTank(&t1);
+	tankList.addTank(&t2);
+	cout << "Printing list\n";
+	tankList.print();
 	unit* u = nullptr;
-	M.pickMonster(u);
 
-	cout << endl << "###############" << endl;
+	cout << "\n\n########## Picking Tank ##########\n\n";
+	tankList.pickTank(u);
+	cout << "Printing list\n";
+	tankList.print();
+	cout << "\n picked Tank info::\n";
+	u->disp();
 
-	M.print();
+	cout << "\n\n########## Picking Tank ##########\n\n";
+	tankList.pickTank(u);
+	cout << "Printing list\n";
+	tankList.print();
+	cout << "\n picked Tank info::\n";
+	u->disp();
 
-	M.pickMonster(u);
+	cout << "\n\n########## Picking Tank ##########\n\n";
+	tankList.pickTank(u);
+	cout << "\n\n##########\n\n";
+	*/
 
-	cout << endl << "###############" << endl;
+	////////// testing gunList ////////////
+	EarthGunList GunList;
+	EarthGun g1;
+	EarthGun g2;
+	g1.set_id(1);
+	g1.set_health(100);
+	g1.set_power(200);
+	g2.set_id(2);
+	g2.set_health(200);
+	g2.set_power(300);
+	GunList.addGunnery(&g1);
+	GunList.addGunnery(&g2);
+	cout << "Printing list\n";
+	GunList.print();
+	unit* u = nullptr;
+	cout << "\n\n########## Picking Gunnery ##########\n\n";
+	GunList.pickGun(u);
+	cout << "Printing list\n";
+	GunList.print();
+	cout << "\n picked Gunnery info::\n";
+	u->disp();
 
-	M.print();
+	cout << "\n\n########## Picking Gunnery ##########\n\n";
+	GunList.pickGun(u);
+	cout << "Printing list\n";
+	GunList.print();
+	cout << "\n picked Gunnery info::\n";
+	u->disp();
 
-
+	cout << "\n\n########## Picking Gunnery ##########\n\n";
+	GunList.pickGun(u);
+	cout << "\n\n##########\n\n";
+	
 	return 0;
 }

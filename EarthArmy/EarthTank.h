@@ -3,7 +3,8 @@
 class EarthTank : public unit
 {
 public:
-	EarthTank() {
+	EarthTank()
+	{
 		set_type("tank");
 		initialHealth = joinTime = health = power = attackCap = id = 10;
 	}
