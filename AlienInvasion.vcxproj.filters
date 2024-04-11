@@ -41,6 +41,9 @@
     <ClCompile Include="EarthArmy\EarthTankList.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
+    <ClCompile Include="unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">
@@ -88,9 +91,6 @@
     <ClInclude Include="EarthGunList.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
-    <ClInclude Include="EarthSoldierList.h">
-      <Filter>EarthArmy</Filter>
-    </ClInclude>
     <ClInclude Include="EarthTankList.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
@@ -106,13 +106,16 @@
     <ClInclude Include="AlienArmy\AlineDroneList.h">
       <Filter>AlineArmy</Filter>
     </ClInclude>
-    <ClInclude Include="AlienArmy\AlineSoldierList.h">
-      <Filter>AlineArmy</Filter>
-    </ClInclude>
     <ClInclude Include="AlienArmy\monster.h">
       <Filter>AlineArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\MonsterList.h">
+      <Filter>AlineArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\EarthSoldierList.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienArmy\AlineSoldierList.h">
       <Filter>AlineArmy</Filter>
     </ClInclude>
   </ItemGroup>
