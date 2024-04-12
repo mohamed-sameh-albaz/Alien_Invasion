@@ -8,7 +8,7 @@ class unit
 protected:
 	int id;
 	string type;
-	int joinTime;
+	int joinTime; // need to be removed
 	int health;
 	int power;
 	int attackCap;

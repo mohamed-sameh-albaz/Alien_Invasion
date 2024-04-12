@@ -11,6 +11,7 @@
 #include"EarthArmy/UML.h"
 #include<fstream>
 #include<string>
+#include "randGen.h"
 using namespace std;
 
 void inputfn(int& N, int& Es, int& Et, int& Eg, int& As, int& Am, int& Ad, int& Prob,
@@ -125,6 +126,7 @@ int main() {
 	*/
 
 	////////// testing gunList ////////////
+	/*
 	EarthGunList GunList;
 	EarthGun g1;
 	EarthGun g2;
@@ -156,6 +158,19 @@ int main() {
 	cout << "\n\n########## Picking Gunnery ##########\n\n";
 	GunList.pickGun(u);
 	cout << "\n\n##########\n\n";
+	*/
 	
+
+	// Testing Random Generator //
+
+	randGen r;
+	r.setParams(70, 20, 10, 80, 12, 8, 100, 3, 50, 30, 90, 2, 5, 1, 20, 40, 80, 1, 4);
+
+	unit* u = r.generateAlienUnit(7);
+
+	if (u) u->disp();
+	else cout << "No Object To Show"; 
+
+
 	return 0;
 }

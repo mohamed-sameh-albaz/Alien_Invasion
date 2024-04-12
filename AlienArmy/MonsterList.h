@@ -16,6 +16,12 @@ public:
 		for (int i = 0; i < n; i++) monsters[i] = nullptr;
 	}
 
+	MonsterList() {
+		n = 100; index = -1;
+		monsters = new monster * [n];
+		for (int i = 0; i < n; i++) monsters[i] = nullptr;
+	}
+
 	bool addMonster(monster* m) {
 		if (index < n) {
 			monsters[++index] = m;
@@ -55,6 +61,10 @@ public:
 				cout << endl << "----------------------------" << endl;
 			}
 		}
+	}
+
+	int count() {
+		return index;
 	}
 };
 
