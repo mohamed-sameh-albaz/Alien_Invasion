@@ -2,12 +2,12 @@
 #include"LinkedQueue.h"
 #include"Node.h"
 template<class T>
-class double_endedQueue:public LinkedQueue<T>
+class double_endedQueue :public LinkedQueue<T>
 
 {
 
 public:
-	bool dequeueBack(T &u) {
+	bool dequeueBack(T& u) {
 		if (LinkedQueue<T>::isEmpty())
 			return false;
 		if (LinkedQueue<T>::frontPtr == LinkedQueue<T>::backPtr)
@@ -28,11 +28,11 @@ public:
 	}
 
 	bool enqueueFront(T u) {
-		Node<T>*t  =new Node<T>(u) ;
+		Node<T>* t = new Node<T>(u);
 		if (!t)
 			return 0;
 		t->setNext(LinkedQueue<T>::frontPtr);
-		LinkedQueue<T>::frontPtr=t;
+		LinkedQueue<T>::frontPtr = t;
 		return 1;
 	}
 };

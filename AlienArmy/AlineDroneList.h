@@ -3,46 +3,55 @@
 #include"../DS/double_endedQueue.h"
 #include"../DS/Node.h"
 
-class AlineDroneList 
+class AlineDroneList
 {
 	double_endedQueue<unit*> l;
-
+	int count;
 public:
-	bool RemoveEnd(unit*&u) {
-		
-		return l.dequeueBack(u);
-		
-		
+	AlineDroneList() { count = 0;
 	}
-bool RemoveFront(unit*& u) {
+	bool RemoveEnd(unit*& u) {
 
-	return l.dequeue(u);
-}
-bool InsertEnd(unit*& u) {
-	
-	return l.enqueue(u);
+		if (l.dequeueBack(u))
+			count--;
+		else return 0;
+		return 1;
+
+	}
+	bool RemoveFront(unit*& u) {
+		if (l.dequeue(u))
+			count--;
+		else return 0;
+		return 1;
+	}
+	bool InsertEnd(unit*& u) {
+		count++;
+		return l.enqueue(u);
 
 
-}
-bool insertFront(unit* &u) {
+	}
+	bool insertFront(unit*& u) {
+		count++;
+		return l.enqueueFront(u);
 
-	return l.enqueueFront(u);
 
-
-}
+	}
 
 	void print() {
 		double_endedQueue<unit*> l1;
 		unit* u;
 		while (l.dequeue(u)) {
 			u->disp();
-			cout << endl << "______________________"<<endl;
+			cout << endl << "______________________" << endl;
 			l1.enqueue(u);
 		}
 
 		while (l1.dequeue(u))
 			l.enqueue(u);
 
+	}
+	int getCount() {
+		return count;
 	}
 };
 

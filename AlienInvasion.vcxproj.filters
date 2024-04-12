@@ -50,6 +50,9 @@
     <ClCompile Include="EarthArmy\UML.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS\double_endedQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">
@@ -132,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="EarthArmy\EarthTankList.h">
       <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\double_endedQueue.h">
+      <Filter>DS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

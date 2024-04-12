@@ -6,7 +6,10 @@ class HL
 	ArrayStack<Healer*> Heal;
 	int count;
 public:
-	HL() { count = 0; }
+	HL() { 
+		count = 0;
+
+	}
 	bool add(Healer* u) {
 		count++;
 		return (Heal.push(u));
@@ -15,9 +18,9 @@ public:
 	 bool pick(Healer*& u) {
 		 count--;
 		return Heal.pop(u);
-	}
+	 }
 
-	 int count() {
+	 int getcount() {
 		 return count;
 	 }
 
