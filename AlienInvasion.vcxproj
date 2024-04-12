@@ -130,6 +130,7 @@
     <ClCompile Include="AlienArmy\AlineDroneList.cpp" />
     <ClCompile Include="AlienArmy\AlineSoldierList.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
+    <ClCompile Include="DS\double_endedQueue.cpp" />
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="AlienArmy\AlineSoldierList.h" />
     <ClInclude Include="AlienArmy\monster.h" />
     <ClInclude Include="AlienArmy\MonsterList.h" />
+    <ClInclude Include="DS\double_endedQueue.h" />
     <ClInclude Include="DS\ArrayStack.h" />
     <ClInclude Include="DS\LinkedQueue.h" />
     <ClInclude Include="DS\Node.h" />

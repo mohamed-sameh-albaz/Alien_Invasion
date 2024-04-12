@@ -130,6 +130,7 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 	if(isEmpty())
 		return false;
 
+
 	Node<T>* nodeToDeletePtr = frontPtr;
 	frntEntry = frontPtr->getItem();
 	frontPtr = frontPtr->getNext();

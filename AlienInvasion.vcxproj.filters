@@ -44,6 +44,15 @@
     <ClCompile Include="unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EarthArmy\HL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthArmy\UML.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DS\double_endedQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">
@@ -117,6 +126,18 @@
     </ClInclude>
     <ClInclude Include="AlienArmy\AlineSoldierList.h">
       <Filter>AlineArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\Healer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\HL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\UML.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DS\double_endedQueue.h">
+      <Filter>DS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,43 +1,47 @@
 #pragma once
 #include "../unit.h"
-#include"../DS/LinkedQueue.h"
+#include"../DS/double_endedQueue.h"
 #include"../DS/Node.h"
 
-class AlineDroneList :   public LinkedQueue<unit*>
+class AlineDroneList 
 {
+	double_endedQueue<unit*> l;
+
 public:
-	bool dequeueBack(unit*u) {
-		if (isEmpty())
-			return false;
-		if (frontPtr == backPtr)
-			dequeue(u);
-		else {
-			Node<unit*>* temp = frontPtr;
-			while (temp->getNext() != backPtr)
-				temp = temp->getNext();
-			u = backPtr->getItem();
-			/*Node<unit*>* dellptr = backPtr;
-			delete dellptr;
-			dellptr = nullptr;*/
-			backPtr = temp;
-		}
-		return true;
+	bool RemoveEnd(unit*&u) {
+		
+		return l.dequeueBack(u);
+		
 		
 	}
-	void disp() {
-		if (isEmpty())
-			return;
+bool RemoveFront(unit*& u) {
 
-		Node<unit*>* temp = frontPtr;
-		while (temp!=backPtr) {
-			temp->getItem()->disp();
-			cout << "\n\n";
-			temp = temp->getNext();
+	return l.dequeue(u);
+}
+bool InsertEnd(unit*& u) {
+	
+	return l.enqueue(u);
 
+
+}
+bool insertFront(unit* &u) {
+
+	return l.enqueueFront(u);
+
+
+}
+
+	void print() {
+		double_endedQueue<unit*> l1;
+		unit* u;
+		while (l.dequeue(u)) {
+			u->disp();
+			cout << endl << "______________________"<<endl;
+			l1.enqueue(u);
 		}
-		backPtr->getItem()->disp();
-		cout << "\n\n";
-		
+
+		while (l1.dequeue(u))
+			l.enqueue(u);
 
 	}
 };
