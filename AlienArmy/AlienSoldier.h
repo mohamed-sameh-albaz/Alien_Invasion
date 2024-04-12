@@ -3,13 +3,14 @@
 #include"../DS/LinkedQueue.h"
 class AlienSoldier : public unit
 {
- public:
-	 AlienSoldier() {
-		 set_type("soldier");
-		 initialHealth = joinTime = health = power = attackCap = id = 100;
 
-	 }
-void attack() {}
+public:
+
+	AlienSoldier() {
+		set_type("alienSoldier");
+		initialHealth = joinTime = health = power = attackCap = id = 0;
+	}
 	
+	void attack() {}
 };
 

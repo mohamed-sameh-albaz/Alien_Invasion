@@ -157,14 +157,14 @@
     <ClInclude Include="DS\StackADT.h" />
     <ClInclude Include="EarthArmy\EarthArmy.h" />
     <ClInclude Include="EarthArmy\EarthGun.h" />
+    <ClInclude Include="EarthArmy\EarthGunList.h" />
     <ClInclude Include="EarthArmy\EarthSoldier.h" />
     <ClInclude Include="EarthArmy\EarthSoldierList.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
+    <ClInclude Include="EarthArmy\EarthTankList.h" />
     <ClInclude Include="EarthArmy\Healer.h" />
     <ClInclude Include="EarthArmy\HL.h" />
     <ClInclude Include="EarthArmy\UML.h" />
-    <ClInclude Include="EarthGunList.h" />
-    <ClInclude Include="EarthTankList.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="randGen.h" />
     <ClInclude Include="unit.h" />

@@ -1,33 +1,25 @@
 #pragma once
 #include "../unit.h"
+#include "../unit.h"
 #include"../DS/LinkedQueue.h"
 #include"../DS/Node.h"
-class EarthSoldierList 
+#include"EarthSoldier.h"
+class EarthSoldierList :public LinkedQueue<unit*>
 {
-	LinkedQueue<unit*> l;
+	
+	void disp() {
+		if (isEmpty())
+			return;
 
-public:
-	bool insert(unit*& u) {
-		return l.enqueue(u);
-	}
-	bool remove(unit*& u) {
-		return l.dequeue(u);
-	}
-	void print() {
-		LinkedQueue<unit*> l1;
-		unit* u;
-		while (l.dequeue(u)) {
-			u->disp();
-			cout << endl << "______________________" << endl;
-			l1.enqueue(u);
+		Node<unit*>* temp = frontPtr;
+		while (temp != backPtr) {
+			temp->getItem()->disp();
+			cout << "\n\n";
+			temp = temp->getNext();
+
 		}
-
-		while (l1.dequeue(u))
-			l.enqueue(u);
-
+		backPtr->getItem()->disp();
+		cout << "\n\n";
 	}
-
-
-
+	
 };
-

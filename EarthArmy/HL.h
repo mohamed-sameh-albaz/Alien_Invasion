@@ -4,15 +4,23 @@
 class HL
 {
 	ArrayStack<Healer*> Heal;
+	int count;
 public:
-	HL() {}
+	HL() { count = 0; }
 	bool add(Healer* u) {
+		count++;
 		return (Heal.push(u));
 	}
 
 	 bool pick(Healer*& u) {
+		 count--;
 		return Heal.pop(u);
 	}
+
+	 int count() {
+		 return count;
+	 }
+
 
 	void print() {
 		ArrayStack<Healer*> tmp = Heal;
