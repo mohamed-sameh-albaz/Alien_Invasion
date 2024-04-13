@@ -1,28 +1,22 @@
-#pragma once
-#include "../unit.h"
-#include "../unit.h"
-#include"../DS/LinkedQueue.h"
-#include"../DS/Node.h"
-#include"../unit.h"
-class AlineSoldierList
+#include "AlienSoldierList.h"
+#include <print>
+
+AlienSoldierList::AlienSoldierList()
 {
-	LinkedQueue<unit*> l;
-	int count;
-public:
-	AlineSoldierList() {
 		count = 0;
 }
-	bool insert(unit*& u) {
+
+	bool AlienSoldierList::insert(unit*& u) {
 		count++;
 		return l.enqueue(u);
 	}
-	bool remove(unit*& u) {
+	bool AlienSoldierList::remove(unit*& u) {
 		if (l.dequeue(u))
 			count--;
 		else return 0;
 		return 1;
 	}
-	void print() {
+	void AlienSoldierList::print() {
 		LinkedQueue<unit*> l1;
 		unit* u;
 		while (l.dequeue(u)) {
@@ -35,5 +29,3 @@ public:
 			l.enqueue(u);
 
 	}
-};
-

@@ -5,11 +5,8 @@
 class EarthSoldier : public unit
 {
 public:
-	EarthSoldier() {
-		set_type("soldier");
-		initialHealth = joinTime = health = power = attackCap = id = 100;
-	}
+	EarthSoldier();
 
-	void attack() {}
+	void attack(); 
 };
 
