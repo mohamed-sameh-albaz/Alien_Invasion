@@ -1,30 +1,28 @@
 #pragma once
-#include<iostream>
+#include "../unit.h"
 #include "../unit.h"
 #include"../DS/LinkedQueue.h"
 #include"../DS/Node.h"
-#include"AlienSoldier.h" //including soldier
-using namespace std;
-
+#include"../unit.h"
 class AlineSoldierList
 {
-	LinkedQueue<unit*> alienSoldierList; //change list name
+	LinkedQueue<unit*> l;
 	int count;
 public:
 	AlineSoldierList() {
 		count = 0;
 }
-	bool insert(unit* u) {  //remove refrence 
+	bool insert(unit*& u) {
 		count++;
 		return alienSoldierList.enqueue(u);
 	}
 	bool remove(unit*& u) {
-		if (alienSoldierList.dequeue(u))
+		if (l.dequeue(u))
 			count--;
 		else return 0;
 		return 1;
 	}
-	void print() {  //change output form
+	void print() {
 		LinkedQueue<unit*> l1;
 		unit* u;
 
@@ -43,10 +41,6 @@ public:
 		while (l1.dequeue(u))
 			alienSoldierList.enqueue(u);
 
-	}
-	int getCount()
-	{
-		return count;
 	}
 };
 

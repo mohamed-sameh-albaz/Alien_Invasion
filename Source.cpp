@@ -18,21 +18,8 @@
 #include "randGen.h"
 using namespace std;
 
-void inputfn(int& N, int& Es, int& Et, int& Eg,int&Hu, int& As, int& Am, int& Ad, int& Prob,
-	int& epower1, int& epower2, int& ehealth1, int& ehealth2, int& eattackcap1, int& eattackcap2,
-	int& apower1, int& apower2, int& ahealth1, int& ahealth2, int& aattackcap1, int& aattackcap2) {
-	ifstream f("in1.text");
-	f >> N>>Prob>>Es>>Et>>Eg>>Hu>>As>>Am>>Ad>> epower1>> epower2>> ehealth1>> ehealth2>> eattackcap1
-		>> eattackcap2>> apower1>> apower2>> ahealth1>> ahealth2>> aattackcap1>> aattackcap2;
-	ehealth2 = -1 * ehealth2;
-	ahealth2 = -1 * ahealth2;
-	epower2 = -1 * epower2;
-	apower2 = -1 * apower2;
-	eattackcap2 = -1 * eattackcap2;
-	aattackcap2 = -1 * aattackcap2;
-	if (Hu > 5)
-		Hu = 5;
-}
+
+
 int main() {
 
 	cout << "test main" << endl;

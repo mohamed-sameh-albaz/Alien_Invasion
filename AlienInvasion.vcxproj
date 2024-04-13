@@ -127,15 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlienArmy\AlineDroneList.cpp" />
-    <ClCompile Include="AlienArmy\AlineSoldierList.cpp" />
+    <ClCompile Include="AlienArmy\AlienDrone.cpp" />
+    <ClCompile Include="AlienArmy\AlienSoldier.cpp" />
+    <ClCompile Include="AlienArmy\AlienDroneList.cpp" />
+    <ClCompile Include="AlienArmy\AlienSoldierList.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
     <ClCompile Include="DS\double_endedQueue.cpp" />
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />
+    <ClCompile Include="EarthArmy\EarthSoldier.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
     <ClCompile Include="EarthArmy\HL.cpp" />
     <ClCompile Include="EarthArmy\UML.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="killedList.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="unit.cpp" />
@@ -144,8 +148,8 @@
     <ClInclude Include="AlienArmy\AlienArmy.h" />
     <ClInclude Include="AlienArmy\AlienDrone.h" />
     <ClInclude Include="AlienArmy\AlienSoldier.h" />
-    <ClInclude Include="AlienArmy\AlineDroneList.h" />
-    <ClInclude Include="AlienArmy\AlineSoldierList.h" />
+    <ClInclude Include="AlienArmy\AlienDroneList.h" />
+    <ClInclude Include="AlienArmy\AlienSoldierList.h" />
     <ClInclude Include="AlienArmy\monster.h" />
     <ClInclude Include="AlienArmy\MonsterList.h" />
     <ClInclude Include="DS\double_endedQueue.h" />

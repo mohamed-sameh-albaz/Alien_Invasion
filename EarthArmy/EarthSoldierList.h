@@ -40,15 +40,12 @@ public:
 		cout << "]" << endl;
 
 		while (l1.dequeue(u))
-			soldierList.enqueue(u);
+			l.enqueue(u);
 
 	}
-	
-	int getCount()
-	{
-		return count;
-	}
 
+
+	void print();
 
 };
 

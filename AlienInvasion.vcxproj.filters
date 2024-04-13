@@ -15,7 +15,7 @@
     <Filter Include="DS">
       <UniqueIdentifier>{404836a3-400f-4d21-80be-88dbfd1c0f21}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AlineArmy">
+    <Filter Include="AlienArmy">
       <UniqueIdentifier>{7dadd814-2232-4664-bdbd-4ad21c40ab71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -23,14 +23,11 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AlienArmy\AlineDroneList.cpp">
-      <Filter>AlineArmy</Filter>
-    </ClCompile>
-    <ClCompile Include="AlienArmy\AlineSoldierList.cpp">
-      <Filter>AlineArmy</Filter>
+    <ClCompile Include="AlienArmy\AlienDroneList.cpp">
+      <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="AlienArmy\MonsterList.cpp">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\EarthGunList.cpp">
       <Filter>EarthArmy</Filter>
@@ -54,6 +51,21 @@
       <Filter>DS</Filter>
     </ClCompile>
     <ClCompile Include="killedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienArmy\AlienDrone.cpp">
+      <Filter>AlienArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienArmy\AlienSoldier.cpp">
+      <Filter>AlienArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienArmy\AlienSoldierList.cpp">
+      <Filter>AlienArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthArmy\EarthSoldier.cpp">
+      <Filter>EarthArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,28 +113,28 @@
       <Filter>DS</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\AlienArmy.h">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\AlienDrone.h">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\AlienSoldier.h">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClInclude>
-    <ClInclude Include="AlienArmy\AlineDroneList.h">
-      <Filter>AlineArmy</Filter>
+    <ClInclude Include="AlienArmy\AlienDroneList.h">
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\monster.h">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\MonsterList.h">
-      <Filter>AlineArmy</Filter>
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="EarthArmy\EarthSoldierList.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
-    <ClInclude Include="AlienArmy\AlineSoldierList.h">
-      <Filter>AlineArmy</Filter>
+    <ClInclude Include="AlienArmy\AlienSoldierList.h">
+      <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="EarthArmy\EarthGunList.h">
       <Filter>EarthArmy</Filter>
