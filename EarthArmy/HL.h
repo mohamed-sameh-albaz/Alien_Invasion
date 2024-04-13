@@ -10,7 +10,7 @@ public:
 		count = 0;
 
 	}
-	bool add(Healer* u) {
+	bool insert(Healer* u) {
 		if (Heal.push(u)) {
 			count++;
 			return true;
@@ -18,7 +18,7 @@ public:
 		else return false;
 	}
 
-	 bool pick(Healer*& u) {
+	 bool remove(Healer*& u) {
 		 if (Heal.pop(u)) {
 
 			 count--;
@@ -27,7 +27,7 @@ public:
 		 else return false;
 	 }
 
-	 int getcount() {
+	 int getCount() {
 		 return count;
 	 }
 

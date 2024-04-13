@@ -1,38 +1,76 @@
 #pragma once
+#include<iostream>
 #include"../unit.h"
 #include"../EarthArmy/EarthTank.h"
 #include"../DS/ArrayStack.h"
-#include<iostream>
 using namespace std;
 
 class EarthTankList
 {
-	int num;
+	int count;
 	ArrayStack<EarthTank*> tankList;
 
 public:
-	EarthTankList():num(0)
+	EarthTankList():count(0)
 	{
 	}
-	bool addTank(EarthTank* newTank)
+	bool insert(EarthTank* newTank)
 	{
 		if (tankList.push(newTank))
 		{
-			num++;
+			count++;
 			return true;
 		}
 		return false;
 	}
-	bool removeUnit(EarthTank* deletedTank)
+	bool remove(unit*& deletedTank)
 	{
-		if (tankList.pop(deletedTank))
+		EarthTank* removedTank;
+		if (tankList.pop(removedTank))
 		{
-			num--;
+			deletedTank = removedTank;
+			count--;
 			return true;
 		}
+		cout << "Cannot pick any tank ,The List Is Empty" << endl;
 		return false;
 	}
-	bool pickTank(unit*& pickedUnit)
+
+	int getCount()
+	{
+		return count;
+	}
+
+	void print()
+	{
+		//if (tankList.isEmpty()) //may be deleted
+		//{
+		//	cout << "The tank List Is Empty" << endl;
+		//	return;
+		//}
+		ArrayStack<EarthTank*>tempList;
+		EarthTank* tempTank;
+		cout << getCount()<<" ET [";
+		while (!tankList.isEmpty())
+		{
+			tankList.pop(tempTank);
+			cout<<tempTank->get_id();
+			//cout << endl << "----------------------------" << endl;
+			tempList.push(tempTank);
+			if (!tankList.isEmpty())
+			{
+				cout << ", ";
+			}
+		}
+		cout <<"]" << endl;
+		while (!tempList.isEmpty())
+		{
+			tempList.pop(tempTank);
+			tankList.push(tempTank);
+		}
+	}
+
+	/*bool pickTank(unit*& pickedUnit)
 	{
 		EarthTank* pickedTank;
 		if (tankList.pop(pickedTank))
@@ -45,28 +83,7 @@ public:
 			cout << "Cannot pick any units ,The List Is Empty" << endl;
 			return false;
 		}
-	}
-	void print()
-	{
-		if (tankList.isEmpty())
-		{
-			cout << "The List Is Empty" << endl;
-			return;
-		}
-		ArrayStack<EarthTank*>tempList;
-		EarthTank* tempTank;
-		while (!tankList.isEmpty())
-		{
-			tankList.pop(tempTank);
-			tempTank->disp();
-			cout << endl << "----------------------------" << endl;
-			tempList.push(tempTank);
-		}
-		while (!tempList.isEmpty())
-		{
-			tempList.pop(tempTank);
-			tankList.push(tempTank);
-		}
-	}
+	}*/
+
 };
 

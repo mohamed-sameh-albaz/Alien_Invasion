@@ -17,12 +17,12 @@ public:
 	}
 
 	MonsterList() {
-		n = 100; index = -1;
+		n = 1000; index = -1;
 		monsters = new monster * [n];
 		for (int i = 0; i < n; i++) monsters[i] = nullptr;
 	}
 
-	bool addMonster(monster* m) {
+	bool insert(monster* m) {
 		if (index < n) {
 			monsters[++index] = m;
 			return true;
@@ -30,7 +30,7 @@ public:
 		else return false;
 	}
 
-	bool pickMonster(unit*& m) {
+	bool remove(unit*& m) {
 		if (index > 0) {
 
 			srand(time(0));
@@ -50,20 +50,26 @@ public:
 		else return false;
 	}
 
-	void print() {
-		if (index == -1) {
-			cout << "The List Is Empty" << endl;
-			return;
-		}
+	void print() {  //change output form
+		//if (index == -1) {
+		//	cout << "The List Is Empty" << endl;
+		//	return;
+		//}
+		cout << getCount()+1 << " AM ["; //index start from -1
 		for (int i = 0; i < n; i++) {
 			if (monsters[i]) {
-				monsters[i]->disp();
-				cout << endl << "----------------------------" << endl;
+				cout << monsters[i]->get_id();
+				//cout << endl << "----------------------------" << endl;
+				if (i != (index))  //index start from -1
+				{
+					cout << ", ";
+				}
 			}
 		}
+		cout << "]" << endl;
 	}
 
-	int count() {
+	int getCount() {
 		return index;
 	}
 };

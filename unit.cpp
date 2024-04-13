@@ -8,7 +8,7 @@ void unit::disp()
 		"\n Type: " << type <<
 		"\n Power: " << power<<
 		"\n Atack Capacity: " <<attackCap <<
-		"\n Join Time: " << joinTime;
+		"\n Join Time: " << joinTime<<endl;
 }
 
 void unit::set_id(int a)

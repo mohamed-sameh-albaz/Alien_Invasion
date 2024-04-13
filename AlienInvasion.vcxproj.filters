@@ -44,13 +44,16 @@
     <ClCompile Include="unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EarthArmy\HL.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EarthArmy\UML.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>EarthArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthArmy\HL.cpp">
+      <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="DS\double_endedQueue.cpp">
+      <Filter>DS</Filter>
+    </ClCompile>
+    <ClCompile Include="killedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -121,15 +124,6 @@
     <ClInclude Include="AlienArmy\AlineSoldierList.h">
       <Filter>AlineArmy</Filter>
     </ClInclude>
-    <ClInclude Include="EarthArmy\Healer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EarthArmy\HL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EarthArmy\UML.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EarthArmy\EarthGunList.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
@@ -138,6 +132,18 @@
     </ClInclude>
     <ClInclude Include="DS\double_endedQueue.h">
       <Filter>DS</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\HL.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\UML.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\Healer.h">
+      <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="killedList.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

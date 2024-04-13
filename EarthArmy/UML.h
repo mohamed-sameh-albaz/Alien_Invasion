@@ -9,7 +9,7 @@ class UML
 	priQueue<unit*> soldiersToHeal;
 	LinkedQueue<unit*> tanksToHeal;
 public:
-	bool add(unit* u) {
+	bool insert(unit* u) {
 		if (u->get_type() == "soldier") {
 			soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));
 			return true;
@@ -21,7 +21,7 @@ public:
 		else return false;
 	}
 
-	bool pick(unit*& u) {
+	bool remove(unit*& u) {
 		if (!soldiersToHeal.isEmpty()) {
 			int i;
 			soldiersToHeal.dequeue(u, i);
