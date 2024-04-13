@@ -7,6 +7,7 @@ class game
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *G;
 public:
+	game();
 	void inputFn();
 };
 

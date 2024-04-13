@@ -1,46 +1,42 @@
-#pragma once
-#include "../unit.h"
-#include "../unit.h"
-#include"../DS/LinkedQueue.h"
-#include"../DS/Node.h"
-#include"../unit.h"
-class AlineSoldierList
+#include "AlienSoldierList.h"
+
+AlienSoldierList::AlienSoldierList()
 {
-	LinkedQueue<unit*> l;
-	int count;
-public:
-	AlineSoldierList() {
-		count = 0;
+	count = 0;
 }
-	bool insert(unit*& u) {
-		count++;
-		return alienSoldierList.enqueue(u);
-	}
-	bool remove(unit*& u) {
-		if (l.dequeue(u))
-			count--;
-		else return 0;
-		return 1;
-	}
-	void print() {
-		LinkedQueue<unit*> l1;
-		unit* u;
 
-		cout << getCount() << " AS [";
-		while (alienSoldierList.dequeue(u)) {
-			cout << u->get_id();
-			//cout << endl << "______________________" << endl;
-			l1.enqueue(u);
-			if (!alienSoldierList.isEmpty())
-			{
-				cout << ", ";
-			}
+bool AlienSoldierList::insert(unit* u) {
+	count++;
+	return alienSoldierList.enqueue(u);
+}
+bool AlienSoldierList::remove(unit*& u) {
+	if (alienSoldierList.dequeue(u))
+		count--;
+	else return 0;
+	return 1;
+}
+void AlienSoldierList::print() {
+	LinkedQueue<unit*> l1;
+	unit* u;
+
+	cout << getCount() << " AS [";
+	while (alienSoldierList.dequeue(u)) {
+		cout << u->get_id();
+		//cout << endl << "______________________" << endl;
+		l1.enqueue(u);
+		if (!alienSoldierList.isEmpty())
+		{
+			cout << ", ";
 		}
-		cout << "]" << endl;
-
-		while (l1.dequeue(u))
-			alienSoldierList.enqueue(u);
-
 	}
-};
+	cout << "]" << endl;
 
+	while (l1.dequeue(u))
+		alienSoldierList.enqueue(u);
+
+}
+
+int AlienSoldierList::getCount()
+{
+	return count;
+}

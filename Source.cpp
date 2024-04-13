@@ -3,9 +3,9 @@
 #include"DS/priQueue.h"
 #include"DS/ArrayStack.h"
 #include"AlienArmy/AlienArmy.h"
-#include"AlienArmy/AlineDroneList.h"
+#include"AlienArmy/AlienDroneList.h"
 #include"AlienArmy/MonsterList.h"
-#include"AlienArmy/AlineSoldierList.h"
+#include"AlienArmy/AlienSoldierList.h"
 #include"EarthArmy/EarthArmy.h"
 #include"EarthArmy/EarthTankList.h"
 #include"EarthArmy/EarthGunList.h"
@@ -17,7 +17,6 @@
 #include<string>
 #include "randGen.h"
 using namespace std;
-
 
 
 int main() {

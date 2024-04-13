@@ -1,13 +1,13 @@
 #pragma once
 #include"../unit.h"
-#include"AlineDroneList.h"
-#include"AlineSoldierList.h"
+#include"AlienDroneList.h"
+#include"AlienSoldierList.h"
 #include"MonsterList.h"
 
 class AlienArmy
 {
-	AlineDroneList * droneList;
-	AlineSoldierList * soldierList;
+	AlienDroneList * droneList;
+	AlienSoldierList * soldierList;
 	MonsterList * monsterList;
 	LinkedQueue<unit*> tempList;
 
@@ -15,8 +15,8 @@ class AlienArmy
 public:
 	AlienArmy() :tempListCnt(0)
 	{
-		droneList = new AlineDroneList;
-		soldierList = new AlineSoldierList;
+		droneList = new AlienDroneList;
+		soldierList = new AlienSoldierList;
 		monsterList = new MonsterList;
 	}
 	~AlienArmy()

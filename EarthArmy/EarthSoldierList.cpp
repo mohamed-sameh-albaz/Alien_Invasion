@@ -1,30 +1,39 @@
 #include "EarthSoldierList.h"
-#include<iostream>
-using namespace std;
+
 EarthSoldierList::EarthSoldierList() {
 	count = 0;
 }
-bool EarthSoldierList::insert(unit*& u) {
+bool EarthSoldierList::insert(unit* u) {
 	count++;
-	return l.enqueue(u);
+	return soldierList.enqueue(u);
 }
 bool EarthSoldierList::remove(unit*& u) {
 
-	if (l.dequeue(u))
+	if (soldierList.dequeue(u))
 		count--;
 	else return 0;
 	return 1;
 }
-void EarthSoldierList::print() {
+void EarthSoldierList::print() {		//change output form
 	LinkedQueue<unit*> l1;
 	unit* u;
-	while (l.dequeue(u)) {
-		u->disp();
-		cout << endl << "______________________" << endl;
+	cout << getCount() << " ES [";
+	while (soldierList.dequeue(u)) {
+		cout << u->get_id();
+		//cout << endl << "______________________" << endl;
 		l1.enqueue(u);
+		if (!soldierList.isEmpty())
+		{
+			cout << ", ";
+		}
 	}
+	cout << "]" << endl;
 
 	while (l1.dequeue(u))
-		l.enqueue(u);
+		soldierList.enqueue(u);
 
+}
+int EarthSoldierList::getCount()
+{
+	return count;
 }

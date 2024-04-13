@@ -4,8 +4,6 @@ class AlienDrone : public unit
 {
 public:
 	AlienDrone(); 
-		
-	
-	void 	attack(); 
+	void attack(); 
 };
 
