@@ -11,13 +11,20 @@ public:
 
 	}
 	bool add(Healer* u) {
-		count++;
-		return (Heal.push(u));
+		if (Heal.push(u)) {
+			count++;
+			return true;
+		}
+		else return false;
 	}
 
 	 bool pick(Healer*& u) {
-		 count--;
-		return Heal.pop(u);
+		 if (Heal.pop(u)) {
+
+			 count--;
+			 return true;
+		 }
+		 else return false;
 	 }
 
 	 int getcount() {

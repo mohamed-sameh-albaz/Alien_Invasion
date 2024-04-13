@@ -159,7 +159,6 @@ int main() {
 	cout << "\n\n########## Picking Gunnery ##########\n\n";
 	GunList.pickGun(u);
 	cout << "\n\n##########\n\n";
-	*/
 	
 
 	// Testing Random Generator //
@@ -171,6 +170,20 @@ int main() {
 
 	if (u) u->disp();
 	else cout << "No Object To Show"; 
+	*/
+
+	Healer h1, h2;
+	h1.set_id(1);
+	h2.set_id(2);
+
+	HL h;
+	h.add(&h1);
+	h.add(&h2);
+
+	h.print();
+	Healer h0;
+	h.add(&h0);
+	h.print();
 
 
 	return 0;
