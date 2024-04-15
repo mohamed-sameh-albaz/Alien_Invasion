@@ -2,7 +2,12 @@
 #include<fstream>
 using namespace std;
 game::game() {
-	G = new randGen;
+	AlienArmy* aArmy = new AlienArmy;
+	EarthArmy* eArmy = new EarthArmy;
+	RG = new randGen;
+	earthCount = 1;
+	alienCount = 2000;
+	inputFn();
 }
 void game::inputFn()
 {
@@ -17,8 +22,29 @@ void game::inputFn()
 	aattackcap2 = -1 * aattackcap2;
 	if (Hu > 5)
 		Hu = 5;
-	G->setParams(Es, Et, Eg, As, Am, Ad, Prob, 
+	RG->setParams(Es, Et, Eg, As, Am, Ad, Prob, 
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2
 		,N,Hu);
+}
+
+void game::fillArmies()
+{
+	RG->fillEarthArmy(eArmy, earthCount);
+	RG->fillAlienArmy(aArmy, alienCount);
+}
+
+
+AlienArmy* game::getAlienArmy() {
+	return aArmy;
+}
+
+EarthArmy* game::getEarthArmy() {
+	return eArmy;
+}
+
+game::~game()
+{
+	delete aArmy;
+	delete eArmy;
 }

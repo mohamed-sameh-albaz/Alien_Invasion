@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "unit.h"
+#include "EarthArmy/EarthArmy.h"
 #include "EarthArmy/EarthSoldier.h"
 #include "EarthArmy/EarthTank.h"
 #include "EarthArmy/EarthGun.h"
@@ -8,6 +9,7 @@
 #include "AlienArmy/AlienSoldier.h"
 #include "AlienArmy/AlienDrone.h"
 #include "AlienArmy/monster.h"
+#include "AlienArmy/AlienArmy.h"
 
 
 
@@ -48,9 +50,6 @@ public:
 
 
 	unit* generateEarthUnit(int id) {
-		srand(time(0));
-		int A = (rand() % 100) + 1;
-		if (A <= Prob) {
 			srand(time(0));
 			int B = (rand() % 100) + 1;
 			if (B <= Es) {
@@ -69,7 +68,7 @@ public:
 				myEarthTank->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 				return myEarthTank;
 			}
-			else {
+			else if (B <= Es + Et + Eg) {
 				EarthGun* myEarthGun = new EarthGun;
 				myEarthGun->set_id(id);
 				myEarthGun->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
@@ -77,42 +76,72 @@ public:
 				myEarthGun->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 				return myEarthGun;
 			}
-		}
-		else return nullptr;
+			else {
+				Healer* myHealer = new Healer;
+				myHealer->set_id(id);
+				myHealer->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
+				myHealer->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
+				myHealer->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+				return myHealer;
+			}
 	}
 
 	unit* generateAlienUnit(int id) {
 		srand(time(0));
+		int B = (rand() % 100) + 1;
+		if (B <= As) {
+			AlienSoldier* myAlienSoldier = new AlienSoldier;
+			myAlienSoldier->set_id(id);
+			myAlienSoldier->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
+			myAlienSoldier->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
+			myAlienSoldier->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+			return myAlienSoldier;
+		}
+		else if (B <= As + Ad) {
+			monster* myMonster = new monster;
+			myMonster->set_id(id);
+			myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
+			myMonster->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
+			myMonster->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+			return myMonster;
+		}
+		else {
+			AlienDrone* myAlienDrone = new AlienDrone;
+			myAlienDrone->set_id(id);
+			myAlienDrone->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
+			myAlienDrone->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
+			myAlienDrone->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+			return myAlienDrone;
+		}
+	}
+
+	bool fillEarthArmy(EarthArmy*& army, int &count) {
+		srand(time(0));
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
-			srand(time(0));
-			int B = (rand() % 100) + 1;
-			if (B <= As) {
-				AlienSoldier* myAlienSoldier = new AlienSoldier;
-				myAlienSoldier->set_id(id);
-				myAlienSoldier->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
-				myAlienSoldier->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
-				myAlienSoldier->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
-				return myAlienSoldier;
+			for (int i = 1; i <= N; i++) {
+				srand(time(0));
+				unit* u = generateEarthUnit(count);
+				count++;
+				army->addUnit(u);
 			}
-			else if (B <= As + Ad) {
-				monster* myMonster = new monster;
-				myMonster->set_id(id);
-				myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
-				myMonster->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
-				myMonster->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
-				return myMonster;
-			}
-			else {
-				AlienDrone* myAlienDrone = new AlienDrone;
-				myAlienDrone->set_id(id);
-				myAlienDrone->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
-				myAlienDrone->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
-				myAlienDrone->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
-				return myAlienDrone;
-			}
+			return true;
 		}
-		else return nullptr;
+		else return false;
+	}
+
+	bool fillAlienArmy(AlienArmy*& army, int& count) {
+		srand(time(0));
+		int A = (rand() % 100) + 1;
+		if (A <= Prob) {
+			for (int i = 1; i <= N; i++) {
+				unit* u = generateAlienUnit(count);
+				count++;
+				army->addUnit(u);
+			}
+			return true;
+		}
+		else return false;
 	}
 
 };

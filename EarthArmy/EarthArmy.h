@@ -41,6 +41,10 @@ public:
 		{
 			return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
 		}
+
+		if (type == "healer") {
+
+		}
 		//healer type
 	}
 

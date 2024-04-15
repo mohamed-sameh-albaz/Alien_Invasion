@@ -16,12 +16,31 @@
 #include<fstream>
 #include<string>
 #include "randGen.h"
+#include "game.h"
 using namespace std;
 
 
 int main() {
-
 	cout << "test main" << endl;
+
+	// Testing Game Class
+
+
+	EarthArmy* a = new EarthArmy;
+	int count = 1;
+	randGen r;
+	r.setParams(70, 20, 6, 80, 12, 8, 100, 3, 50, 30, 90, 2, 5, 1, 20, 40, 80, 1, 4, 8, 4);
+	r.fillEarthArmy(a, count);
+
+	a->print();
+
+
+
+
+
+
+
+	/*
 	
 	////////testing earth army///////////
 	EarthArmy earthArmy;
@@ -91,7 +110,7 @@ int main() {
 	earthArmy.print();
 	alienArmy.print();
 	deadlist.print();
-
+	*/
 	
 
 
