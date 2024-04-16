@@ -26,15 +26,17 @@ int main() {
 	// Testing Game Class
 
 
-	EarthArmy* a = new EarthArmy;
+	EarthArmy* e = new EarthArmy;
+	AlienArmy* a = new AlienArmy;
 	int count = 1;
 	randGen r;
-	r.setParams(70, 20, 6, 80, 12, 8, 100, 3, 50, 30, 90, 2, 5, 1, 20, 40, 80, 1, 4, 8, 4);
-	r.fillEarthArmy(a, count);
+	r.setParams(70, 20, 6, 20, 40, 40, 100, 3, 50, 30, 90, 2, 5, 1, 20, 40, 80, 1, 4, 8, 4);
+	r.fillEarthArmy(e, count);
 
+	e->print();
+
+	r.fillAlienArmy(a, count);
 	a->print();
-
-
 
 
 

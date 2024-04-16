@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "unit.h"
+#include <Windows.h>
 #include "EarthArmy/EarthArmy.h"
 #include "EarthArmy/EarthSoldier.h"
 #include "EarthArmy/EarthTank.h"
@@ -49,9 +50,7 @@ public:
 	}
 
 
-	unit* generateEarthUnit(int id) {
-			srand(time(0));
-			int B = (rand() % 100) + 1;
+	unit* generateEarthUnit(int id,int B) {
 			if (B <= Es) {
 				EarthSoldier* myEarthSoldier = new EarthSoldier;
 				myEarthSoldier->set_id(id);
@@ -86,9 +85,7 @@ public:
 			}
 	}
 
-	unit* generateAlienUnit(int id) {
-		srand(time(0));
-		int B = (rand() % 100) + 1;
+	unit* generateAlienUnit(int id, int B) {
 		if (B <= As) {
 			AlienSoldier* myAlienSoldier = new AlienSoldier;
 			myAlienSoldier->set_id(id);
@@ -120,8 +117,8 @@ public:
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
 			for (int i = 1; i <= N; i++) {
-				srand(time(0));
-				unit* u = generateEarthUnit(count);
+				int B = (rand() % 100) + 1;
+				unit* u = generateEarthUnit(count, B);
 				count++;
 				army->addUnit(u);
 			}
@@ -135,7 +132,8 @@ public:
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
 			for (int i = 1; i <= N; i++) {
-				unit* u = generateAlienUnit(count);
+				int B = (rand() % 100) + 1;
+				unit* u = generateAlienUnit(count, B);
 				count++;
 				army->addUnit(u);
 			}
