@@ -2,12 +2,12 @@
 #include<fstream>
 using namespace std;
 game::game() {
-	AlienArmy* aArmy = new AlienArmy;
-	EarthArmy* eArmy = new EarthArmy;
 	RG = new randGen;
 	earthCount = 1;
 	alienCount = 2000;
 	inputFn();
+	aArmy = new AlienArmy;
+	eArmy = new EarthArmy;
 }
 void game::inputFn()
 {

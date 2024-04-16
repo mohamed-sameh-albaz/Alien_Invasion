@@ -25,7 +25,15 @@ int main() {
 
 	// Testing Game Class
 
+	game* g = new game;
+	g->inputFn();
+	g->fillArmies();
+	g->getAlienArmy()->print();
+	g->getEarthArmy()->print();
 
+
+
+	/*
 	EarthArmy* e = new EarthArmy;
 	AlienArmy* a = new AlienArmy;
 	int count = 1;
@@ -42,7 +50,6 @@ int main() {
 
 
 
-	/*
 	
 	////////testing earth army///////////
 	EarthArmy earthArmy;

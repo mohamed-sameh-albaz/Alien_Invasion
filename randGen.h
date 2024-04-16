@@ -67,21 +67,13 @@ public:
 				myEarthTank->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 				return myEarthTank;
 			}
-			else if (B <= Es + Et + Eg) {
+			else {
 				EarthGun* myEarthGun = new EarthGun;
 				myEarthGun->set_id(id);
 				myEarthGun->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 				myEarthGun->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 				myEarthGun->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 				return myEarthGun;
-			}
-			else {
-				Healer* myHealer = new Healer;
-				myHealer->set_id(id);
-				myHealer->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
-				myHealer->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
-				myHealer->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
-				return myHealer;
 			}
 	}
 
@@ -112,7 +104,7 @@ public:
 		}
 	}
 
-	bool fillEarthArmy(EarthArmy*& army, int &count) {
+	bool fillEarthArmy(EarthArmy* army, int &count) {
 		srand(time(0));
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
@@ -127,7 +119,7 @@ public:
 		else return false;
 	}
 
-	bool fillAlienArmy(AlienArmy*& army, int& count) {
+	bool fillAlienArmy(AlienArmy* army, int& count) {
 		srand(time(0));
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
