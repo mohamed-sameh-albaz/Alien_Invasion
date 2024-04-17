@@ -28,24 +28,28 @@ public:
 
 	bool addUnit(unit*& newUnit)
 	{
-		string type = newUnit->get_type(); //if enum use switch
-		if (type == "Gunnery")
-		{
-			return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
-		}
-		if (type == "soldier")
-		{
-			return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
-		}
-		if (type == "tank")
-		{
-			return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
-		}
+		if (newUnit) {
 
-		if (type == "healer") {
+			string type = newUnit->get_type(); //if enum use switch
+			if (type == "Gunnery")
+			{
+				return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
+			}
+			if (type == "soldier")
+			{
+				return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
+			}
+			if (type == "tank")
+			{
+				return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
+			}
 
+			if (type == "healer") {
+
+			}
+			//healer type
 		}
-		//healer type
+		else return false;
 	}
 
 	bool insertTemp(unit*& tempUnit)

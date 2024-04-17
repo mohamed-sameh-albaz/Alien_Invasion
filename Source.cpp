@@ -28,10 +28,6 @@ void changeColor(int desiredColor) {
 int main() {
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
-	cout << "test main" << endl;
-
-	// Testing Game Class
-
 	game* g = new game;
 	g->inputFn();
 	AlienArmy* aArmy = g->getAlienArmy();
@@ -43,7 +39,8 @@ int main() {
 		changeColor(7);
 		g->fillArmies();
 		int X = (rand() % 100) + 1;
-		unit* u;
+		X = 10;
+		unit* u = nullptr;
 		if (X > 0 && X <= 10) {
 			changeColor(messageColor);
 			cout << endl << "X = " << X << " You Will Pick An Earth Soldier And Add it Again" << endl;
@@ -86,7 +83,7 @@ int main() {
 			changeColor(messageColor);
 			cout << endl << "X = " << X << " You Will Pick 5 Monsters And Insert Them Again" << endl;
 			changeColor(mainColor);
-			unit* m1, * m2, * m3, * m4, * m5;
+			unit* m1 = nullptr, * m2 = nullptr, * m3 = nullptr, * m4 = nullptr, * m5 = nullptr;
 			aArmy->pickMonster(m1);
 			aArmy->pickMonster(m2);
 			aArmy->pickMonster(m3);
@@ -121,8 +118,8 @@ int main() {
 		g->printKilled();
 		changeColor(9);
 		cout << endl <<"Press Enter To Continue" << endl;
-
 		cin.get(); // Wait for user to press enter
+		system("cls");
 	}
 
 
