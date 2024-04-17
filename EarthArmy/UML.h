@@ -9,48 +9,12 @@ class UML
 	priQueue<unit*> soldiersToHeal;
 	LinkedQueue<unit*> tanksToHeal;
 public:
-	bool insert(unit* u) {
-		if (u->get_type() == "soldier") {
-			soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));
-			return true;
-		}
-		else if (u->get_type() == "tank") {
-			tanksToHeal.enqueue(u);
-			return true;
-		}
-		else return false;
-	}
+	bool insert(unit* u);
 
-	bool remove(unit*& u) {
-		if (!soldiersToHeal.isEmpty()) {
-			int i;
-			soldiersToHeal.dequeue(u, i);
-			return true;
-		}
-		else if (!tanksToHeal.isEmpty()) {
-			tanksToHeal.dequeue(u);
-			return true;
-		}
-		else return false;
-	}
+	bool remove(unit*& u);
+	
 
-	void print() {
-		priQueue<unit*> tmpS = soldiersToHeal;
-		LinkedQueue<unit*> tmpT =tanksToHeal;
-
-		while (!tmpS.isEmpty()) {
-			unit* u = nullptr;
-			int tmp;
-			tmpS.dequeue(u,tmp);
-			u->disp();
-			cout << endl << "---------------------------" << endl;
-		}
-		while (!tmpT.isEmpty()) {
-			unit* u = nullptr;
-			tmpT.dequeue(u);
-			u->disp();
-			cout << endl << "---------------------------" << endl;
-		}
-	}
+	void print();
+	
 };
 

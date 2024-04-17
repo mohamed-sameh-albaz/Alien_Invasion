@@ -127,16 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AlienArmy\AlienArmy.cpp" />
     <ClCompile Include="AlienArmy\AlienDrone.cpp" />
     <ClCompile Include="AlienArmy\AlienSoldier.cpp" />
     <ClCompile Include="AlienArmy\AlienDroneList.cpp" />
     <ClCompile Include="AlienArmy\AlienSoldierList.cpp" />
+    <ClCompile Include="AlienArmy\monster.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
     <ClCompile Include="DS\double_endedQueue.cpp" />
+    <ClCompile Include="EarthArmy\EarthArmy.cpp" />
+    <ClCompile Include="EarthArmy\EarthGun.cpp" />
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldier.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
+    <ClCompile Include="EarthArmy\EarthTank.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
+    <ClCompile Include="EarthArmy\Healer.cpp" />
     <ClCompile Include="EarthArmy\HL.cpp" />
     <ClCompile Include="EarthArmy\UML.cpp" />
     <ClCompile Include="game.cpp" />

@@ -25,7 +25,7 @@ class randGen
 public:
 	void setParams(int Es0, int Et0, int Eg0, int As0, int Am0, int Ad0, int Prob0,
 		int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
-		int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20,int N0,int Hu0) {
+		int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20,int N0) {
 		Es = Es0;
 		Et = Et0;
 		Eg = Eg0;
@@ -46,7 +46,7 @@ public:
 		aattackcap1 = aattackcap10;
 		aattackcap2 = aattackcap20;
 		N = N0;
-		Hu = Hu0;
+		//Hu = Hu0;
 	}
 
 
