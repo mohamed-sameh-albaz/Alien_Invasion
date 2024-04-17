@@ -34,10 +34,27 @@ int main() {
 	EarthArmy*  eArmy= g->getEarthArmy();
 
 	for (int i = 1; i <= 50; i++) {
+
+
 		changeColor(12);
 		cout << endl << "Current Timestep: " << i << endl;
 		changeColor(7);
+		cout << endl << "Before Generating Units:" << endl;
+		eArmy->print();
+		aArmy->print();
+		g->printKilled();
+
 		g->fillArmies();
+
+		changeColor(messageColor);
+		cout << endl << "After Generating Units:" << endl;
+		changeColor(mainColor);
+		eArmy->print();
+		aArmy->print();
+		g->printKilled();
+
+
+
 		int X = (rand() % 100) + 1;
 		X = 10;
 		unit* u = nullptr;
