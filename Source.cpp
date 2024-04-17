@@ -20,16 +20,114 @@
 using namespace std;
 
 
+void changeColor(int desiredColor) {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), desiredColor);
+}
+
+
 int main() {
+	srand(time(0));
+	int mainColor = 7, messageColor = 6;
 	cout << "test main" << endl;
 
 	// Testing Game Class
 
 	game* g = new game;
 	g->inputFn();
-	g->fillArmies();
-	g->getAlienArmy()->print();
-	g->getEarthArmy()->print();
+	AlienArmy* aArmy = g->getAlienArmy();
+	EarthArmy*  eArmy= g->getEarthArmy();
+
+	for (int i = 1; i <= 50; i++) {
+		changeColor(12);
+		cout << endl << "Current Timestep: " << i << endl;
+		changeColor(7);
+		g->fillArmies();
+		int X = (rand() % 100) + 1;
+		unit* u;
+		if (X > 0 && X <= 10) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick An Earth Soldier And Add it Again" << endl;
+			changeColor(mainColor);
+			eArmy->pickSoldier(u);
+			eArmy->addUnit(u);
+		}
+		else if (X > 10 && X <= 20) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick A Tank And Add it To Killed List" << endl;
+			changeColor(mainColor);
+			eArmy->pickTank(u);
+			g->insertKilled(u);
+		}
+		else if (X > 20 && X <= 30) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick A Gunnery, Decrease His Health And Insert Him Again" << endl;
+			changeColor(mainColor);
+			int i;
+			eArmy->pickGun(u, i);
+			u->set_health(0.5 * u->get_health());
+			eArmy->addUnit(u);
+		}
+		else if (X > 30 && X <= 40) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick 5 AS, Decrease Their Health, Put Them in Temp List and Put back Again" << endl;
+			changeColor(mainColor);
+			for (int i = 1; i <= 5; i++) {
+				aArmy->pickSoldier(u);
+				u->set_health(0.5 * u->get_health());
+				aArmy->insertTemp(u);
+
+			}
+			for (int i = 1; i <= 5; i++) {
+				aArmy->removeTemp(u);
+				aArmy->addUnit(u);
+			}
+		}
+		else if (X > 40 && X <= 50) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick 5 Monsters And Insert Them Again" << endl;
+			changeColor(mainColor);
+			unit* m1, * m2, * m3, * m4, * m5;
+			aArmy->pickMonster(m1);
+			aArmy->pickMonster(m2);
+			aArmy->pickMonster(m3);
+			aArmy->pickMonster(m4);
+			aArmy->pickMonster(m5);
+
+			aArmy->addUnit(m1);
+			aArmy->addUnit(m2);
+			aArmy->addUnit(m3);
+			aArmy->addUnit(m4);
+			aArmy->addUnit(m5);
+		}
+		else if (X > 50 && X <= 60) {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " You Will Pick 6 Drones And Put Them In Killed List" << endl;
+			changeColor(mainColor);
+			for (int i = 1; i <= 3; i++) {
+				aArmy->pickFrontDrone(u);
+				g->insertKilled(u);
+				aArmy->pickEndDrone(u);
+				g->insertKilled(u);
+			}
+		}
+		else {
+			changeColor(messageColor);
+			cout << endl << "X = " << X << " Nothing Will Change" << endl;
+			changeColor(mainColor);
+		}
+
+		eArmy->print();
+		aArmy->print();
+		g->printKilled();
+		changeColor(9);
+		cout << endl <<"Press Enter To Continue" << endl;
+
+		cin.get(); // Wait for user to press enter
+	}
+
+
+	changeColor(5);
+	cout << endl << "Simulation Ended" << endl;
 
 
 

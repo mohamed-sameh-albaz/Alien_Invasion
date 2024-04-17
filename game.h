@@ -1,5 +1,6 @@
 #pragma once
 #include"randGen.h"
+#include "killedList.h"
 class game
 {
 	AlienArmy* aArmy;
@@ -9,12 +10,15 @@ class game
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
 	int earthCount, alienCount;
+	killedList* dead;
 public:
 	game();
 	void inputFn();
 	void fillArmies();
 	AlienArmy* getAlienArmy();
 	EarthArmy* getEarthArmy();
+	bool insertKilled(unit* u);
+	void printKilled();
 	~game();
 };
 

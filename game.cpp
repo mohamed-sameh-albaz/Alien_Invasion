@@ -8,6 +8,7 @@ game::game() {
 	inputFn();
 	aArmy = new AlienArmy;
 	eArmy = new EarthArmy;
+	dead = new killedList;
 }
 void game::inputFn()
 {
@@ -43,8 +44,23 @@ EarthArmy* game::getEarthArmy() {
 	return eArmy;
 }
 
+bool game::insertKilled(unit* u)
+{
+	if (u) {
+		return dead->insert(u);
+	}
+	else return false;
+}
+
+void game::printKilled()
+{
+	dead->print();
+}
+
+
 game::~game()
 {
 	delete aArmy;
 	delete eArmy;
+	delete dead;
 }

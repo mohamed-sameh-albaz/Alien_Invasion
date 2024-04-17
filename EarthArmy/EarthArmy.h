@@ -62,27 +62,17 @@ public:
 
 	bool pickGun(unit*& pickedGun ,int& pri) 
 	{
-		if(GunneryList->remove(pickedGun, pri))
-		{
-			return insertTemp(pickedGun);
-		}
+		return (GunneryList->remove(pickedGun, pri));
 	}
 
 	bool pickTank(unit*& pickedTank) 
 	{
-		if(tankList->remove(pickedTank))
-		{
-			return insertTemp(pickedTank);
-		}
+		return(tankList->remove(pickedTank));
 	}
 	
 	bool pickSoldier(unit*& pickedSoldier) 
 	{
-		if(soldierList->remove(pickedSoldier))
-		{
-			return insertTemp(pickedSoldier);
-		}
-		return false;
+		return(soldierList->remove(pickedSoldier));
 	}
 
 	//pick healer//

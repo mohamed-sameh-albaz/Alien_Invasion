@@ -86,7 +86,7 @@ public:
 			myAlienSoldier->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
 			return myAlienSoldier;
 		}
-		else if (B <= As + Ad) {
+		else if (B <= As + Am) {
 			monster* myMonster = new monster;
 			myMonster->set_id(id);
 			myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
@@ -105,7 +105,6 @@ public:
 	}
 
 	bool fillEarthArmy(EarthArmy* army, int &count) {
-		srand(time(0));
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
 			for (int i = 1; i <= N; i++) {
@@ -120,7 +119,6 @@ public:
 	}
 
 	bool fillAlienArmy(AlienArmy* army, int& count) {
-		srand(time(0));
 		int A = (rand() % 100) + 1;
 		if (A <= Prob) {
 			for (int i = 1; i <= N; i++) {

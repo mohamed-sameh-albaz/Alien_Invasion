@@ -25,19 +25,22 @@ public:
 
 	bool addUnit(unit*& newUnit)
 	{
-		string type = newUnit->get_type(); //if enum use switch
-		if (type == "alienDrone")
-		{
-			return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
+		if (newUnit) {
+			string type = newUnit->get_type(); //if enum use switch
+			if (type == "alienDrone")
+			{
+				return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
+			}
+			if (type == "alienSoldier")
+			{
+				return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
+			}
+			if (type == "monster")
+			{
+				return monsterList->insert(dynamic_cast<monster*>(newUnit));
+			}
 		}
-		if (type == "alienSoldier")
-		{
-			return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
-		}
-		if (type == "monster")
-		{
-			return monsterList->insert(dynamic_cast<monster*>(newUnit));
-		}
+		else return false;
 	}
 
 	bool insertTemp(unit*& tempUnit)
@@ -54,38 +57,23 @@ public:
 
 	bool pickFrontDrone(unit*& pickedDrone)
 	{
-		if(droneList->RemoveFront(pickedDrone))
-		{
-			return insertTemp(pickedDrone);
-		}
-		return false;
+		return (droneList->RemoveFront(pickedDrone));
 	}
 
 	bool pickEndDrone(unit*& pickedDrone)
 	{
-		if(droneList->RemoveEnd(pickedDrone))
-		{
-			return insertTemp(pickedDrone);
-		}
-		return false;
+		return (droneList->RemoveEnd(pickedDrone));
 	}
 
 	bool pickSoldier(unit*& pickedSoldier) 
 	{
-		if(soldierList->remove(pickedSoldier))
-		{
-			return insertTemp(pickedSoldier);
-		}
-		return false;
+		return (soldierList->remove(pickedSoldier));
 	}
 
 	bool pickMonster(unit*& pickedMonster)
 	{
-		if(monsterList->remove(pickedMonster))
-		{
-			return insertTemp(pickedMonster);
-		}
-		return false;
+		return(monsterList->remove(pickedMonster));
+
 	}
 
 	void print()
