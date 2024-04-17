@@ -56,7 +56,7 @@ int main() {
 
 
 		int X = (rand() % 100) + 1;
-		X = 10;
+		//X = 10;
 		unit* u = nullptr;
 		if (X > 0 && X <= 10) {
 			changeColor(messageColor);
@@ -85,16 +85,42 @@ int main() {
 			changeColor(messageColor);
 			cout << endl << "X = " << X << " You Will Pick 5 AS, Decrease Their Health, Put Them in Temp List and Put back Again" << endl;
 			changeColor(mainColor);
-			for (int i = 1; i <= 5; i++) {
-				aArmy->pickSoldier(u);
-				u->set_health(0.5 * u->get_health());
-				aArmy->insertTemp(u);
+			unit* s1 = nullptr, * s2 = nullptr, * s3 = nullptr, * s4 = nullptr, * s5 = nullptr;
+			//for (int i = 1; i <= 5; i++) {
+			aArmy->pickSoldier(s1);
+			s1->set_health(0.5 * s1->get_health());
+			aArmy->pickSoldier(s2);
+			s2->set_health(0.5 * s2->get_health());
+			aArmy->pickSoldier(s3);
+			s3->set_health(0.5 * s3->get_health());
+			aArmy->pickSoldier(s4);
+			s4->set_health(0.5 * s4->get_health());
+			aArmy->pickSoldier(s5);
+			s5->set_health(0.5 * s5->get_health());
 
-			}
-			for (int i = 1; i <= 5; i++) {
+			aArmy->insertTemp(s1);
+			aArmy->insertTemp(s2);
+			aArmy->insertTemp(s3);
+			aArmy->insertTemp(s4);
+			aArmy->insertTemp(s5);
+
+			aArmy->removeTemp(s1);
+			aArmy->removeTemp(s2);
+			aArmy->removeTemp(s3);
+			aArmy->removeTemp(s4);
+			aArmy->removeTemp(s5);
+
+			aArmy->addUnit(s1);
+			aArmy->addUnit(s2);
+			aArmy->addUnit(s3);
+			aArmy->addUnit(s4);
+			aArmy->addUnit(s5);
+
+			//}
+			/*for (int i = 1; i <= 5; i++) {
 				aArmy->removeTemp(u);
 				aArmy->addUnit(u);
-			}
+			}*/
 		}
 		else if (X > 40 && X <= 50) {
 			changeColor(messageColor);
@@ -117,12 +143,29 @@ int main() {
 			changeColor(messageColor);
 			cout << endl << "X = " << X << " You Will Pick 6 Drones And Put Them In Killed List" << endl;
 			changeColor(mainColor);
-			for (int i = 1; i <= 3; i++) {
+			unit* d1 = nullptr, * d2 = nullptr, * d3 = nullptr, * d4 = nullptr, * d5 = nullptr, * d6 = nullptr;
+			aArmy->pickFrontDrone(d1);
+			aArmy->pickFrontDrone(d2);
+			aArmy->pickFrontDrone(d3);
+
+			aArmy->pickEndDrone(d4);
+			aArmy->pickEndDrone(d5);
+			aArmy->pickEndDrone(d6);
+
+			g->insertKilled(d1);
+			g->insertKilled(d2);
+			g->insertKilled(d3);
+
+			g->insertKilled(d4);
+			g->insertKilled(d5);
+			g->insertKilled(d6);
+
+		/*for (int i = 1; i <= 3; i++) {
 				aArmy->pickFrontDrone(u);
 				g->insertKilled(u);
 				aArmy->pickEndDrone(u);
 				g->insertKilled(u);
-			}
+			}*/
 		}
 		else {
 			changeColor(messageColor);

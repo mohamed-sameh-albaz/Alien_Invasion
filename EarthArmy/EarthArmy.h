@@ -6,16 +6,12 @@
 
 class EarthArmy
 {
-	//Army lists
 	EarthGunList * GunneryList;
 	EarthSoldierList * soldierList;
 	EarthTankList * tankList;
-		//healer list
 	LinkedQueue<unit*> tempList;
-	
-	int tempListCnt;
 public:
-	EarthArmy():tempListCnt(0)
+	EarthArmy()
 	{
 		GunneryList = new EarthGunList;
 		soldierList = new EarthSoldierList;
@@ -43,24 +39,17 @@ public:
 			{
 				return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
 			}
-
-			if (type == "healer") {
-
-			}
-			//healer type
 		}
 		else return false;
 	}
 
 	bool insertTemp(unit*& tempUnit)
 	{
-		tempListCnt++;
 		return tempList.enqueue(tempUnit);
 	}
 
 	bool removeTemp(unit*& tempUnit)
 	{
-		tempListCnt--;
 		return tempList.dequeue(tempUnit);
 	}
 

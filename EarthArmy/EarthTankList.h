@@ -32,7 +32,7 @@ public:
 			count--;
 			return true;
 		}
-		cout << "Cannot pick any tank ,The List Is Empty" << endl;
+		cout << "Cannot pick any tank ,The List Is Empty" << endl;////////////// put in other units or delete it?
 		return false;
 	}
 

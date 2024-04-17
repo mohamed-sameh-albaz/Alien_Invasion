@@ -10,10 +10,8 @@ class AlienArmy
 	AlienSoldierList * soldierList;
 	MonsterList * monsterList;
 	LinkedQueue<unit*> tempList;
-
-	int tempListCnt;
 public:
-	AlienArmy() :tempListCnt(0)
+	AlienArmy()
 	{
 		droneList = new AlienDroneList;
 		soldierList = new AlienSoldierList;
@@ -45,14 +43,12 @@ public:
 
 	bool insertTemp(unit*& tempUnit)
 	{
-		tempListCnt++;
 		return tempList.enqueue(tempUnit);
 	}
 
 	bool removeTemp(unit*& tempUnit)
 	{
-		tempListCnt--;
-		return tempList.dequeue(tempUnit);
+			return tempList.dequeue(tempUnit);
 	}
 
 	bool pickFrontDrone(unit*& pickedDrone)
