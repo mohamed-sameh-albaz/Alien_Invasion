@@ -16,8 +16,7 @@ bool EarthSoldierList::insert(EarthSoldier* u) {
 	return soldierList.enqueue(u);
 }
 bool EarthSoldierList::remove(unit*& u) {
-	EarthSold
-		ier* a;
+	EarthSoldier* a;
 	if (soldierList.dequeue(a)) {
 		u = a;
 		count--;

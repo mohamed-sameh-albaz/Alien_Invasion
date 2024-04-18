@@ -1,4 +1,5 @@
 #include "HL.h"
+#include"Healer.h"
 HL::HL() {
 	count = 0;
 
@@ -20,7 +21,7 @@ bool HL::insert(Healer* u) {
 }
 
 bool HL::remove(unit*& u) {
-	Heal* h;
+	Healer* h;
 	if (Heal.pop(h)) {
 		u = h;
 		count--;

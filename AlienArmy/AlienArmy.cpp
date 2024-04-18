@@ -22,7 +22,7 @@ bool AlienArmy::addUnit(unit*& newUnit)
 		string type = newUnit->get_type(); //if enum use switch
 		if (type == "alienDrone")
 		{
-			return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
+			return droneList->insertEnd(dynamic_cast<AlienDrone*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
 		}
 		if (type == "alienSoldier")
 		{
@@ -48,12 +48,12 @@ bool AlienArmy::removeTemp(unit*& tempUnit)
 
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 {
-	return (droneList->RemoveFront(pickedDrone));
+	return (droneList->removeFront(pickedDrone));
 }
 
 bool AlienArmy::pickEndDrone(unit*& pickedDrone)
 {
-	return (droneList->RemoveEnd(pickedDrone));
+	return (droneList->removeEnd(pickedDrone));
 }
 
 bool AlienArmy::pickSoldier(unit*& pickedSoldier)
