@@ -19,7 +19,7 @@
 #include "game.h"
 using namespace std;
 
-
+//lol
 void changeColor(int desiredColor) {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), desiredColor);
 }
