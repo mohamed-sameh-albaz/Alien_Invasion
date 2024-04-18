@@ -2,7 +2,7 @@
 
 monster::monster()
 {
-	set_type("monster");
+	set_type(AM);
 	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 

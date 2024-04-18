@@ -4,7 +4,6 @@ class EarthSoldier : public unit
 {
 public:
 	EarthSoldier();
-
 	void attack(); 
 };
 

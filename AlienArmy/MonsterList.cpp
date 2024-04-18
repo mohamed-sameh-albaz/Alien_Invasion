@@ -1,16 +1,13 @@
 #include "MonsterList.h"
 
-MonsterList::MonsterList(int num)
-{
-	n = num; index = -1;
-	monsters = new monster * [n];
-	for (int i = 0; i < n; i++) monsters[i] = nullptr;
-}
-
 MonsterList::MonsterList() {
 	n = 1000; index = -1;
 	monsters = new monster * [n];
 	for (int i = 0; i < n; i++) monsters[i] = nullptr;
+}
+
+MonsterList::~MonsterList()
+{
 }
 
 bool MonsterList::insert(monster* m) {
@@ -41,16 +38,11 @@ bool MonsterList::MonsterList::remove(unit*& m){
 	else return false;
 }
 
-void MonsterList::print() {  //change output form
-	//if (index == -1) {
-	//	cout << "The List Is Empty" << endl;
-	//	return;
-	//}
+void MonsterList::print() {  
 	cout << getCount() + 1 << " AM ["; //index start from -1
 	for (int i = 0; i < n; i++) {
 		if (monsters[i]) {
 			cout << monsters[i]->get_id();
-			//cout << endl << "----------------------------" << endl;
 			if (i != (index))  //index start from -1
 			{
 				cout << ", ";
@@ -62,7 +54,4 @@ void MonsterList::print() {  //change output form
 
 int MonsterList::getCount() {
 	return index;
-}
-MonsterList::MonsterList()
-{
 }

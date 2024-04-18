@@ -10,11 +10,7 @@ class UML
 	LinkedQueue<unit*> tanksToHeal;
 public:
 	bool insert(unit* u);
-
 	bool remove(unit*& u);
-	
-
 	void print();
-	
 };
 

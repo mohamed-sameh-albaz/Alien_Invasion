@@ -2,8 +2,8 @@
 
 EarthGun::EarthGun()
 {
-	set_type("Gunnery");
-	initialHealth = joinTime = health = power = attackCap = id = 9;
+	set_type(EG);
+	initialHealth = joinTime = health = power = attackCap = id = 0 ;
 }
 
 void EarthGun::attack()

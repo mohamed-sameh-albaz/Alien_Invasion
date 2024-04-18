@@ -2,7 +2,7 @@
 
 AlienDrone::AlienDrone()
 {
-	set_type("alienDrone");
+	set_type(AD);
 	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 

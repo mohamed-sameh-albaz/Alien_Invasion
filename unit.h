@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
-
+enum type { EG, ET, ES, EH, AS, AM, AD };
 
 #pragma once
 class unit
 {
 protected:
 	int id;
-	string type;
-	int joinTime; // need to be removed
+	type unitType;
+	int joinTime;
 	int health;
 	int power;
 	int attackCap;
@@ -22,7 +22,7 @@ public:
 	void set_health(int a);
 	void set_power(int a);
 	void set_attackCap(int a);
-	void set_type(string s);
+	void set_type(type s);
 	int get_id();
 	int get_joinTime();
 	int get_health();
@@ -39,9 +39,7 @@ public:
 	int get_db();
 	void set_attackpower(unit*u);
 	int get_attackpower();
-
-	string get_type();
-
+	type get_type();
 	virtual void attack() = 0;
 
 };

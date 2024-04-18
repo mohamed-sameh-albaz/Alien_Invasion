@@ -4,6 +4,5 @@ class Healer : public unit
 {
 public:
 	Healer();
-
 	void attack(); 
 };

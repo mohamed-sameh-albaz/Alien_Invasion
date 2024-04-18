@@ -3,8 +3,7 @@
 class monster : public unit
 {
 public:
-	monster(); 
-	
+	monster();
 	void attack(); 
 };
 

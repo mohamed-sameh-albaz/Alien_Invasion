@@ -1,14 +1,22 @@
 #include "unit.h"
-#include<iostream>
-using namespace std;
+
 void unit::disp()
 {
-	cout << " ID: " << id 
+	cout << " ID: " << id
 		<< "\n Health: " << health <<
-		"\n Type: " << type <<
-		"\n Power: " << power<<
-		"\n Atack Capacity: " <<attackCap <<
-		"\n Join Time: " << joinTime<<endl;
+		"\n Type: ";
+	switch (unitType) 
+	{
+		case EG:cout << "Gunnery";
+		case ES:cout << "Earth Soldier";
+		case ET:cout << "Tank";
+		case AS:cout << "Alien Soldier";
+		case AD:cout << "Alien Drone";
+		case AM:cout << "Monster";
+	}
+	cout << "\n Power: " << power
+		<< "\n Attack Capacity: " << attackCap
+		<< "\n Join Time: " << joinTime << endl;
 }
 
 void unit::set_id(int a)
@@ -38,9 +46,9 @@ void unit::set_attackCap(int a)
 	attackCap = a;
 }
 
-void unit::set_type(string s)
+void unit::set_type(type s)
 {
-	type = s;
+	unitType = s;
 }
 
 int unit::get_id()
@@ -127,7 +135,7 @@ int unit::get_attackpower()
 	return attackpower;
 }
 
-string unit::get_type()
+type unit::get_type()
 {
-	return type;
+	return unitType;
 }

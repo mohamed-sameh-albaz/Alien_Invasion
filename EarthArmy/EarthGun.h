@@ -3,8 +3,7 @@
 class EarthGun : public unit
 {
 public:
-	EarthGun();
-	
+	EarthGun();	
 	void attack(); 
 };
 

@@ -3,6 +3,9 @@
 EarthSoldierList::EarthSoldierList() {
 	count = 0;
 }
+EarthSoldierList::~EarthSoldierList()
+{
+}
 bool EarthSoldierList::insert(unit* u) {
 	count++;
 	return soldierList.enqueue(u);
@@ -14,13 +17,12 @@ bool EarthSoldierList::remove(unit*& u) {
 	else return 0;
 	return 1;
 }
-void EarthSoldierList::print() {		//change output form
+void EarthSoldierList::print() {
 	LinkedQueue<unit*> l1;
 	unit* u;
 	cout << getCount() << " ES [";
 	while (soldierList.dequeue(u)) {
 		cout << u->get_id();
-		//cout << endl << "______________________" << endl;
 		l1.enqueue(u);
 		if (!soldierList.isEmpty())
 		{

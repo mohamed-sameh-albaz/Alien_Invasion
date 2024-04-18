@@ -2,8 +2,8 @@
 
 EarthSoldier::EarthSoldier()
 {
-	set_type("soldier");
-	initialHealth = joinTime = health = power = attackCap = id = 100;
+	set_type(ES);
+	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void EarthSoldier::attack()

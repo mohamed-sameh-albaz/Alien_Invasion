@@ -1,7 +1,7 @@
 #include"AlienSoldier.h"
 AlienSoldier::AlienSoldier()
 {
-	set_type("alienSoldier");
+	set_type(AS);
 	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 

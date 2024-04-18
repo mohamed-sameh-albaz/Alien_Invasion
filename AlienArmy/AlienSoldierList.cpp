@@ -5,6 +5,10 @@ AlienSoldierList::AlienSoldierList()
 	count = 0;
 }
 
+AlienSoldierList::~AlienSoldierList()
+{
+}
+
 bool AlienSoldierList::insert(unit* u) {
 	count++;
 	return alienSoldierList.enqueue(u);
@@ -16,24 +20,22 @@ bool AlienSoldierList::remove(unit*& u) {
 	return 1;
 }
 void AlienSoldierList::print() {
-	LinkedQueue<unit*> l1;
-	unit* u;
+	LinkedQueue<unit*> tempList;
+	unit* tempSoldier;
 
-		cout << getCount() << " AS [";
-		while (alienSoldierList.dequeue(u)) {
-			cout << u->get_id();
-			//cout << endl << "______________________" << endl;
-			l1.enqueue(u);
-			if (!alienSoldierList.isEmpty())
-			{
-				cout << ", ";
-			}
+	cout << getCount() << " AS [";
+	while (alienSoldierList.dequeue(tempSoldier)) {
+		cout << tempSoldier->get_id();
+		tempList.enqueue(tempSoldier);
+		if (!alienSoldierList.isEmpty())
+		{
+			cout << ", ";
 		}
-		cout << "]" << endl;
+	}
+	cout << "]" << endl;
 
-		while (l1.dequeue(u))
-			alienSoldierList.enqueue(u);
-
+	while (tempList.dequeue(tempSoldier))
+			alienSoldierList.enqueue(tempSoldier);
 }
 
 int AlienSoldierList::getCount()

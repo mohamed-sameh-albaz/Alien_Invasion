@@ -1,11 +1,11 @@
 #include "UML.h"
 
 bool  UML::insert(unit* u) {
-	if (u->get_type() == "soldier") {
+	if (u->get_type() == AS) {
 		soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));
 		return true;
 	}
-	else if (u->get_type() == "tank") {
+	else if (u->get_type() == ET) {
 		tanksToHeal.enqueue(u);
 		return true;
 	}

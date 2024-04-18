@@ -3,19 +3,8 @@
 #include "unit.h"
 #include <Windows.h>
 #include "EarthArmy/EarthArmy.h"
-#include "EarthArmy/EarthSoldier.h"
-#include "EarthArmy/EarthTank.h"
-#include "EarthArmy/EarthGun.h"
-#include "EarthArmy/Healer.h"
-#include "AlienArmy/AlienSoldier.h"
-#include "AlienArmy/AlienDrone.h"
-#include "AlienArmy/monster.h"
 #include "AlienArmy/AlienArmy.h"
-
-
-
 using namespace std;
-
 
 class randGen
 {
@@ -46,11 +35,10 @@ public:
 		aattackcap1 = aattackcap10;
 		aattackcap2 = aattackcap20;
 		N = N0;
-		//Hu = Hu0;
 	}
 
 
-	unit* generateEarthUnit(int id,int B) {
+	unit* generateEarthUnit(int id,int B) {		
 			if (B <= Es) {
 				EarthSoldier* myEarthSoldier = new EarthSoldier;
 				myEarthSoldier->set_id(id);

@@ -7,13 +7,10 @@ class HL
 	int count;
 public:
 	HL(); 
+	~HL();
 	bool insert(Healer* u);
-
 	bool remove(Healer*& u); 
-
 	int getCount(); 
-
-
 	void print(); 
 };
 

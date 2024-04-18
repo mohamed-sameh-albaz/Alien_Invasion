@@ -10,27 +10,23 @@ AlienArmy::~AlienArmy()
 {
 }
 
-bool AlienArmy::addUnit(unit*& newUnit)
+bool AlienArmy::addUnit(unit* newUnit)
 {
-	if (newUnit) {
-		string type = newUnit->get_type(); //if enum use switch
-		if (type == "alienDrone")
+	type unitType = newUnit->get_type();
+	
+	if(newUnit)
+	{
+		switch (unitType)
 		{
-			return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
-		}
-		if (type == "alienSoldier")
-		{
-			return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
-		}
-		if (type == "monster")
-		{
-			return monsterList->insert(dynamic_cast<monster*>(newUnit));
+		case AS:	return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));
+		case AM:	return monsterList->insert(dynamic_cast<monster*>(newUnit));
+		case AD:	return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));
 		}
 	}
 	else return false;
 }
 
-bool AlienArmy::insertTemp(unit*& tempUnit)
+bool AlienArmy::insertTemp(unit* tempUnit)
 {
 	return tempList.enqueue(tempUnit);
 }

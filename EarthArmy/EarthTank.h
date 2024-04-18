@@ -4,8 +4,6 @@ class EarthTank : public unit
 {
 public:
 	EarthTank();
-	
-
 	void attack();
 };
 

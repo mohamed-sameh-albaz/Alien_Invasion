@@ -1,15 +1,18 @@
 #pragma once
+#include<iostream>
 #include "../unit.h"
 #include"../DS/LinkedQueue.h"
-#include"../DS/Node.h"
 #include"EarthSoldier.h"
+using namespace std;
+
 class EarthSoldierList
 {
-	LinkedQueue<unit*> soldierList; //change list name
+	LinkedQueue<unit*> soldierList; 
 	int count;
 public:
 	EarthSoldierList();
-	bool insert(unit* u);	//remove reference 
+	~EarthSoldierList();
+	bool insert(unit* u);
 	bool remove(unit*& u);
 	void print();
 	int getCount();

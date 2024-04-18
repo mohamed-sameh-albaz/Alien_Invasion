@@ -10,28 +10,23 @@ EarthArmy::~EarthArmy()
 {
 }
 
-bool EarthArmy::addUnit(unit*& newUnit)
+bool EarthArmy::addUnit(unit* newUnit)
 {
-	if (newUnit) {
-
-		string type = newUnit->get_type(); //if enum use switch
-		if (type == "Gunnery")
+	type unitType = newUnit->get_type();
+	
+	if (newUnit)
+	{
+		switch (unitType)
 		{
-			return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
-		}
-		if (type == "soldier")
-		{
-			return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));//ref --> initial value of reference to non-const must be an lvalue
-		}
-		if (type == "tank")
-		{
-			return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
+		case EG:	return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
+		case ES:	return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));
+		case ET:	return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
 		}
 	}
 	else return false;
 }
 
-bool EarthArmy::insertTemp(unit*& tempUnit)
+bool EarthArmy::insertTemp(unit* tempUnit)
 {
 	return tempList.enqueue(tempUnit);
 }
@@ -55,8 +50,6 @@ bool EarthArmy::pickSoldier(unit*& pickedSoldier)
 {
 	return(soldierList->remove(pickedSoldier));
 }
-
-//pick healer//
 
 void EarthArmy::print()
 {

@@ -1,6 +1,12 @@
 #pragma once
+#include<iostream>
 #include"randGen.h"
+#include"EarthArmy/EarthArmy.h"
+#include"AlienArmy/AlienArmy.h"
 #include "killedList.h"
+#include<fstream>
+using namespace std;
+
 class game
 {
 	AlienArmy* aArmy;
@@ -13,12 +19,15 @@ class game
 	killedList* dead;
 public:
 	game();
+	void simulate();
+	void fight();
 	void inputFn();
 	void fillArmies();
 	AlienArmy* getAlienArmy();
 	EarthArmy* getEarthArmy();
 	bool insertKilled(unit* u);
 	void printKilled();
+	void changeColor(int desiredColor);		//console display colors
 	~game();
 };
 

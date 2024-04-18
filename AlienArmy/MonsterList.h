@@ -9,17 +9,11 @@ class MonsterList
 	int index;
 	monster** monsters;
 public:
-	MonsterList(int num);
-	
-
 	MonsterList();
-
 	bool insert(monster* m);
-
 	bool remove(unit*& m); 
-
 	void print(); 
-
 	int getCount(); 
+	~MonsterList();
 };
 

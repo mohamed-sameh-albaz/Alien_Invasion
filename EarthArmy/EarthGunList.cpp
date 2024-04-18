@@ -3,6 +3,9 @@
 EarthGunList::EarthGunList() :count(0)
 {
 }
+EarthGunList::~EarthGunList()
+{
+}
 bool EarthGunList::insert(EarthGun* newGun)
 {
 	int priority = newGun->get_health() + newGun->get_power();
@@ -24,11 +27,7 @@ bool EarthGunList::remove(unit*& deletedUnit, int& deletedPri)
 		deletedPri = pri;
 		return true;
 	}
-	else
-	{
-		cout << "Cannot pick any gunnery ,The List Is Empty" << endl;
-		return false;
-	}
+	return false;
 }
 
 int EarthGunList::getCount()
@@ -38,11 +37,6 @@ int EarthGunList::getCount()
 
 void EarthGunList::print()
 {
-	//if (GunList.isEmpty())
-	//{
-	//	cout << "The gunnery List Is Empty" << endl;
-	//	return;
-	//}
 	priQueue<EarthGun*> tempList;
 	EarthGun* tempGun;
 	int pri;
@@ -51,7 +45,6 @@ void EarthGunList::print()
 	{
 		GunList.dequeue(tempGun, pri);
 		cout << tempGun->get_id();
-		//cout << endl << "----------------------------" << endl;
 		tempList.enqueue(tempGun, pri);
 		if (!GunList.isEmpty())
 		{
@@ -65,15 +58,3 @@ void EarthGunList::print()
 		GunList.enqueue(tempGun, pri);
 	}
 }
-
-/*bool removeGunnery(EarthGun* deletedGun, int& deletedPri)
-{
-	int priority;
-	if (GunList.dequeue(deletedGun,priority))
-	{
-		num--;
-		deletedPri = priority;
-		return true;
-	}
-	return false;
-}*/

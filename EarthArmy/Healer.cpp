@@ -2,7 +2,7 @@
 
 Healer::Healer()
 {
-	set_type("healer");
+	set_type(EH);
 	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
