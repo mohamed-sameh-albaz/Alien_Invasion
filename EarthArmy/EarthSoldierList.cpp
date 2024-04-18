@@ -3,20 +3,34 @@
 EarthSoldierList::EarthSoldierList() {
 	count = 0;
 }
-bool EarthSoldierList::insert(unit* u) {
+EarthSoldierList::~EarthSoldierList()
+{
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
+}
+bool EarthSoldierList::insert(EarthSoldier* u) {
 	count++;
 	return soldierList.enqueue(u);
 }
 bool EarthSoldierList::remove(unit*& u) {
-
-	if (soldierList.dequeue(u))
+	EarthSold
+		ier* a;
+	if (soldierList.dequeue(a)) {
+		u = a;
 		count--;
-	else return 0;
+	}
+	else {
+		u = a;
+		return 0;
+	}
 	return 1;
 }
 void EarthSoldierList::print() {		//change output form
-	LinkedQueue<unit*> l1;
-	unit* u;
+	LinkedQueue<EarthSoldier*> l1;
+	EarthSoldier* u;
 	cout << getCount() << " ES [";
 	while (soldierList.dequeue(u)) {
 		cout << u->get_id();

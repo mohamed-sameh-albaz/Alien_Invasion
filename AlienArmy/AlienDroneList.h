@@ -8,15 +8,17 @@ using namespace std;
 
 class AlienDroneList
 {
-	double_endedQueue<unit*> droneList;		//change list name
+	double_endedQueue<AlienDrone*> droneList;		//change list name
 	int count;
 public:
 	
 	AlienDroneList();
-	bool RemoveEnd(unit*& u);
-	bool RemoveFront(unit*& u);
-	bool InsertEnd(unit* u);		//remove refrence
-	bool insertFront(unit* u);		//remove refrence
+	~AlienDroneList();
+
+	bool removeEnd(unit*& u);
+	bool removeFront(unit*& u);
+	bool insertEnd(AlienDrone* u);		//remove refrence
+	bool insertFront(AlienDrone* u);		//remove refrence
 	void print();
 	int getCount();
 };

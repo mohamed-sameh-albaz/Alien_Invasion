@@ -71,9 +71,6 @@
     <ClCompile Include="AlienArmy\AlienArmy.cpp">
       <Filter>AlienArmy</Filter>
     </ClCompile>
-    <ClCompile Include="AlienArmy\monster.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EarthArmy\EarthArmy.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
@@ -84,6 +81,12 @@
       <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\Healer.cpp">
+      <Filter>EarthArmy</Filter>
+    </ClCompile>
+    <ClCompile Include="randGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienArmy\monster.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
   </ItemGroup>

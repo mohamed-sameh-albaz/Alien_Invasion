@@ -12,7 +12,8 @@ class EarthGunList
 
 public:
 	EarthGunList() ;
-	
+	~EarthGunList();
+
 	bool insert(EarthGun* newGun);
 	
 	bool remove(unit*& deletedUnit, int& deletedPri);

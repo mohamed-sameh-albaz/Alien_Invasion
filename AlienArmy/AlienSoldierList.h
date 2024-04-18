@@ -7,11 +7,13 @@ using namespace std;
 
 class AlienSoldierList
 {
-	LinkedQueue<unit*> alienSoldierList; //change list name
+	LinkedQueue<AlienSoldier*> alienSoldierList; //change list name
 	int count;
 public:
 	AlienSoldierList();
-	bool insert(unit* u);		//remove refrence 
+	~AlienSoldierList();
+
+	bool insert(AlienSoldier* u);		//remove refrence 
 	bool remove(unit*& u);
 	void print();
 	int getCount();

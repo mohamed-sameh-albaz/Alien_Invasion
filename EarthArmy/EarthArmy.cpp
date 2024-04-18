@@ -8,6 +8,12 @@ EarthArmy::EarthArmy()
 
 EarthArmy::~EarthArmy()
 {
+	delete GunneryList;
+	delete soldierList;
+	delete tankList;
+	GunneryList = nullptr;
+	soldierList = nullptr;
+	tankList = nullptr;
 }
 
 bool EarthArmy::addUnit(unit*& newUnit)

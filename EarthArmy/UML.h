@@ -9,6 +9,7 @@ class UML
 	priQueue<unit*> soldiersToHeal;
 	LinkedQueue<unit*> tanksToHeal;
 public:
+	~UML();
 	bool insert(unit* u);
 
 	bool remove(unit*& u);

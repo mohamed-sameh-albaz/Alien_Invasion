@@ -12,6 +12,13 @@ MonsterList::MonsterList() {
 	monsters = new monster * [n];
 	for (int i = 0; i < n; i++) monsters[i] = nullptr;
 }
+MonsterList::~MonsterList() {
+	for (int i = 0; i <= index; i++) {
+		delete monsters[i];
+		monsters[i] =nullptr;
+	}
+	delete[]monsters;
+}
 
 bool MonsterList::insert(monster* m) {
 	if (index < n) {
@@ -63,6 +70,4 @@ void MonsterList::print() {  //change output form
 int MonsterList::getCount() {
 	return index;
 }
-MonsterList::MonsterList()
-{
-}
+

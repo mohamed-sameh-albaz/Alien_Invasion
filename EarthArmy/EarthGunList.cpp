@@ -1,7 +1,17 @@
 #include "EarthGunList.h"
-
+#include"../unit.h"
 EarthGunList::EarthGunList() :count(0)
 {
+}
+EarthGunList::~EarthGunList()
+{
+	unit* a;
+	int x;
+	while (remove(a,x)) {
+		delete a;
+		a = nullptr;
+	}
+
 }
 bool EarthGunList::insert(EarthGun* newGun)
 {

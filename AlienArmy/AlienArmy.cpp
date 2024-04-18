@@ -8,6 +8,12 @@ AlienArmy::AlienArmy()
 }
 AlienArmy::~AlienArmy()
 {
+	delete droneList;
+	delete soldierList;
+	delete monsterList;
+	droneList = nullptr;
+	soldierList = nullptr;
+	monsterList = nullptr;
 }
 
 bool AlienArmy::addUnit(unit*& newUnit)

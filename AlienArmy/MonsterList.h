@@ -13,6 +13,7 @@ public:
 	
 
 	MonsterList();
+	~MonsterList();
 
 	bool insert(monster* m);
 

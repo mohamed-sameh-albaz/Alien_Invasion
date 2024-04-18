@@ -5,19 +5,34 @@ AlienSoldierList::AlienSoldierList()
 	count = 0;
 }
 
-bool AlienSoldierList::insert(unit* u) {
+AlienSoldierList::~AlienSoldierList()
+{
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
+}
+
+bool AlienSoldierList::insert(AlienSoldier* u) {
 	count++;
 	return alienSoldierList.enqueue(u);
 }
 bool AlienSoldierList::remove(unit*& u) {
-	if (alienSoldierList.dequeue(u))
+	AlienSoldier* a;
+	if (alienSoldierList.dequeue(a)) {
 		count--;
-	else return 0;
+		u = a;
+	}
+	else {
+		u = a;
+		return 0;
+	}
 	return 1;
 }
 void AlienSoldierList::print() {
-	LinkedQueue<unit*> l1;
-	unit* u;
+	LinkedQueue<AlienSoldier*> l1;
+	AlienSoldier* u;
 
 		cout << getCount() << " AS [";
 		while (alienSoldierList.dequeue(u)) {

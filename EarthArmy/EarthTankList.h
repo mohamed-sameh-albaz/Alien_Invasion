@@ -12,6 +12,7 @@ class EarthTankList
 
 public:
 	EarthTankList();
+	~EarthTankList();
 
 	bool insert(EarthTank* newTank);
 	
