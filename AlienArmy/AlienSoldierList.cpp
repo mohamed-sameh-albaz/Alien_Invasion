@@ -7,16 +7,27 @@ AlienSoldierList::AlienSoldierList()
 
 AlienSoldierList::~AlienSoldierList()
 {
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
 }
 
-bool AlienSoldierList::insert(unit* u) {
+bool AlienSoldierList::insert(AlienSoldier* u) {
 	count++;
 	return alienSoldierList.enqueue(u);
 }
 bool AlienSoldierList::remove(unit*& u) {
-	if (alienSoldierList.dequeue(u))
+	AlienSoldier* a;
+	if (alienSoldierList.dequeue(a)) {
 		count--;
-	else return 0;
+		u = a;
+	}
+	else {
+		u = a;
+		return 0;
+	}
 	return 1;
 }
 void AlienSoldierList::print() {

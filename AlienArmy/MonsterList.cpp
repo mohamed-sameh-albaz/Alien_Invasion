@@ -1,13 +1,17 @@
 #include "MonsterList.h"
 
+
 MonsterList::MonsterList() {
 	n = 1000; index = -1;
 	monsters = new monster * [n];
 	for (int i = 0; i < n; i++) monsters[i] = nullptr;
 }
-
-MonsterList::~MonsterList()
-{
+MonsterList::~MonsterList() {
+	for (int i = 0; i <= index; i++) {
+		delete monsters[i];
+		monsters[i] =nullptr;
+	}
+	delete[]monsters;
 }
 
 bool MonsterList::insert(monster* m) {

@@ -5,6 +5,11 @@ EarthTankList::EarthTankList() :count(0)
 }
 EarthTankList::~EarthTankList()
 {
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
 }
 bool EarthTankList::insert(EarthTank* newTank)
 {

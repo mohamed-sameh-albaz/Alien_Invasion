@@ -1,5 +1,14 @@
 #include "UML.h"
 
+UML::~UML()
+{
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
+}
+
 bool  UML::insert(unit* u) {
 	if (u->get_type() == AS) {
 		soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));

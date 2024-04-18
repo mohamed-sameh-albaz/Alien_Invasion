@@ -7,12 +7,13 @@ using namespace std;
 
 class EarthSoldierList
 {
-	LinkedQueue<unit*> soldierList; 
+	LinkedQueue<EarthSoldier*> soldierList; 
 	int count;
 public:
 	EarthSoldierList();
 	~EarthSoldierList();
-	bool insert(unit* u);
+
+	bool insert(EarthSoldier* u);	
 	bool remove(unit*& u);
 	void print();
 	int getCount();

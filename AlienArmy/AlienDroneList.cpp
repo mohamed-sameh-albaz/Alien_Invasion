@@ -5,26 +5,47 @@ AlienDroneList::AlienDroneList() {
 }
 AlienDroneList::~AlienDroneList()
 {
+	unit* A;
+	while (removeFront(A)) {
+		delete A;
+		A = nullptr;
+	}
 }
-bool AlienDroneList:: RemoveEnd(unit*& u) {
+bool AlienDroneList:: removeEnd(unit*& u) {
+	AlienDrone* a;
 
-	if (droneList.dequeueBack(u))
+	if (droneList.dequeueBack(a)) {
 		count--;
-	else return 0;
+		u = a;
+	}
+	else { 
+		u = a;
+		return 0;
+	
+	}
 	return 1;
 
 }
-bool AlienDroneList::RemoveFront(unit*& u) {
-	if (droneList.dequeue(u))
+bool AlienDroneList::removeFront(unit*& u) {
+
+	AlienDrone* a;
+	if (droneList.dequeue(a)) {
+		u = a;
 		count--;
-	else return 0;
+	}
+	else {
+		u = a;
+		return 0;
+	
+
+	}
 	return 1;
 }
-bool AlienDroneList::InsertEnd(unit* u) {  
+bool AlienDroneList::insertEnd(AlienDrone* u) {
 	count++;
 	return droneList.enqueue(u);
 }
-bool AlienDroneList::insertFront(unit* u) {  
+bool AlienDroneList::insertFront(AlienDrone* u) {
 	count++;
 	return droneList.enqueueFront(u);
 }

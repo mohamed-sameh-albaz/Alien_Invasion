@@ -10,10 +10,11 @@ class MonsterList
 	monster** monsters;
 public:
 	MonsterList();
+	~MonsterList();
+
 	bool insert(monster* m);
 	bool remove(unit*& m); 
 	void print(); 
 	int getCount(); 
-	~MonsterList();
 };
 

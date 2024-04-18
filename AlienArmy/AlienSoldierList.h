@@ -7,14 +7,14 @@ using namespace std;
 
 class AlienSoldierList
 {
-	LinkedQueue<unit*> alienSoldierList; 
+	LinkedQueue<AlienSoldier*> alienSoldierList;
 	int count;
 public:
 	AlienSoldierList();
-	bool insert(unit* u);
+	~AlienSoldierList();
+	bool insert(AlienSoldier* u);		
 	bool remove(unit*& u);
 	void print();
 	int getCount();
-	~AlienSoldierList();
 };
 

@@ -222,4 +222,8 @@ game::~game()
 	delete aArmy;
 	delete eArmy;
 	delete dead;
+	aArmy = nullptr;
+	eArmy = nullptr;
+	dead = nullptr;
+
 }

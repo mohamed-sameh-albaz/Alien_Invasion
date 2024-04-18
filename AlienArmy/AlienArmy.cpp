@@ -8,6 +8,12 @@ AlienArmy::AlienArmy()
 }
 AlienArmy::~AlienArmy()
 {
+	delete droneList;
+	delete soldierList;
+	delete monsterList;
+	droneList = nullptr;
+	soldierList = nullptr;
+	monsterList = nullptr;
 }
 
 bool AlienArmy::addUnit(unit* newUnit)
@@ -38,12 +44,12 @@ bool AlienArmy::removeTemp(unit*& tempUnit)
 
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 {
-	return (droneList->RemoveFront(pickedDrone));
+	return (droneList->removeFront(pickedDrone));
 }
 
 bool AlienArmy::pickEndDrone(unit*& pickedDrone)
 {
-	return (droneList->RemoveEnd(pickedDrone));
+	return (droneList->removeEnd(pickedDrone));
 }
 
 bool AlienArmy::pickSoldier(unit*& pickedSoldier)

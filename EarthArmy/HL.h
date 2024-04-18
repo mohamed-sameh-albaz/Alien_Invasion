@@ -9,7 +9,9 @@ public:
 	HL(); 
 	~HL();
 	bool insert(Healer* u);
-	bool remove(Healer*& u); 
+
+	bool remove(unit*& u); 
+
 	int getCount(); 
 	void print(); 
 };

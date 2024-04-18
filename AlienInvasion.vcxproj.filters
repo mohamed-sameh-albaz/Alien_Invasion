@@ -83,8 +83,11 @@
     <ClCompile Include="EarthArmy\Healer.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
+    <ClCompile Include="randGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="AlienArmy\monster.cpp">
-      <Filter>AlienArmy</Filter>
+      <Filter>EarthArmy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

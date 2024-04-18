@@ -147,6 +147,7 @@
     <ClCompile Include="EarthArmy\UML.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="killedList.cpp" />
+    <ClCompile Include="randGen.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="unit.cpp" />
   </ItemGroup>

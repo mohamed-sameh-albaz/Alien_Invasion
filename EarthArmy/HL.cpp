@@ -1,9 +1,18 @@
 #include "HL.h"
+#include"Healer.h"
 HL::HL() {
 	count = 0;
 }
 HL::~HL()
 {
+}
+HL::~HL()
+{
+	unit* A;
+	while (remove(A)) {
+		delete A;
+		A = nullptr;
+	}
 }
 bool HL::insert(Healer* u) {
 	if (Heal.push(u)) {
@@ -13,13 +22,17 @@ bool HL::insert(Healer* u) {
 	else return false;
 }
 
-bool HL::remove(Healer*& u) {
-	if (Heal.pop(u)) {
-
+bool HL::remove(unit*& u) {
+	Healer* h;
+	if (Heal.pop(h)) {
+		u = h;
 		count--;
 		return true;
 	}
-	else return false;
+	else { 
+		u = h;
+
+		return false; }
 }
 
 int HL::getCount() {
