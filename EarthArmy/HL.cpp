@@ -1,11 +1,10 @@
 #include "HL.h"
 #include"Healer.h"
+
 HL::HL() {
 	count = 0;
 }
-HL::~HL()
-{
-}
+
 HL::~HL()
 {
 	unit* A;

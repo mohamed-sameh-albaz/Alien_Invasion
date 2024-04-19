@@ -23,7 +23,6 @@ void randGen::setParams(int Es0, int Et0, int Eg0, int As0, int Am0, int Ad0, in
 	aattackcap1 = aattackcap10;
 	aattackcap2 = aattackcap20;
 	N = N0;
-	//Hu = Hu0;
 }
 
 

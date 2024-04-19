@@ -31,8 +31,8 @@ bool AlienSoldierList::remove(unit*& u) {
 	return 1;
 }
 void AlienSoldierList::print() {
-	LinkedQueue<unit*> tempList;
-	unit* tempSoldier;
+	LinkedQueue<AlienSoldier*> tempList;
+	AlienSoldier* tempSoldier;
 
 	cout << getCount() << " AS [";
 	while (alienSoldierList.dequeue(tempSoldier)) {

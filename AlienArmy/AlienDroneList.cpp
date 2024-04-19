@@ -51,8 +51,8 @@ bool AlienDroneList::insertFront(AlienDrone* u) {
 }
 
 void AlienDroneList::print() {
-	double_endedQueue<unit*> tempList;
-	unit* tempDrone;
+	double_endedQueue<AlienDrone*> tempList;
+	AlienDrone* tempDrone;
 
 	cout << getCount() << " AD [";
 	while (droneList.dequeue(tempDrone)) {

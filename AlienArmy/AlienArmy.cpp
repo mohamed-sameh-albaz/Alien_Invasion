@@ -26,7 +26,7 @@ bool AlienArmy::addUnit(unit* newUnit)
 		{
 		case AS:	return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));
 		case AM:	return monsterList->insert(dynamic_cast<monster*>(newUnit));
-		case AD:	return droneList->InsertEnd(dynamic_cast<AlienDrone*>(newUnit));
+		case AD:	return droneList->insertEnd(dynamic_cast<AlienDrone*>(newUnit));
 		}
 	}
 	else return false;
