@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+class game;
 enum type { EG, ET, ES, EH, AS, AM, AD };
 
 #pragma once
@@ -14,7 +15,7 @@ protected:
 	int attackCap;
 	int tj, ta, td, df, dd, db, attackpower;
 	int initialHealth;
-
+	game* g;
 public:
 	void disp();
 	void set_id(int a);

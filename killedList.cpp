@@ -6,6 +6,11 @@ killedList::killedList():count(0)
 
 killedList::~killedList()
 {
+	unit* A;
+	while (deadList.dequeue(A)) {
+		delete A;
+		A = nullptr;
+	}
 }
 
 bool killedList::insert(unit* killedUnit)

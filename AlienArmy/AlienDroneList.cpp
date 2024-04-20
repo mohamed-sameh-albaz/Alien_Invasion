@@ -19,7 +19,6 @@ bool AlienDroneList:: removeEnd(unit*& u) {
 		u = a;
 	}
 	else { 
-		u = a;
 		return 0;
 	
 	}
@@ -34,11 +33,8 @@ bool AlienDroneList::removeFront(unit*& u) {
 		count--;
 	}
 	else {
-		u = a;
 		return 0;
-	
-
-	}
+		}
 	return 1;
 }
 bool AlienDroneList::insertEnd(AlienDrone* u) {
@@ -64,6 +60,7 @@ void AlienDroneList::print() {
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
 
 	while (tempList.dequeue(tempDrone))
 		droneList.enqueue(tempDrone);

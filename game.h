@@ -22,6 +22,7 @@ public:
 	void simulate();
 	void fight();
 	void inputFn();
+	void outputFn();
 	void fillArmies();
 	AlienArmy* getAlienArmy();
 	EarthArmy* getEarthArmy();

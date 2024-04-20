@@ -53,6 +53,8 @@ void EarthTankList::print()
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
+
 	while (!tempList.isEmpty())
 	{
 		tempList.pop(tempTank);

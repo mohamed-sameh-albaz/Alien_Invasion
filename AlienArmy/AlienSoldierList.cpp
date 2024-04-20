@@ -25,7 +25,6 @@ bool AlienSoldierList::remove(unit*& u) {
 		u = a;
 	}
 	else {
-		u = a;
 		return 0;
 	}
 	return 1;
@@ -44,6 +43,7 @@ void AlienSoldierList::print() {
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
 
 	while (tempList.dequeue(tempSoldier))
 			alienSoldierList.enqueue(tempSoldier);

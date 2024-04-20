@@ -87,6 +87,11 @@ bool randGen::fillEarthArmy(EarthArmy* army, int& count) {
 			int B = (rand() % 100) + 1;
 			unit* u = generateEarthUnit(count, B);
 			count++;
+			if (count > 999)
+			{
+				cout << "\nNo IDs are available\n";
+				return true;
+			}
 			army->addUnit(u);
 		}
 		return true;
@@ -101,6 +106,11 @@ bool randGen::fillAlienArmy(AlienArmy* army, int& count) {
 			int B = (rand() % 100) + 1;
 			unit* u = generateAlienUnit(count, B);
 			count++;
+			if (count > 2999)
+			{
+				cout << "\nNo IDs are available\n";
+				return true;
+			}
 			army->addUnit(u);
 		}
 		return true;

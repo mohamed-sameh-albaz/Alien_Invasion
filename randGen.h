@@ -16,7 +16,6 @@ public:
 		int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
 		int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20, int N0);
 
-
 	unit* generateEarthUnit(int id, int B);
 	
 

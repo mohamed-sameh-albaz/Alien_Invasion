@@ -18,10 +18,10 @@ AlienArmy::~AlienArmy()
 
 bool AlienArmy::addUnit(unit* newUnit)
 {
-	type unitType = newUnit->get_type();
 	
 	if(newUnit)
 	{
+		type unitType = newUnit->get_type();
 		switch (unitType)
 		{
 		case AS:	return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));

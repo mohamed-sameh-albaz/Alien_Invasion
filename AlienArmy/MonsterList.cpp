@@ -54,6 +54,8 @@ void MonsterList::print() {
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
+
 }
 
 int MonsterList::getCount() {

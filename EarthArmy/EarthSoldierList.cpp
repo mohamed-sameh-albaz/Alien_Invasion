@@ -22,7 +22,6 @@ bool EarthSoldierList::remove(unit*& u) {
 		count--;
 	}
 	else {
-		u = a;
 		return 0;
 	}
 	return 1;
@@ -40,6 +39,7 @@ void EarthSoldierList::print() {
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
 
 	while (tempList.dequeue(u))
 		soldierList.enqueue(u);

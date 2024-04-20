@@ -142,9 +142,6 @@
     <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTank.cpp" />
     <ClCompile Include="EarthArmy\EarthTankList.cpp" />
-    <ClCompile Include="EarthArmy\Healer.cpp" />
-    <ClCompile Include="EarthArmy\HL.cpp" />
-    <ClCompile Include="EarthArmy\UML.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="killedList.cpp" />
     <ClCompile Include="randGen.cpp" />
@@ -174,9 +171,6 @@
     <ClInclude Include="EarthArmy\EarthSoldierList.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
     <ClInclude Include="EarthArmy\EarthTankList.h" />
-    <ClInclude Include="EarthArmy\Healer.h" />
-    <ClInclude Include="EarthArmy\HL.h" />
-    <ClInclude Include="EarthArmy\UML.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="killedList.h" />
     <ClInclude Include="randGen.h" />

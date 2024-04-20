@@ -59,6 +59,8 @@ void EarthGunList::print()
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
+
 	while (!tempList.isEmpty())
 	{
 		tempList.dequeue(tempGun, pri);

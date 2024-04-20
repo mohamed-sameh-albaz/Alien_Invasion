@@ -18,10 +18,10 @@ EarthArmy::~EarthArmy()
 
 bool EarthArmy::addUnit(unit* newUnit)
 {
-	type unitType = newUnit->get_type();
 	
 	if (newUnit)
 	{
+		type unitType = newUnit->get_type();
 		switch (unitType)
 		{
 		case EG:	return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));

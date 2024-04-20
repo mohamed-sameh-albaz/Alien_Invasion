@@ -22,8 +22,9 @@ void game::simulate()
 
 		changeColor(12);
 		cout << endl << "Current Timestep: " << i << endl;
-		changeColor(7);
+		changeColor(messageColor);
 		cout << endl << "Before Generating Units:" << endl;
+		changeColor(mainColor);
 		eArmy->print();
 		aArmy->print();
 		printKilled();
@@ -184,6 +185,10 @@ void game::inputFn()
 		,N);
 }
 
+void game::outputFn()
+{
+}
+
 void game::fillArmies()
 {
 	RG->fillEarthArmy(eArmy, earthCount);
@@ -222,8 +227,10 @@ game::~game()
 	delete aArmy;
 	delete eArmy;
 	delete dead;
+	delete RG;
 	aArmy = nullptr;
 	eArmy = nullptr;
 	dead = nullptr;
-
+	RG = nullptr;
 }
+
