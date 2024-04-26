@@ -7,3 +7,4 @@ int main() {
 	g->simulate();
 	return 0;
 }
+//kamal
