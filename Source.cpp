@@ -2,6 +2,8 @@
 #include "game.h"
 using namespace std;
 
+void function();
+
 int main() {
 	game* g = new game;
 	g->simulate();
