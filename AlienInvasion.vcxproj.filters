@@ -89,6 +89,9 @@
     <ClCompile Include="EarthArmy\Healer.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
+    <ClCompile Include="tempList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">
@@ -177,6 +180,9 @@
     </ClInclude>
     <ClInclude Include="EarthArmy\Healer.h">
       <Filter>EarthArmy</Filter>
+    </ClInclude>
+    <ClInclude Include="tempList.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
