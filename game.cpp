@@ -9,6 +9,7 @@ game::game() {
 	eArmy = new EarthArmy;
 	dead = new killedList;
 	uml = new UML;
+	timestep = 0;
 }
 
 void game::simulate()
@@ -24,11 +25,14 @@ void game::simulate()
 	fillArmies();
 	unit* es = nullptr;
 	LinkedQueue<unit*> h;
-	while (eArmy->pickSoldier(es)) {
+	while (eArmy->pickTank(es)) {
 		es->disp();
 		cout << "=========================" << endl;
 		h.enqueue(es);
 	}
+	uml->print();
+	dead->print();
+
 
 	while (!h.isEmpty()) {
 		h.dequeue(es);
@@ -38,21 +42,23 @@ void game::simulate()
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 
-	AlienSoldier* as = new AlienSoldier(this);
-	as->set_power(50);
-	as->set_attackCap(4);
-	as->set_health(50);
-	as->disp();
-	as->attack();
+	monster* am = new monster(this);
+	am->set_power(500);
+	am->set_attackCap(4);
+	am->set_health(100);
+	am->disp();
+	am->attack();
 
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 
-	while (eArmy->pickSoldier(es)) {
+	while (eArmy->pickTank(es)) {
 		es->disp();
 		cout << "=========================" << endl;
 	}
+	uml->print();
+	dead->print();
 	/*
 	for (int i = 1; i <= 50; i++) {
 
@@ -260,6 +266,21 @@ void game::printKilled()
 void game::changeColor(int desiredColor)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), desiredColor);
+}
+
+bool game::insertUml(unit* u)
+{
+	return (uml->insert(u));
+}
+
+bool game::pickUml(unit* u)
+{
+	return uml->remove(u);
+}
+
+int game::getCurrTimeStep()
+{
+	return timestep;
 }
 
 game::~game()

@@ -1,5 +1,6 @@
 #include"AlienSoldier.h"
 #include "../game.h"
+#include "../tempList.h"
 AlienSoldier::AlienSoldier(game* master) : unit(master)
 {
 	set_type(AS);
@@ -10,22 +11,28 @@ void AlienSoldier::attack()
 {
 	EarthArmy * e  = g->getEarthArmy();
 	unit* u = nullptr;
-	LinkedQueue<unit*> h;
-	for (int i = 0; i < attackCap; ) {
+	tempList tmp;
+	for (int i = 0; i < attackCap; i++) {
 		if (!e->pickSoldier(u)) break;
 		else {
 			this->set_attackpower(u);
 			u->set_health(u->get_health() - this->get_attackpower());
-			h.enqueue(u);
+			if (u->get_health() <= 0)
+			{
+				g->insertKilled(u);
+			}
+			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20) {
+
+				g->insertUml(u);
+			}
+			else {
+
+				tmp.insert(u);
+			}
 		}
 	}
 
-	while (!h.isEmpty()) {
-		h.dequeue(u);
+	while (tmp.remove(u)) {
 		e->addUnit(u);
 	}
-}
-
-void AlienSoldier::testAttack(unit* u)
-{
 }
