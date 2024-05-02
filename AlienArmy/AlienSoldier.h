@@ -3,7 +3,8 @@
 class AlienSoldier : public unit
 {
 public:
-	AlienSoldier(); 
+	AlienSoldier(game* master); 
 	void attack(); 
+	void testAttack(unit* u);
 };
 

@@ -3,7 +3,7 @@
 class AlienDrone : public unit
 {
 public:
-	AlienDrone(); 
+	AlienDrone(game* master); 
 	void attack(); 
 };
 

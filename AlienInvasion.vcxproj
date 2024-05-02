@@ -149,6 +149,7 @@
     <ClCompile Include="killedList.cpp" />
     <ClCompile Include="randGen.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="tempList.cpp" />
     <ClCompile Include="unit.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +181,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="killedList.h" />
     <ClInclude Include="randGen.h" />
+    <ClInclude Include="tempList.h" />
     <ClInclude Include="unit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

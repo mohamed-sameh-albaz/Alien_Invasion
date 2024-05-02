@@ -3,6 +3,6 @@
 class Healer : public unit
 {
 public:
-	Healer();
+	Healer(game* master);
 	void attack(); 
 };

@@ -17,6 +17,7 @@ class game
 	randGen *RG;
 	int earthCount, alienCount;
 	killedList* dead;
+	UML* uml;
 public:
 	game();
 	void simulate();

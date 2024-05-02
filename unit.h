@@ -17,6 +17,7 @@ protected:
 	int initialHealth;
 	game* g;
 public:
+	unit(game* master) { g = master; }
 	void disp();
 	void set_id(int a);
 	void set_joinTime(int a);
