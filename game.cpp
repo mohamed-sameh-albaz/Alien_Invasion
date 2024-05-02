@@ -1,13 +1,14 @@
 #include "game.h"
 
 game::game() {
-	RG = new randGen;
+	RG = new randGen(this);
 	earthCount = 1;
 	alienCount = 2000;
 	inputFn();
 	aArmy = new AlienArmy;
 	eArmy = new EarthArmy;
 	dead = new killedList;
+	uml = new UML;
 }
 
 void game::simulate()
@@ -15,8 +16,44 @@ void game::simulate()
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
 	inputFn();
-	AlienArmy* aArmy = getAlienArmy();
-	EarthArmy* eArmy = getEarthArmy();
+
+	// Test AS Attack
+
+
+
+	fillArmies();
+	unit* es = nullptr;
+	LinkedQueue<unit*> h;
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+		h.enqueue(es);
+	}
+
+	while (!h.isEmpty()) {
+		h.dequeue(es);
+		eArmy->addUnit(es);
+	}
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+
+	AlienSoldier* as = new AlienSoldier(this);
+	as->set_power(50);
+	as->set_attackCap(4);
+	as->set_health(50);
+	as->disp();
+	as->attack();
+
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+	}
+	/*
 	for (int i = 1; i <= 50; i++) {
 
 
@@ -162,6 +199,9 @@ void game::simulate()
 
 	changeColor(5);
 	cout << endl << "Simulation Ended" << endl;
+
+
+	*/
 }
 
 void game::fight()
@@ -171,7 +211,7 @@ void game::fight()
 void game::inputFn()
 {
 	ifstream f("in1.text");
-	f >> N >> Es >> Et >> Eg  >> As >> Am >> Ad >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
+	f >> N >> Es >> Et >> Eg  >> Hu >> As >> Am >> Ad >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
 	ahealth2 = -1 * ahealth2;
@@ -179,7 +219,7 @@ void game::inputFn()
 	apower2 = -1 * apower2;
 	eattackcap2 = -1 * eattackcap2;
 	aattackcap2 = -1 * aattackcap2;
-	RG->setParams(Es, Et, Eg, As, Am, Ad, Prob, 
+	RG->setParams(Es, Et, Eg, Hu, As, Am, Ad, Prob, 
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2
 		,N);
@@ -228,6 +268,8 @@ game::~game()
 	delete eArmy;
 	delete dead;
 	delete RG;
+	delete uml;
+	uml = nullptr;
 	aArmy = nullptr;
 	eArmy = nullptr;
 	dead = nullptr;

@@ -8,11 +8,22 @@ void unit::disp()
 	switch (unitType) 
 	{
 		case EG:cout << "Gunnery";
+			break;
 		case ES:cout << "Earth Soldier";
+			break;
+
 		case ET:cout << "Tank";
+			break;
+
 		case AS:cout << "Alien Soldier";
+			break;
+
 		case AD:cout << "Alien Drone";
+			break;
+
 		case AM:cout << "Monster";
+			break;
+
 	}
 	cout << "\n Power: " << power
 		<< "\n Attack Capacity: " << attackCap

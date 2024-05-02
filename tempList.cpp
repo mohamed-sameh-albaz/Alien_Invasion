@@ -13,10 +13,10 @@ tempList::~tempList()
 	}
 }
 
-bool tempList::insert(unit* killedUnit)
+bool tempList::insert(unit* tempunit)
 {
 	count++;
-	return list.enqueue(killedUnit);
+	return list.enqueue(tempunit);
 }
 
 bool tempList::remove(unit*& tempunit)

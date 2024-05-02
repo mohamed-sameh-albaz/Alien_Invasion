@@ -3,7 +3,7 @@
 class EarthTank : public unit
 {
 public:
-	EarthTank();
+	EarthTank(game* master);
 	void attack();
 };
 

@@ -1,6 +1,6 @@
 #include "monster.h"
 
-monster::monster()
+monster::monster(game* master) : unit(master)
 {
 	set_type(AM);
 	initialHealth = joinTime = health = power = attackCap = id = 0;

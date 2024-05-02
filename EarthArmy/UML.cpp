@@ -35,20 +35,33 @@ bool  UML::remove(unit*& u) {
 }
 
 void  UML::print() {
-	priQueue<unit*> tmpS = soldiersToHeal;
-	LinkedQueue<unit*> tmpT = tanksToHeal;
+	priQueue<unit*> tmpS;
+	LinkedQueue<unit*> tmpT;
 
-	while (!tmpS.isEmpty()) {
+	while (!soldiersToHeal.isEmpty()) {
 		unit* u = nullptr;
 		int tmp;
-		tmpS.dequeue(u, tmp);
+		soldiersToHeal.dequeue(u, tmp);
+		tmpS.enqueue(u, tmp);
 		u->disp();
 		cout << endl << "---------------------------" << endl;
+	}
+	while (!tanksToHeal.isEmpty()) {
+		unit* u = nullptr;
+		tanksToHeal.dequeue(u);
+		tmpT.enqueue(u);
+		u->disp();
+		cout << endl << "---------------------------" << endl;
+	}
+	while (!tmpS.isEmpty()) {
+		unit* u = nullptr;
+		int n;
+		tmpS.dequeue(u, n);
+		soldiersToHeal.enqueue(u, n);
 	}
 	while (!tmpT.isEmpty()) {
 		unit* u = nullptr;
 		tmpT.dequeue(u);
-		u->disp();
-		cout << endl << "---------------------------" << endl;
+		tanksToHeal.enqueue(u);
 	}
 }

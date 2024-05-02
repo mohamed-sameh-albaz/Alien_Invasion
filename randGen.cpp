@@ -1,11 +1,12 @@
 #include "randGen.h"
 
-void randGen::setParams(int Es0, int Et0, int Eg0, int As0, int Am0, int Ad0, int Prob0,
+void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0, int As0, int Am0, int Ad0, int Prob0,
 	int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
 	int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20, int N0) {
 	Es = Es0;
 	Et = Et0;
 	Eg = Eg0;
+	Hu = Hu0;
 	As = As0;
 	Am = Am0;
 	Ad = Ad0;
@@ -28,7 +29,7 @@ void randGen::setParams(int Es0, int Et0, int Eg0, int As0, int Am0, int Ad0, in
 
 unit* randGen::generateEarthUnit(int id, int B) {
 	if (B <= Es) {
-		EarthSoldier* myEarthSoldier = new EarthSoldier;
+		EarthSoldier* myEarthSoldier = new EarthSoldier(g);
 		myEarthSoldier->set_id(id);
 		myEarthSoldier->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthSoldier->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
@@ -36,26 +37,34 @@ unit* randGen::generateEarthUnit(int id, int B) {
 		return myEarthSoldier;
 	}
 	else if (B <= Es + Et) {
-		EarthTank* myEarthTank = new EarthTank;
+		EarthTank* myEarthTank = new EarthTank(g);
 		myEarthTank->set_id(id);
 		myEarthTank->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthTank->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myEarthTank->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 		return myEarthTank;
 	}
-	else {
-		EarthGun* myEarthGun = new EarthGun;
+	else if (B <= Es + Et + Eg) {
+		EarthGun* myEarthGun = new EarthGun(g);
 		myEarthGun->set_id(id);
 		myEarthGun->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthGun->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myEarthGun->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
 		return myEarthGun;
 	}
+	else {
+		Healer* myHealer = new Healer(g);
+		myHealer->set_id(id);
+		myHealer->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
+		myHealer->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
+		myHealer->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+		return myHealer;
+	}
 }
 
 unit* randGen::generateAlienUnit(int id, int B) {
 	if (B <= As) {
-		AlienSoldier* myAlienSoldier = new AlienSoldier;
+		AlienSoldier* myAlienSoldier = new AlienSoldier(g);
 		myAlienSoldier->set_id(id);
 		myAlienSoldier->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienSoldier->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
@@ -63,7 +72,7 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		return myAlienSoldier;
 	}
 	else if (B <= As + Am) {
-		monster* myMonster = new monster;
+		monster* myMonster = new monster(g);
 		myMonster->set_id(id);
 		myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myMonster->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
@@ -71,7 +80,7 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		return myMonster;
 	}
 	else {
-		AlienDrone* myAlienDrone = new AlienDrone;
+		AlienDrone* myAlienDrone = new AlienDrone(g);
 		myAlienDrone->set_id(id);
 		myAlienDrone->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienDrone->set_power((rand() % (apower2 - apower1 + 1)) + apower1);

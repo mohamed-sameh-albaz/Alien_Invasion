@@ -1,6 +1,6 @@
 #include "EarthTank.h"
 
-EarthTank::EarthTank()
+EarthTank::EarthTank(game* master) : unit(master)
 {
 	set_type(ET);
 	initialHealth = joinTime = health = power = attackCap = id = 0;

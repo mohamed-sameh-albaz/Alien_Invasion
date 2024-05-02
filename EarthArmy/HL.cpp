@@ -14,11 +14,12 @@ HL::~HL()
 	}
 }
 bool HL::insert(Healer* u) {
-	if (Heal.push(u)) {
+	if (Heal.push(u))
+	{
 		count++;
 		return true;
 	}
-	else return false;
+	return false;
 }
 
 bool HL::remove(unit*& u) {
@@ -40,22 +41,25 @@ int HL::getCount() {
 
 
 void HL::print() {
-	ArrayStack<Healer*> tempList;
-	Healer* tmpUnit;
-	cout << " EH [";
-	while (!tempList.isEmpty()) {
-		tempList.pop(tmpUnit);
-		cout<<tmpUnit->get_id();
-		tempList.push(tmpUnit);
+	ArrayStack<Healer*>tempList;
+	Healer* temp;
+	cout << getCount() << " EH [";
+	while (!Heal.isEmpty())
+	{
+		Heal.pop(temp);
+		cout << temp->get_id();
+		tempList.push(temp);
 		if (!Heal.isEmpty())
 		{
 			cout << ", ";
 		}
 	}
 	cout << "]" << endl;
+	cout << "_____________________________________________________\n";
+
 	while (!tempList.isEmpty())
 	{
-		tempList.pop(tmpUnit);
-		Heal.push(tmpUnit);
+		tempList.pop(temp);
+		Heal.push(temp);
 	}
 }
