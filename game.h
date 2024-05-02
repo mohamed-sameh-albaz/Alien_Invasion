@@ -15,7 +15,7 @@ class game
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
-	int earthCount, alienCount;
+	int earthCount, alienCount, timestep;
 	killedList* dead;
 	UML* uml;
 public:
@@ -30,6 +30,9 @@ public:
 	bool insertKilled(unit* u);
 	void printKilled();
 	void changeColor(int desiredColor);		//console display colors
+	bool insertUml(unit* u);
+	bool pickUml(unit* u);
+	int getCurrTimeStep();
 	~game();
 };
 
