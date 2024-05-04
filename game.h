@@ -27,6 +27,7 @@ public:
 	void fillArmies();
 	AlienArmy* getAlienArmy();
 	EarthArmy* getEarthArmy();
+	UML* getUML();
 	bool insertKilled(unit* u);
 	void printKilled();
 	void changeColor(int desiredColor);		//console display colors
