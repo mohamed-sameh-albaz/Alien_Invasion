@@ -21,7 +21,7 @@ void AlienSoldier::attack()
 			{
 				g->insertKilled(u);
 			}
-			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20) {
+			else if ((u->get_health() * 100 / u->get_initial_health()) <= 100) {
 
 				g->insertUml(u);
 			}
