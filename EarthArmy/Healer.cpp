@@ -18,7 +18,7 @@ void Healer::attack()
 		else {
 			this->set_attackpower(u);
 			u->set_health(u->get_health() + this->get_attackpower());
-			if ((u->get_health() * 100 / u->get_initial_health()) > 20) {
+			if ((u->get_health() * 0 / u->get_initial_health()) > 20) {
 
 				g->getEarthArmy()->addUnit(u);
 			}

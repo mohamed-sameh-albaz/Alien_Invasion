@@ -24,7 +24,7 @@ void monster::attack()
 				u->set_distructionTime(g->getCurrTimeStep());
 
 			}
-			else if ((u->get_health() * 100 / u->get_initial_health()) <= 100) {
+			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20) {
 
 				g->insertUml(u);
 			}
