@@ -36,16 +36,6 @@ bool EarthArmy::addUnit(unit* newUnit)
 	else return false;
 }
 
-bool EarthArmy::insertTemp(unit* tempUnit)
-{
-	return tempList.enqueue(tempUnit);
-}
-
-bool EarthArmy::removeTemp(unit*& tempUnit)
-{
-	return tempList.dequeue(tempUnit);
-}
-
 bool EarthArmy::pickGun(unit*& pickedGun, int& pri)
 {
 	return (GunneryList->remove(pickedGun, pri));
@@ -77,4 +67,14 @@ void EarthArmy::print()
 
 void EarthArmy::attack()
 {
+}
+
+int EarthArmy::getListCnt(type neededUnit)
+{
+	switch (neededUnit)
+	{
+	case(ES):return soldierList->getCount();
+	case(ET):return tankList->getCount();
+	case(EG):return GunneryList->getCount();
+	}
 }

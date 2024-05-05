@@ -32,16 +32,6 @@ bool AlienArmy::addUnit(unit* newUnit)
 	else return false;
 }
 
-bool AlienArmy::insertTemp(unit* tempUnit)
-{
-	return tempList.enqueue(tempUnit);
-}
-
-bool AlienArmy::removeTemp(unit*& tempUnit)
-{
-	return tempList.dequeue(tempUnit);
-}
-
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 {
 	return (droneList->removeFront(pickedDrone));
@@ -73,4 +63,14 @@ void AlienArmy::print()
 
 void AlienArmy::attack()
 {
+}
+
+int AlienArmy::getListCnt(type neededUnit)
+{
+	switch (neededUnit)
+	{
+	case(AS):return soldierList->getCount();
+	case(AD):return droneList->getCount();
+	case(AM):return monsterList->getCount();
+	}
 }

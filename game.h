@@ -34,5 +34,7 @@ public:
 	bool pickUml(unit* u);
 	int getCurrTimeStep();
 	~game();
+	int getEArmyCnt();
+	int getAArmyCnt();
 };
 

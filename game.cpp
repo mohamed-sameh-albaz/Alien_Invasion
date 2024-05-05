@@ -297,3 +297,13 @@ game::~game()
 	RG = nullptr;
 }
 
+int game::getEArmyCnt()
+{
+	return earthCount;
+}
+
+int game::getAArmyCnt()
+{
+	return alienCount;
+}
+

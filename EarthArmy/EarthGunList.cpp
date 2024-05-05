@@ -23,6 +23,12 @@ bool EarthGunList::insert(EarthGun* newGun)
 	}
 	return false;
 }
+bool EarthGunList::peek(EarthGun*& pickedUnit)
+{
+	int pri;
+	return GunList.peek(pickedUnit,pri);
+}
+
 bool EarthGunList::remove(unit*& deletedUnit, int& deletedPri)
 {
 	EarthGun* pickedGun;

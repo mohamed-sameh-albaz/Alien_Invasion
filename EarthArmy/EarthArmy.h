@@ -12,18 +12,16 @@ class EarthArmy
 	EarthSoldierList * soldierList;
 	EarthTankList * tankList;
 	HL* healers;
-	LinkedQueue<unit*> tempList;
 public:
 	EarthArmy();
 	~EarthArmy();
 	bool addUnit(unit* newUnit);
-	bool insertTemp(unit* tempUnit);
-	bool removeTemp(unit*& tempUnit);
 	bool pickGun(unit*& pickedGun, int& pri);
 	bool pickTank(unit*& pickedTank);
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);
 	void print();
 	void attack();
+	int getListCnt(type neededUnit);
 };
 

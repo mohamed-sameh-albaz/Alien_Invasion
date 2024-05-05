@@ -13,6 +13,7 @@ public:
 	EarthTankList();
 	~EarthTankList();
 	bool insert(EarthTank* newTank);
+	bool peek(EarthTank*& picekdUnit);
 	bool remove(unit*& deletedTank);
 	int getCount();
 	void print();
