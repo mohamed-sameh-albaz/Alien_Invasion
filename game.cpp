@@ -17,10 +17,46 @@ void game::simulate()
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
 	inputFn();
+	
 
+	//Test ES attack
+	fillArmies();
+	unit* as = NULL;
+	LinkedQueue<unit*>h;
+	while (aArmy->pickSoldier(as)) {
+		as->disp();
+		cout << "==============";
+		h.enqueue(as);
+	}
+	while (h.dequeue(as))
+		aArmy->addUnit(as);
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	EarthSoldier* es = new EarthSoldier(this);
+	es->set_power(500);
+	es->set_attackCap(4);
+	es->set_health(100);
+	es->disp();
+	es->attack();
+
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	
+	while (aArmy->pickSoldier(as))
+	{
+		as->disp();
+		cout << "=====================";
+		h.enqueue(as);
+	}
+	while (h.dequeue(as))
+		aArmy->addUnit(as);
+	aArmy->print();
+	eArmy->print();
+	dead->print();
+	/*
 	// Test AS Attack
-
-
 
 	fillArmies();
 	unit* es = nullptr;
@@ -59,6 +95,8 @@ void game::simulate()
 	}
 	uml->print();
 	dead->print();
+	*/
+
 	/*
 	for (int i = 1; i <= 50; i++) {
 
@@ -212,6 +250,7 @@ void game::simulate()
 
 void game::fight()
 {
+
 }
 
 void game::inputFn()
