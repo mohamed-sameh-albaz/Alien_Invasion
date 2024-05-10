@@ -12,6 +12,9 @@ void unit::disp()
 		case ES:cout << "Earth Soldier";
 			break;
 
+		case EH:cout << "Earth Healer";
+			break;
+
 		case ET:cout << "Tank";
 			break;
 
