@@ -28,12 +28,36 @@ bool tempList::remove(unit*& tempunit)
 		return 0;
 }
 
-void tempList::print()
+int tempList::getCount()
+{
+	return count;
+}
+
+void tempList::print(type attacker,int id )
 {
 	LinkedQueue<unit*> temp;
 	unit* tempUnit;
-	cout << "\n============== Temp Units ==============" << endl;
-	cout << count << " units [";
+	cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
+	switch (attacker)
+	{
+	case EG:cout << " EG ";
+		break;
+	case ES:cout << " ES ";
+		break;
+
+	case ET:cout << " ET ";
+		break;
+
+	case AS:cout << " AS ";
+		break;
+
+	case AD:cout << " AD ";
+		break;
+
+	case AM:cout << " AM ";
+		break;
+	}
+	cout << id << " shots [";
 	while (!list.isEmpty())
 	{
 		list.dequeue(tempUnit);

@@ -35,7 +35,7 @@ void game::simulate()
 	cout << "=========================" << endl;
 	EarthSoldier* es = new EarthSoldier(this);
 	es->set_power(500);
-	es->set_attackCap(4);
+	es->set_attackCap(100);
 	es->set_health(100);
 	es->disp();
 	es->attack();
@@ -47,7 +47,7 @@ void game::simulate()
 	while (aArmy->pickSoldier(as))
 	{
 		as->disp();
-		cout << "=====================";
+		cout << "=====================" << endl;
 		h.enqueue(as);
 	}
 	while (h.dequeue(as))

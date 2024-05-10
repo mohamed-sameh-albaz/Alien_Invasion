@@ -11,6 +11,7 @@ public:
 	~tempList();
 	bool insert(unit* unit);
 	bool remove(unit*& unit);
-	void print();
+	int getCount();
+	void print(type attacker,int id);
 };
 
