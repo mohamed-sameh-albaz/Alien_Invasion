@@ -15,45 +15,124 @@ void EarthTank::attack()
 	EarthArmy* attackingArmy = g->getEarthArmy();
 	int armyCnt = g->getEArmyCnt();
 	int enemyCnt = g->getAArmyCnt();
-	int armySolsPerc =  (attackingArmy->getListCnt(ES) * 100) / (attackedArmy->getListCnt(AS));
+	int armySolsPerc = (attackingArmy->getListCnt(ES) * 100) / (attackedArmy->getListCnt(AS));
 	bool ASremain = true;//army still have AS
 	bool AMremain = true;//army still have AM
 
-	if (armySolsPerc < 30)
+	if (armySolsPerc <= 30)
 		attackAS = true;
 	if (attackAS)
 	{
-		if (armySolsPerc > 80)
+		if (armySolsPerc >= 80)
 			attackAS = false;
 	}
 	unit* attackedUnit = nullptr;
 	tempList tmp;
-	for (int i = 0; i < attackCap; i++) {
-		if (!attackAS and AMremain ){//Not considering it until ES becomes 80%
-			if (!attackedArmy->pickMonster(attackedUnit))
+	if (!attackAS and AMremain) {//Not considering it until ES becomes 80%
+
+		for (int i = 0; i < attackCap; i++)
+		{
+			attackedArmy->pickMonster(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
 			{
 				AMremain = false;
 				break;
 			}
-			else 
+			attackedUnit = nullptr;
+		}
+	}
+	else if (attackAS)
+	{
+		if(AMremain)
+		{
+			for (int i = 0; i < attackCap / 2; i++)//pick 50% of the list monsters
 			{
-				this->set_attackpower(attackedUnit);
+				attackedArmy->pickMonster(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					AMremain = false;
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+
+		for (int i = 0; i < attackCap - tmp.getCount(); i++)//pick 50% of the list AS
+		{
+			attackedArmy->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				ASremain = false;
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+
+		if (!AMremain)//if monsters in the army is empty complete the list with AS
+		{
+			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			{
+				attackedArmy->pickSoldier(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					ASremain = false;
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+
+		else if (!ASremain and AMremain)//if AS army is empty complete the list with AM
+		{
+			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			{
+				attackedArmy->pickMonster(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					AMremain = false;
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+	}
+	
+	tmp.print(get_type(), id);
+
+	for (int i = 0; i < tmp.getCount(); i++)
+	{
+		tmp.remove(attackedUnit);
+		this->set_attackpower(attackedUnit);
+		attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+		if (attackedUnit->get_health() <= 0)
+			g->insertKilled(attackedUnit);
+		else
+			tmp.insert(attackedUnit);
+	}
+	//{
+		/*this->set_attackpower(attackedUnit);
 				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 				if (attackedUnit->get_health() <= 0)
 					g->insertKilled(attackedUnit);
 				else
-					tmp.insert(attackedUnit);
-			}
-		}
-		else
-		{
-			attackAS = true;
+					tmp.insert(attackedUnit);*/
+			/*attackAS = true;
 			if (!attackedArmy->pickSoldier(attackedUnit))
 			{
 				break;
 				ASremain = false;
 			}
-			else if(ASremain)
+			else if (ASremain)
 			{
 				this->set_attackpower(attackedUnit);
 				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
@@ -63,9 +142,9 @@ void EarthTank::attack()
 					tmp.insert(attackedUnit);
 			}
 			if (!ASremain)
-				attackAS = false;
-		}
-	}
+				attackAS = false;*/
+	//}
+
 	while (tmp.remove(attackedUnit))
 		attackedArmy->addUnit(attackedUnit);
 }
