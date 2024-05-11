@@ -25,6 +25,7 @@ bool tempList::remove(unit*& tempunit)
 			count--;
 			return 1;
 		}
+		
 		return 0;
 }
 

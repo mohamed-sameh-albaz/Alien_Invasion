@@ -17,8 +17,80 @@ void game::simulate()
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
 	inputFn();
+
+
+	// Test New Monster
+
+	fillArmies();
+	unit* et = nullptr;
+	unit* es = nullptr;
+	ArrayStack<unit*> h;
+	LinkedQueue<unit*> h2;
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+		h2.enqueue(es);
+	}
+	while (eArmy->pickTank(et)) {
+		et->disp();
+		cout << "=========================" << endl;
+		h.push(et);
+	}
+	uml->print();
+	dead->print();
+
+
+	while (!h.isEmpty()) {
+		h.pop(et);
+		eArmy->addUnit(et);
+	}
+	while (!h2.isEmpty()) {
+		h2.dequeue(es);
+		eArmy->addUnit(es);
+	}
+
+	monster* am = new monster(this);
+	am->set_power(200);
+	am->set_attackCap(4);
+	am->set_health(200);
+	AlienSoldier* as = new AlienSoldier(this);
+	as->set_power(100);
+	as->set_attackCap(4);
+	as->set_health(200);
+
+	as->attack();
+	as->attack();
+	as->attack();
+
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+		h2.enqueue(es);
+	}
+	while (eArmy->pickTank(et)) {
+		et->disp();
+		cout << "=========================" << endl;
+		h.push(et);
+	}
+
+	while (!h.isEmpty()) {
+		h.pop(et);
+		eArmy->addUnit(et);
+	}
+	while (!h2.isEmpty()) {
+		h2.dequeue(es);
+		eArmy->addUnit(es);
+	}
+
+	uml->print();
+	dead->print();
 	
 
+	/*
 	//Test ES attack
 	fillArmies();
 	unit* as = NULL;
@@ -55,7 +127,6 @@ void game::simulate()
 	aArmy->print();
 	eArmy->print();
 	dead->print();
-	/*
 	// Test AS Attack
 
 	unit* u = nullptr;
