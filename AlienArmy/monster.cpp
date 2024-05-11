@@ -11,31 +11,60 @@ monster::monster(game* master) : unit(master)
 void monster::attack()
 {
 	EarthArmy* e = g->getEarthArmy();
-	unit* u = nullptr;
+	unit* attackedTank = nullptr;
+	unit* attackedsoldier = nullptr;
+	unit* removedFromTmplst = nullptr;
 	tempList tmp;
-	for (int i = 0; i < attackCap; i++) {
-		if (!e->pickTank(u)) break;
+	
+	for (int i = 0; i < attackCap/2; i++) {
+		if (!e->pickTank(attackedTank)) break;
 		else {
-			this->set_attackpower(u);
-			u->set_health(u->get_health() - this->get_attackpower());
-			if (u->get_health() <= 0)
+			this->set_attackpower(attackedTank);
+			attackedTank->set_health(attackedTank->get_health() - this->get_attackpower());
+			if (attackedTank->get_health() <= 0)
 			{
-				g->insertKilled(u);
-				u->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedTank);
+				g->insertKilledEarth(attackedTank);
+
+				attackedTank->set_distructionTime(g->getCurrTimeStep());
 
 			}
-			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20) {
+			else if ((attackedTank->get_health() * 100 / attackedTank->get_initial_health()) <= 20) {
 
-				g->insertUml(u);
+				g->insertUml(attackedTank);
 			}
 			else {
 
-				tmp.insert(u);
+				tmp.insert(attackedTank);
 			}
 		}
 	}
+	for (int i = 0; i < attackCap/2+ attackCap%2; i++) {
+		if (!e->pickSoldier(attackedsoldier)) break;
+		else {
+			this->set_attackpower(attackedsoldier);
+			attackedsoldier->set_health(attackedsoldier->get_health() - this->get_attackpower());
+			if (attackedsoldier->get_health() <= 0)
+			{
+				g->insertKilled(attackedsoldier);
+				g->insertKilledEarth(attackedsoldier);
+				attackedsoldier->set_distructionTime(g->getCurrTimeStep());
 
-	while (tmp.remove(u)) {
-		e->addUnit(u);
+			}
+			else if ((attackedsoldier->get_health() * 100 / attackedsoldier->get_initial_health()) <= 20) {
+
+				g->insertUml(attackedsoldier);
+			}
+			else {
+
+				tmp.insert(attackedsoldier);
+			}
+		}
+	}
+	
+	while (tmp.remove(removedFromTmplst)) {
+		e->addUnit(removedFromTmplst);
 	}
 }
+
+

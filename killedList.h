@@ -13,6 +13,7 @@ public:
 	killedList();
 	~killedList();
 	bool insert(unit* killedUnit);
+	bool remove(unit*& killedUnit);
 	void print();
 };
 

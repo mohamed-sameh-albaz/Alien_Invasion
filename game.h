@@ -16,11 +16,15 @@ class game
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
 	int earthCount, alienCount, timestep;
+	killedList* deadAliens;
 	killedList* dead;
+
+	killedList* deadEarth;
+
 	UML* uml;
 public:
 	game();
-	void simulate();
+	void simulate(int mode);
 	void fight();
 	void inputFn();
 	void outputFn();
@@ -29,6 +33,9 @@ public:
 	EarthArmy* getEarthArmy();
 	UML* getUML();
 	bool insertKilled(unit* u);
+
+	bool insertKilledAlien(unit* u);
+	bool insertKilledEarth(unit* u);
 	void printKilled();
 	void changeColor(int desiredColor);		//console display colors
 	bool insertUml(unit* u);
