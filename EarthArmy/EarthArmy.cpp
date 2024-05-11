@@ -46,6 +46,21 @@ bool EarthArmy::pickTank(unit*& pickedTank)
 	return(tankList->remove(pickedTank));
 }
 
+EarthGunList* EarthArmy::get_GunneryList()
+{
+	return GunneryList;
+}
+
+EarthSoldierList* EarthArmy::get_soldierList()
+{
+	return soldierList;
+}
+
+EarthTankList* EarthArmy::get_tankList()
+{
+	return tankList;
+}
+
 bool EarthArmy::pickSoldier(unit*& pickedSoldier)
 {
 	return(soldierList->remove(pickedSoldier));

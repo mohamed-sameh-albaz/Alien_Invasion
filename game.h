@@ -18,7 +18,7 @@ class game
 	int earthCount, alienCount, timestep;
 	killedList* deadAliens;
 	killedList* dead;
-
+	int result;
 	killedList* deadEarth;
 
 	UML* uml;

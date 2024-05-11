@@ -32,6 +32,21 @@ bool AlienArmy::addUnit(unit* newUnit)
 	else return false;
 }
 
+AlienDroneList* AlienArmy::get_droneList()
+{
+	return droneList;
+}
+
+AlienSoldierList* AlienArmy::get_soldierList()
+{
+	return soldierList;
+}
+
+MonsterList* AlienArmy::get_monsterList()
+{
+	return monsterList;
+}
+
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 {
 	return (droneList->removeFront(pickedDrone));

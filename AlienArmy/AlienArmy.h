@@ -13,6 +13,10 @@ public:
 	AlienArmy();
 	~AlienArmy();
 	bool addUnit(unit* newUnit);
+	AlienDroneList* get_droneList();
+	AlienSoldierList* get_soldierList();
+	MonsterList* get_monsterList();
+
 	bool pickFrontDrone(unit*& pickedDrone);
 	bool pickEndDrone(unit*& pickedDrone);
 	bool pickSoldier(unit*& pickedSoldier);
