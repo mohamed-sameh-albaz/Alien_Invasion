@@ -4,5 +4,6 @@ class Healer : public unit
 {
 public:
 	Healer(game* master);
-	void attack(); 
+	void attack();
+	void suicide();
 };

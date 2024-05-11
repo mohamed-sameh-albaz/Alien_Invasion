@@ -100,6 +100,7 @@ void EarthArmy::attack()
 	unit* attackingSol = nullptr;
 	unit* attackingGun = nullptr;
 	unit* attackingTank = nullptr;
+	unit* attackingHealer = nullptr;
 	peekSoldier(attackingSol);//pick doesnot remove the unit from its original list
 	if (attackingSol)
 		attackingSol->attack();
@@ -109,6 +110,11 @@ void EarthArmy::attack()
 	peekGun(attackingGun);
 	if (attackingGun)
 		attackingGun->attack();
+	pickHealer(attackingHealer);
+	if (attackingHealer) {
+		attackingHealer->attack();
+		dynamic_cast<Healer*>(attackingHealer)->suicide();
+	}
 }
 
 int EarthArmy::getListCnt(type neededUnit)

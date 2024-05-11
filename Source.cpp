@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	game* g = new game;
-	int mode;
+	int mode = 1;
 	do
 	{
 		system("cls");
@@ -21,7 +21,8 @@ int main() {
 		cout << "=================================== Silent Mode =============================" << endl;
 
 	}
-	g->simulate(mode);
+	cin.get();
+	g->fight(mode);
 	return 0;
 	// test branch
 }

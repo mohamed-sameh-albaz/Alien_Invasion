@@ -29,8 +29,7 @@ bool HL::remove(unit*& u) {
 		count--;
 		return true;
 	}
-	else { 
-		u = h;
+	else {
 
 		return false; }
 }
