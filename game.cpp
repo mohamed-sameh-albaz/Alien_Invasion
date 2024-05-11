@@ -18,43 +18,84 @@ void game::simulate()
 	int mainColor = 7, messageColor = 6;
 	inputFn();
 	
-
-	//Test ES attack
+	//testing tank
 	fillArmies();
-	unit* as = NULL;
-	LinkedQueue<unit*>h;
-	while (aArmy->pickSoldier(as)) {
-		as->disp();
-		cout << "==============";
-		h.enqueue(as);
-	}
-	while (h.dequeue(as))
-		aArmy->addUnit(as);
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-	EarthSoldier* es = new EarthSoldier(this);
-	es->set_power(500);
-	es->set_attackCap(100);
-	es->set_health(100);
-	es->disp();
-	es->attack();
-
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-	
-	while (aArmy->pickSoldier(as))
-	{
-		as->disp();
-		cout << "=====================" << endl;
-		h.enqueue(as);
-	}
-	while (h.dequeue(as))
-		aArmy->addUnit(as);
 	aArmy->print();
 	eArmy->print();
 	dead->print();
+	//unit* AM = nullptr;
+	//unit* AS = nullptr;
+	//LinkedQueue<unit*>h;
+	//while (aArmy->pickMonster(AM))
+	//{
+	//	AM->disp();
+	//	cout << "==================";
+	//	h.enqueue(AM);
+	//}
+	//while (h.dequeue(AM))
+	//	aArmy->addUnit(AM);
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	/*EarthTank* t = new EarthTank(this);
+	t->set_power(500);
+	t->set_attackCap(100);
+	t->set_health(100);
+	t->disp();
+	t->attack();*/
+	eArmy->attack();
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+
+	//while (aArmy->pickMonster(AM))
+	//{
+	//	AM->disp();
+	//	cout << "================" << endl;
+	//	h.enqueue(AM);
+	//}
+	//while (h.dequeue(AM))
+	//	aArmy->addUnit(AM);
+	aArmy->print();
+	eArmy->print();
+	dead->print();
+
+	//Test ES attack
+	//fillArmies();
+	//unit* as = NULL;
+	//LinkedQueue<unit*>h;
+	//while (aArmy->pickSoldier(as)) {
+	//	as->disp();
+	//	cout << "==============";
+	//	h.enqueue(as);
+	//}
+	//while (h.dequeue(as))
+	//	aArmy->addUnit(as);
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	//EarthSoldier* es = new EarthSoldier(this);
+	//es->set_power(500);
+	//es->set_attackCap(100);
+	//es->set_health(100);
+	//es->disp();
+	//es->attack();
+
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	//cout << "=========================" << endl;
+	//
+	//while (aArmy->pickSoldier(as))
+	//{
+	//	as->disp();
+	//	cout << "=====================" << endl;
+	//	h.enqueue(as);
+	//}
+	//while (h.dequeue(as))
+	//	aArmy->addUnit(as);
+	//aArmy->print();
+	//eArmy->print();
+	//dead->print();
 	/*
 	// Test AS Attack
 

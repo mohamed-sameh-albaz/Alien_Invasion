@@ -67,6 +67,18 @@ void EarthArmy::print()
 
 void EarthArmy::attack()
 {
+	unit* attackingSol = nullptr;
+	unit* attackingGun = nullptr;
+	unit* attackingTank = nullptr;
+	pickSoldier(attackingSol);//pick doesnot remove the unit from its original list
+	if (attackingSol)
+		attackingSol->attack();
+	pickTank(attackingTank);
+	if (attackingTank)
+		attackingTank->attack();
+	//pickGun(attackingGun);
+	if (attackingGun)
+		attackingGun->attack();
 }
 
 int EarthArmy::getListCnt(type neededUnit)
