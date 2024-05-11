@@ -13,50 +13,54 @@ void AlienDrone::attack()
 	EarthArmy* e = g->getEarthArmy();
 	unit* attackedTank = nullptr;
 	unit* attackedgunnery = nullptr;
+	unit* attackedunit= nullptr;
+
 	unit* removedFromTmplst = nullptr;
-	tempList tmp;
-
-	for (int i = 0; i < attackCap / 2; i++) {
-		if (!e->pickTank(attackedTank)) break;
+	tempList attackedlist,templist;
+	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
+	{
+		e->pickTank(attackedTank);
+		if (attackedTank)
+			attackedlist.insert(attackedTank);
+		else
+			break;
+		attackedTank = nullptr;
+	}
+	for (int i = 0; i < (attackCap / 2); i++)
+	{
+		e->pickGun(attackedgunnery);
+		if (attackedgunnery)
+			attackedlist.insert(attackedgunnery);
+		else
+			break;
+		attackedgunnery = nullptr;
+	}
+	attackedlist.print(get_type(), id);
+	for (int i = 0; i < attackCap ; i++) {
+		if (!attackedlist.remove(attackedunit)) break;
 		else {
-			this->set_attackpower(attackedTank);
-			attackedTank->set_health(attackedTank->get_health() - this->get_attackpower());
-			if (attackedTank->get_health() <= 0)
+			this->set_attackpower(attackedunit);
+			attackedunit->set_health(attackedunit->get_health() - this->get_attackpower());
+			if (attackedunit->get_health() <= 0)
 			{
-				g->insertKilled(attackedTank);
-				attackedTank->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedunit);
+				attackedunit->set_distructionTime(g->getCurrTimeStep());
 
 			}
-			else if ((attackedTank->get_health() * 100 / attackedTank->get_initial_health()) <= 20) {
+			else if ((attackedunit->get_id() == 1) && ((attackedunit->get_health() * 100 / attackedunit->get_initial_health()) <= 20)) {
 
-				g->insertUml(attackedTank);
+				g->insertUml(attackedunit);
 			}
 			else {
 
-				tmp.insert(attackedTank);
+				templist.insert(attackedunit);
 			}
 		}
 	}
-	for (int i = 0; i < attackCap / 2 + attackCap % 2; i++) {
-		if (!e->pickSoldier(attackedgunnery)) break;
-		else {
-			this->set_attackpower(attackedgunnery);
-			attackedgunnery->set_health(attackedgunnery->get_health() - this->get_attackpower());
-			if (attackedgunnery->get_health() <= 0)
-			{
-				g->insertKilled(attackedgunnery);
+	
+	
 
-				attackedgunnery->set_distructionTime(g->getCurrTimeStep());
-
-			}
-			else {
-
-				tmp.insert(attackedgunnery);
-			}
-		}
-	}
-
-	while (tmp.remove(removedFromTmplst)) {
+	while (templist.remove(removedFromTmplst)) {
 		e->addUnit(removedFromTmplst);
 	}
 }
