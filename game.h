@@ -40,5 +40,8 @@ public:
 	~game();
 	int getEArmyCnt();
 	int getAArmyCnt();
+	bool alienIsEmpty();
+	bool earthIsEmpty();
+
 };
 

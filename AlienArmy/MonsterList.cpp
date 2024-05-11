@@ -59,5 +59,5 @@ void MonsterList::print() {
 }
 
 int MonsterList::getCount() {
-	return index;
+	return index+1;
 }

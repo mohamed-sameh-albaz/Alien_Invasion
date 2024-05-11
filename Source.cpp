@@ -10,7 +10,7 @@ int main() {
 	{
 		system("cls");
 		cout << "please enter 1 if you want interactive mode and 2 if you want silent mode\n";
-		cin >> mode;
+		//cin >> mode;
 	}
 	while (mode != 1 && mode != 2);
 	system("cls");
@@ -21,8 +21,9 @@ int main() {
 		cout << "=================================== Silent Mode =============================" << endl;
 
 	}
-	cin.get();
-	g->fight(mode);
+	//cin.get();
+	//g->fight(1);
+	g->simulate(1);
 	return 0;
 	// test branch
 }

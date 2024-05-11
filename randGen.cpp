@@ -110,7 +110,7 @@ bool randGen::fillEarthArmy(EarthArmy* army, int& count) {
 
 bool randGen::fillAlienArmy(AlienArmy* army, int& count) {
 	int A = (rand() % 100) + 1;
-	if (A <= Prob) {
+	if (false) {
 		for (int i = 1; i <= N; i++) {
 			int B = (rand() % 100) + 1;
 			unit* u = generateAlienUnit(count, B);

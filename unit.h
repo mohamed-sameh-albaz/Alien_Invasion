@@ -15,10 +15,13 @@ protected:
 	int attackCap;
 	int tj, ta, td, df, dd, db, attackpower;
 	int initialHealth;
+	int tUML;
 	game* g;
 public:
-	unit(game* master) { g = master; }
+	unit(game* master) { g = master; tUML = 0; }
 	void disp();
+	void setUMLtime(int tUML);
+	int getUMLtime();
 	void set_id(int a);
 	void set_joinTime(int a);
 	void set_health(int a);
