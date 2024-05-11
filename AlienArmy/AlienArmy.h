@@ -16,6 +16,10 @@ public:
 	AlienDroneList* get_droneList();
 	AlienSoldierList* get_soldierList();
 	MonsterList* get_monsterList();
+	bool peeksoldier(unit*& pickedunit);
+	bool peekFrontdrone(unit*& pickedunit);
+	bool peekbackdrone(unit*& pickedunit);
+	bool peekmonster(unit*& pickedunit);
 
 	bool pickFrontDrone(unit*& pickedDrone);
 	bool pickEndDrone(unit*& pickedDrone);

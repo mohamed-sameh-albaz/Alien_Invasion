@@ -7,6 +7,16 @@ class double_endedQueue :public LinkedQueue<T>
 {
 
 public:
+	bool peekBack(T& u) {
+		if (LinkedQueue<T>::isEmpty())
+			return false;
+
+		u = LinkedQueue<T>::backPtr->getItem();
+		return true;
+	}
+	bool peekFront(T& u) {
+		return LinkedQueue<T>::peek(u);
+	}
 	bool dequeueBack(T& u) {
 		if (LinkedQueue<T>::isEmpty())
 			return false;

@@ -74,7 +74,7 @@ void game::simulate(int mode)
 	am->attack();
 	am->attack();
 	am->attack();
-	am->attack();*/
+	am->attack();
 	AlienDrone* ad1 = new AlienDrone(this);
 	ad1->set_power(200);
 	ad1->set_attackCap(4);
@@ -476,14 +476,8 @@ void game::simulate(int mode)
 		cout << endl << "Simulation Ended" << endl;
 
 
-		*/
-	}
-	else
-		{
-			cout << "Silent mode\n";
-			cout << "Simulation starts...\n";
-			cout << "Simulation ends,Output fileis created...\n";
-
+	*/
+	
 		}
 }
 
@@ -491,38 +485,62 @@ void game::fight(int mode)
 {
 		inputFn();
 
-		if(mode==1)
-	{
+		int flag = 0;
 		srand(time(0));
 		int mainColor = 7, messageColor = 6;
 
 		while (true) {
+			if (getAArmyCnt() == 0 || getEArmyCnt() == 0)
+				break;
 			changeColor(12);
+			if(mode==1)
 			cout << endl << "Current Timestep: " << timestep << endl;
 			changeColor(mainColor);
 
 			fillArmies();
 			
 			// Print Armies
-			eArmy->print();
-			aArmy->print();
+			if(mode==1)
+			{
+				eArmy->print();
+				aArmy->print();
+			}
 
 
 			//Start Fighting
+			if (!flag && mode == 2) {
+				cout << "Simulation starts\n";
+				flag++;
+			}
 			eArmy->attack();
 			aArmy->attack();
 
-
-			dead->print();
-			
+			if(mode==1)
+			{
+				dead->print();
+				uml->print();
+			}
 
 			timestep++;
-			cout << endl << "Press Enter To Continue" << endl;
-			cin.get(); // Wait for user to press enter
-			system("cls");
+			if(mode==1)
+			{
+				cout << endl << "Press Enter To Continue" << endl;
+				cin.get(); // Wait for user to press enter
+				system("cls");
+			}
 		}
-	
-	}
+		outputFn();
+		if (mode == 2)
+			cout << "Simulation ends ,Output file is created\n";
+		if(mode==1)
+		{
+			if (getEArmyCnt() > 0)
+				cout << "Earth  Win \n";
+			else if (getEArmyCnt() == 0 && getAArmyCnt() == 0)
+				cout << "Drawn\n";
+			else if (getEArmyCnt () == 0 && getAArmyCnt() > 0)
+				cout << "Loss \n";
+		}
 }
 
 void game::inputFn()
@@ -615,11 +633,11 @@ void game::outputFn()
 			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
 	}
 	out_file << "Batle result: ";
-	if (result == 1)
+	if (getEArmyCnt() > 0)
 		out_file << "Win \n";
-	if (result == 0)
+	else if (getEArmyCnt()==0&& getAArmyCnt() == 0)
 		out_file << "Drawn\n";
-	if (result == -1)
+	else if (getEArmyCnt() == 0 && getAArmyCnt() > 0)
 		out_file << "Loss \n";
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
 		

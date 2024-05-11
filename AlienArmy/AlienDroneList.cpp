@@ -41,6 +41,21 @@ bool AlienDroneList::insertEnd(AlienDrone* u) {
 	count++;
 	return droneList.enqueue(u);
 }
+bool AlienDroneList::peekFront(unit*& u)
+{
+	AlienDrone* peekeddrone = nullptr;
+	if (droneList.peekFront(peekeddrone))
+		u = peekeddrone;
+	return u;
+}
+bool AlienDroneList::peekBack(unit*& u)
+{
+	AlienDrone* peekeddrone = nullptr;
+	if (droneList.peekBack(peekeddrone))
+		u = peekeddrone;
+	return u;
+}
+
 bool AlienDroneList::insertFront(AlienDrone* u) {
 	count++;
 	return droneList.enqueueFront(u);

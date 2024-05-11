@@ -12,7 +12,8 @@ class AlienSoldierList
 public:
 	AlienSoldierList();
 	~AlienSoldierList();
-	bool insert(AlienSoldier* u);		
+	bool insert(AlienSoldier* u);
+	bool peek(unit*&);
 	bool remove(unit*& u);
 	void print();
 	int getCount();
