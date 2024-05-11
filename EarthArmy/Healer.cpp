@@ -33,3 +33,8 @@ void Healer::attack()
 		g->insertUml(u);
 	}
 }
+
+void Healer::suicide()
+{
+	g->insertKilled(this);
+}

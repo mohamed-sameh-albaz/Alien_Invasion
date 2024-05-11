@@ -20,7 +20,14 @@ void game::simulate(int mode)
 		int mainColor = 7, messageColor = 6;
 		inputFn();
 
+		while (true) {
+			cout << endl << "Press Enter To Continue" << endl;
+			cin.get(); // Wait for user to press enter
+		}
+	
 
+
+	/*
 	// Test New Monster
 
 	fillArmies();
@@ -96,7 +103,6 @@ void game::simulate(int mode)
 	uml->print();
 	dead->print();
 	
-	/*
 
 	//Test ES attack
 	fillArmies();
@@ -476,9 +482,42 @@ void game::simulate(int mode)
 		}
 }
 
-void game::fight()
+void game::fight(int mode)
 {
+		inputFn();
+
+		if(mode==1)
+	{
+		srand(time(0));
+		int mainColor = 7, messageColor = 6;
+
+		while (true) {
+			changeColor(12);
+			cout << endl << "Current Timestep: " << timestep << endl;
+			changeColor(mainColor);
+
+			fillArmies();
+			
+			// Print Armies
+			eArmy->print();
+			aArmy->print();
+
+
+			//Start Fighting
+			eArmy->attack();
+			aArmy->attack();
+
+
+			dead->print();
+			
+
+			timestep++;
+			cout << endl << "Press Enter To Continue" << endl;
+			cin.get(); // Wait for user to press enter
+			system("cls");
+		}
 	
+	}
 }
 
 void game::inputFn()

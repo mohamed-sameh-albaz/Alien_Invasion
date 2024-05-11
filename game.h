@@ -25,7 +25,7 @@ class game
 public:
 	game();
 	void simulate(int mode);
-	void fight();
+	void fight (int mode);
 	void inputFn();
 	void outputFn();
 	void fillArmies();
