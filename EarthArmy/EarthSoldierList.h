@@ -14,7 +14,7 @@ public:
 	~EarthSoldierList();
 
 	bool insert(EarthSoldier* u);
-	bool peek(EarthSoldier*& pickedUnit);
+	bool peek(unit*& peekedUnit);
 	bool remove(unit*& u);
 	void print();
 	int getCount();

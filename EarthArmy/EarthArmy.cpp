@@ -36,9 +36,9 @@ bool EarthArmy::addUnit(unit* newUnit)
 	else return false;
 }
 
-bool EarthArmy::pickGun(unit*& pickedGun, int& pri)
+bool EarthArmy::pickGun(unit*& pickedGun)
 {
-	return (GunneryList->remove(pickedGun, pri));
+	return (GunneryList->remove(pickedGun));
 }
 
 bool EarthArmy::pickTank(unit*& pickedTank)
@@ -56,6 +56,21 @@ bool EarthArmy::pickHealer(unit*& pickedHealer)
 	return (healers->remove(pickedHealer));
 }
 
+bool EarthArmy::peekGun(unit*& peekedGun)
+{
+	return GunneryList->peek(peekedGun);
+}
+
+bool EarthArmy::peekTank(unit*& peekedTank)
+{
+	return tankList->peek(peekedTank);
+}
+
+bool EarthArmy::peekSoldier(unit*& peekedSoldier)
+{
+	return soldierList->peek(peekedSoldier);
+}
+
 void EarthArmy::print()
 {
 	cout << "============== Earth Army Alive Units ==============" << endl;
@@ -70,13 +85,13 @@ void EarthArmy::attack()
 	unit* attackingSol = nullptr;
 	unit* attackingGun = nullptr;
 	unit* attackingTank = nullptr;
-	pickSoldier(attackingSol);//pick doesnot remove the unit from its original list
+	peekSoldier(attackingSol);//pick doesnot remove the unit from its original list
 	if (attackingSol)
 		attackingSol->attack();
-	pickTank(attackingTank);
+	peekTank(attackingTank);
 	if (attackingTank)
 		attackingTank->attack();
-	//pickGun(attackingGun);
+	peekGun(attackingGun);
 	if (attackingGun)
 		attackingGun->attack();
 }

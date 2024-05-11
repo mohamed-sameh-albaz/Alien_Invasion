@@ -6,8 +6,7 @@ EarthGunList::EarthGunList() :count(0)
 EarthGunList::~EarthGunList()
 {
 	unit* a;
-	int x;
-	while (remove(a,x)) {
+	while (remove(a)) {
 		delete a;
 		a = nullptr;
 	}
@@ -23,13 +22,16 @@ bool EarthGunList::insert(EarthGun* newGun)
 	}
 	return false;
 }
-bool EarthGunList::peek(EarthGun*& pickedUnit)
+bool EarthGunList::peek(unit*& peekedUnit)
 {
 	int pri;
-	return GunList.peek(pickedUnit,pri);
+	EarthGun* peekedGun=nullptr;
+	if (GunList.peek(peekedGun, pri))
+		peekedUnit = peekedGun;
+	return peekedGun;
 }
 
-bool EarthGunList::remove(unit*& deletedUnit, int& deletedPri)
+bool EarthGunList::remove(unit*& deletedUnit)
 {
 	EarthGun* pickedGun;
 	int pri;
@@ -37,7 +39,7 @@ bool EarthGunList::remove(unit*& deletedUnit, int& deletedPri)
 	{
 		deletedUnit = pickedGun;
 		count--;
-		deletedPri = pri;
+		/*deletedPri = pri;*/
 		return true;
 	}
 	return false;

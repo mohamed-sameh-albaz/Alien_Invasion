@@ -20,9 +20,12 @@ bool EarthTankList::insert(EarthTank* newTank)
 	}
 	return false;
 }
-bool EarthTankList::peek(EarthTank*& picekdUnit)
+bool EarthTankList::peek(unit*& peekedUnit)
 {
-	return tankList.peek(picekdUnit);
+	EarthTank* peekedTank = nullptr;
+	if(tankList.peek(peekedTank))
+		peekedUnit = peekedTank;
+	return peekedTank;
 }
 bool EarthTankList::remove(unit*& deletedTank)
 {

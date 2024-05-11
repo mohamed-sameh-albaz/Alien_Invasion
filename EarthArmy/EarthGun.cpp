@@ -32,9 +32,9 @@ void EarthGun::attack()
 	for (int i = 0; i < (attackCap - attackedCnt); i++)
 	{
 		if (i % 2 == 0)
-			attackedArmy->pickEndDrone(attackedUnit);
-		else
 			attackedArmy->pickFrontDrone(attackedUnit);
+		else
+			attackedArmy->pickEndDrone(attackedUnit);
 		if (attackedUnit)
 			tmp.insert(attackedUnit);
 		else

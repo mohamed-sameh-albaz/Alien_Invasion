@@ -23,39 +23,10 @@ void game::simulate()
 	aArmy->print();
 	eArmy->print();
 	dead->print();
-	//unit* AM = nullptr;
-	//unit* AS = nullptr;
-	//LinkedQueue<unit*>h;
-	//while (aArmy->pickMonster(AM))
-	//{
-	//	AM->disp();
-	//	cout << "==================";
-	//	h.enqueue(AM);
-	//}
-	//while (h.dequeue(AM))
-	//	aArmy->addUnit(AM);
-	//cout << "=========================" << endl;
-	//cout << "=========================" << endl;
-	//cout << "=========================" << endl;
-	/*EarthTank* t = new EarthTank(this);
-	t->set_power(500);
-	t->set_attackCap(100);
-	t->set_health(100);
-	t->disp();
-	t->attack();*/
 	eArmy->attack();
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-	cout << "=========================" << endl;
-
-	//while (aArmy->pickMonster(AM))
-	//{
-	//	AM->disp();
-	//	cout << "================" << endl;
-	//	h.enqueue(AM);
-	//}
-	//while (h.dequeue(AM))
-	//	aArmy->addUnit(AM);
+	cout << "====================================================" << endl
+		<< "\t\tafter attack\t\t\t\t" << endl
+		<< "======================================================" << endl;
 	aArmy->print();
 	eArmy->print();
 	dead->print();
