@@ -10,29 +10,43 @@ AlienSoldier::AlienSoldier(game* master) : unit(master)
 void AlienSoldier::attack()
 {
 	EarthArmy * e  = g->getEarthArmy();
-	unit* u = nullptr;
-	tempList tmp;
+	unit* attackedUnit = nullptr;
+	tempList tmp,tmp2;
+	for (int i = 0; i < (attackCap); i++)
+	{
+		e->pickSoldier(attackedUnit);
+		if (attackedUnit)
+			tmp.insert(attackedUnit);
+		else
+			break;
+		attackedUnit = nullptr;
+	}
+	tmp.print(get_type(), id);
 	for (int i = 0; i < attackCap; i++) {
-		if (!e->pickSoldier(u)) break;
+		if (!tmp.remove(attackedUnit)) break;
 		else {
-			this->set_attackpower(u);
-			u->set_health(u->get_health() - this->get_attackpower());
-			if (u->get_health() <= 0)
+			this->set_attackpower(attackedUnit);
+			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+			if (attackedUnit->get_health() <= 0)
 			{
-				g->insertKilled(u);
+				g->insertKilled(attackedUnit);
+				attackedUnit->set_distructionTime(g->getCurrTimeStep());
 			}
-			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20){
+			else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20){
 
-				g->insertUml(u);
+				g->insertUml(attackedUnit);
 			}
 			else {
 
-				tmp.insert(u);
+				tmp2.insert(attackedUnit);
 			}
 		}
+
+		attackedUnit = nullptr;
+
 	}
 
-	while (tmp.remove(u)) {
-		e->addUnit(u);
+	while (tmp2.remove(attackedUnit)) {
+		e->addUnit(attackedUnit);
 	}
 }
