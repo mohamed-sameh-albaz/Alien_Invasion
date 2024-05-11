@@ -5,7 +5,7 @@ class tempList
 {
 	LinkedQueue<unit*> list;
 	int count;
-
+	static bool firstPrinted;
 public:
 	tempList();
 	~tempList();

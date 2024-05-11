@@ -21,6 +21,103 @@ void game::simulate(int mode)
 		inputFn();
 
 
+	// Test New Monster
+
+	fillArmies();
+	unit* et = nullptr;
+	unit* es = nullptr;
+	ArrayStack<unit*> h;
+	LinkedQueue<unit*> h2;
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+		h2.enqueue(es);
+	}
+	while (eArmy->pickTank(et)) {
+		et->disp();
+		cout << "=========================" << endl;
+		h.push(et);
+	}
+	uml->print();
+	dead->print();
+
+
+	while (!h.isEmpty()) {
+		h.pop(et);
+		eArmy->addUnit(et);
+	}
+	while (!h2.isEmpty()) {
+		h2.dequeue(es);
+		eArmy->addUnit(es);
+	}
+
+	monster* am = new monster(this);
+	am->set_power(200);
+	am->set_attackCap(4);
+	am->set_health(200);
+	AlienSoldier* as = new AlienSoldier(this);
+	as->set_power(100);
+	as->set_attackCap(4);
+	as->set_health(200);
+
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+
+	while (eArmy->pickSoldier(es)) {
+		es->disp();
+		cout << "=========================" << endl;
+		h2.enqueue(es);
+	}
+	while (eArmy->pickTank(et)) {
+		et->disp();
+		cout << "=========================" << endl;
+		h.push(et);
+	}
+
+	while (!h.isEmpty()) {
+		h.pop(et);
+		eArmy->addUnit(et);
+	}
+	while (!h2.isEmpty()) {
+		h2.dequeue(es);
+		eArmy->addUnit(es);
+	}
+
+	uml->print();
+	dead->print();
+	
+	/*
+
+	//Test ES attack
+	fillArmies();
+	unit* as = NULL;
+	LinkedQueue<unit*>h;
+	while (aArmy->pickSoldier(as)) {
+		as->disp();
+		cout << "==============";
+		h.enqueue(as);
+	}
+	while (h.dequeue(as))
+		aArmy->addUnit(as);
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	EarthSoldier* es = new EarthSoldier(this);
+	es->set_power(500);
+	es->set_attackCap(100);
+	es->set_health(100);
+	es->disp();
+	es->attack();
 		//Test ES attack
 		fillArmies();
 		unit* as = NULL;
@@ -42,6 +139,22 @@ void game::simulate(int mode)
 		es->disp();
 		es->attack();
 
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	cout << "=========================" << endl;
+	
+	while (aArmy->pickSoldier(as))
+	{
+		as->disp();
+		cout << "=====================" << endl;
+		h.enqueue(as);
+	}
+	while (h.dequeue(as))
+		aArmy->addUnit(as);
+	aArmy->print();
+	eArmy->print();
+	dead->print();
+	// Test AS Attack
 		cout << "=========================" << endl;
 		cout << "=========================" << endl;
 		cout << "=========================" << endl;
@@ -420,7 +533,7 @@ void game::outputFn()
 
 	}
 	int pir;
-	while (eArmy->get_GunneryList()->remove(alliveunit,pir)) {
+	while (eArmy->get_GunneryList()->remove(alliveunit)) {
 
 		EG++;
 
@@ -438,7 +551,6 @@ void game::outputFn()
 	out_file << "Df/Db%= " << float(df / db) * 100 << "%\n" << "Dd/Db%= " << float(dd / db) * 100 << "%\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
-	int AS = 0, AM = 0, AD = 0;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
 	df =  dd =db = 0;
 	while (deadAliens->remove(killedunit)) {
@@ -513,7 +625,7 @@ UML* game::getUML()
 bool game::insertKilled(unit* u)
 {
 	if (u) {
-		return deadAliens->insert(u);
+		return dead->insert(u);
 	}
 	else return false;
 }

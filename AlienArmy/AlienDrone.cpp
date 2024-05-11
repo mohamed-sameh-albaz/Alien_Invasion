@@ -24,8 +24,6 @@ void AlienDrone::attack()
 			if (attackedTank->get_health() <= 0)
 			{
 				g->insertKilled(attackedTank);
-				g->insertKilledEarth(attackedTank);
-
 				attackedTank->set_distructionTime(g->getCurrTimeStep());
 
 			}
@@ -47,7 +45,6 @@ void AlienDrone::attack()
 			if (attackedgunnery->get_health() <= 0)
 			{
 				g->insertKilled(attackedgunnery);
-				g->insertKilledEarth(attackedgunnery);
 
 				attackedgunnery->set_distructionTime(g->getCurrTimeStep());
 

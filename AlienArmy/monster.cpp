@@ -11,59 +11,56 @@ monster::monster(game* master) : unit(master)
 void monster::attack()
 {
 	EarthArmy* e = g->getEarthArmy();
-	unit* attackedTank = nullptr;
-	unit* attackedsoldier = nullptr;
-	unit* removedFromTmplst = nullptr;
-	tempList tmp;
-	
-	for (int i = 0; i < attackCap/2; i++) {
-		if (!e->pickTank(attackedTank)) break;
-		else {
-			this->set_attackpower(attackedTank);
-			attackedTank->set_health(attackedTank->get_health() - this->get_attackpower());
-			if (attackedTank->get_health() <= 0)
-			{
-				g->insertKilled(attackedTank);
-				g->insertKilledEarth(attackedTank);
+	tempList tmp, tmp2;
+	unit* attackedUnit = nullptr;
+	int attackedcnt = 0;
+	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
+	{
+		e->pickTank(attackedUnit);
+		if (attackedUnit)
+			tmp.insert(attackedUnit);
+		else
+			break;
+		attackedUnit = nullptr;
+	}
 
-				attackedTank->set_distructionTime(g->getCurrTimeStep());
+	for (int i = 0; i < (attackCap / 2); i++)
+	{
+		e->pickSoldier(attackedUnit);
+		if (attackedUnit)
+			tmp.insert(attackedUnit);
+		else
+			break;
+		attackedUnit = nullptr;
+	}
+	tmp.print(get_type(), id);
+
+
+	for (int i = 0; i < attackCap; i++) {
+		if (!tmp.remove(attackedUnit)) break;
+		else {
+			this->set_attackpower(attackedUnit);
+			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+			if (attackedUnit->get_health() <= 0)
+			{
+				attackedUnit->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedUnit);
 
 			}
-			else if ((attackedTank->get_health() * 100 / attackedTank->get_initial_health()) <= 20) {
+			else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20) {
 
-				g->insertUml(attackedTank);
+				g->insertUml(attackedUnit);
 			}
 			else {
 
-				tmp.insert(attackedTank);
+				tmp2.insert(attackedUnit);
 			}
 		}
+		attackedUnit = nullptr;
 	}
-	for (int i = 0; i < attackCap/2+ attackCap%2; i++) {
-		if (!e->pickSoldier(attackedsoldier)) break;
-		else {
-			this->set_attackpower(attackedsoldier);
-			attackedsoldier->set_health(attackedsoldier->get_health() - this->get_attackpower());
-			if (attackedsoldier->get_health() <= 0)
-			{
-				g->insertKilled(attackedsoldier);
-				g->insertKilledEarth(attackedsoldier);
-				attackedsoldier->set_distructionTime(g->getCurrTimeStep());
 
-			}
-			else if ((attackedsoldier->get_health() * 100 / attackedsoldier->get_initial_health()) <= 20) {
-
-				g->insertUml(attackedsoldier);
-			}
-			else {
-
-				tmp.insert(attackedsoldier);
-			}
-		}
-	}
-	
-	while (tmp.remove(removedFromTmplst)) {
-		e->addUnit(removedFromTmplst);
+	while (tmp2.remove(attackedUnit)) {
+		e->addUnit(attackedUnit);
 	}
 }
 

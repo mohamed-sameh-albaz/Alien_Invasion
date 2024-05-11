@@ -12,7 +12,6 @@ void EarthSoldier::attack()
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	unit* attackedUnit = nullptr;
 	tempList tmp;
-	int attackedcnt = 0;
 	for (int i = 0; i < attackCap; i++)
 	{
 		attackedArmy->pickSoldier(attackedUnit);
@@ -24,8 +23,9 @@ void EarthSoldier::attack()
 	}
 	//cout << id << " ES ";
 	tmp.print(get_type(),id);
+	int attackedCnt = tmp.getCount();
 
-	for (int i = 0; i < tmp.getCount(); i++)
+	for (int i = 0; i < attackedCnt; i++)
 	{
 		tmp.remove(attackedUnit);
 			this->set_attackpower(attackedUnit);

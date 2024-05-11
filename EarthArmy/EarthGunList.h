@@ -13,8 +13,8 @@ public:
 	EarthGunList();
 	~EarthGunList();
 	bool insert(EarthGun* newGun);
-	bool peek(EarthGun*& pickedUnit);
-	bool remove(unit*& deletedUnit, int& deletedPri);
+	bool peek(unit*& peekedUnit);
+	bool remove(unit*& deletedUnit);
 	int getCount();
 	void print();
 };

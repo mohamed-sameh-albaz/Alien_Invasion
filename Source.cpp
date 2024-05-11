@@ -13,6 +13,14 @@ int main() {
 		cin >> mode;
 	}
 	while (mode != 1 && mode != 2);
+	system("cls");
+	if (mode == 1) {
+		cout << "=================================== InterActive Mode =============================" << endl;
+	}
+	else {
+		cout << "=================================== Silent Mode =============================" << endl;
+
+	}
 	g->simulate(mode);
 	return 0;
 	// test branch

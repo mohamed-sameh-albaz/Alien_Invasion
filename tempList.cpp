@@ -1,5 +1,7 @@
 #include "tempList.h"
 
+bool tempList::firstPrinted = false;
+
 tempList::tempList() :count(0)
 {
 }
@@ -25,6 +27,7 @@ bool tempList::remove(unit*& tempunit)
 			count--;
 			return 1;
 		}
+		
 		return 0;
 }
 
