@@ -25,33 +25,33 @@ void game::simulate(int mode)
 
 	fillArmies();
 	unit* et = nullptr;
-	unit* es = nullptr;
-	ArrayStack<unit*> h;
-	LinkedQueue<unit*> h2;
-	while (eArmy->pickSoldier(es)) {
-		es->disp();
-		cout << "=========================" << endl;
-		h2.enqueue(es);
-	}
+	unit* eg = nullptr;
+	LinkedQueue<unit*> h;
+	ArrayStack<unit*> h2;
 	while (eArmy->pickTank(et)) {
 		et->disp();
 		cout << "=========================" << endl;
-		h.push(et);
+		h2.push(et);
+	}
+	while (eArmy->pickGun(eg)) {
+		eg->disp();
+		cout << "=========================" << endl;
+		h.enqueue(eg);
 	}
 	uml->print();
 	dead->print();
 
 
 	while (!h.isEmpty()) {
-		h.pop(et);
-		eArmy->addUnit(et);
+		h.dequeue(eg);
+		eArmy->addUnit(eg);
 	}
 	while (!h2.isEmpty()) {
-		h2.dequeue(es);
-		eArmy->addUnit(es);
+		h2.pop(et);
+		eArmy->addUnit(et);
 	}
 
-	monster* am = new monster(this);
+	/*monster* am = new monster(this);
 	am->set_power(200);
 	am->set_attackCap(4);
 	am->set_health(200);
@@ -67,30 +67,34 @@ void game::simulate(int mode)
 	am->attack();
 	am->attack();
 	am->attack();
-	am->attack();
-
+	am->attack();*/
+	AlienDrone* ad1 = new AlienDrone(this);
+	ad1->set_power(200);
+	ad1->set_attackCap(4);
+	ad1->set_health(200);
+	ad1->attack();
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 
-	while (eArmy->pickSoldier(es)) {
-		es->disp();
-		cout << "=========================" << endl;
-		h2.enqueue(es);
-	}
 	while (eArmy->pickTank(et)) {
 		et->disp();
 		cout << "=========================" << endl;
-		h.push(et);
+		h2.pop(et);
+	}
+	while (eArmy->pickGun(eg)) {
+		eg->disp();
+		cout << "=========================" << endl;
+		h.enqueue(eg);
 	}
 
 	while (!h.isEmpty()) {
-		h.pop(et);
-		eArmy->addUnit(et);
+		h.dequeue(eg);
+		eArmy->addUnit(eg);
 	}
 	while (!h2.isEmpty()) {
-		h2.dequeue(es);
-		eArmy->addUnit(es);
+		h2.pop(et);
+		eArmy->addUnit(et);
 	}
 
 	uml->print();
@@ -192,6 +196,7 @@ void game::simulate(int mode)
 		cout << "=========================" << endl;
 		cout << "=========================" << endl;
 		cout << "=========================" << endl;
+
 
 
 		Healer* hu = new Healer(this);
@@ -508,7 +513,9 @@ void game::outputFn()
 	int ET, ES, EG;
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET =0;
-	while (deadEarth->remove(killedunit)) {
+	while (dead->remove(killedunit)) {
+		if (killedunit->get_id() >= 1000)
+			continue;
 		if (killedunit->get_type() == 2)
 			deadES++;
 		else if (killedunit->get_type() == 1)
@@ -532,7 +539,6 @@ void game::outputFn()
 		ET++;
 
 	}
-	int pir;
 	while (eArmy->get_GunneryList()->remove(alliveunit)) {
 
 		EG++;
@@ -553,7 +559,9 @@ void game::outputFn()
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
 	df =  dd =db = 0;
-	while (deadAliens->remove(killedunit)) {
+	while (dead->remove(killedunit)) {
+		if (killedunit->get_id() < 1000)
+			continue;
 		if (killedunit->get_type() == 4)
 			deadAS++;
 		else if (killedunit->get_type() == 5)
@@ -630,26 +638,10 @@ bool game::insertKilled(unit* u)
 	else return false;
 }
 
-bool game::insertKilledAlien(unit* u)
-{
-	if (u) {
-		return deadAliens->insert(u);
-	}
-	else return false;
-}
-
-bool game::insertKilledEarth(unit* u)
-{
-	if (u) {
-		return deadEarth->insert(u);
-	}
-	else return false;
-}
 
 void game::printKilled()
 {
-	deadAliens->print();
-	deadEarth->print();
+	dead->print();
 }
 
 void game::changeColor(int desiredColor)
@@ -676,8 +668,6 @@ game::~game()
 {
 	delete aArmy;
 	delete eArmy;
-	delete deadAliens;
-	delete deadEarth;
 	delete dead;
 
 	delete RG;
@@ -686,8 +676,6 @@ game::~game()
 	uml = nullptr;
 	aArmy = nullptr;
 	eArmy = nullptr;
-	deadAliens = nullptr;
-	deadEarth = nullptr;
 
 	RG = nullptr;
 }
