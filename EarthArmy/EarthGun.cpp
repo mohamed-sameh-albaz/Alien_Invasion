@@ -23,12 +23,12 @@ void EarthGun::attack()
 			tmp.insert(attackedUnit);
 		else
 		{
-			attackedCnt = tmp.getCount();
 			AMremain = false;
 			break;
 		}
 		attackedUnit = nullptr;
 	}
+	attackedCnt = tmp.getCount();
 	for (int i = 0; i < (attackCap - attackedCnt); i++)
 	{
 		if (i % 2 == 0)
@@ -39,13 +39,13 @@ void EarthGun::attack()
 			tmp.insert(attackedUnit);
 		else
 		{
-			attackedCnt = tmp.getCount();
 			ADremain = false;
 			break;
 		}
 		attackedUnit = nullptr;
 	}
-	if (AMremain and !ADremain)
+	attackedCnt = tmp.getCount();
+	if (attackedCnt != attackCap and !ADremain)
 	{
 		for (int i = 0; i < attackCap -attackedCnt; i++)
 		{
@@ -54,14 +54,13 @@ void EarthGun::attack()
 				tmp.insert(attackedUnit);
 			else
 			{
-				attackedCnt = tmp.getCount();
 				AMremain = false;
 				break;
 			}
 			attackedUnit = nullptr;
 		}
 	}
-	else if (!AMremain and ADremain)
+	else if (attackedCnt != attackCap and !AMremain)
 	{
 		for (int i = 0; i < (attackCap - attackedCnt); i++)
 		{
@@ -73,13 +72,13 @@ void EarthGun::attack()
 				tmp.insert(attackedUnit);
 			else
 			{
-				attackedCnt = tmp.getCount();
 				ADremain = false;
 				break;
 			}
 			attackedUnit = nullptr;
 		}
 	}
+	attackedCnt = tmp.getCount();
 	tmp.print(get_type(), id);
 
 	for (int i = 0; i < attackedCnt; i++)
