@@ -20,6 +20,8 @@ void AlienSoldier::attack()
 			if (u->get_health() <= 0)
 			{
 				g->insertKilled(u);
+				g->insertKilledEarth(u);
+
 			}
 			else if ((u->get_health() * 100 / u->get_initial_health()) <= 20){
 

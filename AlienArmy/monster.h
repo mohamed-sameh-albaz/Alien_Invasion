@@ -5,5 +5,6 @@ class monster : public unit
 public:
 	monster(game* master);
 	void attack(); 
+
 };
 

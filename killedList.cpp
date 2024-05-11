@@ -19,6 +19,11 @@ bool killedList::insert(unit* killedUnit)
 	return deadList.enqueue(killedUnit);
 }
 
+bool killedList::remove(unit*& killedUnit)
+{
+	return deadList.dequeue(killedUnit);
+}
+
 void killedList::print()
 {
 	LinkedQueue<unit*> temp;
