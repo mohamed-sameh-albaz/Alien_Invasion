@@ -29,8 +29,9 @@ void AlienSoldier::attack()
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
 			{
-				g->insertKilled(attackedUnit);
+
 				attackedUnit->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedUnit);
 			}
 			else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20){
 

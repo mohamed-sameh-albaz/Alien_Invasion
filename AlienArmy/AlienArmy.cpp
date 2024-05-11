@@ -1,5 +1,5 @@
 #include "AlienArmy.h"
-
+#include"../tempList.h"
 AlienArmy::AlienArmy()
 {
 	droneList = new AlienDroneList;
@@ -30,6 +30,21 @@ bool AlienArmy::addUnit(unit* newUnit)
 		}
 	}
 	else return false;
+}
+
+AlienDroneList* AlienArmy::get_droneList()
+{
+	return droneList;
+}
+
+AlienSoldierList* AlienArmy::get_soldierList()
+{
+	return soldierList;
+}
+
+MonsterList* AlienArmy::get_monsterList()
+{
+	return monsterList;
 }
 
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
@@ -63,6 +78,19 @@ void AlienArmy::print()
 
 void AlienArmy::attack()
 {
+	tempList temp;
+	unit *attacker;
+	if (pickSoldier(attacker))
+		attacker->attack();
+	if (pickMonster(attacker))
+		attacker->attack();
+
+	if (pickFrontDrone(attacker))
+		attacker->attack();
+	if (pickEndDrone(attacker))
+		attacker->attack();
+
+	
 }
 
 int AlienArmy::getListCnt(type neededUnit)

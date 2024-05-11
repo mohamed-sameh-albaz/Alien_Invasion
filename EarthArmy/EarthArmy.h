@@ -18,6 +18,9 @@ public:
 	bool addUnit(unit* newUnit);
 	bool pickGun(unit*& pickedGun, int& pri);
 	bool pickTank(unit*& pickedTank);
+	EarthGunList* get_GunneryList();
+	EarthSoldierList* get_soldierList();
+	EarthTankList* get_tankList();
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);
 	void print();
