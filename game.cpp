@@ -60,11 +60,14 @@ void game::simulate(int mode)
 	as->set_attackCap(4);
 	as->set_health(200);
 
-	as->attack();
-	as->attack();
-	as->attack();
-	as->attack();
-	as->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
+	am->attack();
 
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
@@ -530,7 +533,7 @@ void game::outputFn()
 
 	}
 	int pir;
-	while (eArmy->get_GunneryList()->remove(alliveunit,pir)) {
+	while (eArmy->get_GunneryList()->remove(alliveunit)) {
 
 		EG++;
 

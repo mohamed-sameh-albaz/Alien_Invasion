@@ -16,13 +16,16 @@ public:
 	EarthArmy();
 	~EarthArmy();
 	bool addUnit(unit* newUnit);
-	bool pickGun(unit*& pickedGun, int& pri);
+	bool pickGun(unit*& pickedGun);
 	bool pickTank(unit*& pickedTank);
 	EarthGunList* get_GunneryList();
 	EarthSoldierList* get_soldierList();
 	EarthTankList* get_tankList();
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);
+	bool peekGun(unit*& peekedGun);
+	bool peekTank(unit*& peekedTank);
+	bool peekSoldier(unit*& peekedSoldier);
 	void print();
 	void attack();
 	int getListCnt(type neededUnit);

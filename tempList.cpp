@@ -1,5 +1,7 @@
 #include "tempList.h"
 
+bool tempList::firstPrinted = false;
+
 tempList::tempList() :count(0)
 {
 }

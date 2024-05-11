@@ -1,6 +1,9 @@
 #include "EarthTank.h"
 #include"../game.h"
 #include"../tempList.h"
+using namespace std;
+
+
 
 bool EarthTank::attackAS = false;
 
@@ -15,9 +18,13 @@ void EarthTank::attack()
 	EarthArmy* attackingArmy = g->getEarthArmy();
 	int armyCnt = g->getEArmyCnt();
 	int enemyCnt = g->getAArmyCnt();
-	int armySolsPerc = (attackingArmy->getListCnt(ES) * 100) / (attackedArmy->getListCnt(AS));
+	int ASCnt = attackedArmy->getListCnt(AS);
+	int armySolsPerc = 0;
+	if(ASCnt)
+		armySolsPerc = (attackingArmy->getListCnt(ES) * 100) / ASCnt;
 	bool ASremain = true;//army still have AS
 	bool AMremain = true;//army still have AM
+	int attackedCnt=0;
 
 	if (armySolsPerc <= 30)
 		attackAS = true;
@@ -28,7 +35,7 @@ void EarthTank::attack()
 	}
 	unit* attackedUnit = nullptr;
 	tempList tmp;
-	if (!attackAS and AMremain) {//Not considering it until ES becomes 80%
+	if (!attackAS) {//Not considering it until ES becomes 80%
 
 		for (int i = 0; i < attackCap; i++)
 		{
@@ -43,25 +50,22 @@ void EarthTank::attack()
 			attackedUnit = nullptr;
 		}
 	}
-	else if (attackAS)
+	else
 	{
-		if(AMremain)
+		for (int i = 0; i < attackCap / 2; i++)//pick 50% of the list monsters
 		{
-			for (int i = 0; i < attackCap / 2; i++)//pick 50% of the list monsters
+			attackedArmy->pickMonster(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
 			{
-				attackedArmy->pickMonster(attackedUnit);
-				if (attackedUnit)
-					tmp.insert(attackedUnit);
-				else
-				{
-					AMremain = false;
-					break;
-				}
-				attackedUnit = nullptr;
+				AMremain = false;
+				break;
 			}
+			attackedUnit = nullptr;
 		}
-
-		for (int i = 0; i < attackCap - tmp.getCount(); i++)//pick 50% of the list AS
+		attackedCnt = tmp.getCount();
+		for (int i = 0; i < attackCap - attackedCnt; i++)//pick 50% of the list AS
 		{
 			attackedArmy->pickSoldier(attackedUnit);
 			if (attackedUnit)
@@ -73,14 +77,16 @@ void EarthTank::attack()
 			}
 			attackedUnit = nullptr;
 		}
-
-		if (!AMremain)//if monsters in the army is empty complete the list with AS
+		attackedCnt = tmp.getCount();
+		if (!AMremain and attackedCnt != attackCap)//if monsters in the army is empty complete the list with AS
 		{
-			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			for (int i = 0; i < attackCap -attackedCnt; i++)
 			{
 				attackedArmy->pickSoldier(attackedUnit);
 				if (attackedUnit)
+				{
 					tmp.insert(attackedUnit);
+				}
 				else
 				{
 					ASremain = false;
@@ -89,10 +95,9 @@ void EarthTank::attack()
 				attackedUnit = nullptr;
 			}
 		}
-
-		else if (!ASremain and AMremain)//if AS army is empty complete the list with AM
+		else if (!ASremain and attackedCnt != attackCap)//if AS army is empty complete the list with AM
 		{
-			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			for (int i = 0; i < attackCap -attackedCnt; i++)
 			{
 				attackedArmy->pickMonster(attackedUnit);
 				if (attackedUnit)
@@ -106,10 +111,9 @@ void EarthTank::attack()
 			}
 		}
 	}
-	
+	attackedCnt = tmp.getCount();
 	tmp.print(get_type(), id);
-
-	for (int i = 0; i < tmp.getCount(); i++)
+	for (int i = 0; i < attackedCnt; i++)
 	{
 		tmp.remove(attackedUnit);
 		this->set_attackpower(attackedUnit);
@@ -119,32 +123,6 @@ void EarthTank::attack()
 		else
 			tmp.insert(attackedUnit);
 	}
-	//{
-		/*this->set_attackpower(attackedUnit);
-				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
-				if (attackedUnit->get_health() <= 0)
-					g->insertKilled(attackedUnit);
-				else
-					tmp.insert(attackedUnit);*/
-			/*attackAS = true;
-			if (!attackedArmy->pickSoldier(attackedUnit))
-			{
-				break;
-				ASremain = false;
-			}
-			else if (ASremain)
-			{
-				this->set_attackpower(attackedUnit);
-				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
-				if (attackedUnit->get_health() <= 0)
-					g->insertKilled(attackedUnit);
-				else
-					tmp.insert(attackedUnit);
-			}
-			if (!ASremain)
-				attackAS = false;*/
-	//}
-
 	while (tmp.remove(attackedUnit))
 		attackedArmy->addUnit(attackedUnit);
 }

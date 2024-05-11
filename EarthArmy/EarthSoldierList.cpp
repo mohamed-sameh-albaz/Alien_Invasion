@@ -16,9 +16,12 @@ bool EarthSoldierList::insert(EarthSoldier* u) {
 	return soldierList.enqueue(u);
 }
 
-bool EarthSoldierList::peek(EarthSoldier*& pickedUnit)
+bool EarthSoldierList::peek(unit*& peekedUnit)
 {
-	return soldierList.peek(pickedUnit);
+	EarthSoldier* peekedSol = nullptr;
+	if (soldierList.peek(peekedSol))
+		peekedUnit = peekedSol;
+	return peekedSol;
 }
 
 bool EarthSoldierList::remove(unit*& u) {
