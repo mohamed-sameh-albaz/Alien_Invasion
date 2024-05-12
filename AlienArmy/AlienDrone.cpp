@@ -10,36 +10,67 @@ AlienDrone::AlienDrone(game* master) : unit(master)
 
 void AlienDrone::attack()
 {
-	
+	/*if (get_attacks() == 0)
+	{
+		set_attacks(1);
+		set_joinTime(g->getCurrTimeStep());
+	}*/
 	EarthArmy* e = g->getEarthArmy();
 	unit* attackedTank = nullptr;
 	unit* attackedgunnery = nullptr;
 	unit* attackedunit= nullptr;
-
+	bool EGremain = true;//army still have AS
+	bool ETremain = true;//army still have AM
+	int attackedCnt=0;
 	unit* removedFromTmplst = nullptr;
 	tempList attackedlist,templist;
 	
 
-	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
+	for (int i = 0; i < (attackCap / 2); i++)
 	{
 		e->pickTank(attackedTank);
 		if (attackedTank)
 			attackedlist.insert(attackedTank);
 		else
+		{
+			ETremain = false;
 			break;
+		}
 		attackedTank = nullptr;
 	}
-	for (int i = 0; i < (attackCap / 2); i++)
+	attackedCnt = attackedlist.getCount();
+	for (int i = 0; i < attackCap - attackedCnt; i++)
 	{
 		e->pickGun(attackedgunnery);
 		if (attackedgunnery)
 			attackedlist.insert(attackedgunnery);
 		else
+		{
+			EGremain = false;
 			break;
+		}
 		attackedgunnery = nullptr;
 	}
+
+	if (!EGremain && ETremain) {
+		attackedCnt = attackedlist.getCount();
+		attackedTank = nullptr;
+		for (int i = 0 ; i < attackCap - attackedCnt ; i++) {
+			e->pickTank(attackedTank);
+			if (attackedTank)
+				attackedlist.insert(attackedTank);
+			else
+			{
+				ETremain = false;
+				break;
+			}
+			attackedTank = nullptr;
+			}
+	}
+
 	if(g->get_mode()==1)
-	attackedlist.print(get_type(), id);
+		attackedlist.print(get_type(), id);
+
 	for (int i = 0; i < attackCap ; i++) {
 		if (!attackedlist.remove(attackedunit)) break;
 		else {
