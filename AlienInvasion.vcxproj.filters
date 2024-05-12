@@ -188,4 +188,7 @@
   <ItemGroup>
     <None Include="input_file.text" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="output_file.txt" />
+  </ItemGroup>
 </Project>

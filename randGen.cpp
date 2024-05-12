@@ -1,5 +1,5 @@
 #include "randGen.h"
-
+#include"game.h"
 void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0, int As0, int Am0, int Ad0, int Prob0,
 	int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
 	int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20, int N0) {
@@ -96,7 +96,7 @@ bool randGen::fillEarthArmy(EarthArmy* army, int& count) {
 			int B = (rand() % 100) + 1;
 			unit* u = generateEarthUnit(count, B);
 			count++;
-			if (count > 999)
+			if (count > 999&&g->get_mode()==1)
 			{
 				cout << "\nNo IDs are available\n";
 				return true;
@@ -110,12 +110,12 @@ bool randGen::fillEarthArmy(EarthArmy* army, int& count) {
 
 bool randGen::fillAlienArmy(AlienArmy* army, int& count) {
 	int A = (rand() % 100) + 1;
-	if (false) {
+	if (A<=Prob) {
 		for (int i = 1; i <= N; i++) {
 			int B = (rand() % 100) + 1;
 			unit* u = generateAlienUnit(count, B);
 			count++;
-			if (count > 2999)
+			if (count > 2999 && g->get_mode() == 1)
 			{
 				cout << "\nNo IDs are available\n";
 				return true;

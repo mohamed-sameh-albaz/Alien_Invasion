@@ -1,5 +1,5 @@
 #include "game.h"
-
+#include"tempList.h"
 game::game() {
 	RG = new randGen(this);
 	earthCount = 1;
@@ -638,16 +638,20 @@ void game::inputFn()
 void game::outputFn()
 {
 	ofstream out_file("output_file.txt");
+	out_file.clear();
 	unit* killedunit;
 	unit* alliveunit;
-
+	tempList temp;
 	int deadET,deadES, deadEG;
 	int ET, ES, EG;
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET =0;
 	while (dead->remove(killedunit)) {
-		if (killedunit->get_id() >= 1000)
+		if (killedunit->get_id() > 1000)
+		{
+			temp.insert(killedunit);
 			continue;
+		}
 		if (killedunit->get_type() == 2)
 			deadES++;
 		else if (killedunit->get_type() == 1)
@@ -657,10 +661,13 @@ void game::outputFn()
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<
+		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<"  "<<
+
 			killedunit->get_tj() << "  " << killedunit->get_df() << "  " <<
 			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
 	}
+	while (temp.remove(killedunit))
+		dead->insert(killedunit);
 	while (uml->remove(alliveunit)) {
 		if (alliveunit->get_type() == 2)
 			ES++;
@@ -720,7 +727,7 @@ void game::outputFn()
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<
+		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<"  "<<
 			killedunit->get_tj() << "  " << killedunit->get_df() << "  " <<
 			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
 	}
