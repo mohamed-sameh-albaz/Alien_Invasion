@@ -9,11 +9,11 @@ AlienSoldier::AlienSoldier(game* master) : unit(master)
 
 void AlienSoldier::attack()
 {
-	if (get_attacks() == 0)
+	/*if (get_attacks() == 0)
 	{
 		set_attacks(1);
 		set_joinTime(g->getCurrTimeStep());
-	}
+	}*/
 	EarthArmy * e  = g->getEarthArmy();
 	unit* attackedUnit = nullptr;
 	tempList tmp,tmp2;

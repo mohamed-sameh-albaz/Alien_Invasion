@@ -34,6 +34,7 @@ unit* randGen::generateEarthUnit(int id, int B) {
 		myEarthSoldier->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthSoldier->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myEarthSoldier->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+		myEarthSoldier->set_joinTime(g->getCurrTimeStep());
 		return myEarthSoldier;
 	}
 	else if (B <= Es + Et) {
@@ -42,6 +43,7 @@ unit* randGen::generateEarthUnit(int id, int B) {
 		myEarthTank->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthTank->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myEarthTank->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+		myEarthTank->set_joinTime(g->getCurrTimeStep());
 		return myEarthTank;
 	}
 	else if (B <= Es + Et + Eg) {
@@ -50,6 +52,7 @@ unit* randGen::generateEarthUnit(int id, int B) {
 		myEarthGun->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myEarthGun->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myEarthGun->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+		myEarthGun->set_joinTime(g->getCurrTimeStep());
 		return myEarthGun;
 	}
 	else {
@@ -58,6 +61,7 @@ unit* randGen::generateEarthUnit(int id, int B) {
 		myHealer->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
 		myHealer->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
 		myHealer->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+		myHealer->set_joinTime(g->getCurrTimeStep());
 		return myHealer;
 	}
 }
@@ -69,6 +73,7 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myAlienSoldier->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienSoldier->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myAlienSoldier->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myAlienSoldier->set_joinTime(g->getCurrTimeStep());
 		return myAlienSoldier;
 	}
 	else if (B <= As + Am) {
@@ -77,6 +82,7 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myMonster->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myMonster->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myMonster->set_joinTime(g->getCurrTimeStep());
 		return myMonster;
 	}
 	else {
@@ -85,6 +91,7 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myAlienDrone->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienDrone->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myAlienDrone->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myAlienDrone->set_joinTime(g->getCurrTimeStep());
 		return myAlienDrone;
 	}
 }

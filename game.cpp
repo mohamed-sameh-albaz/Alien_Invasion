@@ -30,29 +30,36 @@ void game::simulate(int mode)
 		srand(time(0));
 		int mainColor = 7, messageColor = 6;
 		inputFn();
+		//testing drone
 
+		AlienDrone* AD = new AlienDrone(this);
+		AD->set_power(0);
+		AD->set_attackCap(4);
+		AD->set_health(100);
+		AD->disp();
+	
 		//while (true) {
 		//	cout << endl << "Press Enter To Continue" << endl;
 		//	cin.get(); // Wait for user to press enter
 		//}
 		//testing timeSteps
-		Healer* hu = new Healer(this);
-		hu->set_power(0);
-		hu->set_attackCap(4);
-		hu->set_health(100);
-		hu->disp();
-		EarthSoldier* ES = new EarthSoldier(this);
-		ES->set_health(100);
-		
-		ES->set_health(10);
-		uml->insert(ES);
-		ES->setUMLtime(0);
-		uml->print();
-		dead->print();
-		timestep = 11;
-		hu->attack();
-		uml->print();
-		dead->print();
+		//Healer* hu = new Healer(this);
+		//hu->set_power(0);
+		//hu->set_attackCap(4);
+		//hu->set_health(100);
+		//hu->disp();
+		//EarthSoldier* ES = new EarthSoldier(this);
+		//ES->set_health(100);
+		//
+		//ES->set_health(10);
+		//uml->insert(ES);
+		//ES->setUMLtime(0);
+		//uml->print();
+		//dead->print();
+		//timestep = 11;
+		//hu->attack();
+		//uml->print();
+		//dead->print();
 		
 	/*
 	// Test New Monster
@@ -552,28 +559,14 @@ void game::fight(int mode)
 
 				fillArmies();
 
-				cout << "BEFORE ATTACK" << endl;
-
 				// Print Armies
 				eArmy->print();
 				aArmy->print();
-				//////////////////////
-				uml->print();
-				dead->print();
-				////////////////////////
+				
 				//Start Fighting 
 				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				eArmy->attack();
 				aArmy->attack();
-				/////////////////
-				// Print Armies
-				changeColor(messageColor);
-				cout << "AFTER ATTACK" << endl;
-				changeColor(mainColor);
-				eArmy->print();
-				aArmy->print();
-				////////////////
-
 				uml->print();
 				dead->print();
 

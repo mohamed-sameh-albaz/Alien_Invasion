@@ -9,12 +9,12 @@ monster::monster(game* master) : unit(master)
 }
 
 void monster::attack()
-{
+{/*
 	if (get_attacks() == 0)
 	{
 		set_attacks(1);
 		set_joinTime(g->getCurrTimeStep());
-	}
+	}*/
 	EarthArmy* e = g->getEarthArmy();
 	tempList tmp, tmp2;
 	unit* attackedUnit = nullptr;
