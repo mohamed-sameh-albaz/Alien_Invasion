@@ -552,14 +552,27 @@ void game::fight(int mode)
 
 				fillArmies();
 
+				cout << "BEFORE ATTACK" << endl;
+
 				// Print Armies
 				eArmy->print();
 				aArmy->print();
-
-
-				//Start Fighting
+				//////////////////////
+				uml->print();
+				dead->print();
+				////////////////////////
+				//Start Fighting 
+				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				eArmy->attack();
 				aArmy->attack();
+				/////////////////
+				// Print Armies
+				changeColor(messageColor);
+				cout << "AFTER ATTACK" << endl;
+				changeColor(mainColor);
+				eArmy->print();
+				aArmy->print();
+				////////////////
 
 				uml->print();
 				dead->print();
@@ -605,11 +618,6 @@ void game::fight(int mode)
 				//Start Fighting
 				eArmy->attack();
 				aArmy->attack();
-
-
-				
-
-
 				timestep++;
 				
 			}
