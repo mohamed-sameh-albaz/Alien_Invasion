@@ -24,7 +24,7 @@ void game::simulate(int mode)
 		//	cout << endl << "Press Enter To Continue" << endl;
 		//	cin.get(); // Wait for user to press enter
 		//}
-
+		//testing timeSteps
 		Healer* hu = new Healer(this);
 		hu->set_power(0);
 		hu->set_attackCap(4);
