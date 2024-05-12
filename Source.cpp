@@ -21,6 +21,7 @@ int main() {
 		cout << "=================================== Silent Mode =============================" << endl;
 
 	}
+	cin.get();
 	g->fight(mode);
 	return 0;
 	// test branch

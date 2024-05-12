@@ -14,6 +14,11 @@ EarthTank::EarthTank(game* master) : unit(master)
 }
 void EarthTank::attack()
 {
+	if (get_attacks() == 0)
+	{
+		set_attacks(1);
+		set_joinTime(g->getCurrTimeStep());
+	}
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	EarthArmy* attackingArmy = g->getEarthArmy();
 	int armyCnt = g->getEArmyCnt();

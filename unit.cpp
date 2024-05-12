@@ -38,6 +38,16 @@ void unit::disp()
 		<< "\n Join Time: " << joinTime << endl;
 }
 
+void unit::set_attacks(int a)
+{
+	attacks = a;
+}
+
+int unit::get_attacks()
+{
+	return attacks;
+}
+
 void unit::set_Noofattacked(int a)
 {
 	number_of_attacked = a;
@@ -122,13 +132,13 @@ int unit::get_attackCap()
 
 void unit::set_atackedTime(int a)
 {
-	tj = a;
+	ta = a;
 }
 
 void unit::set_distructionTime(int a)
 { 
 	td = a;
-	df = ta - tj;
+	df = ta - joinTime;
 	dd = td - ta;
 	db = df + dd;
 
@@ -136,7 +146,7 @@ void unit::set_distructionTime(int a)
 
 int unit::get_tj()
 {
-	return tj;
+	return joinTime;
 }
 
 int unit::get_ta()

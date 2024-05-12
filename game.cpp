@@ -9,7 +9,7 @@ game::game() {
 	aArmy = new AlienArmy;
 	eArmy = new EarthArmy;
 	dead = new killedList;
-	timestep = 0;
+	timestep = 1;
 	m = 1;
 }
 
@@ -561,7 +561,7 @@ void game::fight(int mode)
 				eArmy->attack();
 				aArmy->attack();
 
-
+				uml->print();
 				dead->print();
 
 
@@ -710,7 +710,7 @@ void game::outputFn()
 	out_file << "Df/Db%= " << float(df / db) * 100 << "%\n" << "Dd/Db%= " << float(dd / db) * 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
-		float(uml->get_count() / (deadET + ES + deadES + ET + deadEG + EG)) * 100;
+		float(uml->get_count() / (deadET + ES + deadES + ET + deadEG + EG)) * 100<<"\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;

@@ -10,6 +10,11 @@ AlienDrone::AlienDrone(game* master) : unit(master)
 
 void AlienDrone::attack()
 {
+	if (get_attacks() == 0)
+	{
+		set_attacks(1);
+		set_joinTime(g->getCurrTimeStep());
+	}
 	EarthArmy* e = g->getEarthArmy();
 	unit* attackedTank = nullptr;
 	unit* attackedgunnery = nullptr;
@@ -54,8 +59,8 @@ void AlienDrone::attack()
 				g->insertKilled(attackedunit);
 
 			}
-			else if ((attackedunit->get_id() == 1) && ((attackedunit->get_health() * 100 / attackedunit->get_initial_health()) <= 20)) {
-
+			else if ((attackedunit->get_type() == ET) && ((attackedunit->get_health() * 100 / attackedunit->get_initial_health()) <= 20)) {
+				
 				g->insertUml(attackedunit);
 				attackedunit->setUMLtime(g->getCurrTimeStep());
 			}
