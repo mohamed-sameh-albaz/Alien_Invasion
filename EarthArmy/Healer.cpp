@@ -23,7 +23,10 @@ void Healer::attack()
 				this->set_attackpower(u);
 				u->set_health(u->get_health() + this->get_attackpower());//curStep-unlJOined>10=>killed
 				if ((u->get_health() * 0 / u->get_initial_health()) > 20)
+				{
 					g->getEarthArmy()->addUnit(u);
+					uml->set_count(uml->get_count() + 1);
+				}
 				else
 					tmp.insert(u);
 			}

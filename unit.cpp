@@ -1,5 +1,10 @@
 #include "unit.h"
 
+unit::unit(game* master)
+{  g = master; tUML = 0; 
+number_of_attacked = 0;
+}
+
 void unit::disp()
 {
 	cout << " ID: " << id
@@ -31,6 +36,16 @@ void unit::disp()
 	cout << "\n Power: " << power
 		<< "\n Attack Capacity: " << attackCap
 		<< "\n Join Time: " << joinTime << endl;
+}
+
+void unit::set_Noofattacked(int a)
+{
+	number_of_attacked = a;
+}
+
+int unit::get_Noofattacked()
+{
+	return number_of_attacked;
 }
 
 void unit::setUMLtime(int tUML)

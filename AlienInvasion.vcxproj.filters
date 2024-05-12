@@ -185,4 +185,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="input_file.text" />
+  </ItemGroup>
 </Project>

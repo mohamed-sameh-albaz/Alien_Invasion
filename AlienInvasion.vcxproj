@@ -184,6 +184,9 @@
     <ClInclude Include="tempList.h" />
     <ClInclude Include="unit.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="input_file.text" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

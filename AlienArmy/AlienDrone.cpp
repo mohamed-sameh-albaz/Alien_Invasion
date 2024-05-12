@@ -17,6 +17,8 @@ void AlienDrone::attack()
 
 	unit* removedFromTmplst = nullptr;
 	tempList attackedlist,templist;
+	
+
 	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
 	{
 		e->pickTank(attackedTank);
@@ -35,10 +37,15 @@ void AlienDrone::attack()
 			break;
 		attackedgunnery = nullptr;
 	}
+	if(g->get_mode()==1)
 	attackedlist.print(get_type(), id);
 	for (int i = 0; i < attackCap ; i++) {
 		if (!attackedlist.remove(attackedunit)) break;
 		else {
+			if (attackedunit->get_Noofattacked() == 0) {
+				attackedunit->set_atackedTime(g->getCurrTimeStep());
+				attackedunit->set_Noofattacked(1);
+			}
 			this->set_attackpower(attackedunit);
 			attackedunit->set_health(attackedunit->get_health() - this->get_attackpower());
 			if (attackedunit->get_health() <= 0)

@@ -1,0 +1,13 @@
+Earth army:-
+No of dead ES= 0
+ No of dead ET= 0
+ No of dead EG= 0
+Precentage of dead ES relative to their total= 0%
+Precentage of dead ET relative to their total= 0%
+Precentage of dead EG relative to their total= 0%
+Precentage of total earth destrcted unit relative to their total= 0%
+Precentage of units healed successfully relative to all units= 0Batle result: Drawn
+Alien army:-
+No of dead AS= 0
+ No of dead AM= 0
+ No of dead AD= 0

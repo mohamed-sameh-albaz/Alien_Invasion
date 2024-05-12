@@ -98,8 +98,7 @@ void AlienArmy::print()
 
 void AlienArmy::attack()
 {
-	tempList temp;
-	unit *attacker;
+	unit *attacker=nullptr;
 	if (peeksoldier(attacker))
 		attacker->attack();
 	if (peekmonster(attacker))

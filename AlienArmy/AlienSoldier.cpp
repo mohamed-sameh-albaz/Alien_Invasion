@@ -21,10 +21,15 @@ void AlienSoldier::attack()
 			break;
 		attackedUnit = nullptr;
 	}
+	if (g->get_mode() == 1)
 	tmp.print(get_type(), id);
 	for (int i = 0; i < attackCap; i++) {
 		if (!tmp.remove(attackedUnit)) break;
 		else {
+			if (attackedUnit->get_Noofattacked() == 0) {
+				attackedUnit->set_atackedTime(g->getCurrTimeStep());
+				attackedUnit->set_Noofattacked(1);
+			}
 			this->set_attackpower(attackedUnit);
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)

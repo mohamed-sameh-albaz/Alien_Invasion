@@ -18,10 +18,12 @@ class game
 	int earthCount, alienCount, timestep;
 	killedList* dead;
 	int result;
-
+	int m;//mode
 	UML* uml;
 public:
 	game();
+	void set_mode(int a);
+	int get_mode();
 	void simulate(int mode);
 	void fight (int mode);
 	void inputFn();

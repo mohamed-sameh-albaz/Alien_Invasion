@@ -6,6 +6,8 @@ tempList::tempList() :count(0)
 {
 }
 
+
+
 tempList::~tempList()
 {
 	unit* A;

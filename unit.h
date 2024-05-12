@@ -14,12 +14,15 @@ protected:
 	int power;
 	int attackCap;
 	int tj, ta, td, df, dd, db, attackpower;
+	int number_of_attacked;
 	int initialHealth;
 	int tUML;
 	game* g;
 public:
-	unit(game* master) { g = master; tUML = 0; }
+	unit(game* master); 
 	void disp();
+	void set_Noofattacked(int a);
+	int get_Noofattacked();
 	void setUMLtime(int tUML);
 	int getUMLtime();
 	void set_id(int a);

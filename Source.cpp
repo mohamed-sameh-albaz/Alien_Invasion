@@ -5,12 +5,12 @@ using namespace std;
 
 int main() {
 	game* g = new game;
-	int mode = 1;
+	int mode ;
 	do
 	{
 		system("cls");
 		cout << "please enter 1 if you want interactive mode and 2 if you want silent mode\n";
-		//cin >> mode;
+		cin >> mode;
 	}
 	while (mode != 1 && mode != 2);
 	system("cls");
@@ -21,9 +21,7 @@ int main() {
 		cout << "=================================== Silent Mode =============================" << endl;
 
 	}
-	//cin.get();
-	//g->fight(1);
-	g->simulate(1);
+	g->fight(mode);
 	return 0;
 	// test branch
 }

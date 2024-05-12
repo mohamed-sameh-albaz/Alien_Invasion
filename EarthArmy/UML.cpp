@@ -9,15 +9,29 @@ UML::~UML()
 	}
 }
 
+UML::UML()
+{
+	count = 0;
+}
+
+int UML::get_count()
+{
+	return count;
+}
+
+void UML::set_count(int a)
+{
+	count = a;
+
+}
+
 bool  UML::insert(unit* u) {
 	if (u->get_type() == ES) {
 		soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));
-		count++;
 		return true;
 	}
 	else if (u->get_type() == ET) {
 		tanksToHeal.enqueue(u);
-		count++;
 		return true;
 	}
 	else return false;
@@ -27,12 +41,10 @@ bool  UML::remove(unit*& u) {
 	if (!soldiersToHeal.isEmpty()) {
 		int i;
 		soldiersToHeal.dequeue(u, i);
-		count--;
 		return true;
 	}
 	else if (!tanksToHeal.isEmpty()) {
 		tanksToHeal.dequeue(u);
-		count--;
 		return true;
 	}
 	else return false;
