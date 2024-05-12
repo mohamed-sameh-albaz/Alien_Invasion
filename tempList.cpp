@@ -42,7 +42,6 @@ void tempList::print(type attacker,int id )
 {
 	LinkedQueue<unit*> temp;
 	unit* tempUnit;
-	cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 	switch (attacker)
 	{
 	case EG:cout << " EG ";
