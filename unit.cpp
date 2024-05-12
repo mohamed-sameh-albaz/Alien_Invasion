@@ -33,6 +33,16 @@ void unit::disp()
 		<< "\n Join Time: " << joinTime << endl;
 }
 
+void unit::setUMLtime(int tUML)
+{
+	this->tUML = tUML;
+}
+
+int unit::getUMLtime()
+{
+	return tUML;
+}
+
 void unit::set_id(int a)
 {
 	id = a;

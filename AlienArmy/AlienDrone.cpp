@@ -43,13 +43,14 @@ void AlienDrone::attack()
 			attackedunit->set_health(attackedunit->get_health() - this->get_attackpower());
 			if (attackedunit->get_health() <= 0)
 			{
-				g->insertKilled(attackedunit);
 				attackedunit->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedunit);
 
 			}
 			else if ((attackedunit->get_id() == 1) && ((attackedunit->get_health() * 100 / attackedunit->get_initial_health()) <= 20)) {
 
 				g->insertUml(attackedunit);
+				attackedunit->setUMLtime(g->getCurrTimeStep());
 			}
 			else {
 

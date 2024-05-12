@@ -20,13 +20,29 @@ void game::simulate(int mode)
 		int mainColor = 7, messageColor = 6;
 		inputFn();
 
-		while (true) {
-			cout << endl << "Press Enter To Continue" << endl;
-			cin.get(); // Wait for user to press enter
-		}
-	
-
-
+		//while (true) {
+		//	cout << endl << "Press Enter To Continue" << endl;
+		//	cin.get(); // Wait for user to press enter
+		//}
+		//testing timeSteps
+		Healer* hu = new Healer(this);
+		hu->set_power(0);
+		hu->set_attackCap(4);
+		hu->set_health(100);
+		hu->disp();
+		EarthSoldier* ES = new EarthSoldier(this);
+		ES->set_health(100);
+		
+		ES->set_health(10);
+		uml->insert(ES);
+		ES->setUMLtime(0);
+		uml->print();
+		dead->print();
+		timestep = 11;
+		hu->attack();
+		uml->print();
+		dead->print();
+		
 	/*
 	// Test New Monster
 
@@ -180,7 +196,6 @@ void game::simulate(int mode)
 		aArmy->print();
 		eArmy->print();
 		dead->print();
-		/*
 		// Test AS Attack
 
 		unit* u = nullptr;
@@ -484,63 +499,67 @@ void game::simulate(int mode)
 void game::fight(int mode)
 {
 		inputFn();
+		bool fight = true;
+		if (mode == 1)
+		{
+			srand(time(0));
+			int mainColor = 7, messageColor = 6;
 
-		int flag = 0;
-		srand(time(0));
-		int mainColor = 7, messageColor = 6;
+			while (fight) {
+				if (timestep > 40)
+				{
+					if (alienIsEmpty() and !earthIsEmpty())
+					{
+						//earth winner
+						system("cls");
+						changeColor(messageColor);///////
+						cout << "**********		EARTH ARMY WINS		************";
+						changeColor(mainColor);
+						break;
+					}
+					else if (!alienIsEmpty() and earthIsEmpty())
+					{
+						system("cls");
+						changeColor(messageColor);///////
+						cout << "**********		ALIEN ARMY WINS		************";
+						changeColor(mainColor);
+						break;
+					}
+					else if(alienIsEmpty() and earthIsEmpty())
+					{
+						system("cls");
+						changeColor(messageColor);///////
+						cout << "**********		DRAW NO ONE WIN		************";
+						changeColor(mainColor);
+						break;
+					}
+				}
+				changeColor(12);
+				cout << endl << "Current Timestep: " << timestep << endl;
+				changeColor(mainColor);
 
-		while (true) {
-			if (getAArmyCnt() == 0 || getEArmyCnt() == 0)
-				break;
-			changeColor(12);
-			if(mode==1)
-			cout << endl << "Current Timestep: " << timestep << endl;
-			changeColor(mainColor);
+				fillArmies();
 
-			fillArmies();
-			
-			// Print Armies
-			if(mode==1)
-			{
+				// Print Armies
 				eArmy->print();
 				aArmy->print();
-			}
 
 
-			//Start Fighting
-			if (!flag && mode == 2) {
-				cout << "Simulation starts\n";
-				flag++;
-			}
-			eArmy->attack();
-			aArmy->attack();
+				//Start Fighting
+				eArmy->attack();
+				aArmy->attack();
 
-			if(mode==1)
-			{
+
 				dead->print();
-				uml->print();
-			}
 
-			timestep++;
-			if(mode==1)
-			{
+
+				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
-				cin.get(); // Wait for user to press enter
-				system("cls");
+				//cin.get(); // Wait for user to press enter
+				//system("cls");
 			}
 		}
-		outputFn();
-		if (mode == 2)
-			cout << "Simulation ends ,Output file is created\n";
-		if(mode==1)
-		{
-			if (getEArmyCnt() > 0)
-				cout << "Earth  Win \n";
-			else if (getEArmyCnt() == 0 && getAArmyCnt() == 0)
-				cout << "Drawn\n";
-			else if (getEArmyCnt () == 0 && getAArmyCnt() > 0)
-				cout << "Loss \n";
-		}
+	
 }
 
 void game::inputFn()
@@ -745,5 +764,15 @@ int game::getEArmyCnt()
 int game::getAArmyCnt()
 {
 	return alienCount;
+}
+
+bool game::alienIsEmpty()
+{
+	return !(aArmy->getListCnt(AS) + aArmy->getListCnt(AM) + aArmy->getListCnt(AD));
+}
+
+bool game::earthIsEmpty()
+{
+	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG));
 }
 
