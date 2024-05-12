@@ -38,11 +38,10 @@ int tempList::getCount()
 	return count;
 }
 
-void tempList::print(type attacker,int id )
+void tempList::print(type attacker,int id )//attacking 2 units print
 {
 	LinkedQueue<unit*> temp;
 	unit* tempUnit;
-	cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 	switch (attacker)
 	{
 	case EG:cout << " EG ";

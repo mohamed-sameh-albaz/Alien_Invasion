@@ -30,29 +30,36 @@ void game::simulate(int mode)
 		srand(time(0));
 		int mainColor = 7, messageColor = 6;
 		inputFn();
+		//testing drone
 
+		AlienDrone* AD = new AlienDrone(this);
+		AD->set_power(0);
+		AD->set_attackCap(4);
+		AD->set_health(100);
+		AD->disp();
+	
 		//while (true) {
 		//	cout << endl << "Press Enter To Continue" << endl;
 		//	cin.get(); // Wait for user to press enter
 		//}
 		//testing timeSteps
-		Healer* hu = new Healer(this);
-		hu->set_power(0);
-		hu->set_attackCap(4);
-		hu->set_health(100);
-		hu->disp();
-		EarthSoldier* ES = new EarthSoldier(this);
-		ES->set_health(100);
-		
-		ES->set_health(10);
-		uml->insert(ES);
-		ES->setUMLtime(0);
-		uml->print();
-		dead->print();
-		timestep = 11;
-		hu->attack();
-		uml->print();
-		dead->print();
+		//Healer* hu = new Healer(this);
+		//hu->set_power(0);
+		//hu->set_attackCap(4);
+		//hu->set_health(100);
+		//hu->disp();
+		//EarthSoldier* ES = new EarthSoldier(this);
+		//ES->set_health(100);
+		//
+		//ES->set_health(10);
+		//uml->insert(ES);
+		//ES->setUMLtime(0);
+		//uml->print();
+		//dead->print();
+		//timestep = 11;
+		//hu->attack();
+		//uml->print();
+		//dead->print();
 		
 	/*
 	// Test New Monster
@@ -524,6 +531,8 @@ void game::fight(int mode)
 					{
 						//earth winner
 						system("cls");
+						result = 1;
+
 						changeColor(messageColor);///////
 						cout << "**********		EARTH ARMY WINS		************";
 						changeColor(mainColor);
@@ -531,6 +540,8 @@ void game::fight(int mode)
 					}
 					else if (!alienIsEmpty() and earthIsEmpty())
 					{
+						result = -1;
+
 						system("cls");
 						changeColor(messageColor);///////
 						cout << "**********		ALIEN ARMY WINS		************";
@@ -539,6 +550,8 @@ void game::fight(int mode)
 					}
 					else if(alienIsEmpty() and earthIsEmpty())
 					{
+						result = 0;
+
 						system("cls");
 						changeColor(messageColor);///////
 						cout << "**********		DRAW NO ONE WIN		************";
@@ -555,12 +568,11 @@ void game::fight(int mode)
 				// Print Armies
 				eArmy->print();
 				aArmy->print();
-
-
-				//Start Fighting
+				
+				//Start Fighting 
+				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				eArmy->attack();
 				aArmy->attack();
-
 				uml->print();
 				dead->print();
 
@@ -605,11 +617,6 @@ void game::fight(int mode)
 				//Start Fighting
 				eArmy->attack();
 				aArmy->attack();
-
-
-				
-
-
 				timestep++;
 				
 			}
@@ -647,7 +654,7 @@ void game::outputFn()
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET =0;
 	while (dead->remove(killedunit)) {
-		if (killedunit->get_id() > 1000)
+		if (killedunit->get_id() >2000)
 		{
 			temp.insert(killedunit);
 			continue;
@@ -692,25 +699,32 @@ void game::outputFn()
 	out_file << "Earth army:-\n";
 	out_file << "No of dead ES= " << deadES << "\n" << " No of dead ET= " << deadET << "\n" << " No of dead EG= " << deadEG << "\n";
 	if ((deadES + ES) != 0)
-		out_file << "Precentage of dead ES relative to their total= " << float(deadES / (deadES + ES)) * 100 << "%\n";
+		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
 	if ((deadET + ET) != 0)
-		out_file<< "Precentage of dead ET relative to their total= " << float(deadET / (deadET + ET)) * 100 << "%\n";
+		out_file<< "Precentage of dead ET relative to their total= " << float(deadET )/ (deadET + ET) * 100 << "%\n";
 	if((deadEG + EG)!=0)
-		out_file<< "Precentage of dead EG relative to their total= " << float(deadEG / (deadEG + EG)) * 100 << "%\n";
+		out_file<< "Precentage of dead EG relative to their total= " << float(deadEG) / (deadEG + EG)* 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
 	out_file << "Precentage of total earth destrcted unit relative to their total= " <<
-		float((deadES + deadET + deadEG) / (deadET + ES + deadES + ET + deadEG + EG)) * 100 << "%\n";
+		float((deadES + deadET + deadEG) )/ (deadET + ES + deadES + ET + deadEG + EG) * 100 << "%\n";
 	if((deadES + deadET + deadEG)!=0)
 	{
 		out_file << "Average Df= " << float(df / (deadES + deadET + deadEG)) << "\n "
-			"Average Dd= " << float(dd / (deadES + deadET + deadEG)) << "\n " <<
-			"Average Db= " << float(db / (deadES + deadET + deadEG)) << "\n";
+			"Average Dd= " << float(dd )/ (deadES + deadET + deadEG) << "\n " <<
+			"Average Db= " << float(db) / (deadES + deadET + deadEG) << "\n";
 	}
 	if(db!=0)
-	out_file << "Df/Db%= " << float(df / db) * 100 << "%\n" << "Dd/Db%= " << float(dd / db) * 100 << "%\n";
+	out_file << "Df/Db%= " << float(df )/ db * 100 << "%\n" << "Dd/Db%= " << float(dd) / db * 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
-		float(uml->get_count() / (deadET + ES + deadES + ET + deadEG + EG)) * 100<<"\n";
+		float(uml->get_count() )/ (deadET + ES + deadES + ET + deadEG + EG) * 100<<"\n";
+	out_file << "Batle result: ";
+	if (result == 1)
+			out_file << "Win \n";
+	if (result == 0)
+		out_file << "Drawn\n";
+	if (result == -1)
+		out_file << "Loss \n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
@@ -731,13 +745,6 @@ void game::outputFn()
 			killedunit->get_tj() << "  " << killedunit->get_df() << "  " <<
 			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
 	}
-	out_file << "Batle result: ";
-	if (result == 1)
-			out_file << "Win \n";
-	if (result == 0)
-		out_file << "Drawn\n";
-	if (result == -1)
-		out_file << "Loss \n";
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
 		
 			AS++;
@@ -756,22 +763,22 @@ void game::outputFn()
 	out_file << "Alien army:-\n";
 	out_file << "No of dead AS= " << deadAS<<"\n" << " No of dead AM= " << deadAM << "\n" << " No of dead AD= " << deadAD << "\n";
 	if ((deadAS + AS) != 0)
-		out_file << "Precentage of dead AS relative to their total= " << float(deadAS / (deadAS + AS)) * 100 << "%\n";
+		out_file << "Precentage of dead AS relative to their total= " << float(deadAS )/ (deadAS + AS) * 100 << "%\n";
 	if ((deadAM + AM) != 0)
-		out_file << "Precentage of dead AM relative to their total= " << float(deadAM / (deadAM + AM)) * 100 << "%\n";
+		out_file << "Precentage of dead AM relative to their total= " << float(deadAM) / (deadAM + AM) * 100 << "%\n";
 	if((deadAD + AD)!=0)
-	    out_file <<"Precentage of dead AD relative to their total= "<<float(deadAD / (deadAD + AD)) * 100 << "%\n";
+	    out_file <<"Precentage of dead AD relative to their total= "<<float(deadAD) / (deadAD + AD) * 100 << "%\n";
 	if((deadAM + AS + deadAM + AM + deadAD + AD)!=0)
 	out_file << "Precentage of total alien destrcted unit relative to their total= "<<
-		float((deadAS + deadAM + deadAD) / (deadAM + AS + deadAM + AM + deadAD + AD)) * 100 << "%\n";
+		float((deadAS + deadAM + deadAD) )/ (deadAM + AS + deadAM + AM + deadAD + AD) * 100 << "%\n";
 	if((deadAS + deadAM + deadAD)!=0)
 	{
 		out_file << "Average Df= " << float(df / (deadAS + deadAM + deadAD)) << "\n "
-			"Average Dd= " << float(dd / (deadAS + deadAM + deadAD)) << "\n " <<
-			"Average Db= " << float(db / (deadAS + deadAM + deadAD)) << "\n";
+			"Average Dd= " << float(dd )/ (deadAS + deadAM + deadAD)<< "\n " <<
+			"Average Db= " << float(db )/ (deadAS + deadAM + deadAD) << "\n";
 	}
 	if(db!=0)
-	out_file <<"Df/Db%= " << float(df / db) * 100 << "%\n"<<"Dd/Db%= " << float(dd / db) * 100 << "%\n";
+	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n";
 		
 
 }
