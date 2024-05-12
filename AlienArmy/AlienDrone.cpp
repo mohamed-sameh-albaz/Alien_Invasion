@@ -10,11 +10,7 @@ AlienDrone::AlienDrone(game* master) : unit(master)
 
 void AlienDrone::attack()
 {
-	if (get_attacks() == 0)
-	{
-		set_attacks(1);
-		set_joinTime(g->getCurrTimeStep());
-	}
+	
 	EarthArmy* e = g->getEarthArmy();
 	unit* attackedTank = nullptr;
 	unit* attackedgunnery = nullptr;

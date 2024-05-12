@@ -69,6 +69,8 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myAlienSoldier->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienSoldier->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myAlienSoldier->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myAlienSoldier->set_joinTime(g->getCurrTimeStep());
+
 		return myAlienSoldier;
 	}
 	else if (B <= As + Am) {
@@ -77,6 +79,8 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myMonster->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myMonster->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myMonster->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myMonster->set_joinTime(g->getCurrTimeStep());
+
 		return myMonster;
 	}
 	else {
@@ -85,6 +89,8 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myAlienDrone->set_health((rand() % (ahealth2 - ahealth1 + 1)) + ahealth1);
 		myAlienDrone->set_power((rand() % (apower2 - apower1 + 1)) + apower1);
 		myAlienDrone->set_attackCap((rand() % (aattackcap2 - aattackcap1 + 1)) + aattackcap1);
+		myAlienDrone->set_joinTime(g->getCurrTimeStep());
+
 		return myAlienDrone;
 	}
 }

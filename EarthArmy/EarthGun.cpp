@@ -10,11 +10,7 @@ EarthGun::EarthGun(game* master) : unit(master)
 
 void EarthGun::attack()
 {
-	if (get_attacks() == 0)
-	{
-		set_attacks(1);
-		set_joinTime(g->getCurrTimeStep());
-	}
+	
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	unit* attackedUnit = nullptr;
 	tempList tmp;
