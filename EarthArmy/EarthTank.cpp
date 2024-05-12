@@ -24,7 +24,6 @@ void EarthTank::attack()
 	if(ASCnt)
 		armySolsPerc = (attackingArmy->getListCnt(ES) * 100) / ASCnt;
 	bool ASremain = true;//army still have AS
-	//bool AMremain = true;//army still have AM
 	int attackedCnt=0;
 
 	if (armySolsPerc <= 30)

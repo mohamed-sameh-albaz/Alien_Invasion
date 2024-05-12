@@ -35,28 +35,17 @@ public:
 		}
 		return false;
 	}
-	void print(type unitType)
+	void print(type unitType=AD)
 	{
 		Node<unit*> *nextUnit = frontPtr;
 		cout << count;
 		switch (unitType)
 		{
-		case EG:cout << " EG [";
-			break;
 		case ES:cout << " ES [";
 			break;
-
-		case ET:cout << " ET [";
-			break;
-
 		case AS:cout << " AS [";
 			break;
-
-		case AD:cout << " AD [";
-			break;
-
-		case AM:cout << " AM [";
-			break;
+		default:cout << " units [";//killed list
 		}
 		while (nextUnit)
 		{

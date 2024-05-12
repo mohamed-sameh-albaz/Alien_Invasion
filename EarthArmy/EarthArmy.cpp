@@ -3,8 +3,8 @@ EarthArmy::EarthArmy()
 {
 	GunneryList = new EarthGunList;
 	soldierList = new QueueList;
-	tankList = new EarthTankList;
-	healers = new HL;
+	tankList = new  StackList;
+	healers = new  StackList;
 }
 
 EarthArmy::~EarthArmy()
@@ -28,7 +28,7 @@ bool EarthArmy::addUnit(unit* newUnit)
 		switch (unitType)
 		{
 		case EG:	return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
-		case ES:	return soldierList->insert(/*dynamic_cast<EarthSoldier*>*/(newUnit));
+		case ES:	return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));
 		case ET:	return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
 		case EH:	return healers->insert(dynamic_cast<Healer*>(newUnit));
 		}
@@ -56,7 +56,7 @@ QueueList* EarthArmy::get_soldierList()
 	return soldierList;
 }
 
-EarthTankList* EarthArmy::get_tankList()
+StackList* EarthArmy::get_tankList()
 {
 	return tankList;
 }
@@ -90,9 +90,9 @@ void EarthArmy::print()
 {
 	cout << "============== Earth Army Alive Units ==============" << endl;
 	soldierList->print(ES);
-	tankList->print();
+	tankList->print(ET);
 	GunneryList->print();
-	healers->print();
+	healers->print(EH);
 }
 
 void EarthArmy::attack()

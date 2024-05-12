@@ -3,18 +3,18 @@
 #include"AlienDroneList.h"
 #include"AlienSoldierList.h"
 #include"MonsterList.h"
-
+#include"../ADTs/QueueList.h"
 class AlienArmy
 {
 	AlienDroneList * droneList;
-	AlienSoldierList * soldierList;
+	QueueList * soldierList;
 	MonsterList * monsterList;
 public:
 	AlienArmy();
 	~AlienArmy();
 	bool addUnit(unit* newUnit);
 	AlienDroneList* get_droneList();
-	AlienSoldierList* get_soldierList();
+	QueueList* get_soldierList();
 	MonsterList* get_monsterList();
 	bool peeksoldier(unit*& pickedunit);
 	bool peekFrontdrone(unit*& pickedunit);

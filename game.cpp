@@ -8,7 +8,7 @@ game::game() {
 	uml = new UML;
 	aArmy = new AlienArmy;
 	eArmy = new EarthArmy;
-	dead = new killedList;
+	dead = new QueueList;
 	timestep = 1;
 	m = 1;
 }
@@ -524,41 +524,41 @@ void game::fight(int mode)
 		{
 			
 
-			while (fight) {
-				if (timestep > 40)
-				{
-					if (alienIsEmpty() and !earthIsEmpty())
-					{
-						//earth winner
-						system("cls");
-						result = 1;
+			while (true) {
+				//if (timestep > 40)
+				//{
+				//	if (alienIsEmpty() and !earthIsEmpty())
+				//	{
+				//		//earth winner
+				//		system("cls");
+				//		result = 1;
 
-						changeColor(messageColor);///////
-						cout << "**********		EARTH ARMY WINS		************";
-						changeColor(mainColor);
-						break;
-					}
-					else if (!alienIsEmpty() and earthIsEmpty())
-					{
-						result = -1;
+				//		changeColor(messageColor);///////
+				//		cout << "**********		EARTH ARMY WINS		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//	else if (!alienIsEmpty() and earthIsEmpty())
+				//	{
+				//		result = -1;
 
-						system("cls");
-						changeColor(messageColor);///////
-						cout << "**********		ALIEN ARMY WINS		************";
-						changeColor(mainColor);
-						break;
-					}
-					else if(alienIsEmpty() and earthIsEmpty())
-					{
-						result = 0;
+				//		system("cls");
+				//		changeColor(messageColor);///////
+				//		cout << "**********		ALIEN ARMY WINS		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//	else if(alienIsEmpty() and earthIsEmpty())
+				//	{
+				//		result = 0;
 
-						system("cls");
-						changeColor(messageColor);///////
-						cout << "**********		DRAW NO ONE WIN		************";
-						changeColor(mainColor);
-						break;
-					}
-				}
+				//		system("cls");
+				//		changeColor(messageColor);///////
+				//		cout << "**********		DRAW NO ONE WIN		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//}
 				changeColor(12);
 				cout << endl << "Current Timestep: " << timestep << endl;
 				changeColor(mainColor);
@@ -574,12 +574,13 @@ void game::fight(int mode)
 				eArmy->attack();
 				aArmy->attack();
 				uml->print();
+				cout << "\n============== killed/Destructed Units ==============" << endl;
 				dead->print();
 
 
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
-				cin.get(); // Wait for user to press enter
+				//cin.get(); // Wait for user to press enter
 				system("cls");
 			}
 		}

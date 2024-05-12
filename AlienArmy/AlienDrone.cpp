@@ -10,17 +10,11 @@ AlienDrone::AlienDrone(game* master) : unit(master)
 
 void AlienDrone::attack()
 {
-	/*if (get_attacks() == 0)
-	{
-		set_attacks(1);
-		set_joinTime(g->getCurrTimeStep());
-	}*/
 	EarthArmy* e = g->getEarthArmy();
 	unit* attackedTank = nullptr;
-	unit* attackedgunnery = nullptr;
-	unit* attackedunit= nullptr;
-	bool EGremain = true;//army still have AS
-	bool ETremain = true;//army still have AM
+	unit* attackedGunnery = nullptr;
+	unit* attackedUnit= nullptr;
+	bool EGRemain = true;//army still have EG
 	int attackedCnt=0;
 	unit* removedFromTmplst = nullptr;
 	tempList attackedlist,templist;
@@ -33,7 +27,6 @@ void AlienDrone::attack()
 			attackedlist.insert(attackedTank);
 		else
 		{
-			ETremain = false;
 			break;
 		}
 		attackedTank = nullptr;
@@ -41,65 +34,60 @@ void AlienDrone::attack()
 	attackedCnt = attackedlist.getCount();
 	for (int i = 0; i < attackCap - attackedCnt; i++)
 	{
-		e->pickGun(attackedgunnery);
-		if (attackedgunnery)
-			attackedlist.insert(attackedgunnery);
+		e->pickGun(attackedGunnery);
+		if (attackedGunnery)
+			attackedlist.insert(attackedGunnery);
 		else
 		{
-			EGremain = false;
+			EGRemain = false;
 			break;
 		}
-		attackedgunnery = nullptr;
+		attackedGunnery = nullptr;
 	}
-
-	if (!EGremain && ETremain) {
-		attackedCnt = attackedlist.getCount();
-		attackedTank = nullptr;
-		for (int i = 0 ; i < attackCap - attackedCnt ; i++) {
+	attackedCnt = attackedlist.getCount();
+	if (!EGRemain && attackedCnt!=attackCap) {
+		for (int i = 0 ; i < attackCap - attackedCnt ; i++) 
+		{
 			e->pickTank(attackedTank);
 			if (attackedTank)
 				attackedlist.insert(attackedTank);
 			else
 			{
-				ETremain = false;
 				break;
 			}
 			attackedTank = nullptr;
-			}
+		}
 	}
-
+	attackedCnt = attackedlist.getCount();
 	if(g->get_mode()==1)
 		attackedlist.print(get_type(), id);
 
-	for (int i = 0; i < attackCap ; i++) {
-		if (!attackedlist.remove(attackedunit)) break;
-		else {
-			if (attackedunit->get_Noofattacked() == 0) {
-				attackedunit->set_atackedTime(g->getCurrTimeStep());
-				attackedunit->set_Noofattacked(1);
+	for (int i = 0; i < attackedCnt/*attackCap*/; i++) {
+		//if (!attackedlist.remove(attackedUnit)) break;
+		attackedlist.remove(attackedUnit);
+		//else
+		 {
+			if (attackedUnit->get_Noofattacked() == 0) {
+				attackedUnit->set_atackedTime(g->getCurrTimeStep());
+				attackedUnit->set_Noofattacked(1);
 			}
-			this->set_attackpower(attackedunit);
-			attackedunit->set_health(attackedunit->get_health() - this->get_attackpower());
-			if (attackedunit->get_health() <= 0)
+			this->set_attackpower(attackedUnit);
+			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+			if (attackedUnit->get_health() <= 0)
 			{
-				attackedunit->set_distructionTime(g->getCurrTimeStep());
-				g->insertKilled(attackedunit);
+				attackedUnit->set_distructionTime(g->getCurrTimeStep());
+				g->insertKilled(attackedUnit);
 
 			}
-			else if ((attackedunit->get_type() == ET) && ((attackedunit->get_health() * 100 / attackedunit->get_initial_health()) <= 20)) {
+			else if ((attackedUnit->get_type() == ET) && ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20)) {
 				
-				g->insertUml(attackedunit);
-				attackedunit->setUMLtime(g->getCurrTimeStep());
+				g->insertUml(attackedUnit);
+				attackedUnit->setUMLtime(g->getCurrTimeStep());
 			}
-			else {
-
-				templist.insert(attackedunit);
-			}
-		}
+			else 
+				templist.insert(attackedUnit);
+		 }
 	}
-	
-	
-
 	while (templist.remove(removedFromTmplst)) {
 		e->addUnit(removedFromTmplst);
 	}

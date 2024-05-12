@@ -6,13 +6,13 @@
 #include "HL.h"
 #include "UML.h"
 #include"../ADTs/QueueList.h"
+#include"../ADTs/StackList.h"
 class EarthArmy
 {
 	QueueList* soldierList;
 	EarthGunList * GunneryList;
-	//EarthSoldierList * soldierList;
-	EarthTankList * tankList;
-	HL* healers;
+	StackList* tankList;
+	StackList* healers;
 public:
 	EarthArmy();
 	~EarthArmy();
@@ -21,7 +21,7 @@ public:
 	bool pickTank(unit*& pickedTank);
 	EarthGunList* get_GunneryList();
 	QueueList* get_soldierList();
-	EarthTankList* get_tankList();
+	StackList* get_tankList();
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);
 	bool peekGun(unit*& peekedGun);

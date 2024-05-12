@@ -16,7 +16,7 @@ class game
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
 	int earthCount, alienCount, timestep;
-	killedList* dead;
+	QueueList* dead;
 	int result;
 	int m;//mode
 	UML* uml;

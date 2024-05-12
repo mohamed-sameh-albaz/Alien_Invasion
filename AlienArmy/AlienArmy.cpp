@@ -3,7 +3,7 @@
 AlienArmy::AlienArmy()
 {
 	droneList = new AlienDroneList;
-	soldierList = new AlienSoldierList;
+	soldierList = new QueueList;
 	monsterList = new MonsterList;
 }
 AlienArmy::~AlienArmy()
@@ -37,7 +37,7 @@ AlienDroneList* AlienArmy::get_droneList()
 	return droneList;
 }
 
-AlienSoldierList* AlienArmy::get_soldierList()
+QueueList* AlienArmy::get_soldierList()
 {
 	return soldierList;
 }
@@ -91,7 +91,7 @@ bool AlienArmy::pickMonster(unit*& pickedMonster)
 void AlienArmy::print()
 {
 	cout << "\n============== Alien Army Alive Units ==============" << endl;
-	soldierList->print();
+	soldierList->print(AS);
 	monsterList->print();
 	droneList->print();
 }

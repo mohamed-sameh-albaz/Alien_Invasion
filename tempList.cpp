@@ -2,46 +2,9 @@
 
 bool tempList::firstPrinted = false;
 
-tempList::tempList() :count(0)
-{
-}
-
-
-
-tempList::~tempList()
-{
-	unit* A;
-	while (list.dequeue(A)) {
-		delete A;
-		A = nullptr;
-	}
-}
-
-bool tempList::insert(unit* tempunit)
-{
-	count++;
-	return list.enqueue(tempunit);
-}
-
-bool tempList::remove(unit*& tempunit)
-{
-		if (list.dequeue(tempunit)) {
-			count--;
-			return 1;
-		}
-		
-		return 0;
-}
-
-int tempList::getCount()
-{
-	return count;
-}
-
 void tempList::print(type attacker,int id )//attacking 2 units print
 {
-	LinkedQueue<unit*> temp;
-	unit* tempUnit;
+	Node<unit*>* nextUnit = frontPtr;
 	switch (attacker)
 	{
 	case EG:cout << " EG ";
@@ -62,21 +25,12 @@ void tempList::print(type attacker,int id )//attacking 2 units print
 		break;
 	}
 	cout << id << " shots [";
-	while (!list.isEmpty())
+	while (nextUnit)
 	{
-		list.dequeue(tempUnit);
-		cout << tempUnit->get_id();
-		temp.enqueue(tempUnit);
-		if (!list.isEmpty())
-		{
+		cout << nextUnit->getItem()->get_id();
+		if (nextUnit->getNext())
 			cout << ", ";
-		}
+		nextUnit = nextUnit->getNext();
 	}
 	cout << "]" << endl;
-
-	while (!temp.isEmpty())
-	{
-		temp.dequeue(tempUnit);
-		list.enqueue(tempUnit);
-	}
 }

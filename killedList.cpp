@@ -28,7 +28,6 @@ void killedList::print()
 {
 	LinkedQueue<unit*> temp;
 	unit* tempUnit;
-	cout << "\n============== killed/Destructed Units ==============" << endl;
 	cout << count << " units [";
 	while (!deadList.isEmpty())
 	{
