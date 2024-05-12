@@ -18,6 +18,17 @@ bool AlienSoldierList::insert(AlienSoldier* u) {
 	count++;
 	return alienSoldierList.enqueue(u);
 }
+bool AlienSoldierList::peek(unit*&u)
+{
+	AlienSoldier* peekedSol = nullptr;
+		if (alienSoldierList.peek(peekedSol))
+			u = peekedSol;
+		return peekedSol;
+}
+
+	
+	
+
 bool AlienSoldierList::remove(unit*& u) {
 	AlienSoldier* a;
 	if (alienSoldierList.dequeue(a)) {

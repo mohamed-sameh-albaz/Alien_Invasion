@@ -90,8 +90,7 @@ void game::simulate(int mode)
 	am->attack();
 	am->attack();
 	am->attack();
-	am->attack();*/
-		/*
+	am->attack();
 	AlienDrone* ad1 = new AlienDrone(this);
 	ad1->set_power(200);
 	ad1->set_attackCap(4);
@@ -492,14 +491,8 @@ void game::simulate(int mode)
 		cout << endl << "Simulation Ended" << endl;
 
 
-		*/
-	}
-	else
-		{
-			cout << "Silent mode\n";
-			cout << "Simulation starts...\n";
-			cout << "Simulation ends,Output fileis created...\n";
-
+	*/
+	
 		}
 }
 
@@ -659,11 +652,11 @@ void game::outputFn()
 			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
 	}
 	out_file << "Batle result: ";
-	if (result == 1)
+	if (getEArmyCnt() > 0)
 		out_file << "Win \n";
-	if (result == 0)
+	else if (getEArmyCnt()==0&& getAArmyCnt() == 0)
 		out_file << "Drawn\n";
-	if (result == -1)
+	else if (getEArmyCnt() == 0 && getAArmyCnt() > 0)
 		out_file << "Loss \n";
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
 		

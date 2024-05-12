@@ -14,6 +14,7 @@ public:
 
 	bool insert(monster* m);
 	bool remove(unit*& m); 
+	bool peek(unit*& m);
 	void print(); 
 	int getCount(); 
 };

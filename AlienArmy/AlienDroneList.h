@@ -16,7 +16,10 @@ public:
 
 	bool removeEnd(unit*& u);
 	bool removeFront(unit*& u);
-	bool insertEnd(AlienDrone* u);		
+	bool insertEnd(AlienDrone* u);
+	bool peekFront(unit*& u);
+	bool peekBack(unit*& u);
+
 	bool insertFront(AlienDrone* u);		
 	void print();
 	int getCount();

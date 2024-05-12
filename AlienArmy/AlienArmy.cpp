@@ -47,6 +47,26 @@ MonsterList* AlienArmy::get_monsterList()
 	return monsterList;
 }
 
+bool AlienArmy::peeksoldier(unit*& pickedunit)
+{
+	return soldierList->peek(pickedunit);
+}
+
+bool AlienArmy::peekFrontdrone(unit*& pickedunit)
+{
+	return droneList->peekFront(pickedunit);
+}
+
+bool AlienArmy::peekbackdrone(unit*& pickedunit)
+{
+	return droneList->peekBack(pickedunit);
+}
+
+bool AlienArmy::peekmonster(unit*& pickedunit)
+{
+	return monsterList->peek(pickedunit);
+}
+
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 {
 	return (droneList->removeFront(pickedDrone));
@@ -80,14 +100,14 @@ void AlienArmy::attack()
 {
 	tempList temp;
 	unit *attacker;
-	if (pickSoldier(attacker))
+	if (peeksoldier(attacker))
 		attacker->attack();
-	if (pickMonster(attacker))
+	if (peekmonster(attacker))
 		attacker->attack();
 
-	if (pickFrontDrone(attacker))
+	if (peekFrontdrone(attacker))
 		attacker->attack();
-	if (pickEndDrone(attacker))
+	if (peekbackdrone(attacker))
 		attacker->attack();
 
 	

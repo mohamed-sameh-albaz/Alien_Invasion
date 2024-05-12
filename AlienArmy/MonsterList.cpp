@@ -22,6 +22,22 @@ bool MonsterList::insert(monster* m) {
 	else return false;
 }
 
+bool MonsterList::peek(unit*& m)
+{
+	if (index > 0) {
+
+		srand(time(0));
+		int randMonster = (rand() % (index + 1));
+		m = monsters[randMonster];
+		return true;
+	}
+	else if (index == 0) {
+		m = monsters[0];
+		return true;
+	}
+	else return false;
+}
+
 bool MonsterList::MonsterList::remove(unit*& m){
 	if (index > 0) {
 
