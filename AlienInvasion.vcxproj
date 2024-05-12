@@ -153,6 +153,8 @@
     <ClCompile Include="unit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ADTs\QueueList.h" />
+    <ClInclude Include="ADTs\StackList.h" />
     <ClInclude Include="AlienArmy\AlienArmy.h" />
     <ClInclude Include="AlienArmy\AlienDrone.h" />
     <ClInclude Include="AlienArmy\AlienSoldier.h" />
