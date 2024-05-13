@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Distructed time: 5   
 First attacked time: 0   
 ID: 2   
@@ -32,9 +33,109 @@ Type: 0
 Jion time: 7   
 First attacked delay (Df): 0   
 Destruction delay (Dd): 2   
+=======
+Distructed time: 6   
+First attacked time: 6   
+ID: 4   
+Type: 2   
+Jion time: 3   
+First attacked delay (Df): 3   
+Destruction delay (Dd): 0   
+Battle time(Db): 3   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 26   
+Type: 2   
+Jion time: 5   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 0   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 20   
+Type: 1   
+Jion time: 4   
+First attacked delay (Df): 2   
+Destruction delay (Dd): 0   
+Battle time(Db): 2   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 3   
+Type: 1   
+Jion time: 3   
+First attacked delay (Df): 3   
+Destruction delay (Dd): 0   
+Battle time(Db): 3   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 14   
+Type: 2   
+Jion time: 4   
+First attacked delay (Df): 2   
+Destruction delay (Dd): 0   
+>>>>>>> Stashed changes
+Battle time(Db): 2   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 6   
+ID: 17   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 2   
+Destruction delay (Dd): 1   
+Battle time(Db): 3   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 6   
+ID: 10   
+Type: 0   
+Jion time: 3   
+First attacked delay (Df): 3   
+Destruction delay (Dd): 1   
+Battle time(Db): 4   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 6   
+ID: 15   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 2   
+Destruction delay (Dd): 2   
+Battle time(Db): 4   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 7   
+ID: 5   
+Type: 0   
+Jion time: 3   
+First attacked delay (Df): 4   
+Destruction delay (Dd): 1   
+Battle time(Db): 5   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 6   
+ID: 31   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 2   
+Battle time(Db): 2   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 7   
+ID: 35   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 1   
 Battle time(Db): 2   
 __________________________________________________________________
 Earth army:-
+<<<<<<< Updated upstream
 No of dead ES= 2
 No of dead ET= 0
 No of dead EG= 1
@@ -47,6 +148,20 @@ Average Df= 0
  Average Db= 2
 Df/Db%= 0%
 Dd/Db%= 183.333%
+=======
+No of dead ES= 3
+No of dead ET= 2
+No of dead EG= 6
+Precentage of dead ES relative to their total= 100%
+Precentage of dead ET relative to their total= 100%
+Precentage of dead EG relative to their total= 100%
+Precentage of total earth destrcted unit relative to their total= 100%
+Average Df= 2
+ Average Dd= 0.727273
+ Average Db= 2.81818
+Df/Db%= 6.45161%
+Dd/Db%= 2.34604%
+>>>>>>> Stashed changes
 Precentage of units healed successfully relative to all units= 0
 Batle result: Loss 
 Distructed time: 9   
@@ -66,9 +181,15 @@ No of dead AD= 0
 Precentage of dead AS relative to their total= 0%
 Precentage of dead AM relative to their total= 14.2857%
 Precentage of dead AD relative to their total= 0%
+<<<<<<< Updated upstream
 Precentage of total alien destrcted unit relative to their total= 6.66667%
 Average Df= 2
  Average Dd= 4
  Average Db= 6
 Df/Db%= 33.3333%
 Dd/Db%= 66.6667%
+=======
+Precentage of total alien destrcted unit relative to their total= 0%
+Df/Db%= 0%
+Dd/Db%= 100%
+>>>>>>> Stashed changes
