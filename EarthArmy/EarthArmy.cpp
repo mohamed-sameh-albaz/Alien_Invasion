@@ -46,6 +46,11 @@ bool EarthArmy::pickTank(unit*& pickedTank)
 	return(tankList->remove(pickedTank));
 }
 
+StackList* EarthArmy::get_healers()
+{
+	return healers;
+}
+
 EarthGunList* EarthArmy::get_GunneryList()
 {
 	return GunneryList;

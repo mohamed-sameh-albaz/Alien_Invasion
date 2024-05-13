@@ -21,7 +21,7 @@ protected:
 public:
 	unit(game* master); 
 	void disp();
-	
+	void set_batleTime(int a);
 	void set_Noofattacked(int a);
 	int get_Noofattacked();
 	void setUMLtime(int tUML);

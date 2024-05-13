@@ -19,6 +19,8 @@ public:
 	bool addUnit(unit* newUnit);
 	bool pickGun(unit*& pickedGun);
 	bool pickTank(unit*& pickedTank);
+	StackList* get_healers();
+
 	EarthGunList* get_GunneryList();
 	QueueList* get_soldierList();
 	StackList* get_tankList();

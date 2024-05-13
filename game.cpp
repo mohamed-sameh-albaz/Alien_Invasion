@@ -613,7 +613,7 @@ void game::fight(int mode)
 
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
-				cin.get(); // Wait for user to press enter
+				//cin.get(); // Wait for user to press enter
 				system("cls");
 			}
 		}
@@ -656,6 +656,57 @@ void game::fight(int mode)
 			}
 			cout << "Simulation ends....\n";
 		}
+		tempList temp;
+		unit* temp_unit;
+			while (aArmy->get_droneList()->removeFront(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (aArmy->get_soldierList()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (aArmy->get_monsterList()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (eArmy->get_soldierList()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (eArmy->get_GunneryList()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (eArmy->get_tankList()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
+			while (eArmy->get_healers()->remove(temp_unit)) {
+				temp_unit->set_distructionTime(timestep);
+				temp.enqueue(temp_unit);
+			}
+			while (temp.dequeue(temp_unit)) {
+				aArmy->addUnit(temp_unit);
+			}
 		outputFn();
 }
 
@@ -717,19 +768,28 @@ void game::outputFn()
 			ES++;
 		else if (alliveunit->get_type() == 1)
 			ET++;
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 	}
 	while (eArmy->get_soldierList()->remove(alliveunit)) {
-		
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 			ES++;
 		
 	}
 	while (eArmy->get_tankList()->remove(alliveunit)) {
-
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 		ET++;
 
 	}
 	while (eArmy->get_GunneryList()->remove(alliveunit)) {
-
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 		EG++;
 
 	}
@@ -787,17 +847,23 @@ void game::outputFn()
 			"__________________________________________________________________\n";
 	}
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
-		
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 			AS++;
 		
 	}
 	while (aArmy->get_monsterList()->remove(alliveunit)) {
-
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 		AM++;
 
 	}
 	while (aArmy->get_droneList()->removeFront(alliveunit)) {
-
+		df = df + alliveunit->get_df();
+		dd = dd + alliveunit->get_dd();
+		db = db + alliveunit->get_db();
 		AD++;
 
 	}
@@ -911,6 +977,7 @@ bool game::alienIsEmpty()
 
 bool game::earthIsEmpty()
 {
-	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG)+uml->get_curr_count());//add uml count
+	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG)+uml->get_curr_count()
+		);//add uml count
 }
 

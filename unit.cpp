@@ -38,6 +38,11 @@ void unit::disp()
 		<< "\n Join Time: " << joinTime << endl;
 }
 
+void unit::set_batleTime(int a)
+{
+	db = a - joinTime;
+}
+
 
 
 void unit::set_Noofattacked(int a)
