@@ -19,7 +19,10 @@ void Healer::attack()
 			if (!uml->remove(u)) break;
 			else {
 				if (g->getCurrTimeStep() - u->getUMLtime() > 10)
+				{
+					u->set_distructionTime(g->getCurrTimeStep());
 					g->insertKilled(u);
+				}
 				else
 				{
 					this->set_attackpower(u);
@@ -43,5 +46,7 @@ void Healer::attack()
 
 void Healer::suicide()
 {
+	set_distructionTime(g->getCurrTimeStep());
+
 	g->insertKilled(this);
 }

@@ -90,6 +90,7 @@ void monster::attack()
 	while (tmp2.remove(attackedUnit)) {
 		e->addUnit(attackedUnit);
 	}
+	
 }
 
 

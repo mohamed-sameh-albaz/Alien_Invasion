@@ -688,7 +688,7 @@ void game::outputFn()
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET =0;
 	while (dead->remove(killedunit)) {
-		if (killedunit->get_id() >2000)
+		if (killedunit->get_id() >=2000)
 		{
 			temp.insert(killedunit);
 			continue;
@@ -702,10 +702,13 @@ void game::outputFn()
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<"  "<<
-
-			killedunit->get_tj() << "  " << killedunit->get_df() << "  " <<
-			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
+		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "First attacked time: "
+			<< killedunit->get_ta() << "   \n"
+			<< "ID: " << killedunit->get_id() << "   \n" <<
+			"Type: "<<killedunit->get_type()<<"   \n"
+			"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
+			"Destruction delay (Dd): "<<killedunit->get_dd() << "   \n" <<"Battle time(Db): " << killedunit->get_db() << "   \n"<<
+			"__________________________________________________________________\n";
 	}
 	while (temp.remove(killedunit))
 		dead->insert(killedunit);
@@ -731,7 +734,7 @@ void game::outputFn()
 
 	}
 	out_file << "Earth army:-\n";
-	out_file << "No of dead ES= " << deadES << "\n" << " No of dead ET= " << deadET << "\n" << " No of dead EG= " << deadEG << "\n";
+	out_file << "No of dead ES= " << deadES << "\n" << "No of dead ET= " << deadET << "\n" << "No of dead EG= " << deadEG << "\n";
 	if ((deadES + ES) != 0)
 		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
 	if ((deadET + ET) != 0)
@@ -764,8 +767,7 @@ void game::outputFn()
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
 	df =  dd =db = 0;
 	while (dead->remove(killedunit)) {
-		if (killedunit->get_id() < 1000)
-			continue;
+		
 		if (killedunit->get_type() == 4)
 			deadAS++;
 		else if (killedunit->get_type() == 5)
@@ -775,9 +777,14 @@ void game::outputFn()
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << killedunit->get_td() << "  " << killedunit->get_id() <<"  "<<
-			killedunit->get_tj() << "  " << killedunit->get_df() << "  " <<
-			killedunit->get_dd() << "  " << killedunit->get_db() << "  \n";
+		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "ID: "
+			<< "First attacked time: " << killedunit->get_ta() << "   \n"
+			<< "Number of attacked: " << killedunit->get_Noofattacked()<<"   \n"
+			<<"ID: " << killedunit->get_id() << "   \n" <<
+			"Type: " << killedunit->get_type() << "   \n"
+			"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
+			"Destruction delay (Dd): " << killedunit->get_dd() << "   \n" << "Battle time(Db): " << killedunit->get_db() << "   \n" <<
+			"__________________________________________________________________\n";
 	}
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
 		
@@ -795,7 +802,7 @@ void game::outputFn()
 
 	}
 	out_file << "Alien army:-\n";
-	out_file << "No of dead AS= " << deadAS<<"\n" << " No of dead AM= " << deadAM << "\n" << " No of dead AD= " << deadAD << "\n";
+	out_file << "No of dead AS= " << deadAS<<"\n" << "No of dead AM= " << deadAM << "\n" << "No of dead AD= " << deadAD << "\n";
 	if ((deadAS + AS) != 0)
 		out_file << "Precentage of dead AS relative to their total= " << float(deadAS )/ (deadAS + AS) * 100 << "%\n";
 	if ((deadAM + AM) != 0)
@@ -804,7 +811,7 @@ void game::outputFn()
 	    out_file <<"Precentage of dead AD relative to their total= "<<float(deadAD) / (deadAD + AD) * 100 << "%\n";
 	if((deadAM + AS + deadAM + AM + deadAD + AD)!=0)
 	out_file << "Precentage of total alien destrcted unit relative to their total= "<<
-		float((deadAS + deadAM + deadAD) )/ (deadAM + AS + deadAM + AM + deadAD + AD) * 100 << "%\n";
+		float((deadAS + deadAM + deadAD) )/ (deadAM + AS + deadAS + AM + deadAD + AD) * 100 << "%\n";
 	if((deadAS + deadAM + deadAD)!=0)
 	{
 		out_file << "Average Df= " << float(df / (deadAS + deadAM + deadAD)) << "\n "
@@ -904,6 +911,6 @@ bool game::alienIsEmpty()
 
 bool game::earthIsEmpty()
 {
-	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG));
+	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG));//add uml count
 }
 

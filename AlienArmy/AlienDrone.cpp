@@ -18,7 +18,6 @@ void AlienDrone::attack()
 	int attackedCnt=0;
 	unit* removedFromTmplst = nullptr;
 	tempList attackedlist,templist;
-	
 
 	for (int i = 0; i < (attackCap / 2); i++)
 	{
@@ -91,6 +90,7 @@ void AlienDrone::attack()
 	while (templist.remove(removedFromTmplst)) {
 		e->addUnit(removedFromTmplst);
 	}
+	
 }
 
 
