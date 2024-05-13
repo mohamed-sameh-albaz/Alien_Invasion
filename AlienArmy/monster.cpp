@@ -15,6 +15,10 @@ void monster::attack()
 	tempList tmp, tmp2;
 	unit* attackedUnit = nullptr;
 	int attackedcnt = 0;
+
+	bool EGremain = true;//army still have AS
+	bool ETremain = true;//army still have AM
+	int attackedCnt = 0;
 	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
 	{
 		e->pickTank(attackedUnit);
@@ -34,6 +38,37 @@ void monster::attack()
 			break;
 		attackedUnit = nullptr;
 	}
+	if (!EGremain && ETremain) {
+		attackedCnt = tmp.getCount();
+		attackedUnit = nullptr;
+		for (int i = 0; i < attackCap - attackedCnt; i++) {
+			e->pickTank(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				ETremain = false;
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+	}
+	if (EGremain && !ETremain) {
+		attackedCnt = tmp.getCount();
+		attackedUnit = nullptr;
+		for (int i = 0; i < attackCap - attackedCnt; i++) {
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				EGremain = false;
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+	}
+
 	if (g->get_mode() == 1)
 	tmp.print(get_type(), id);
 
@@ -69,6 +104,7 @@ void monster::attack()
 	while (tmp2.remove(attackedUnit)) {
 		e->addUnit(attackedUnit);
 	}
+	
 }
 
 

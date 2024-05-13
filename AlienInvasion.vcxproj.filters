@@ -90,7 +90,7 @@
       <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="tempList.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>EarthArmy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

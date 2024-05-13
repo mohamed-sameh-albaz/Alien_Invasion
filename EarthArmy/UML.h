@@ -11,7 +11,7 @@ class UML
 	int count;
 public:
 	~UML();
-	UML(); 
+	UML();
 	int get_count();
 	void set_count(int a);
 	bool insert(unit* u);

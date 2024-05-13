@@ -24,7 +24,6 @@ void AlienDrone::attack()
 	int attackedCnt=0;
 	unit* removedFromTmplst = nullptr;
 	tempList attackedlist,templist;
-	
 
 	for (int i = 0; i < (attackCap / 2); i++)
 	{
@@ -67,6 +66,21 @@ void AlienDrone::attack()
 			attackedTank = nullptr;
 			}
 	}
+	if (EGremain && !ETremain) {
+		attackedCnt = attackedlist.getCount();
+		attackedgunnery= nullptr;
+		for (int i = 0; i < attackCap - attackedCnt; i++) {
+			e->pickGun(attackedgunnery);
+			if (attackedgunnery)
+				attackedlist.insert(attackedgunnery);
+			else
+			{
+				EGremain = false;
+				break;
+			}
+			attackedgunnery = nullptr;
+		}
+	}
 
 	if(g->get_mode()==1)
 		attackedlist.print(get_type(), id);
@@ -103,6 +117,7 @@ void AlienDrone::attack()
 	while (templist.remove(removedFromTmplst)) {
 		e->addUnit(removedFromTmplst);
 	}
+	
 }
 
 

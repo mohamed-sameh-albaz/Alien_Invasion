@@ -38,15 +38,7 @@ void unit::disp()
 		<< "\n Join Time: " << joinTime << endl;
 }
 
-void unit::set_attacks(int a)
-{
-	attacks = a;
-}
 
-int unit::get_attacks()
-{
-	return attacks;
-}
 
 void unit::set_Noofattacked(int a)
 {
@@ -161,6 +153,8 @@ int unit::get_td()
 
 int unit::get_df()
 {
+	if (df < 0)
+		return 0;
 	return df;
 }
 
