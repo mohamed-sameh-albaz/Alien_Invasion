@@ -11,27 +11,35 @@ UML::~UML()
 
 UML::UML()
 {
-	count = 0;
+	healed_count = 0;
+	curr_count = 0;
 }
 
-int UML::get_count()
+int UML::get_healed_count()
 {
-	return count;
+	return healed_count;
 }
 
-void UML::set_count(int a)
+void UML::set_healed_count(int a)
 {
-	count = a;
+	healed_count = a;
 
+}
+
+int UML::get_curr_count()
+{
+	return curr_count;
 }
 
 bool  UML::insert(unit* u) {
 	if (u->get_type() == ES) {
 		soldiersToHeal.enqueue(u, -1 * (u->get_health() / u->get_initial_health() * 100));
+		curr_count++;
 		return true;
 	}
 	else if (u->get_type() == ET) {
 		tanksToHeal.enqueue(u);
+		curr_count++;
 		return true;
 	}
 	else return false;
@@ -41,10 +49,12 @@ bool  UML::remove(unit*& u) {
 	if (!soldiersToHeal.isEmpty()) {
 		int i;
 		soldiersToHeal.dequeue(u, i);
+		curr_count--;
 		return true;
 	}
 	else if (!tanksToHeal.isEmpty()) {
 		tanksToHeal.dequeue(u);
+		curr_count--;
 		return true;
 	}
 	else return false;
@@ -54,7 +64,7 @@ void  UML::print() {
 	priQueue<unit*> tmpS;
 	LinkedQueue<unit*> tmpT;
 	cout << "\n============== Units To Be Healed ==============" << endl;
-	cout << count << " units [";
+	cout << curr_count << " units [";
 
 	while (!soldiersToHeal.isEmpty()) {
 		unit* u = nullptr;

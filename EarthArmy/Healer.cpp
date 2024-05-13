@@ -13,27 +13,32 @@ void Healer::attack()
 	UML* uml = g->getUML();
 	unit* u = nullptr;
 	tempList tmp;
-	for (int i = 0; i < attackCap; i++) {
-		if (!uml->remove(u)) break;
-		else {
-			if (g->getCurrTimeStep() - u->getUMLtime() > 10)
-				g->insertKilled(u);
-			else
-			{
-				this->set_attackpower(u);
-				u->set_health(u->get_health() + this->get_attackpower());//curStep-unlJOined>10=>killed
-				if ((u->get_health() * 0 / u->get_initial_health()) > 20)
-				{
-					g->getEarthArmy()->addUnit(u);
-					uml->set_count(uml->get_count() + 1);
-				}
+	if (uml->get_curr_count() > 0) {
+
+		for (int i = 0; i < attackCap; i++) {
+			if (!uml->remove(u)) break;
+			else {
+				if (g->getCurrTimeStep() - u->getUMLtime() > 10)
+					g->insertKilled(u);
 				else
-					tmp.insert(u);
+				{
+					this->set_attackpower(u);
+					u->set_health(u->get_health() + this->get_attackpower());//curStep-unlJOined>10=>killed
+					if ((u->get_health() * 100 / u->get_initial_health()) > 20)
+					{
+						g->getEarthArmy()->addUnit(u);
+						uml->set_healed_count(uml->get_healed_count() + 1);
+					}
+					else
+						tmp.insert(u);
+				}
 			}
 		}
+		while (tmp.remove(u))
+			g->insertUml(u);
+		g->getEarthArmy()->pickHealer(u);
+		suicide();
 	}
-	while (tmp.remove(u)) 
-		g->insertUml(u);
 }
 
 void Healer::suicide()

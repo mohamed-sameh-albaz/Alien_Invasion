@@ -32,11 +32,42 @@ void game::simulate(int mode)
 		inputFn();
 		//testing drone
 
-		AlienDrone* AD = new AlienDrone(this);
-		AD->set_power(0);
-		AD->set_attackCap(4);
-		AD->set_health(100);
-		AD->disp();
+		monster* AM = new monster(this);
+		AM->set_power(10);
+		AM->set_attackCap(10);
+		AM->set_health(100);
+		AM->disp();
+
+		EarthTank t1(this), t2(this), t3(this);
+		EarthSoldier g1(this), g2(this), g3(this);
+
+		t1.set_id(1);
+		t1.set_health(100);
+		t2.set_id(2);
+		t2.set_health(100);
+		t3.set_id(3);
+		t3.set_health(100);
+		g1.set_id(4);
+		g1.set_health(100);
+		g2.set_id(5);
+		g2.set_health(100);
+		g3.set_id(6);
+		g3.set_health(100);
+
+		eArmy->addUnit(&t1);
+		eArmy->addUnit(&t2);
+		eArmy->addUnit(&t3);
+		eArmy->addUnit(&g1);
+		//eArmy->addUnit(&g2);
+		//eArmy->addUnit(&g3);
+
+		eArmy->print();
+
+		cout << "====================== Drone Attack ======================" << endl;
+		AM->attack();
+
+		cout << "After Attacking" << endl;
+		eArmy->print();
 	
 		//while (true) {
 		//	cout << endl << "Press Enter To Continue" << endl;
@@ -525,40 +556,40 @@ void game::fight(int mode)
 			
 
 			while (true) {
-				//if (timestep > 40)
-				//{
-				//	if (alienIsEmpty() and !earthIsEmpty())
-				//	{
-				//		//earth winner
-				//		system("cls");
-				//		result = 1;
+				if (timestep > 40)
+				{
+					if (alienIsEmpty() and !earthIsEmpty())
+					{
+						//earth winner
+						system("cls");
+						result = 1;
 
-				//		changeColor(messageColor);///////
-				//		cout << "**********		EARTH ARMY WINS		************";
-				//		changeColor(mainColor);
-				//		break;
-				//	}
-				//	else if (!alienIsEmpty() and earthIsEmpty())
-				//	{
-				//		result = -1;
+						changeColor(messageColor);///////
+						cout << "**********		EARTH ARMY WINS		************";
+						changeColor(mainColor);
+						break;
+					}
+					else if (!alienIsEmpty() and earthIsEmpty())
+					{
+						result = -1;
 
-				//		system("cls");
-				//		changeColor(messageColor);///////
-				//		cout << "**********		ALIEN ARMY WINS		************";
-				//		changeColor(mainColor);
-				//		break;
-				//	}
-				//	else if(alienIsEmpty() and earthIsEmpty())
-				//	{
-				//		result = 0;
+						system("cls");
+						changeColor(messageColor);///////
+						cout << "**********		ALIEN ARMY WINS		************";
+						changeColor(mainColor);
+						break;
+					}
+					else if(alienIsEmpty() and earthIsEmpty())
+					{
+						result = 0;
 
-				//		system("cls");
-				//		changeColor(messageColor);///////
-				//		cout << "**********		DRAW NO ONE WIN		************";
-				//		changeColor(mainColor);
-				//		break;
-				//	}
-				//}
+						system("cls");
+						changeColor(messageColor);///////
+						cout << "**********		DRAW NO ONE WIN		************";
+						changeColor(mainColor);
+						break;
+					}
+				}
 				changeColor(12);
 				cout << endl << "Current Timestep: " << timestep << endl;
 				changeColor(mainColor);
@@ -574,13 +605,15 @@ void game::fight(int mode)
 				eArmy->attack();
 				aArmy->attack();
 				uml->print();
+				// Heal Units To Be Healed
+				eArmy->heal();
 				cout << "\n============== killed/Destructed Units ==============" << endl;
 				dead->print();
 
 
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
-				//cin.get(); // Wait for user to press enter
+				cin.get(); // Wait for user to press enter
 				system("cls");
 			}
 		}
@@ -718,7 +751,7 @@ void game::outputFn()
 	out_file << "Df/Db%= " << float(df )/ db * 100 << "%\n" << "Dd/Db%= " << float(dd) / db * 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
-		float(uml->get_count() )/ (deadET + ES + deadES + ET + deadEG + EG) * 100<<"\n";
+		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG) * 100<<"\n";
 	out_file << "Batle result: ";
 	if (result == 1)
 			out_file << "Win \n";

@@ -24,5 +24,4 @@ int main() {
 	cin.get();
 	g->fight(mode);
 	return 0;
-	// test branch
 }

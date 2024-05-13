@@ -3,7 +3,6 @@
 #include"randGen.h"
 #include"EarthArmy/EarthArmy.h"
 #include"AlienArmy/AlienArmy.h"
-#include "killedList.h"
 #include<fstream>
 using namespace std;
 

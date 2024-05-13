@@ -76,6 +76,11 @@ bool EarthArmy::peekGun(unit*& peekedGun)
 	return GunneryList->peek(peekedGun);
 }
 
+bool EarthArmy::peekHealer(unit*& peekedHealer)
+{
+	return healers->peek(peekedHealer);
+}
+
 bool EarthArmy::peekTank(unit*& peekedTank)
 {
 	return tankList->peek(peekedTank);
@@ -100,7 +105,6 @@ void EarthArmy::attack()
 	unit* attackingSol = nullptr;
 	unit* attackingGun = nullptr;
 	unit* attackingTank = nullptr;
-	unit* attackingHealer = nullptr;
 	peekSoldier(attackingSol);//pick doesnot remove the unit from its original list
 	if (attackingSol)
 		attackingSol->attack();
@@ -110,10 +114,15 @@ void EarthArmy::attack()
 	peekGun(attackingGun);
 	if (attackingGun)
 		attackingGun->attack();
-	pickHealer(attackingHealer);
+
+}
+
+void EarthArmy::heal()
+{
+	unit* attackingHealer = nullptr;
+	peekHealer(attackingHealer);
 	if (attackingHealer) {
 		attackingHealer->attack();
-		dynamic_cast<Healer*>(attackingHealer)->suicide();
 	}
 }
 

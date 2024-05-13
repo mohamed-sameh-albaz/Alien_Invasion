@@ -1,8 +1,8 @@
 #pragma once
 #include"../unit.h"
 #include"AlienDroneList.h"
-#include"AlienSoldierList.h"
 #include"MonsterList.h"
+#include"AlienSoldier.h"
 #include"../ADTs/QueueList.h"
 class AlienArmy
 {
@@ -16,6 +16,7 @@ public:
 	AlienDroneList* get_droneList();
 	QueueList* get_soldierList();
 	MonsterList* get_monsterList();
+
 	bool peeksoldier(unit*& pickedunit);
 	bool peekFrontdrone(unit*& pickedunit);
 	bool peekbackdrone(unit*& pickedunit);

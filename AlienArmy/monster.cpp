@@ -14,7 +14,8 @@ void monster::attack()
 	EarthArmy* e = g->getEarthArmy();
 	tempList tmp, tmp2;
 	unit* attackedUnit = nullptr;
-	int attackedcnt = 0;
+	bool ESRemain = true;//army still have ES
+	int attackedCnt = 0;
 	for (int i = 0; i < ((attackCap / 2) + (attackCap % 2)); i++)
 	{
 		e->pickTank(attackedUnit);
@@ -25,20 +26,40 @@ void monster::attack()
 		attackedUnit = nullptr;
 	}
 
-	for (int i = 0; i < (attackCap / 2); i++)
+	attackedCnt = tmp.getCount();
+	for (int i = 0; i < attackCap - attackedCnt; i++)
 	{
 		e->pickSoldier(attackedUnit);
 		if (attackedUnit)
 			tmp.insert(attackedUnit);
 		else
+		{
+			ESRemain = false;
 			break;
+		}
 		attackedUnit = nullptr;
 	}
+
+	attackedCnt = tmp.getCount();
+	if (!ESRemain && attackedCnt != attackCap) {
+		for (int i = 0; i < attackCap - attackedCnt; i++)
+		{
+			e->pickTank(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+	}
+	attackedCnt = tmp.getCount();
 	if (g->get_mode() == 1)
 	tmp.print(get_type(), id);
 
 
-	for (int i = 0; i < attackCap; i++) {
+	for (int i = 0; i < attackedCnt; i++) {
 		if (!tmp.remove(attackedUnit)) break;
 		else {
 			if (attackedUnit->get_Noofattacked() == 0) {

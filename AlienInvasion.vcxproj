@@ -131,7 +131,6 @@
     <ClCompile Include="AlienArmy\AlienDrone.cpp" />
     <ClCompile Include="AlienArmy\AlienSoldier.cpp" />
     <ClCompile Include="AlienArmy\AlienDroneList.cpp" />
-    <ClCompile Include="AlienArmy\AlienSoldierList.cpp" />
     <ClCompile Include="AlienArmy\monster.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
     <ClCompile Include="DS\double_endedQueue.cpp" />
@@ -139,14 +138,10 @@
     <ClCompile Include="EarthArmy\EarthGun.cpp" />
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldier.cpp" />
-    <ClCompile Include="EarthArmy\EarthSoldierList.cpp" />
     <ClCompile Include="EarthArmy\EarthTank.cpp" />
-    <ClCompile Include="EarthArmy\EarthTankList.cpp" />
     <ClCompile Include="EarthArmy\Healer.cpp" />
-    <ClCompile Include="EarthArmy\HL.cpp" />
     <ClCompile Include="EarthArmy\UML.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="killedList.cpp" />
     <ClCompile Include="randGen.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="tempList.cpp" />
@@ -159,7 +154,6 @@
     <ClInclude Include="AlienArmy\AlienDrone.h" />
     <ClInclude Include="AlienArmy\AlienSoldier.h" />
     <ClInclude Include="AlienArmy\AlienDroneList.h" />
-    <ClInclude Include="AlienArmy\AlienSoldierList.h" />
     <ClInclude Include="AlienArmy\monster.h" />
     <ClInclude Include="AlienArmy\MonsterList.h" />
     <ClInclude Include="DS\double_endedQueue.h" />
@@ -174,14 +168,10 @@
     <ClInclude Include="EarthArmy\EarthGun.h" />
     <ClInclude Include="EarthArmy\EarthGunList.h" />
     <ClInclude Include="EarthArmy\EarthSoldier.h" />
-    <ClInclude Include="EarthArmy\EarthSoldierList.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
-    <ClInclude Include="EarthArmy\EarthTankList.h" />
     <ClInclude Include="EarthArmy\Healer.h" />
-    <ClInclude Include="EarthArmy\HL.h" />
     <ClInclude Include="EarthArmy\UML.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="killedList.h" />
     <ClInclude Include="randGen.h" />
     <ClInclude Include="tempList.h" />
     <ClInclude Include="unit.h" />

@@ -32,28 +32,16 @@
     <ClCompile Include="EarthArmy\EarthGunList.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
-    <ClCompile Include="EarthArmy\EarthSoldierList.cpp">
-      <Filter>EarthArmy</Filter>
-    </ClCompile>
-    <ClCompile Include="EarthArmy\EarthTankList.cpp">
-      <Filter>EarthArmy</Filter>
-    </ClCompile>
     <ClCompile Include="unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DS\double_endedQueue.cpp">
       <Filter>DS</Filter>
     </ClCompile>
-    <ClCompile Include="killedList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AlienArmy\AlienDrone.cpp">
       <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="AlienArmy\AlienSoldier.cpp">
-      <Filter>AlienArmy</Filter>
-    </ClCompile>
-    <ClCompile Include="AlienArmy\AlienSoldierList.cpp">
       <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\EarthSoldier.cpp">
@@ -81,9 +69,6 @@
       <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\UML.cpp">
-      <Filter>EarthArmy</Filter>
-    </ClCompile>
-    <ClCompile Include="EarthArmy\HL.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\Healer.cpp">
@@ -154,34 +139,25 @@
     <ClInclude Include="AlienArmy\MonsterList.h">
       <Filter>AlienArmy</Filter>
     </ClInclude>
-    <ClInclude Include="EarthArmy\EarthSoldierList.h">
-      <Filter>EarthArmy</Filter>
-    </ClInclude>
-    <ClInclude Include="AlienArmy\AlienSoldierList.h">
-      <Filter>AlienArmy</Filter>
-    </ClInclude>
     <ClInclude Include="EarthArmy\EarthGunList.h">
-      <Filter>EarthArmy</Filter>
-    </ClInclude>
-    <ClInclude Include="EarthArmy\EarthTankList.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
     <ClInclude Include="DS\double_endedQueue.h">
       <Filter>DS</Filter>
     </ClInclude>
-    <ClInclude Include="killedList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EarthArmy\UML.h">
-      <Filter>EarthArmy</Filter>
-    </ClInclude>
-    <ClInclude Include="EarthArmy\HL.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
     <ClInclude Include="EarthArmy\Healer.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
     <ClInclude Include="tempList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ADTs\QueueList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ADTs\StackList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

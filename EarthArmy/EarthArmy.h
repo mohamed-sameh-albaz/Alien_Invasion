@@ -1,10 +1,10 @@
 #pragma once
 #include"../unit.h"
 #include"EarthGunList.h"
-#include"EarthSoldierList.h"
-#include"EarthTankList.h"
-#include "HL.h"
 #include "UML.h"
+#include "Healer.h"
+#include "EarthTank.h"
+#include "EarthSoldier.h"
 #include"../ADTs/QueueList.h"
 #include"../ADTs/StackList.h"
 class EarthArmy
@@ -25,10 +25,12 @@ public:
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);
 	bool peekGun(unit*& peekedGun);
+	bool peekHealer(unit*& peekedHealer);
 	bool peekTank(unit*& peekedTank);
 	bool peekSoldier(unit*& peekedSoldier);
 	void print();
 	void attack();
+	void heal();
 	int getListCnt(type neededUnit);
 };
 
