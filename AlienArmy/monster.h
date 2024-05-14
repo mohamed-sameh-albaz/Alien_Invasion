@@ -5,7 +5,7 @@ class monster : public unit
 public:
 	monster(game* master);
 	void attack(); 
-	void infectSoldier(unit*& s);
+	void infectSoldier(unit*& s,int A, int B, int randomSoldierNum);
 
 };
 

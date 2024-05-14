@@ -32,7 +32,12 @@ void monster::attack()
 		e->pickSoldier(attackedUnit);
 		if (attackedUnit)
 		{
-			infectSoldier(attackedUnit);
+			int A = (rand() % 100) + 1;
+			int B = (rand() % 100) + 1;
+			int randomSoldierNum = -1;
+			if (e->get_soldierList()->getCount() > 0)
+				randomSoldierNum = (rand() % e->get_soldierList()->getCount());
+			infectSoldier(attackedUnit,A,B, randomSoldierNum);
 			tmp.insert(attackedUnit);
 		}
 		else
@@ -71,6 +76,7 @@ void monster::attack()
 			}
 			if (attackedUnit->get_type() == ES) {
 				if (dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {
+					tmp2.enqueue(attackedUnit);
 					attackedUnit = nullptr;
 					continue;
 				}
@@ -103,19 +109,16 @@ void monster::attack()
 	
 }
 
-void monster::infectSoldier(unit*& s)
+void monster::infectSoldier(unit*& s, int A, int B, int randomSoldierNum)
 {
 	EarthArmy* e = g->getEarthArmy();
 	EarthSoldier* mySoldier = dynamic_cast<EarthSoldier*>(s);
-	int A = (rand() % 100) + 1;
 	if (A <= g->getInfectionProb()) {
 		if (!mySoldier->isCured()) {
 			if (!mySoldier->isInfected()) {
 				mySoldier->setInfected(true);
 				e->setInfectedCount(e->getInfectedCount() + 1);
-				int B = (rand() % 100) + 1;
 				if (B <= 2) {
-					int randomSoldierNum = (rand() % e->get_soldierList()->getCount());
 					tempList t;
 
 					int solCount = e->get_soldierList()->getCount();
