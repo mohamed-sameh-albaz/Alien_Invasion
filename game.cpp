@@ -609,11 +609,14 @@ void game::fight(int mode)
 				eArmy->heal();
 				cout << "\n============== killed/Destructed Units ==============" << endl;
 				dead->print();
-
+				cout << "\n============== Infected Units ==============" << endl;
+				cout << "Infected Percentage: ";
+				if (eArmy->get_soldierList()->getCount() > 0) cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
+				else cout << "0%" << endl;
 
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
-				//cin.get(); // Wait for user to press enter
+				if (timestep > 100)cin.get(); // Wait for user to press enter
 				system("cls");
 			}
 		}
@@ -713,7 +716,7 @@ void game::fight(int mode)
 void game::inputFn()
 {
 	ifstream in_file("input_file.text");
-	in_file>> N >> Es >> Et >> Eg  >> Hu >> As >> Am >> Ad >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
+	in_file>> N >> Es >> Et >> Eg  >> Hu >> SaverCount >> As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
 	ahealth2 = -1 * ahealth2;
@@ -721,7 +724,7 @@ void game::inputFn()
 	apower2 = -1 * apower2;
 	eattackcap2 = -1 * eattackcap2;
 	aattackcap2 = -1 * aattackcap2;
-	RG->setParams(Es, Et, Eg, Hu, As, Am, Ad, Prob, 
+	RG->setParams(Es, Et, Eg, Hu, SaverCount,As, Am, Ad, InfectionProb,Prob, 
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2
 		,N);
@@ -916,6 +919,11 @@ bool game::insertKilled(unit* u)
 		return dead->insert(u);
 	}
 	else return false;
+}
+
+int game::getInfectionProb()
+{
+	return InfectionProb;
 }
 
 

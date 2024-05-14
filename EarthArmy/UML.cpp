@@ -71,6 +71,9 @@ void  UML::print() {
 		int tmp;
 		soldiersToHeal.dequeue(u, tmp);
 		tmpS.enqueue(u, tmp);
+		if (dynamic_cast<EarthSoldier*>(u)->isInfected()) {
+			cout << "#";
+		}
 		cout << u->get_id();
 		if (!soldiersToHeal.isEmpty() || !tanksToHeal.isEmpty()) cout << ", ";
 	}

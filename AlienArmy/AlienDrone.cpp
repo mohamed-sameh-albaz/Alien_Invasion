@@ -58,13 +58,13 @@ void AlienDrone::attack()
 		}
 	}
 	attackedCnt = attackedlist.getCount();
+
 	if(g->get_mode()==1)
 		attackedlist.print(get_type(), id);
 
-	for (int i = 0; i < attackedCnt/*attackCap*/; i++) {
-		//if (!attackedlist.remove(attackedUnit)) break;
-		attackedlist.remove(attackedUnit);
-		//else
+	for (int i = 0; i < attackCap; i++) {
+		if (!attackedlist.remove(attackedUnit)) break;
+		else
 		 {
 			if (attackedUnit->get_Noofattacked() == 0) {
 				attackedUnit->set_atackedTime(g->getCurrTimeStep());
@@ -74,8 +74,8 @@ void AlienDrone::attack()
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
 			{
-				attackedUnit->set_distructionTime(g->getCurrTimeStep());
 				g->insertKilled(attackedUnit);
+				attackedUnit->set_distructionTime(g->getCurrTimeStep());
 
 			}
 			else if ((attackedUnit->get_type() == ET) && ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20)) {
@@ -85,6 +85,8 @@ void AlienDrone::attack()
 			}
 			else 
 				templist.insert(attackedUnit);
+
+			attackedUnit = nullptr;
 		 }
 	}
 	while (templist.remove(removedFromTmplst)) {

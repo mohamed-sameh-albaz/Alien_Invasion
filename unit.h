@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 class game;
-enum type { EG, ET, ES, EH, AS, AM, AD };
+enum type { EG, ET, ES, EH, AS, AM, AD, saver};
 
 #pragma once
 class unit

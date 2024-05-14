@@ -10,7 +10,7 @@ class game
 {
 	AlienArmy* aArmy;
 	EarthArmy* eArmy;
-	int Es, Et, Eg, As,N, Am, Ad, Prob,Hu,
+	int Es, Et, Eg,SaverCount,InfectionProb, As,N, Am, Ad, Prob,Hu,
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
@@ -32,7 +32,7 @@ public:
 	EarthArmy* getEarthArmy();
 	UML* getUML();
 	bool insertKilled(unit* u);
-
+	int getInfectionProb();
 	void printKilled();
 	void changeColor(int desiredColor);		//console display colors
 	bool insertUml(unit* u);

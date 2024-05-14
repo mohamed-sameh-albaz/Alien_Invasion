@@ -77,6 +77,9 @@
     <ClCompile Include="tempList.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
+    <ClCompile Include="EarthArmy\SU.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EarthArmy\EarthArmy.h">
@@ -158,6 +161,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ADTs\StackList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthArmy\SU.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
