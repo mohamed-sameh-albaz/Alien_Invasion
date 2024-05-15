@@ -602,8 +602,6 @@ void game::fight(int mode)
 				
 				//Start Fighting 
 				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
-				eArmy->attack();
-				aArmy->attack();
 				if(eArmy->get_soldierList()->getCount()>0)
 				if (eArmy->getInfectedCount()*100/ eArmy->get_soldierList()->getCount() >= RG->get_threshold())
 					RG->genAlliedArmy(eArmy);
@@ -612,6 +610,8 @@ void game::fight(int mode)
 				{
 					while (eArmy->get_SaverList()->dequeue(destroing));
 				}
+				eArmy->attack();
+				aArmy->attack();
 
 				uml->print();
 				// Heal Units To Be Healed
@@ -626,7 +626,7 @@ void game::fight(int mode)
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
 				//if (timestep > 100)
-					//cin.get(); // Wait for user to press enter
+					cin.get(); // Wait for user to press enter
 				system("cls");
 			}
 		}
