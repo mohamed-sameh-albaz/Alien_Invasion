@@ -1,7 +1,9 @@
 #pragma once
 #include<iostream>
 #include"../unit.h"
+#include "../EarthArmy/EarthSoldier.h"
 #include"../DS/LinkedQueue.h"
+
 
 //template <typename T>
 class QueueList :public LinkedQueue<unit*>
@@ -49,6 +51,13 @@ public:
 		}
 		while (nextUnit)
 		{
+			if (nextUnit->getItem()->get_type() == ES) {
+				unit* mySol = nextUnit->getItem();
+				EarthSoldier* toBePrinted = dynamic_cast<EarthSoldier*>(mySol);
+				if (toBePrinted->isInfected()) {
+					cout << "#";
+				}
+			}
 			cout << nextUnit->getItem()->get_id();
 			if (nextUnit->getNext())
 				cout << ", ";

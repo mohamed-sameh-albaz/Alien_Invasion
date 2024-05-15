@@ -1,15 +1,6 @@
 Distructed time: 3   
 First attacked time: 3   
-ID: 5   
-Type: 1   
-Jion time: 1   
-First attacked delay (Df): 2   
-Destruction delay (Dd): 0   
-Battle time(Db): 2   
-__________________________________________________________________
-Distructed time: 3   
-First attacked time: 3   
-ID: 2   
+ID: 7   
 Type: 2   
 Jion time: 1   
 First attacked delay (Df): 2   
@@ -18,45 +9,162 @@ Battle time(Db): 2
 __________________________________________________________________
 Distructed time: 3   
 First attacked time: 3   
-ID: 10   
+ID: 15   
+Type: 2   
+Jion time: 2   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 0   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 20   
+Type: 2   
+Jion time: 2   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 0   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 11   
 Type: 1   
-Jion time: 1   
-First attacked delay (Df): 2   
+Jion time: 2   
+First attacked delay (Df): 1   
 Destruction delay (Dd): 0   
-Battle time(Db): 2   
+Battle time(Db): 1   
 __________________________________________________________________
 Distructed time: 3   
+First attacked time: 0   
+ID: 18   
+Type: 3   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 3   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 4   
 First attacked time: 3   
-ID: 4   
-Type: 0   
-Jion time: 1   
-First attacked delay (Df): 2   
-Destruction delay (Dd): 0   
+ID: 16   
+Type: 1   
+Jion time: 2   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 1   
 Battle time(Db): 2   
 __________________________________________________________________
-Distructed time: 3   
+Distructed time: 4   
 First attacked time: 3   
-ID: 6   
+ID: 12   
 Type: 0   
-Jion time: 1   
-First attacked delay (Df): 2   
-Destruction delay (Dd): 0   
+Jion time: 2   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 1   
 Battle time(Db): 2   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 3   
+ID: 19   
+Type: 0   
+Jion time: 2   
+First attacked delay (Df): 1   
+Destruction delay (Dd): 1   
+Battle time(Db): 2   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 24   
+Type: 2   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 27   
+Type: 0   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 25   
+Type: 0   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 44   
+Type: 2   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 47   
+Type: 0   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 45   
+Type: 0   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 54   
+Type: 2   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 57   
+Type: 0   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 55   
+Type: 0   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
 __________________________________________________________________
 Earth army:-
-No of dead ES= 1
+No of dead ES= 6
 No of dead ET= 2
-No of dead EG= 2
+No of dead EG= 8
 Precentage of dead ES relative to their total= 100%
 Precentage of dead ET relative to their total= 100%
 Precentage of dead EG relative to their total= 100%
 Precentage of total earth destrcted unit relative to their total= 100%
-Average Df= 2
- Average Dd= 0
- Average Db= 2
-Df/Db%= 100%
-Dd/Db%= 0%
-Precentage of units healed successfully relative to all units= 0
+Average Df= 0
+ Average Dd= 0.375
+ Average Db= 0.75
+Df/Db%= 66.6667%
+Dd/Db%= 50%
+Precentage of units healed successfully relative to all units= 6.25
 Batle result: Loss 
 Alien army:-
 No of dead AS= 0
@@ -66,5 +174,5 @@ Precentage of dead AS relative to their total= 0%
 Precentage of dead AM relative to their total= 0%
 Precentage of dead AD relative to their total= 0%
 Precentage of total alien destrcted unit relative to their total= 0%
-Df/Db%= 0%
-Dd/Db%= 209.933%
+Df/Db%= 5.4878%
+Dd/Db%= 196.68%

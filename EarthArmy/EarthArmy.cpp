@@ -5,6 +5,8 @@ EarthArmy::EarthArmy()
 	soldierList = new QueueList;
 	tankList = new  StackList;
 	healers = new  StackList;
+	SaverList = new QueueList;
+	infectedCount = 0;
 }
 
 EarthArmy::~EarthArmy()
@@ -13,10 +15,12 @@ EarthArmy::~EarthArmy()
 	delete soldierList;
 	delete tankList;
 	delete healers;
+	delete SaverList;
 	healers = nullptr;
 	GunneryList = nullptr;
 	soldierList = nullptr;
 	tankList = nullptr;
+	SaverList = nullptr;
 }
 
 bool EarthArmy::addUnit(unit* newUnit)
@@ -31,6 +35,7 @@ bool EarthArmy::addUnit(unit* newUnit)
 		case ES:	return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));
 		case ET:	return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
 		case EH:	return healers->insert(dynamic_cast<Healer*>(newUnit));
+		case saver:	return SaverList->insert(dynamic_cast<SU*>(newUnit));
 		}
 	}
 	else return false;
@@ -64,6 +69,16 @@ QueueList* EarthArmy::get_soldierList()
 StackList* EarthArmy::get_tankList()
 {
 	return tankList;
+}
+
+void EarthArmy::setInfectedCount(int a)
+{
+	infectedCount = a;
+}
+
+int EarthArmy::getInfectedCount()
+{
+	return infectedCount;
 }
 
 bool EarthArmy::pickSoldier(unit*& pickedSoldier)

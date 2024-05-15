@@ -5,6 +5,28 @@ EarthSoldier::EarthSoldier(game* master) : unit(master)
 {
 	set_type(ES);
 	initialHealth = joinTime = health = power = attackCap = id = 0;
+	Infected = false;
+	cured = false;
+}
+
+void EarthSoldier::setInfected(bool b)
+{
+	Infected = b;
+}
+
+void EarthSoldier::setCured(bool b)
+{
+	cured = b;
+}
+
+bool EarthSoldier::isInfected()
+{
+	return Infected;
+}
+
+bool EarthSoldier::isCured()
+{
+	return cured;
 }
 
 void EarthSoldier::attack()
