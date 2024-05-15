@@ -19,12 +19,15 @@ class EarthArmy
 public:
 	EarthArmy();
 	~EarthArmy();
+	int is_empty_saver();
 	bool addUnit(unit* newUnit);
 	bool pickGun(unit*& pickedGun);
 	bool pickTank(unit*& pickedTank);
 	StackList* get_healers();
 	EarthGunList* get_GunneryList();
 	QueueList* get_soldierList();
+	QueueList* get_SaverList();
+
 	StackList* get_tankList();
 	void setInfectedCount(int a);
 	int getInfectedCount();
@@ -34,6 +37,9 @@ public:
 	bool peekHealer(unit*& peekedHealer);
 	bool peekTank(unit*& peekedTank);
 	bool peekSoldier(unit*& peekedSoldier);
+	bool peekSaver(unit*& peekedSaver);
+	bool pickSaver(unit*& pickkedSaver);
+
 	void print();
 	void attack();
 	void heal();

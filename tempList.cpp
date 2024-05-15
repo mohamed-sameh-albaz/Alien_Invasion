@@ -23,6 +23,8 @@ void tempList::print(type attacker,int id )//attacking 2 units print
 
 	case AM:cout << " AM ";
 		break;
+	case saver:cout << " SU ";
+		break;
 	}
 	cout << id << " shots [";
 	while (nextUnit)

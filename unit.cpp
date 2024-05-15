@@ -31,6 +31,8 @@ void unit::disp()
 
 		case AM:cout << "Monster";
 			break;
+		case saver:cout << "Saver";
+			break;
 
 	}
 	cout << "\n Power: " << power

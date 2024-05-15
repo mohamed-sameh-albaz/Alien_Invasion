@@ -23,6 +23,11 @@ EarthArmy::~EarthArmy()
 	SaverList = nullptr;
 }
 
+int EarthArmy::is_empty_saver()
+{
+	return SaverList->isEmpty();
+}
+
 bool EarthArmy::addUnit(unit* newUnit)
 {
 	
@@ -64,6 +69,11 @@ EarthGunList* EarthArmy::get_GunneryList()
 QueueList* EarthArmy::get_soldierList()
 {
 	return soldierList;
+}
+
+QueueList* EarthArmy::get_SaverList()
+{
+	return SaverList;
 }
 
 StackList* EarthArmy::get_tankList()
@@ -111,6 +121,16 @@ bool EarthArmy::peekSoldier(unit*& peekedSoldier)
 	return soldierList->peek(peekedSoldier);
 }
 
+bool EarthArmy::peekSaver(unit*& peekedSaver)
+{
+	return SaverList->peek(peekedSaver);
+}
+
+bool EarthArmy::pickSaver(unit*& pickedSaver)
+{
+	return SaverList->dequeue(pickedSaver);
+}
+
 void EarthArmy::print()
 {
 	cout << "============== Earth Army Alive Units ==============" << endl;
@@ -118,6 +138,8 @@ void EarthArmy::print()
 	tankList->print(ET);
 	GunneryList->print();
 	healers->print(EH);
+	SaverList->print(saver);
+
 }
 
 void EarthArmy::attack()
@@ -125,6 +147,8 @@ void EarthArmy::attack()
 	unit* attackingSol = nullptr;
 	unit* attackingGun = nullptr;
 	unit* attackingTank = nullptr;
+	unit* attackingaSver = nullptr;
+
 	peekSoldier(attackingSol);//pick doesnot remove the unit from its original list
 	if (attackingSol)
 		attackingSol->attack();
@@ -134,6 +158,10 @@ void EarthArmy::attack()
 	peekGun(attackingGun);
 	if (attackingGun)
 		attackingGun->attack();
+	peekSaver(attackingaSver);
+	if (attackingaSver)
+		attackingaSver->attack();
+
 
 }
 

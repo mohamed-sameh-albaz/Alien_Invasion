@@ -1,6 +1,6 @@
 #include "randGen.h"
 #include"game.h"
-void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0,int SaverCount0 ,int As0, int Am0, int Ad0,int InfectionProb0, int Prob0,
+void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0,int SaverCount0,int threshold ,int As0, int Am0, int Ad0,int InfectionProb0, int Prob0,
 	int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
 	int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20, int N0) {
 	Es = Es0;
@@ -97,6 +97,11 @@ unit* randGen::generateAlienUnit(int id, int B) {
 		myAlienDrone->set_joinTime(g->getCurrTimeStep());
 		return myAlienDrone;
 	}
+}
+
+int randGen::get_threshold()
+{
+	return threshold;
 }
 
 bool randGen::fillEarthArmy(EarthArmy* army, int& count) {

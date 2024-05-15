@@ -12,7 +12,7 @@ class game
 	EarthArmy* eArmy;
 	int Es, Et, Eg,SaverCount,InfectionProb, As,N, Am, Ad, Prob,Hu,
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
-		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
+		apower1, threshold, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	randGen *RG;
 	int earthCount, alienCount, timestep;
 	QueueList* dead;

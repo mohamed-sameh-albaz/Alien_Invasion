@@ -47,6 +47,9 @@ public:
 			break;
 		case AS:cout << " AS [";
 			break;
+		case saver:cout << " SU [";
+			break;
+
 		default:cout << " units [";//killed list
 		}
 		while (nextUnit)

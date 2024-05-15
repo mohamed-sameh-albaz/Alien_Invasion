@@ -27,32 +27,48 @@ void monster::attack()
 	}
 
 	attackedCnt = tmp.getCount();
-	for (int i = 0; i < attackCap - attackedCnt; i++)
+	if(e->is_empty_saver())
 	{
-		e->pickSoldier(attackedUnit);
-		if (attackedUnit)
-		{
-			int A = (rand() % 100) + 1;
-			int B = (rand() % 100) + 1;
-			int randomSoldierNum = -1;
-			if (e->get_soldierList()->getCount() > 0)
-				randomSoldierNum = (rand() % e->get_soldierList()->getCount());
-			infectSoldier(attackedUnit,A,B, randomSoldierNum);
-			tmp.insert(attackedUnit);
-		}
-		else
-		{
-			ESRemain = false;
-			break;
-		}
-		attackedUnit = nullptr;
-	}
-
-	attackedCnt = tmp.getCount();
-	if (!ESRemain && attackedCnt != attackCap) {
 		for (int i = 0; i < attackCap - attackedCnt; i++)
 		{
-			e->pickTank(attackedUnit);
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+			{
+				int A = (rand() % 100) + 1;
+				int B = (rand() % 100) + 1;
+				int randomSoldierNum = -1;
+				if (e->get_soldierList()->getCount() > 0)
+					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
+				infectSoldier(attackedUnit, A, B, randomSoldierNum);
+				tmp.insert(attackedUnit);
+			}
+			else
+			{
+				ESRemain = false;
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+
+		attackedCnt = tmp.getCount();
+		if (!ESRemain && attackedCnt != attackCap) {
+			for (int i = 0; i < attackCap - attackedCnt; i++)
+			{
+				e->pickTank(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+	}
+	else {
+		for (int i = 0; i < (attackCap-tmp.getCount())/2 ; i++)
+		{
+			e->pickSaver(attackedUnit);
 			if (attackedUnit)
 				tmp.insert(attackedUnit);
 			else
@@ -60,6 +76,52 @@ void monster::attack()
 				break;
 			}
 			attackedUnit = nullptr;
+		}
+		for (int i = 0; i < (attackCap - tmp.getCount()); i++)
+		{
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+			{
+				int A = (rand() % 100) + 1;
+				int B = (rand() % 100) + 1;
+				int randomSoldierNum = -1;
+				if (e->get_soldierList()->getCount() > 0)
+					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
+				infectSoldier(attackedUnit, A, B, randomSoldierNum);
+				tmp.insert(attackedUnit);
+			}
+			else
+			{
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+		attackedCnt = tmp.getCount();
+		if ( attackedCnt < attackCap) {
+			for (int i = 0; i < attackCap - attackedCnt; i++)
+			{
+				e->pickSoldier(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+		if (tmp.getCount() < attackCap) {
+			for (int i = 0; i < attackCap - attackedCnt; i++)
+			{
+				e->pickTank(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					break;
+				}
+				attackedUnit = nullptr;
+			}
 		}
 	}
 	attackedCnt = tmp.getCount();

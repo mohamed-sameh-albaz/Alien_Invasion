@@ -11,16 +11,56 @@ void AlienSoldier::attack()
 {
 	
 	EarthArmy * e  = g->getEarthArmy();
+	
 	unit* attackedUnit = nullptr;
 	tempList tmp,tmp2;
-	for (int i = 0; i < (attackCap); i++)
+	if(e->is_empty_saver())
 	{
-		e->pickSoldier(attackedUnit);
-		if (attackedUnit)
-			tmp.insert(attackedUnit);
-		else
-			break;
-		attackedUnit = nullptr;
+		for (int i = 0; i < (attackCap); i++)
+		{
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+				break;
+			attackedUnit = nullptr;
+		}
+	}
+	else {
+		for (int i = 0; i < (attackCap)/2; i++)
+		{
+			e->pickSaver(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+		for (int i = 0; i < (attackCap) -tmp.getCount(); i++)
+		{
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+				break;
+			attackedUnit = nullptr;
+		}
+		if ( tmp.getCount() < attackCap) {
+			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			{
+				e->pickSaver(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+
 	}
 	if (g->get_mode() == 1)
 	tmp.print(get_type(), id);
@@ -44,6 +84,7 @@ void AlienSoldier::attack()
 				g->insertUml(attackedUnit);
 				attackedUnit->setUMLtime(g->getCurrTimeStep());
 			}
+
 			else {
 
 				tmp2.insert(attackedUnit);
