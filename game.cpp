@@ -811,7 +811,8 @@ void game::outputFn()
 			"Average Db= " << float(db) / (deadES + deadET + deadEG) << "\n";
 	}
 	if(db!=0)
-	out_file << "Df/Db%= " << float(df )/ db * 100 << "%\n" << "Dd/Db%= " << float(dd) / db * 100 << "%\n";
+	out_file << "Df/Db%= " << float(float(df / (deadES + deadET + deadEG)))/ db * 100 << "%\n" << "Dd/Db%= " << 
+		float(float(dd) / (deadES + deadET + deadEG)) / db * 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
 		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG) * 100<<"\n";
