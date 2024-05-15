@@ -23,7 +23,7 @@ void AlienSoldier::attack()
 		attackedUnit = nullptr;
 	}
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(get_type(), id);
 	for (int i = 0; i < attackCap; i++) {
 		if (!tmp.remove(attackedUnit)) break;
 		else {
@@ -35,6 +35,9 @@ void AlienSoldier::attack()
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
 			{
+				//if (attackedUnit->get_type() == ES)
+				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+					e->setInfectedCount(e->getInfectedCount() - 1);
 
 				attackedUnit->set_distructionTime(g->getCurrTimeStep());
 				g->insertKilled(attackedUnit);
@@ -43,15 +46,15 @@ void AlienSoldier::attack()
 
 				g->insertUml(attackedUnit);
 				attackedUnit->setUMLtime(g->getCurrTimeStep());
+				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+					e->setInfectedCount(e->getInfectedCount() - 1);
 			}
 			else {
 
 				tmp2.insert(attackedUnit);
 			}
 		}
-
 		attackedUnit = nullptr;
-
 	}
 
 	while (tmp2.remove(attackedUnit)) {

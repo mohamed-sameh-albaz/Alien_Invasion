@@ -31,15 +31,7 @@ void monster::attack()
 	{
 		e->pickSoldier(attackedUnit);
 		if (attackedUnit)
-		{
-			int A = (rand() % 100) + 1;
-			int B = (rand() % 100) + 1;
-			int randomSoldierNum = -1;
-			if (e->get_soldierList()->getCount() > 0)
-				randomSoldierNum = (rand() % e->get_soldierList()->getCount());
-			infectSoldier(attackedUnit,A,B, randomSoldierNum);
 			tmp.insert(attackedUnit);
-		}
 		else
 		{
 			ESRemain = false;
@@ -64,7 +56,7 @@ void monster::attack()
 	}
 	attackedCnt = tmp.getCount();
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(get_type(), id);
 
 
 	for (int i = 0; i < attackedCnt; i++) {
@@ -75,29 +67,44 @@ void monster::attack()
 				attackedUnit->set_Noofattacked(1);
 			}
 			if (attackedUnit->get_type() == ES) {
+				int A = (rand() % 100) + 1;
+				int B = (rand() % 100) + 1;
+				int randomSoldierNum = -1;
+				if (e->get_soldierList()->getCount() > 0)
+					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
+				infectSoldier(attackedUnit, A, B, randomSoldierNum);
+
 				if (dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {
 					tmp2.enqueue(attackedUnit);
 					attackedUnit = nullptr;
 					continue;
 				}
-
 			}
-			this->set_attackpower(attackedUnit);
-			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
-			if (attackedUnit->get_health() <= 0)
+			if(attackedUnit)
 			{
-				attackedUnit->set_distructionTime(g->getCurrTimeStep());
-				g->insertKilled(attackedUnit);
+				this->set_attackpower(attackedUnit);
+				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+				if (attackedUnit->get_health() <= 0)
+				{
+					if(attackedUnit->get_type()==ES)
+						if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+							e->setInfectedCount(e->getInfectedCount() - 1);
 
-			}
-			else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20) {
+					attackedUnit->set_distructionTime(g->getCurrTimeStep());
+					g->insertKilled(attackedUnit);
+				}
+				else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20) {
 
-				g->insertUml(attackedUnit);
-				attackedUnit->setUMLtime(g->getCurrTimeStep());
-			}
-			else {
+					g->insertUml(attackedUnit);
+					attackedUnit->setUMLtime(g->getCurrTimeStep());
+					if (attackedUnit->get_type() == ES)
+						if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+							e->setInfectedCount(e->getInfectedCount() - 1);
+				}
+				else {
 
-				tmp2.insert(attackedUnit);
+					tmp2.insert(attackedUnit);
+				}
 			}
 		}
 		attackedUnit = nullptr;

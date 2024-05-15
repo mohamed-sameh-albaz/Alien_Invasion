@@ -556,40 +556,40 @@ void game::fight(int mode)
 			
 
 			while (true) {
-				if (timestep > 40)
-				{
-					if (alienIsEmpty() and !earthIsEmpty())
-					{
-						//earth winner
-						system("cls");
-						result = 1;
+				//if (timestep > 40)
+				//{
+				//	if (alienIsEmpty() and !earthIsEmpty())
+				//	{
+				//		//earth winner
+				//		system("cls");
+				//		result = 1;
 
-						changeColor(messageColor);///////
-						cout << "**********		EARTH ARMY WINS		************";
-						changeColor(mainColor);
-						break;
-					}
-					else if (!alienIsEmpty() and earthIsEmpty())
-					{
-						result = -1;
+				//		changeColor(messageColor);///////
+				//		cout << "**********		EARTH ARMY WINS		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//	else if (!alienIsEmpty() and earthIsEmpty())
+				//	{
+				//		result = -1;
 
-						system("cls");
-						changeColor(messageColor);///////
-						cout << "**********		ALIEN ARMY WINS		************";
-						changeColor(mainColor);
-						break;
-					}
-					else if(alienIsEmpty() and earthIsEmpty())
-					{
-						result = 0;
+				//		system("cls");
+				//		changeColor(messageColor);///////
+				//		cout << "**********		ALIEN ARMY WINS		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//	else if(alienIsEmpty() and earthIsEmpty())
+				//	{
+				//		result = 0;
 
-						system("cls");
-						changeColor(messageColor);///////
-						cout << "**********		DRAW NO ONE WIN		************";
-						changeColor(mainColor);
-						break;
-					}
-				}
+				//		system("cls");
+				//		changeColor(messageColor);///////
+				//		cout << "**********		DRAW NO ONE WIN		************";
+				//		changeColor(mainColor);
+				//		break;
+				//	}
+				//}
 				changeColor(12);
 				cout << endl << "Current Timestep: " << timestep << endl;
 				changeColor(mainColor);
@@ -613,12 +613,18 @@ void game::fight(int mode)
 				cout << "Infected Percentage: ";
 				if (eArmy->get_soldierList()->getCount() > 0) cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
 				else cout << "0%" << endl;
-
+				int x;
+				eArmy->get_soldierList()->print(ES);
+				if (eArmy->getInfectedCount() < 0)
+				{
+					cout << "error" << endl;
+					cin >> x;
+				}
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
 				if (timestep > 100)
 					cin.get(); // Wait for user to press enter
-				system("cls");
+				//system("cls");
 			}
 		}
 		else {

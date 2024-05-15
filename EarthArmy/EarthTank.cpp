@@ -78,23 +78,6 @@ void EarthTank::attack()
 			attackedUnit = nullptr;
 		}
 		attackedCnt = tmp.getCount();
-		//if (!AMremain and attackedCnt != attackCap)//if monsters in the army is empty complete the list with AS
-		//{
-		//	for (int i = 0; i < attackCap -attackedCnt; i++)
-		//	{
-		//		attackedArmy->pickSoldier(attackedUnit);
-		//		if (attackedUnit)
-		//		{
-		//			tmp.insert(attackedUnit);
-		//		}
-		//		else
-		//		{
-		//			ASremain = false;
-		//			break;
-		//		}
-		//		attackedUnit = nullptr;
-		//	}
-		//}
 		if (!ASremain and attackedCnt != attackCap)//if AS army is empty complete the list with AM
 		{
 			for (int i = 0; i < attackCap -attackedCnt; i++)

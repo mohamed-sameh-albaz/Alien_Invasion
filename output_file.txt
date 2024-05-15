@@ -1,105 +1,3246 @@
-Distructed time: 3   
-First attacked time: 3   
-ID: 7   
+Distructed time: 1   
+First attacked time: 1   
+ID: 10   
 Type: 2   
 Jion time: 1   
-First attacked delay (Df): 2   
+First attacked delay (Df): 0   
 Destruction delay (Dd): 0   
-Battle time(Db): 2   
+Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 3   
-First attacked time: 3   
-ID: 15   
+Distructed time: 1   
+First attacked time: 1   
+ID: 8   
+Type: 1   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 7   
+Type: 1   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 6   
+Type: 1   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 4   
+Type: 1   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 2   
+Type: 0   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 5   
+Type: 0   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+ID: 9   
+Type: 0   
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
+ID: 13   
 Type: 2   
 Jion time: 2   
-First attacked delay (Df): 1   
+First attacked delay (Df): 0   
 Destruction delay (Dd): 0   
-Battle time(Db): 1   
+Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 3   
-First attacked time: 3   
+Distructed time: 2   
+First attacked time: 2   
+ID: 14   
+Type: 2   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
+ID: 17   
+Type: 2   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
+ID: 19   
+Type: 2   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
 ID: 20   
 Type: 2   
 Jion time: 2   
-First attacked delay (Df): 1   
-Destruction delay (Dd): 0   
-Battle time(Db): 1   
-__________________________________________________________________
-Distructed time: 3   
-First attacked time: 3   
-ID: 11   
-Type: 1   
-Jion time: 2   
-First attacked delay (Df): 1   
-Destruction delay (Dd): 0   
-Battle time(Db): 1   
-__________________________________________________________________
-Distructed time: 3   
-First attacked time: 0   
-ID: 18   
-Type: 3   
-Jion time: 2   
 First attacked delay (Df): 0   
-Destruction delay (Dd): 3   
-Battle time(Db): 1   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 4   
-First attacked time: 3   
+Distructed time: 2   
+First attacked time: 2   
 ID: 16   
 Type: 1   
 Jion time: 2   
-First attacked delay (Df): 1   
-Destruction delay (Dd): 1   
-Battle time(Db): 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 4   
-First attacked time: 3   
+Distructed time: 2   
+First attacked time: 2   
 ID: 12   
+Type: 1   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
+ID: 11   
+Type: 1   
+Jion time: 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 2   
+ID: 15   
 Type: 0   
 Jion time: 2   
-First attacked delay (Df): 1   
-Destruction delay (Dd): 1   
-Battle time(Db): 2   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 4   
+Distructed time: 3   
 First attacked time: 3   
-ID: 19   
-Type: 0   
-Jion time: 2   
-First attacked delay (Df): 1   
-Destruction delay (Dd): 1   
-Battle time(Db): 2   
-__________________________________________________________________
-Distructed time: 37   
-First attacked time: 37   
-ID: 24   
+ID: 22   
 Type: 2   
-Jion time: 37   
+Jion time: 3   
 First attacked delay (Df): 0   
 Destruction delay (Dd): 0   
 Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 37   
-First attacked time: 37   
+Distructed time: 3   
+First attacked time: 3   
+ID: 23   
+Type: 2   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
 ID: 27   
-Type: 0   
-Jion time: 37   
+Type: 2   
+Jion time: 3   
 First attacked delay (Df): 0   
 Destruction delay (Dd): 0   
 Battle time(Db): 0   
 __________________________________________________________________
-Distructed time: 37   
-First attacked time: 37   
+Distructed time: 3   
+First attacked time: 3   
+ID: 29   
+Type: 2   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 30   
+Type: 1   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 21   
+Type: 1   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 26   
+Type: 0   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
 ID: 25   
 Type: 0   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 28   
+Type: 0   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 3   
+First attacked time: 3   
+ID: 24   
+Type: 0   
+Jion time: 3   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 32   
+Type: 2   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 33   
+Type: 2   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 37   
+Type: 2   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 39   
+Type: 2   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 40   
+Type: 1   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 31   
+Type: 1   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 36   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 35   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 38   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 4   
+First attacked time: 4   
+ID: 34   
+Type: 0   
+Jion time: 4   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 42   
+Type: 2   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 43   
+Type: 2   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 47   
+Type: 2   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 49   
+Type: 2   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 50   
+Type: 1   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 41   
+Type: 1   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 46   
+Type: 0   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 45   
+Type: 0   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 48   
+Type: 0   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 5   
+First attacked time: 5   
+ID: 44   
+Type: 0   
+Jion time: 5   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 52   
+Type: 2   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 53   
+Type: 2   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 57   
+Type: 2   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 59   
+Type: 2   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 60   
+Type: 1   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 51   
+Type: 1   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 56   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 55   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 58   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 6   
+First attacked time: 6   
+ID: 54   
+Type: 0   
+Jion time: 6   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 62   
+Type: 2   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 63   
+Type: 2   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 67   
+Type: 2   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 69   
+Type: 2   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 70   
+Type: 1   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 61   
+Type: 1   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 66   
+Type: 0   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 65   
+Type: 0   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 68   
+Type: 0   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 7   
+First attacked time: 7   
+ID: 64   
+Type: 0   
+Jion time: 7   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 72   
+Type: 2   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 73   
+Type: 2   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 77   
+Type: 2   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 79   
+Type: 2   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 80   
+Type: 1   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 71   
+Type: 1   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 76   
+Type: 0   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 75   
+Type: 0   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 78   
+Type: 0   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 8   
+First attacked time: 8   
+ID: 74   
+Type: 0   
+Jion time: 8   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 82   
+Type: 2   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 83   
+Type: 2   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 87   
+Type: 2   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 89   
+Type: 2   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 90   
+Type: 1   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 81   
+Type: 1   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 86   
+Type: 0   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 85   
+Type: 0   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 88   
+Type: 0   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 9   
+First attacked time: 9   
+ID: 84   
+Type: 0   
+Jion time: 9   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 92   
+Type: 2   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 93   
+Type: 2   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 97   
+Type: 2   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 99   
+Type: 2   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 100   
+Type: 1   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 91   
+Type: 1   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 96   
+Type: 0   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 95   
+Type: 0   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 98   
+Type: 0   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 10   
+First attacked time: 10   
+ID: 94   
+Type: 0   
+Jion time: 10   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 102   
+Type: 2   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 103   
+Type: 2   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 107   
+Type: 2   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 109   
+Type: 2   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 110   
+Type: 1   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 101   
+Type: 1   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 106   
+Type: 0   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 105   
+Type: 0   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 108   
+Type: 0   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 11   
+First attacked time: 11   
+ID: 104   
+Type: 0   
+Jion time: 11   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 112   
+Type: 2   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 113   
+Type: 2   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 117   
+Type: 2   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 119   
+Type: 2   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 120   
+Type: 1   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 111   
+Type: 1   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 116   
+Type: 0   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 115   
+Type: 0   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 118   
+Type: 0   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 12   
+First attacked time: 12   
+ID: 114   
+Type: 0   
+Jion time: 12   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 122   
+Type: 2   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 123   
+Type: 2   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 127   
+Type: 2   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 129   
+Type: 2   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 130   
+Type: 1   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 121   
+Type: 1   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 126   
+Type: 0   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 125   
+Type: 0   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 128   
+Type: 0   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 13   
+First attacked time: 13   
+ID: 124   
+Type: 0   
+Jion time: 13   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 132   
+Type: 2   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 135   
+Type: 2   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 137   
+Type: 2   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 133   
+Type: 1   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 131   
+Type: 1   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 138   
+Type: 0   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 140   
+Type: 0   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 136   
+Type: 0   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 14   
+First attacked time: 14   
+ID: 139   
+Type: 0   
+Jion time: 14   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 142   
+Type: 2   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 145   
+Type: 2   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 147   
+Type: 2   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 143   
+Type: 1   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 141   
+Type: 1   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 148   
+Type: 0   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 150   
+Type: 0   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 146   
+Type: 0   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 15   
+First attacked time: 15   
+ID: 149   
+Type: 0   
+Jion time: 15   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 152   
+Type: 2   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 155   
+Type: 2   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 157   
+Type: 2   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 153   
+Type: 1   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 151   
+Type: 1   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 158   
+Type: 0   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 160   
+Type: 0   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 156   
+Type: 0   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 16   
+First attacked time: 16   
+ID: 159   
+Type: 0   
+Jion time: 16   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 162   
+Type: 2   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 165   
+Type: 2   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 167   
+Type: 2   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 163   
+Type: 1   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 161   
+Type: 1   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 168   
+Type: 0   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 170   
+Type: 0   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 166   
+Type: 0   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 17   
+First attacked time: 17   
+ID: 169   
+Type: 0   
+Jion time: 17   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 172   
+Type: 2   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 175   
+Type: 2   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 177   
+Type: 2   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 173   
+Type: 1   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 171   
+Type: 1   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 178   
+Type: 0   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 180   
+Type: 0   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 176   
+Type: 0   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 18   
+First attacked time: 18   
+ID: 179   
+Type: 0   
+Jion time: 18   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 182   
+Type: 2   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 185   
+Type: 2   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 187   
+Type: 2   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 183   
+Type: 1   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 181   
+Type: 1   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 188   
+Type: 0   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 190   
+Type: 0   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 186   
+Type: 0   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 19   
+First attacked time: 19   
+ID: 189   
+Type: 0   
+Jion time: 19   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 192   
+Type: 2   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 195   
+Type: 2   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 197   
+Type: 2   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 193   
+Type: 1   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 191   
+Type: 1   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 198   
+Type: 0   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 200   
+Type: 0   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 196   
+Type: 0   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 20   
+First attacked time: 20   
+ID: 199   
+Type: 0   
+Jion time: 20   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 202   
+Type: 2   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 205   
+Type: 2   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 207   
+Type: 2   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 203   
+Type: 1   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 201   
+Type: 1   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 208   
+Type: 0   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 210   
+Type: 0   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 206   
+Type: 0   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 21   
+First attacked time: 21   
+ID: 209   
+Type: 0   
+Jion time: 21   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 212   
+Type: 2   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 215   
+Type: 2   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 217   
+Type: 2   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 213   
+Type: 1   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 211   
+Type: 1   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 218   
+Type: 0   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 220   
+Type: 0   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 216   
+Type: 0   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 22   
+First attacked time: 22   
+ID: 219   
+Type: 0   
+Jion time: 22   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 222   
+Type: 2   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 225   
+Type: 2   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 227   
+Type: 2   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 223   
+Type: 1   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 221   
+Type: 1   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 228   
+Type: 0   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 230   
+Type: 0   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 226   
+Type: 0   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 23   
+First attacked time: 23   
+ID: 229   
+Type: 0   
+Jion time: 23   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 232   
+Type: 2   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 235   
+Type: 2   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 237   
+Type: 2   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 233   
+Type: 1   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 231   
+Type: 1   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 238   
+Type: 0   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 240   
+Type: 0   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 236   
+Type: 0   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 24   
+First attacked time: 24   
+ID: 239   
+Type: 0   
+Jion time: 24   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 242   
+Type: 2   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 245   
+Type: 2   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 247   
+Type: 2   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 243   
+Type: 1   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 241   
+Type: 1   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 248   
+Type: 0   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 250   
+Type: 0   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 246   
+Type: 0   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 25   
+First attacked time: 25   
+ID: 249   
+Type: 0   
+Jion time: 25   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 251   
+Type: 2   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 253   
+Type: 2   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 256   
+Type: 2   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 259   
+Type: 2   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 260   
+Type: 1   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 257   
+Type: 1   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 252   
+Type: 1   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 254   
+Type: 0   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 255   
+Type: 0   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 26   
+First attacked time: 26   
+ID: 258   
+Type: 0   
+Jion time: 26   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 261   
+Type: 2   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 263   
+Type: 2   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 266   
+Type: 2   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 269   
+Type: 2   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 270   
+Type: 1   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 267   
+Type: 1   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 262   
+Type: 1   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 264   
+Type: 0   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 265   
+Type: 0   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 27   
+First attacked time: 27   
+ID: 268   
+Type: 0   
+Jion time: 27   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 271   
+Type: 2   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 273   
+Type: 2   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 276   
+Type: 2   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 279   
+Type: 2   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 280   
+Type: 1   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 277   
+Type: 1   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 272   
+Type: 1   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 274   
+Type: 0   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 275   
+Type: 0   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 28   
+First attacked time: 28   
+ID: 278   
+Type: 0   
+Jion time: 28   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 281   
+Type: 2   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 283   
+Type: 2   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 286   
+Type: 2   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 289   
+Type: 2   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 290   
+Type: 1   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 287   
+Type: 1   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 282   
+Type: 1   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 284   
+Type: 0   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 285   
+Type: 0   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 29   
+First attacked time: 29   
+ID: 288   
+Type: 0   
+Jion time: 29   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 291   
+Type: 2   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 293   
+Type: 2   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 296   
+Type: 2   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 299   
+Type: 2   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 300   
+Type: 1   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 297   
+Type: 1   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 292   
+Type: 1   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 294   
+Type: 0   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 295   
+Type: 0   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 30   
+First attacked time: 30   
+ID: 298   
+Type: 0   
+Jion time: 30   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 301   
+Type: 2   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 303   
+Type: 2   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 306   
+Type: 2   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 309   
+Type: 2   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 310   
+Type: 1   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 307   
+Type: 1   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 302   
+Type: 1   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 304   
+Type: 0   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 305   
+Type: 0   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 31   
+First attacked time: 31   
+ID: 308   
+Type: 0   
+Jion time: 31   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 311   
+Type: 2   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 313   
+Type: 2   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 316   
+Type: 2   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 319   
+Type: 2   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 320   
+Type: 1   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 317   
+Type: 1   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 312   
+Type: 1   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 314   
+Type: 0   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 315   
+Type: 0   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 32   
+First attacked time: 32   
+ID: 318   
+Type: 0   
+Jion time: 32   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 321   
+Type: 2   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 323   
+Type: 2   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 326   
+Type: 2   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 329   
+Type: 2   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 330   
+Type: 1   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 327   
+Type: 1   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 322   
+Type: 1   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 324   
+Type: 0   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 325   
+Type: 0   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 33   
+First attacked time: 33   
+ID: 328   
+Type: 0   
+Jion time: 33   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 331   
+Type: 2   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 334   
+Type: 2   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 335   
+Type: 2   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 340   
+Type: 2   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 336   
+Type: 1   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 333   
+Type: 1   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 332   
+Type: 1   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 338   
+Type: 0   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 34   
+First attacked time: 34   
+ID: 339   
+Type: 0   
+Jion time: 34   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 341   
+Type: 2   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 344   
+Type: 2   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 345   
+Type: 2   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 350   
+Type: 2   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 346   
+Type: 1   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 343   
+Type: 1   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 342   
+Type: 1   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 348   
+Type: 0   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 35   
+First attacked time: 35   
+ID: 349   
+Type: 0   
+Jion time: 35   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 351   
+Type: 2   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 354   
+Type: 2   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 355   
+Type: 2   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 360   
+Type: 2   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 356   
+Type: 1   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 353   
+Type: 1   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 352   
+Type: 1   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 358   
+Type: 0   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 36   
+First attacked time: 36   
+ID: 359   
+Type: 0   
+Jion time: 36   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 361   
+Type: 2   
 Jion time: 37   
 First attacked delay (Df): 0   
 Destruction delay (Dd): 0   
 Battle time(Db): 0   
 __________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 364   
+Type: 2   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 365   
+Type: 2   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 370   
+Type: 2   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 366   
+Type: 1   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 363   
+Type: 1   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 362   
+Type: 1   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 368   
+Type: 0   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 37   
+First attacked time: 37   
+ID: 369   
+Type: 0   
+Jion time: 37   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 371   
+Type: 2   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 374   
+Type: 2   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 375   
+Type: 2   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 380   
+Type: 2   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 376   
+Type: 1   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 373   
+Type: 1   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 372   
+Type: 1   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 378   
+Type: 0   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 38   
+First attacked time: 38   
+ID: 379   
+Type: 0   
+Jion time: 38   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
 Distructed time: 39   
 First attacked time: 39   
-ID: 44   
+ID: 381   
 Type: 2   
 Jion time: 39   
 First attacked delay (Df): 0   
@@ -108,7 +3249,61 @@ Battle time(Db): 0
 __________________________________________________________________
 Distructed time: 39   
 First attacked time: 39   
-ID: 47   
+ID: 384   
+Type: 2   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 385   
+Type: 2   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 390   
+Type: 2   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 386   
+Type: 1   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 383   
+Type: 1   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 382   
+Type: 1   
+Jion time: 39   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 39   
+First attacked time: 39   
+ID: 388   
 Type: 0   
 Jion time: 39   
 First attacked delay (Df): 0   
@@ -117,7 +3312,7 @@ Battle time(Db): 0
 __________________________________________________________________
 Distructed time: 39   
 First attacked time: 39   
-ID: 45   
+ID: 389   
 Type: 0   
 Jion time: 39   
 First attacked delay (Df): 0   
@@ -126,7 +3321,7 @@ Battle time(Db): 0
 __________________________________________________________________
 Distructed time: 40   
 First attacked time: 40   
-ID: 54   
+ID: 391   
 Type: 2   
 Jion time: 40   
 First attacked delay (Df): 0   
@@ -135,7 +3330,61 @@ Battle time(Db): 0
 __________________________________________________________________
 Distructed time: 40   
 First attacked time: 40   
-ID: 57   
+ID: 394   
+Type: 2   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 395   
+Type: 2   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 400   
+Type: 2   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 396   
+Type: 1   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 393   
+Type: 1   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 392   
+Type: 1   
+Jion time: 40   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 40   
+First attacked time: 40   
+ID: 398   
 Type: 0   
 Jion time: 40   
 First attacked delay (Df): 0   
@@ -144,7 +3393,7 @@ Battle time(Db): 0
 __________________________________________________________________
 Distructed time: 40   
 First attacked time: 40   
-ID: 55   
+ID: 399   
 Type: 0   
 Jion time: 40   
 First attacked delay (Df): 0   
@@ -152,19 +3401,17 @@ Destruction delay (Dd): 0
 Battle time(Db): 0   
 __________________________________________________________________
 Earth army:-
-No of dead ES= 6
-No of dead ET= 2
-No of dead EG= 8
+No of dead ES= 146
+No of dead ET= 98
+No of dead EG= 134
 Precentage of dead ES relative to their total= 100%
 Precentage of dead ET relative to their total= 100%
 Precentage of dead EG relative to their total= 100%
 Precentage of total earth destrcted unit relative to their total= 100%
 Average Df= 0
- Average Dd= 0.375
- Average Db= 0.75
-Df/Db%= 66.6667%
-Dd/Db%= 50%
-Precentage of units healed successfully relative to all units= 6.25
+ Average Dd= 0
+ Average Db= 0
+Precentage of units healed successfully relative to all units= 0
 Batle result: Loss 
 Alien army:-
 No of dead AS= 0
@@ -174,5 +3421,5 @@ Precentage of dead AS relative to their total= 0%
 Precentage of dead AM relative to their total= 0%
 Precentage of dead AD relative to their total= 0%
 Precentage of total alien destrcted unit relative to their total= 0%
-Df/Db%= 5.4878%
-Dd/Db%= 196.68%
+Df/Db%= 11.2073%
+Dd/Db%= 106.756%

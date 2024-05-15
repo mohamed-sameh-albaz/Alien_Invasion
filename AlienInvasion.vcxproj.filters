@@ -35,9 +35,6 @@
     <ClCompile Include="unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DS\double_endedQueue.cpp">
-      <Filter>DS</Filter>
-    </ClCompile>
     <ClCompile Include="AlienArmy\AlienDrone.cpp">
       <Filter>AlienArmy</Filter>
     </ClCompile>

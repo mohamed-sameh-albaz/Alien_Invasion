@@ -133,7 +133,6 @@
     <ClCompile Include="AlienArmy\AlienDroneList.cpp" />
     <ClCompile Include="AlienArmy\monster.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
-    <ClCompile Include="DS\double_endedQueue.cpp" />
     <ClCompile Include="EarthArmy\EarthArmy.cpp" />
     <ClCompile Include="EarthArmy\EarthGun.cpp" />
     <ClCompile Include="EarthArmy\EarthGunList.cpp" />

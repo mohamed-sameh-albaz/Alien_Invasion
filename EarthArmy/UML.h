@@ -7,7 +7,7 @@
 class UML
 {
 	priQueue<unit*> soldiersToHeal;
-	LinkedQueue<unit*> tanksToHeal;
+	LinkedQueue<unit*> tanksToHeal;//must be changed
 	int healed_count, curr_count;
 public:
 	~UML();
