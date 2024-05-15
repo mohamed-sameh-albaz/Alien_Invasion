@@ -591,7 +591,7 @@ void game::fight(int mode)
 				//	}
 				//}
 				changeColor(12);
-				cout << endl << "Current Timestep: " << timestep << endl;
+				cout << endl << " Current Timestep: " << timestep << endl;
 				changeColor(mainColor);
 
 				fillArmies();
@@ -610,7 +610,7 @@ void game::fight(int mode)
 				cout << "\n============== killed/Destructed Units ==============" << endl;
 				dead->print();
 				cout << "\n============== Infected Units ==============" << endl;
-				cout << "Infected Percentage: ";
+				cout << " Infected Percentage: ";
 				if (eArmy->get_soldierList()->getCount() > 0) cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
 				else cout << "0%" << endl;
 				int x;

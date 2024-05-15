@@ -21,10 +21,6 @@ void Healer::attack()
 			else {
 				if (g->getCurrTimeStep() - u->getUMLtime() > 10)
 				{
-					/*if (u->get_type() == ES)
-						if ((dynamic_cast<EarthSoldier*>(u)->isInfected()))
-							e->setInfectedCount(e->getInfectedCount() - 1);*/
-
 					u->set_distructionTime(g->getCurrTimeStep());
 					g->insertKilled(u);
 				}
@@ -36,13 +32,12 @@ void Healer::attack()
 						{
 							dynamic_cast<EarthSoldier*>(u)->setCured(true);
 							dynamic_cast<EarthSoldier*>(u)->setInfected(false);
-							//e->setInfectedCount(e->getInfectedCount() - 1);
 						}
 					}
 					else 
 					{
 						this->set_attackpower(u);
-						u->set_health(u->get_health() + this->get_attackpower());//curStep-unlJOined>10=>killed
+						u->set_health(u->get_health() + this->get_attackpower());
 						if ((u->get_health() * 100 / u->get_initial_health()) > 20)
 						{
 							g->getEarthArmy()->addUnit(u);

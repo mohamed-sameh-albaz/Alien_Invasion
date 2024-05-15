@@ -23,7 +23,7 @@ void AlienSoldier::attack()
 		attackedUnit = nullptr;
 	}
 	if (g->get_mode() == 1)
-		tmp.print(get_type(), id);
+		tmp.print(this);
 	for (int i = 0; i < attackCap; i++) {
 		if (!tmp.remove(attackedUnit)) break;
 		else {

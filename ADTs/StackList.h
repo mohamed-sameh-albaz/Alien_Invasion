@@ -37,7 +37,7 @@ public:
 	void print(type unitType)
 	{
 		int topUnit = count-1;
-		cout << count;
+		cout <<" " << count;
 		switch (unitType)
 		{
 		case ET:cout << " ET [";

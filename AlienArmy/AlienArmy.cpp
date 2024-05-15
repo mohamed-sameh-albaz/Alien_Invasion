@@ -98,18 +98,19 @@ void AlienArmy::print()
 
 void AlienArmy::attack()
 {
-	unit *attacker=nullptr;
-	if (peeksoldier(attacker))
-		attacker->attack();
-	if (peekmonster(attacker))
-		attacker->attack();
+	unit *attackingSol=nullptr;
+	unit *attackingMo=nullptr;
+	unit *attackingFDrone=nullptr;
+	unit *attackingBDrone=nullptr;
 
-	if (peekFrontdrone(attacker))
-		attacker->attack();
-	if (peekbackdrone(attacker))
-		attacker->attack();
-
-	
+	if (peeksoldier(attackingSol))
+		attackingSol->attack();
+	if (peekmonster(attackingMo))
+		attackingMo->attack();
+	if (peekFrontdrone(attackingFDrone))
+		attackingFDrone->attack();
+	if (peekbackdrone(attackingBDrone))
+		attackingBDrone->attack();
 }
 
 int AlienArmy::getListCnt(type neededUnit)

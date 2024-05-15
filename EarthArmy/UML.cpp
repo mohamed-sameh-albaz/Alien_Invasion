@@ -64,7 +64,7 @@ void  UML::print() {
 	priQueue<unit*> tmpS;
 	LinkedQueue<unit*> tmpT;
 	cout << "\n============== Units To Be Healed ==============" << endl;
-	cout << curr_count << " units [";
+	cout << " "<<curr_count << " UML [";
 
 	while (!soldiersToHeal.isEmpty()) {
 		unit* u = nullptr;

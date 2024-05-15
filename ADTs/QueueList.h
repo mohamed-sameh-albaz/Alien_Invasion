@@ -40,7 +40,7 @@ public:
 	void print(type unitType=AD)
 	{
 		Node<unit*> *nextUnit = frontPtr;
-		cout << count;
+		cout<<" " << count;
 		switch (unitType)
 		{
 		case ES:cout << " ES [";

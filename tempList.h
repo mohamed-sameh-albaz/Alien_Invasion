@@ -5,6 +5,6 @@ class tempList:public QueueList
 {
 	static bool firstPrinted;
 public:
-	void print(type attacker,int id);
+	void print(unit *attacker);
 };
 

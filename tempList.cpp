@@ -2,10 +2,11 @@
 
 bool tempList::firstPrinted = false;
 
-void tempList::print(type attacker,int id )//attacking 2 units print
+void tempList::print(unit *attacker)//attacking 2 units print
 {
 	Node<unit*>* nextUnit = frontPtr;
-	switch (attacker)
+	type attackerType = attacker->get_type();
+	switch (attackerType)
 	{
 	case EG:cout << " EG ";
 		break;
@@ -24,9 +25,15 @@ void tempList::print(type attacker,int id )//attacking 2 units print
 	case AM:cout << " AM ";
 		break;
 	}
-	cout << id << " shots [";
+	if (attackerType== ES)
+		if (dynamic_cast<EarthSoldier*>(attacker)->isInfected())
+			cout << "#";			//print infected ES when attack??
+	cout << attacker->get_id()<< " shots [";
 	while (nextUnit)
 	{
+		if(nextUnit->getItem()->get_type()==ES)
+			if(dynamic_cast<EarthSoldier*>(nextUnit->getItem())->isInfected())
+				cout<<"#";
 		cout << nextUnit->getItem()->get_id();
 		if (nextUnit->getNext())
 			cout << ", ";

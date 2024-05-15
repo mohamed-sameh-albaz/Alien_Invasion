@@ -60,7 +60,7 @@ void AlienDrone::attack()
 	attackedCnt = attackedlist.getCount();
 
 	if(g->get_mode()==1)
-		attackedlist.print(get_type(), id);
+		attackedlist.print(this);
 
 	for (int i = 0; i < attackCap; i++) {
 		if (!attackedlist.remove(attackedUnit)) break;

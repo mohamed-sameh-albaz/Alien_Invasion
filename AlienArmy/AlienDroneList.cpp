@@ -65,7 +65,7 @@ void AlienDroneList::print() {
 	double_endedQueue<AlienDrone*> tempList;
 	AlienDrone* tempDrone;
 
-	cout << getCount() << " AD [";
+	cout <<" "<< getCount() << " AD [";
 	while (droneList.dequeue(tempDrone)) {
 		cout << tempDrone->get_id();
 		tempList.enqueue(tempDrone);

@@ -81,7 +81,7 @@ void EarthGun::attack()
 	}
 	attackedCnt = tmp.getCount();
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(this);
 
 	for (int i = 0; i < attackedCnt; i++)
 	{

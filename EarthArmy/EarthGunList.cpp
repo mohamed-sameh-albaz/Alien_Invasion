@@ -55,7 +55,7 @@ void EarthGunList::print()
 	priQueue<EarthGun*> tempList;
 	EarthGun* tempGun;
 	int pri;
-	cout << getCount() << " EG [";
+	cout <<" "<< getCount() << " EG [";
 	while (!GunList.isEmpty())
 	{
 		GunList.dequeue(tempGun, pri);
