@@ -560,7 +560,11 @@ bool game::alienIsEmpty()
 
 bool game::earthIsEmpty()
 {
-	if (!(uml->get_curr_count() > 0 and eArmy->getListCnt(EH) > 0) and !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG)))
+	if ((uml->get_curr_count() > 0 and eArmy->getListCnt(EH) == 0) and (eArmy->get_soldierList()->isEmpty() and eArmy->get_tankList()->isEmpty() and eArmy->get_GunneryList()->isEmpty()))
+		return true;
+	else if ((uml->get_curr_count() == 0 and eArmy->getListCnt(EH) > 0) and (eArmy->get_soldierList()->isEmpty() and eArmy->get_tankList()->isEmpty() and eArmy->get_GunneryList()->isEmpty()))
+		return true;
+	else if ((uml->get_curr_count() == 0 and eArmy->getListCnt(EH) == 0) and (eArmy->get_soldierList()->isEmpty() and eArmy->get_tankList()->isEmpty() and eArmy->get_GunneryList()->isEmpty()))
 		return true;
 	return false;
 }
