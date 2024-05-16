@@ -604,10 +604,6 @@ void game::fight(int mode)
 				if (eArmy->getInfectedCount()*100/ eArmy->get_soldierList()->getCount() >= RG->get_threshold())
 					RG->genAlliedArmy(eArmy);
 				unit* destroing;
-				if (!eArmy->getInfectedCount())
-				{
-					while (eArmy->get_SaverList()->remove(destroing));
-				}
 				eArmy->print();
 
 
@@ -630,6 +626,10 @@ void game::fight(int mode)
 				//if (timestep > 100)
 					cin.get(); // Wait for user to press enter
 				system("cls");
+				if (!eArmy->getInfectedCount())
+				{
+					while (eArmy->get_SaverList()->remove(destroing));
+				}
 			}
 		}
 		else {
@@ -674,10 +674,6 @@ void game::fight(int mode)
 					if (eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount() >= RG->get_threshold())
 						RG->genAlliedArmy(eArmy);
 				unit* destroing;
-				if (!eArmy->getInfectedCount())
-				{
-					while (eArmy->get_SaverList()->remove(destroing));
-				}
 
 
 				eArmy->attack();
@@ -689,6 +685,10 @@ void game::fight(int mode)
 				
 				
 
+				if (!eArmy->getInfectedCount())
+				{
+					while (eArmy->get_SaverList()->remove(destroing));
+				}
 				timestep++;
 				//if (timestep > 100)
 				

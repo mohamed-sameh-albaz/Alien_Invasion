@@ -128,7 +128,7 @@ bool EarthArmy::peekSaver(unit*& peekedSaver)
 
 bool EarthArmy::pickSaver(unit*& pickedSaver)
 {
-	return SaverList->dequeue(pickedSaver);
+	return SaverList->remove(pickedSaver);
 }
 
 void EarthArmy::print()
