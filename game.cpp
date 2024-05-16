@@ -783,10 +783,10 @@ void game::outputFn()
 	unit* killedunit;
 	unit* alliveunit;
 	tempList temp;
-	int deadET,deadES, deadEG,deadSU;
-	int ET, ES, EG,SU;
+	int deadET,deadES, deadEG,deadSU,deadHU;
+	int ET, ES, EG,SU,HU;
 	int df=0, dd=0, db=0;
-	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =0;
+	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =HU=deadHU=0;
 	out_file << "--------------------------:Earth army:----------------------------\n";
 		while (dead->remove(killedunit)) {
 		if (killedunit->get_id() >=2000)
@@ -794,6 +794,7 @@ void game::outputFn()
 			temp.insert(killedunit);
 			continue;
 		}
+			
 		if (killedunit->get_type() == 2)
 			deadES++;
 		else if (killedunit->get_type() == 1)
@@ -802,9 +803,14 @@ void game::outputFn()
 			deadEG++;
 		else if (killedunit->get_type() == saver)
 			deadSU++;
-		df = df + killedunit->get_df();
-		dd = dd + killedunit->get_dd();
-		db = db + killedunit->get_db();
+		else if (killedunit->get_type() == 3)
+			deadHU++;
+		if (killedunit->get_type() != 3)
+		
+			df = df + killedunit->get_df();
+			dd = dd + killedunit->get_dd();
+			db = db + killedunit->get_db();
+		
 		out_file << "Distructed time: " << killedunit->get_td() << "   \n" <<
 			"First attacked time: "<< killedunit->get_ta() << "   \n"
 			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
@@ -847,6 +853,11 @@ void game::outputFn()
 			ES++;
 		
 	}
+	while (eArmy->get_healers()->remove(alliveunit)) {
+
+		HU++;
+
+	}
 	while (eArmy->get_tankList()->remove(alliveunit)) {
 		
 		ET++;
@@ -867,7 +878,7 @@ void game::outputFn()
 	out_file 	 << "--------------------------:Earth army:----------------------------\n"
 
 		<<"------------------------------------------------------------------\nNo of  ES = " << deadES +ES<< "\n" << "No of  ET = " << deadET +ET<< "\n" << "No of  EG = " 
-		<< deadEG +EG<< "\n"<<"No of dead SU="<<deadSU+SU<<"\n";
+		<< deadEG +EG<< "\n"<<"No of  SU="<<deadSU+SU<<"\n" << "No of  HU=" << deadHU + HU << "\n";
 	if ((deadES + ES) != 0)
 		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
 	if ((deadET + ET) != 0)
@@ -876,15 +887,21 @@ void game::outputFn()
 		out_file<< "Precentage of dead EG relative to their total= " << float(deadEG) / (deadEG + EG)* 100 << "%\n";
 	if ((deadSU + SU) != 0)
 		out_file << "Precentage of dead SU relative to their total= " << float(deadSU) / (deadSU + SU) * 100 << "%\n";
-	if((deadET + ES + deadES + ET + deadEG + EG+ deadSU+ SU)!=0)
+	if ((deadHU + HU) != 0)
+		out_file << "Precentage of dead healers relative to their total= " << float(deadHU) / (deadHU + HU) * 100 << "%\n";
+	if((deadET + ES + deadES + ET + deadEG + EG+ deadSU+ SU+ deadHU + HU)!=0)
 	out_file << "Precentage of total earth destrcted unit relative to their total= " <<
-		float((deadES + deadET + deadEG+ deadSU) )/ (deadET + ES + deadES + ET + deadEG + EG+deadSU + SU) * 100 << "%\n";
-	if((deadES + deadET + deadEG + deadSU)!=0)
+		float((deadES + deadET + deadEG+ deadSU+deadHU) )/ (deadET + ES + deadES + ET + deadEG + EG+deadSU + SU+deadHU+HU) * 100 << "%\n";
+	if ((deadES + deadET + deadEG + deadSU) != 0)
+
+		out_file << "Average Df= " << float(df) / (deadES + deadET + deadEG + deadSU) << "\n ";
+	if ((deadES + deadET + deadEG + deadSU+ deadHU) != 0)
+
 	{
-		out_file << "Average Df= " << float(df )/ (deadES + deadET + deadEG + deadSU) << "\n "<<
-			"Average Dd= " << float(dd )/ (deadES + deadET + deadEG + deadSU) << "\n " <<
-			"Average Db= " << float(db) / (deadES + deadET + deadEG + deadSU) << "\n";
+		out_file << "Average Dd= " << float(dd) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n ";
+		out_file << "Average Db= " << float(db) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n";
 	}
+	
 	if(db!=0)
 	out_file << "Df/Db%= " <<float(df) /  db * 100 << "%\n" << "Dd/Db%= " <<
 		float(dd) / db * 100 << "%\n";
@@ -1067,6 +1084,6 @@ bool game::alienIsEmpty()
 
 bool game::earthIsEmpty()
 {
-	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG));//add uml count
+	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG)+uml->get_curr_count());//add uml count
 }
 
