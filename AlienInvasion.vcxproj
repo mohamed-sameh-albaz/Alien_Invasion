@@ -180,11 +180,14 @@
     <ClInclude Include="unit.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="input_file.text" />
-    <None Include="Source.text" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="output_file.txt" />
+    <Text Include="input_file.txt" />
+    <Text Include="IN_OUT\StrongEarth_ModerateAliens.txt" />
+    <Text Include="IN_OUT\StrongEarth_StrongAliens.txt" />
+    <Text Include="IN_OUT\StrongEarth_WeakAliens.txt" />
+    <Text Include="IN_OUT\WeakEarth_ModerateAliens.txt" />
+    <Text Include="IN_OUT\WeakEarth_StrongAliens.txt" />
+    <Text Include="IN_OUT\WeakEarth_WeakAliens.txt" />
+    <Text Include="output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -601,7 +601,6 @@ void game::fight(mode CurMode)
 				// Print Armies
 				
 				//Start Fighting 
-				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				if(eArmy->get_soldierList()->getCount()>0)
 				if (eArmy->getInfectedCount()*100/ eArmy->get_soldierList()->getCount() >= RG->get_threshold())
 					RG->genAlliedArmy(eArmy);
@@ -610,6 +609,7 @@ void game::fight(mode CurMode)
 
 
 				aArmy->print();
+				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				eArmy->attack();
 				aArmy->attack();
 
@@ -764,7 +764,7 @@ void game::fight(mode CurMode)
 
 void game::inputFn()
 {
-	ifstream in_file("input_file.text");
+	ifstream in_file("input_file.txt");
 	in_file>> N >> Es >> Et >> Eg  >> Hu >> SaverCount >> threshold >>As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
@@ -780,7 +780,7 @@ void game::inputFn()
 
 void game::outputFn()///////////////////modify using Enum
 {
-	ofstream out_file("output_file.txt");
+	ofstream out_file("output.txt");
 	out_file.clear();
 	unit* killedunit;
 	unit* alliveunit;
