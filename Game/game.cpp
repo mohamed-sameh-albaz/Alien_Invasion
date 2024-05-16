@@ -30,22 +30,6 @@ void game::set_file_mode(selector s)
 void game::simulate(int mode)
 {
 	//phase 1.2 simualation code or delete the function
-	EarthSoldier* ptr = new EarthSoldier(this);
-	//ptr->setInfected(true);
-	ptr->set_health(10);
-	eArmy->addUnit(ptr);
-	ptr->setInfected(true);
-	monster m(this);
-	m.set_power(100);
-	m.set_attackCap(5);
-	m.set_health(100);
-	while(ptr->get_health()>0)
-	{
-		m.attack();
-	}
-	dead->print(Dead);
-	eArmy->print();
-
 }
 
 void game::fight(mode CurMode,selector s)
@@ -79,7 +63,7 @@ void game::fight(mode CurMode,selector s)
 					changeColor(mainColor);
 					break;
 				}
-				else if(alienIsEmpty() and earthIsEmpty())
+				else if(Drawn())
 				{
 					battleHero=drawn;
 					system("cls");
@@ -92,44 +76,42 @@ void game::fight(mode CurMode,selector s)
 			changeColor(12);
 			cout << endl << " Current Timestep: " << timestep << endl;
 			changeColor(mainColor);
-
 			fillArmies();
 
-				// Print Armies
-				
-				//Start Fighting 
-				if(eArmy->get_soldierList()->getCount()>0)
+			if(eArmy->get_soldierList()->getCount()>0)
 				if (eArmy->getInfectedCount()*100/ eArmy->get_soldierList()->getCount() >= RG->get_threshold())
 					RG->genAlliedArmy(eArmy);
-				unit* destroing;
-				eArmy->print();
-				aArmy->print();
-				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
-				eArmy->attack();
-				aArmy->attack();
 
-				uml->print();
-				// Heal Units To Be Healed
-				eArmy->heal();
-				cout << "\n============== killed/Destructed Units ==============" << endl;
-				dead->print(Dead);
-				cout << "\n============== Infected Units ==============" << endl;
-				cout << "Infected Percentage: ";
-				if (eArmy->get_soldierList()->getCount() > 0) 
-					cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
-				else
-					cout << "0%" << endl;
+			unit* destroing;
+			// Print Armies
+			eArmy->print();
+			aArmy->print();
+			//Start Fighting 
+			cout << "\n============== Units fighting at current step ==============" << endl;
+			eArmy->attack();
+			aArmy->attack();
+			// Heal Units To Be Healed
+			uml->print();
+			eArmy->heal();
 
-				timestep++;
-				cout << endl << "Press Enter To Continue" << endl;
-				//if (timestep > 100)
-					//cin.get(); // Wait for user to press enter
-				system("cls");
-				if (!eArmy->getInfectedCount())
-				{
-					while (eArmy->get_SaverList()->remove(destroing))
-						insertKilled(destroing);
-				}
+			cout << "\n============== killed/Destructed Units ==============" << endl;
+			dead->print(Dead);
+			cout << "\n============== Infected Units ==============" << endl;
+			cout << "Infected Percentage: ";
+			if (eArmy->get_soldierList()->getCount() > 0) 
+				cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
+			else
+				cout << "0%" << endl;
+
+			timestep++;
+			cout << endl << "Press Enter To Continue" << endl;
+			cin.get(); // Wait for user to press enter
+			system("cls");
+			if (!eArmy->getInfectedCount())
+			{
+				while (eArmy->get_SaverList()->remove(destroing))
+					insertKilled(destroing);
+			}
 		}
 	}
 	else
@@ -280,9 +262,9 @@ void game::outputFn()///////////////////modify using Enum
 	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =HU=deadHU=0;
 	out_file << "-------------------------:Batle result:---------------------------\n";
 	if (battleHero == Earth)
-		out_file << "------------------------------:Win:-------------------------------\n";
+		out_file << "------------------------------:EARTH ARMY WINS:-------------------------------\n";
 	if (battleHero == ALien)
-		out_file << "----------------------------:Loss:-------------------------------\n";
+		out_file << "------------------------------:EARTH ARMY LOSSES:-------------------------------\n";
 	if (battleHero == drawn)
 		out_file << "-----------------------------:Drawn:-------------------------------\n";
 

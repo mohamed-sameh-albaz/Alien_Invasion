@@ -186,5 +186,6 @@ int EarthArmy::getListCnt(type neededUnit)
 	case(ET):return tankList->getCount();
 	case(EG):return GunneryList->getCount();
 	case(saver):return SaverList->getCount();
+	case(EH):return healers->getCount();
 	}
 }

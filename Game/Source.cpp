@@ -1,18 +1,14 @@
 #include <iostream>
 #include <Windows.h>
 #include "game.h"
-
 using namespace std;
-
 
 int main() {
 	game* g = new game;
 	int mod;
 	int sel;
 	mode GameMode;
-	g->simulate(InterActive);
 	selector s;
-	cin>>mod;
 	do
 	{
 		system("cls");
@@ -24,10 +20,10 @@ int main() {
 	{
 		system("cls");
 		cout<< "enter :\n"
-			<<"\t1 for strong earth moderete aliens \n" 
+			<<"\t1 for strong earth moderate aliens \n" 
 			<<"\t2 for strong earth strong aliens \n"
 			<<"\t3 for strong earth  weak aliens \n"
-			<<"\t4 for weak earth  moderete aliens\n" 
+			<<"\t4 for weak earth  moderate aliens\n" 
 			<<"\t5 for weak earth  strong aliens\n" 
 			<<"\t6 for weak earth  weak aliens\n";
 
