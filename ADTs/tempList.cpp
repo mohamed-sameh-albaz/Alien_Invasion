@@ -1,29 +1,18 @@
 #include "tempList.h"
 
-bool tempList::firstPrinted = false;
-
 void tempList::print(unit *attacker)//attacking 2 units print
 {
 	Node<unit*>* nextUnit = frontPtr;
 	type attackerType = attacker->get_type();
+	tempList tmp; //for multiple attacking units-->to be done...
 	switch (attackerType)
 	{
-	case EG:cout << " EG ";
-		break;
-	case ES:cout << " ES ";
-		break;
-
-	case ET:cout << " ET ";
-		break;
-
-	case AS:cout << " AS ";
-		break;
-
-	case AD:cout << " AD ";
-		break;
-
-	case AM:cout << " AM ";
-		break;
+	case EG:cout << " EG ";		break;
+	case ES:cout << " ES ";		break;
+	case ET:cout << " ET ";		break;
+	case AS:cout << " AS ";		break;
+	case AD:cout << " AD ";		break;
+	case AM:cout << " AM ";		break;
 	}
 	if (attackerType== ES)
 		if (dynamic_cast<EarthSoldier*>(attacker)->isInfected())

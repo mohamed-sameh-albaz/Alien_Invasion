@@ -1,13 +1,11 @@
 #pragma once
-#include "../DS/priQueue.h"
-#include "../DS/LinkedQueue.h"
-#include "EarthSoldier.h"
-#include "EarthTank.h"
+#include "../ADTs/QueueList.h"
+#include"../ADTs/PriQueueList.h"
 
 class UML
 {
-	priQueue<unit*> soldiersToHeal;
-	LinkedQueue<unit*> tanksToHeal;//must be changed
+	PriQueueList soldiersToHeal;
+	QueueList tanksToHeal;
 	int healed_count, curr_count;
 public:
 	~UML();

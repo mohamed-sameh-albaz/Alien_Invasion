@@ -1,23 +1,18 @@
 #include "EarthTank.h"
-#include"../game.h"
-#include"../tempList.h"
-using namespace std;
-
-
+#include"../Game/game.h"
 
 bool EarthTank::attackAS = false;
 
 EarthTank::EarthTank(game* master) : unit(master)
 {
 	set_type(ET);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 void EarthTank::attack()
 {
 	
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	EarthArmy* attackingArmy = g->getEarthArmy();
-	int armyCnt = g->getEArmyCnt();
+	int armyCnt = g->getEArmyCnt();//for what?
 	int enemyCnt = g->getAArmyCnt();
 	int ASCnt = attackedArmy->getListCnt(AS);
 	int armySolsPerc = 0;

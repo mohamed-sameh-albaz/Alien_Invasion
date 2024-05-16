@@ -1,11 +1,8 @@
 #include "AlienDrone.h"
-#include"../tempList.h"
-#include"../EarthArmy/EarthArmy.h"
-#include"../game.h"
+#include"../Game/game.h"
 AlienDrone::AlienDrone(game* master) : unit(master)
 {
 	set_type(AD);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void AlienDrone::attack()

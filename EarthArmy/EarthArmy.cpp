@@ -1,7 +1,7 @@
 #include "EarthArmy.h"
 EarthArmy::EarthArmy()
 {
-	GunneryList = new EarthGunList;
+	GunneryList = new PriQueueList;
 	soldierList = new QueueList;
 	tankList = new  StackList;
 	healers = new  StackList;
@@ -31,14 +31,18 @@ bool EarthArmy::addUnit(unit* newUnit)
 		type unitType = newUnit->get_type();
 		switch (unitType)
 		{
-		case EG:	return GunneryList->insert(dynamic_cast<EarthGun*>(newUnit));
-		case ES:	return soldierList->insert(dynamic_cast<EarthSoldier*>(newUnit));
-		case ET:	return tankList->insert(dynamic_cast<EarthTank*>(newUnit));
-		case EH:	return healers->insert(dynamic_cast<Healer*>(newUnit));
-		case saver:	return SaverList->insert(dynamic_cast<SU*>(newUnit));
+		case EG:	
+		{
+			int GunPri = newUnit->get_health() + newUnit->get_power();
+			return GunneryList->insert(newUnit,GunPri);
+		}
+		case ES:	return soldierList->insert(newUnit);
+		case ET:	return tankList->insert(newUnit);
+		case EH:	return healers->insert(newUnit);
+		case saver:	return SaverList->insert(newUnit);
 		}
 	}
-	else return false;
+	return false;
 }
 
 bool EarthArmy::pickGun(unit*& pickedGun)
@@ -56,7 +60,7 @@ StackList* EarthArmy::get_healers()
 	return healers;
 }
 
-EarthGunList* EarthArmy::get_GunneryList()
+PriQueueList* EarthArmy::get_GunneryList()
 {
 	return GunneryList;
 }
@@ -71,9 +75,9 @@ StackList* EarthArmy::get_tankList()
 	return tankList;
 }
 
-void EarthArmy::setInfectedCount(int a)
+void EarthArmy::setInfectedCount(int infectedCnt)
 {
-	infectedCount = a;
+	infectedCount = infectedCnt;
 }
 
 int EarthArmy::getInfectedCount()
@@ -125,7 +129,7 @@ void EarthArmy::attack()
 	unit* attackingSol = nullptr;
 	unit* attackingGun = nullptr;
 	unit* attackingTank = nullptr;
-	peekSoldier(attackingSol);//pick doesnot remove the unit from its original list
+	peekSoldier(attackingSol);//pick does not remove the unit from its original list
 	if (attackingSol)
 		attackingSol->attack();
 	peekTank(attackingTank);
@@ -153,5 +157,6 @@ int EarthArmy::getListCnt(type neededUnit)
 	case(ES):return soldierList->getCount();
 	case(ET):return tankList->getCount();
 	case(EG):return GunneryList->getCount();
+	case(saver):return SaverList->getCount();
 	}
 }

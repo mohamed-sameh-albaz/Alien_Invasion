@@ -1,10 +1,8 @@
 #include"AlienSoldier.h"
-#include "../game.h"
-#include "../tempList.h"
+#include"../Game/game.h"
 AlienSoldier::AlienSoldier(game* master) : unit(master)
 {
 	set_type(AS);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void AlienSoldier::attack()

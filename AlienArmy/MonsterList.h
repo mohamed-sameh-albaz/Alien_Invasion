@@ -1,8 +1,8 @@
+#pragma once
 #include <iostream>
 #include "monster.h"
 using namespace std;
 
-#pragma once
 class MonsterList
 {
 	int n;

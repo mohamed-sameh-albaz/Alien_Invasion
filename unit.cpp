@@ -1,8 +1,11 @@
 #include "unit.h"
 
 unit::unit(game* master)
-{  g = master; tUML = 0; 
-number_of_attacked = 0;
+{ 
+	g = master; tUML = 0; 
+	attacks=number_of_attacked = 0;
+	initialHealth = joinTime = health = power = attackCap = id = 0;
+	ta = td = df = dd = db = attackpower = 0;
 }
 
 void unit::disp()
@@ -79,7 +82,6 @@ void unit::set_health(int a)
 {
 	health = a;
 	if (initialHealth == 0) initialHealth = a;
-
 }
 
 void unit::set_power(int a)
@@ -138,7 +140,6 @@ void unit::set_distructionTime(int a)
 	df = ta - joinTime;
 	dd = td - ta;
 	db = df + dd;
-
 }
 
 int unit::get_tj()
@@ -158,9 +159,7 @@ int unit::get_td()
 
 int unit::get_df()
 {
-	if (df < 0)
-		return 0;
-	return df;
+	return (df < 0) ? 0 : df;
 }
 
 int unit::get_dd()

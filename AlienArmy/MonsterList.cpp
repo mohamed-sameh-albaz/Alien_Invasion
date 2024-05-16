@@ -1,6 +1,5 @@
 #include "MonsterList.h"
 
-
 MonsterList::MonsterList() {
 	n = 1000; index = -1;
 	monsters = new monster * [n];

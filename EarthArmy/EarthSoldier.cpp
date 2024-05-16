@@ -1,10 +1,8 @@
 #include "EarthSoldier.h"
-#include"../game.h"
-#include"../tempList.h"
+#include"../Game/game.h"
 EarthSoldier::EarthSoldier(game* master) : unit(master)
 {
 	set_type(ES);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 	Infected = false;
 	cured = false;
 }

@@ -1,9 +1,9 @@
+#pragma once
 #include <iostream>
 using namespace std;
 class game;
-enum type { EG, ET, ES, EH, AS, AM, AD, saver};
+enum type { EG, ET, ES, EH, AS, AM, AD, saver ,Dead};
 
-#pragma once
 class unit
 {
 protected:
@@ -12,7 +12,7 @@ protected:
 	int health;
 	int power;
 	int attackCap;
-	int  joinTime,ta, td, df, dd, db, attackpower;
+	int joinTime,ta, td, df, dd, db, attackpower;
 	int number_of_attacked;
 	int initialHealth;
 	int attacks;

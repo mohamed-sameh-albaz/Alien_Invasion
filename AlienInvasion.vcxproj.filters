@@ -20,17 +20,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Game\Source.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AlienArmy\AlienDroneList.cpp">
-      <Filter>AlienArmy</Filter>
     </ClCompile>
     <ClCompile Include="AlienArmy\MonsterList.cpp">
       <Filter>AlienArmy</Filter>
-    </ClCompile>
-    <ClCompile Include="EarthArmy\EarthGunList.cpp">
-      <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="unit.cpp">
       <Filter>Source Files</Filter>
@@ -44,7 +38,7 @@
     <ClCompile Include="EarthArmy\EarthSoldier.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="Game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AlienArmy\AlienArmy.cpp">
@@ -59,7 +53,7 @@
     <ClCompile Include="EarthArmy\EarthTank.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
-    <ClCompile Include="randGen.cpp">
+    <ClCompile Include="Game\randGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AlienArmy\monster.cpp">
@@ -71,10 +65,22 @@
     <ClCompile Include="EarthArmy\Healer.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
-    <ClCompile Include="tempList.cpp">
+    <ClCompile Include="ADTs\tempList.cpp">
       <Filter>EarthArmy</Filter>
     </ClCompile>
     <ClCompile Include="EarthArmy\SU.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ADTs\DEQeueueList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ADTs\QueueList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ADTs\StackList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ADTs\PriQueueList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,10 +100,10 @@
     <ClInclude Include="unit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game.h">
+    <ClInclude Include="Game\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="randGen.h">
+    <ClInclude Include="Game\randGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DS\ArrayStack.h">
@@ -130,17 +136,11 @@
     <ClInclude Include="AlienArmy\AlienSoldier.h">
       <Filter>AlienArmy</Filter>
     </ClInclude>
-    <ClInclude Include="AlienArmy\AlienDroneList.h">
-      <Filter>AlienArmy</Filter>
-    </ClInclude>
     <ClInclude Include="AlienArmy\monster.h">
       <Filter>AlienArmy</Filter>
     </ClInclude>
     <ClInclude Include="AlienArmy\MonsterList.h">
       <Filter>AlienArmy</Filter>
-    </ClInclude>
-    <ClInclude Include="EarthArmy\EarthGunList.h">
-      <Filter>EarthArmy</Filter>
     </ClInclude>
     <ClInclude Include="DS\double_endedQueue.h">
       <Filter>DS</Filter>
@@ -151,7 +151,7 @@
     <ClInclude Include="EarthArmy\Healer.h">
       <Filter>EarthArmy</Filter>
     </ClInclude>
-    <ClInclude Include="tempList.h">
+    <ClInclude Include="ADTs\tempList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ADTs\QueueList.h">
@@ -161,6 +161,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EarthArmy\SU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ADTs\DEQeueueList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ADTs\PriQueueList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

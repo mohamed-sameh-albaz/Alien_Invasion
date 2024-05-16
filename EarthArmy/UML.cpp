@@ -42,7 +42,7 @@ bool  UML::insert(unit* u) {
 		curr_count++;
 		return true;
 	}
-	else return false;
+	return false;
 }
 
 bool  UML::remove(unit*& u) {
@@ -57,10 +57,10 @@ bool  UML::remove(unit*& u) {
 		curr_count--;
 		return true;
 	}
-	else return false;
+	return false;
 }
 
-void  UML::print() {
+void  UML::print() { //change lists and traverse 
 	priQueue<unit*> tmpS;
 	LinkedQueue<unit*> tmpT;
 	cout << "\n============== Units To Be Healed ==============" << endl;

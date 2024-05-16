@@ -127,33 +127,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ADTs\DEQeueueList.cpp" />
+    <ClCompile Include="ADTs\PriQueueList.cpp" />
+    <ClCompile Include="ADTs\QueueList.cpp" />
+    <ClCompile Include="ADTs\StackList.cpp" />
     <ClCompile Include="AlienArmy\AlienArmy.cpp" />
     <ClCompile Include="AlienArmy\AlienDrone.cpp" />
     <ClCompile Include="AlienArmy\AlienSoldier.cpp" />
-    <ClCompile Include="AlienArmy\AlienDroneList.cpp" />
     <ClCompile Include="AlienArmy\monster.cpp" />
     <ClCompile Include="AlienArmy\MonsterList.cpp" />
     <ClCompile Include="EarthArmy\EarthArmy.cpp" />
     <ClCompile Include="EarthArmy\EarthGun.cpp" />
-    <ClCompile Include="EarthArmy\EarthGunList.cpp" />
     <ClCompile Include="EarthArmy\EarthSoldier.cpp" />
     <ClCompile Include="EarthArmy\EarthTank.cpp" />
     <ClCompile Include="EarthArmy\Healer.cpp" />
     <ClCompile Include="EarthArmy\UML.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="randGen.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Game\game.cpp" />
+    <ClCompile Include="Game\randGen.cpp" />
+    <ClCompile Include="Game\Source.cpp" />
     <ClCompile Include="EarthArmy\SU.cpp" />
-    <ClCompile Include="tempList.cpp" />
+    <ClCompile Include="ADTs\tempList.cpp" />
     <ClCompile Include="unit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ADTs\DEQeueueList.h" />
+    <ClInclude Include="ADTs\PriQueueList.h" />
     <ClInclude Include="ADTs\QueueList.h" />
     <ClInclude Include="ADTs\StackList.h" />
     <ClInclude Include="AlienArmy\AlienArmy.h" />
     <ClInclude Include="AlienArmy\AlienDrone.h" />
     <ClInclude Include="AlienArmy\AlienSoldier.h" />
-    <ClInclude Include="AlienArmy\AlienDroneList.h" />
     <ClInclude Include="AlienArmy\monster.h" />
     <ClInclude Include="AlienArmy\MonsterList.h" />
     <ClInclude Include="DS\double_endedQueue.h" />
@@ -166,15 +169,14 @@
     <ClInclude Include="DS\StackADT.h" />
     <ClInclude Include="EarthArmy\EarthArmy.h" />
     <ClInclude Include="EarthArmy\EarthGun.h" />
-    <ClInclude Include="EarthArmy\EarthGunList.h" />
     <ClInclude Include="EarthArmy\EarthSoldier.h" />
     <ClInclude Include="EarthArmy\EarthTank.h" />
     <ClInclude Include="EarthArmy\Healer.h" />
     <ClInclude Include="EarthArmy\UML.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="randGen.h" />
+    <ClInclude Include="Game\game.h" />
+    <ClInclude Include="Game\randGen.h" />
     <ClInclude Include="EarthArmy\SU.h" />
-    <ClInclude Include="tempList.h" />
+    <ClInclude Include="ADTs\tempList.h" />
     <ClInclude Include="unit.h" />
   </ItemGroup>
   <ItemGroup>
