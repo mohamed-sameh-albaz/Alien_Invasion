@@ -134,7 +134,7 @@ void monster::attack()
 		else {
 			if (attackedUnit->get_Noofattacked() == 0) {
 				attackedUnit->set_atackedTime(g->getCurrTimeStep());
-				attackedUnit->set_Noofattacked(1);
+				attackedUnit->set_Noofattacked(1 + attackedUnit->get_Noofattacked());
 			}
 			if (attackedUnit->get_type() == ES) {
 				if (dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {

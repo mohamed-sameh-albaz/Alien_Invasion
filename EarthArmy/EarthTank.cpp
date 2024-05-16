@@ -119,7 +119,7 @@ void EarthTank::attack()
 		tmp.remove(attackedUnit);
 		if (attackedUnit->get_Noofattacked() == 0) {
 			attackedUnit->set_atackedTime(g->getCurrTimeStep());
-			attackedUnit->set_Noofattacked(1);
+			attackedUnit->set_Noofattacked(1 + attackedUnit->get_Noofattacked());
 		}
 		this->set_attackpower(attackedUnit);
 		attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
