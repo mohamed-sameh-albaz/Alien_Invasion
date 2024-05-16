@@ -13,6 +13,8 @@ void tempList::print(unit *attacker)//attacking 2 units print
 	case AS:cout << " AS ";		break;
 	case AD:cout << " AD ";		break;
 	case AM:cout << " AM ";		break;
+	case saver:cout << " SU ";		break;
+
 	}
 	if (attackerType== ES)
 		if (dynamic_cast<EarthSoldier*>(attacker)->isInfected())

@@ -25,6 +25,7 @@ void AlienSoldier::attack()
 		}
 	}
 	else {
+
 		for (int i = 0; i < (attackCap)/2; i++)
 		{
 			e->pickSaver(attackedUnit);
@@ -77,7 +78,7 @@ void AlienSoldier::attack()
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
 			{
-				//if (attackedUnit->get_type() == ES)
+				if (attackedUnit->get_type() == ES)
 				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
 					e->setInfectedCount(e->getInfectedCount() - 1);
 
@@ -88,6 +89,7 @@ void AlienSoldier::attack()
 
 				g->insertUml(attackedUnit);
 				attackedUnit->setUMLtime(g->getCurrTimeStep());
+				if(attackedUnit->get_type()==ES)
 				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
 					e->setInfectedCount(e->getInfectedCount() - 1);
 			}

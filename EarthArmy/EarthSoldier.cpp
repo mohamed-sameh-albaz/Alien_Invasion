@@ -106,6 +106,7 @@ void EarthSoldier::attack()
 			g->insertKilled(attackedUnit);
 			attackedUnit->set_distructionTime(g->getCurrTimeStep());
 			if(Infected)
+				if(attackedUnit->get_type()==ES)
 				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
 					allies->setInfectedCount(allies->getInfectedCount() - 1);
 		}
@@ -113,6 +114,7 @@ void EarthSoldier::attack()
 		{
 			g->insertUml(attackedUnit);
 			attackedUnit->setUMLtime(g->getCurrTimeStep());
+			if(attackedUnit->get_type()==ES)
 			if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
 				allies->setInfectedCount(allies->getInfectedCount() - 1);
 		}
