@@ -1,8 +1,7 @@
 #include "AlienArmy.h"
-#include"../tempList.h"
 AlienArmy::AlienArmy()
 {
-	droneList = new AlienDroneList;
+	droneList = new DEQueueList;
 	soldierList = new QueueList;
 	monsterList = new MonsterList;
 }
@@ -18,21 +17,20 @@ AlienArmy::~AlienArmy()
 
 bool AlienArmy::addUnit(unit* newUnit)
 {
-	
 	if(newUnit)
 	{
 		type unitType = newUnit->get_type();
 		switch (unitType)
 		{
-		case AS:	return soldierList->insert(dynamic_cast<AlienSoldier*>(newUnit));
+		case AS:	return soldierList->insert(newUnit);
 		case AM:	return monsterList->insert(dynamic_cast<monster*>(newUnit));
-		case AD:	return droneList->insertEnd(dynamic_cast<AlienDrone*>(newUnit));
+		case AD:	return droneList->insertEnd(newUnit);
 		}
 	}
-	else return false;
+	return false;
 }
 
-AlienDroneList* AlienArmy::get_droneList()
+DEQueueList* AlienArmy::get_droneList()
 {
 	return droneList;
 }
@@ -47,24 +45,24 @@ MonsterList* AlienArmy::get_monsterList()
 	return monsterList;
 }
 
-bool AlienArmy::peeksoldier(unit*& pickedunit)
+bool AlienArmy::peekSoldier(unit*& peekedUnit)
 {
-	return soldierList->peek(pickedunit);
+	return soldierList->peek(peekedUnit);
 }
 
-bool AlienArmy::peekFrontdrone(unit*& pickedunit)
+bool AlienArmy::peekFrontDrone(unit*& peekedUnit)
 {
-	return droneList->peekFront(pickedunit);
+	return droneList->frontPeek(peekedUnit);
 }
 
-bool AlienArmy::peekbackdrone(unit*& pickedunit)
+bool AlienArmy::peekBackDrone(unit*& peekedUnit)
 {
-	return droneList->peekBack(pickedunit);
+	return (getListCnt(AD) > 1) ? droneList->peekBack(peekedUnit) : false;
 }
 
-bool AlienArmy::peekmonster(unit*& pickedunit)
+bool AlienArmy::peekMonster(unit*& peekedUnit)
 {
-	return monsterList->peek(pickedunit);
+	return monsterList->peek(peekedUnit);
 }
 
 bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
@@ -74,7 +72,7 @@ bool AlienArmy::pickFrontDrone(unit*& pickedDrone)
 
 bool AlienArmy::pickEndDrone(unit*& pickedDrone)
 {
-	return (droneList->removeEnd(pickedDrone));
+	return (getListCnt(AD) > 1) ? droneList->removeEnd(pickedDrone) : false;
 }
 
 bool AlienArmy::pickSoldier(unit*& pickedSoldier)
@@ -98,18 +96,19 @@ void AlienArmy::print()
 
 void AlienArmy::attack()
 {
-	unit *attacker=nullptr;
-	if (peeksoldier(attacker))
-		attacker->attack();
-	if (peekmonster(attacker))
-		attacker->attack();
+	unit *attackingSol=nullptr;
+	unit *attackingMo=nullptr;
+	unit *attackingFDrone=nullptr;
+	unit *attackingBDrone=nullptr;
 
-	if (peekFrontdrone(attacker))
-		attacker->attack();
-	if (peekbackdrone(attacker))
-		attacker->attack();
-
-	
+	if (peekSoldier(attackingSol))
+		attackingSol->attack();
+	if (peekMonster(attackingMo))
+		attackingMo->attack();
+	if (peekFrontDrone(attackingFDrone))
+		attackingFDrone->attack();
+	if (peekBackDrone(attackingBDrone))
+		attackingBDrone->attack();
 }
 
 int AlienArmy::getListCnt(type neededUnit)

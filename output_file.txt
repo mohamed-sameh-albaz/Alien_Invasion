@@ -139,7 +139,7 @@ First attacked delay (Df): 0
 Destruction delay (Dd): 1   
 Battle time(Db): 1   
 __________________________________________________________________
-Distructed time: 4   
+Distructed time: 3   
 First attacked time: 3   
 Number of times be attacked: 4   
 ID: 13   

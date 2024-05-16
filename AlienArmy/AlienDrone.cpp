@@ -1,11 +1,8 @@
 #include "AlienDrone.h"
-#include"../tempList.h"
-#include"../EarthArmy/EarthArmy.h"
-#include"../game.h"
+#include"../Game/game.h"
 AlienDrone::AlienDrone(game* master) : unit(master)
 {
 	set_type(AD);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void AlienDrone::attack()
@@ -60,7 +57,7 @@ void AlienDrone::attack()
 	attackedCnt = attackedlist.getCount();
 
 	if(g->get_mode()==1)
-		attackedlist.print(get_type(), id);
+		attackedlist.print(this);
 
 	for (int i = 0; i < attackCap; i++) {
 		if (!attackedlist.remove(attackedUnit)) break;

@@ -1,5 +1,6 @@
 #pragma once
 #include "../unit.h"
+
 class EarthTank : public unit
 {
 	static bool attackAS;

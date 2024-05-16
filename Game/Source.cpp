@@ -5,23 +5,25 @@ using namespace std;
 
 int main() {
 	game* g = new game;
-	int mode ;
+	int mod;
+	mode GameMode;
 	do
 	{
 		system("cls");
 		cout << "please enter 1 if you want interactive mode and 2 if you want silent mode\n";
-		cin >> mode;
+		cin >> mod;
 	}
-	while (mode != 1 && mode != 2);
+	while (mod != 1 && mod != 2);
+
+	mod == 1 ? (GameMode = InterActive) : (GameMode = Silent);
 	system("cls");
-	if (mode == 1) {
+	if (GameMode == InterActive) {
 		cout << "=================================== InterActive Mode =============================" << endl;
 	}
 	else {
 		cout << "=================================== Silent Mode =============================" << endl;
-
 	}
 	cin.get();
-	g->fight(mode);
+	g->fight(GameMode);
 	return 0;
 }

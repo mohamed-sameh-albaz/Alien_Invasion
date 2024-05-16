@@ -1,6 +1,5 @@
 #include "MonsterList.h"
 
-
 MonsterList::MonsterList() {
 	n = 1000; index = -1;
 	monsters = new monster * [n];
@@ -59,7 +58,7 @@ bool MonsterList::MonsterList::remove(unit*& m){
 }
 
 void MonsterList::print() {  
-	cout << getCount()  << " AM ["; //index start from -1
+	cout <<" "<< getCount() << " AM ["; //index start from -1
 	for (int i = 0; i < n; i++) {
 		if (monsters[i]) {
 			cout << monsters[i]->get_id();

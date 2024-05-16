@@ -1,10 +1,8 @@
 #include"AlienSoldier.h"
-#include "../game.h"
-#include "../tempList.h"
+#include"../Game/game.h"
 AlienSoldier::AlienSoldier(game* master) : unit(master)
 {
 	set_type(AS);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void AlienSoldier::attack()
@@ -63,7 +61,7 @@ void AlienSoldier::attack()
 
 	}
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(this);
 	for (int i = 0; i < attackCap; i++) {
 		if (!tmp.remove(attackedUnit)) break;
 		else {
@@ -75,6 +73,9 @@ void AlienSoldier::attack()
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
 			{
+				//if (attackedUnit->get_type() == ES)
+				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+					e->setInfectedCount(e->getInfectedCount() - 1);
 
 				attackedUnit->set_distructionTime(g->getCurrTimeStep());
 				g->insertKilled(attackedUnit);
@@ -83,6 +84,8 @@ void AlienSoldier::attack()
 
 				g->insertUml(attackedUnit);
 				attackedUnit->setUMLtime(g->getCurrTimeStep());
+				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+					e->setInfectedCount(e->getInfectedCount() - 1);
 			}
 
 			else {
@@ -90,9 +93,7 @@ void AlienSoldier::attack()
 				tmp2.insert(attackedUnit);
 			}
 		}
-
 		attackedUnit = nullptr;
-
 	}
 
 	while (tmp2.remove(attackedUnit)) {

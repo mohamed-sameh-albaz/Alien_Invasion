@@ -1,11 +1,9 @@
 #include "SU.h"
-#include"../game.h"
-#include"../tempList.h"
+#include"../Game/game.h"
+
 SU::SU(game* g) : unit(g)
 {
 	set_type(saver);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
-
 }
 
 void SU::attack()
@@ -22,9 +20,8 @@ void SU::attack()
 			break;
 		attackedUnit = nullptr;
 	}
-	//cout << id << " ES ";
-	if (g->get_mode() == 1)
-		tmp.print(get_type(), id);
+	if (g->get_mode() == 1)//change mode num
+		tmp.print(this);
 	int attackedCnt = tmp.getCount();
 
 	for (int i = 0; i < attackedCnt; i++)

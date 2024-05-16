@@ -1,18 +1,14 @@
 #pragma once
 #include"../unit.h"
-#include"EarthGunList.h"
 #include "UML.h"
-#include "Healer.h"
-#include "EarthTank.h"
-#include "SU.h"
-#include "EarthSoldier.h"
 #include"../ADTs/QueueList.h"
 #include"../ADTs/StackList.h"
+#include"../ADTs/PriQueueList.h"
 class EarthArmy
 {
 	QueueList* soldierList;
 	QueueList* SaverList;
-	EarthGunList * GunneryList;
+	PriQueueList * GunneryList;
 	StackList* tankList;
 	StackList* healers;
 	int infectedCount;
@@ -24,12 +20,12 @@ public:
 	bool pickGun(unit*& pickedGun);
 	bool pickTank(unit*& pickedTank);
 	StackList* get_healers();
-	EarthGunList* get_GunneryList();
+	PriQueueList* get_GunneryList();
 	QueueList* get_soldierList();
 	QueueList* get_SaverList();
 
 	StackList* get_tankList();
-	void setInfectedCount(int a);
+	void setInfectedCount(int infectedCnt);
 	int getInfectedCount();
 	bool pickSoldier(unit*& pickedSoldier);
 	bool pickHealer(unit*& pickedHealer);

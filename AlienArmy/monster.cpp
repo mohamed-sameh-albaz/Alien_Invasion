@@ -1,11 +1,9 @@
 #include "monster.h"
-#include "../game.h"
-#include "../tempList.h"
+#include"../Game/game.h"
 
 monster::monster(game* master) : unit(master)
 {
 	set_type(AM);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void monster::attack()
@@ -100,7 +98,7 @@ void monster::attack()
 		if ( attackedCnt < attackCap) {
 			for (int i = 0; i < attackCap - attackedCnt; i++)
 			{
-				e->pickSoldier(attackedUnit);
+				e->pickSaver(attackedUnit);
 				if (attackedUnit)
 					tmp.insert(attackedUnit);
 				else
@@ -126,7 +124,7 @@ void monster::attack()
 	}
 	attackedCnt = tmp.getCount();
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(this);
 
 
 	for (int i = 0; i < attackedCnt; i++) {
@@ -137,29 +135,44 @@ void monster::attack()
 			}
 				attackedUnit->set_Noofattacked(1 + attackedUnit->get_Noofattacked());
 			if (attackedUnit->get_type() == ES) {
+				int A = (rand() % 100) + 1;
+				int B = (rand() % 100) + 1;
+				int randomSoldierNum = -1;
+				if (e->get_soldierList()->getCount() > 0)
+					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
+				infectSoldier(attackedUnit, A, B, randomSoldierNum);
+
 				if (dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {
 					tmp2.enqueue(attackedUnit);
 					attackedUnit = nullptr;
 					continue;
 				}
-
 			}
-			this->set_attackpower(attackedUnit);
-			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
-			if (attackedUnit->get_health() <= 0)
+			if(attackedUnit)
 			{
-				attackedUnit->set_distructionTime(g->getCurrTimeStep());
-				g->insertKilled(attackedUnit);
+				this->set_attackpower(attackedUnit);
+				attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
+				if (attackedUnit->get_health() <= 0)
+				{
+					if(attackedUnit->get_type()==ES)
+						if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+							e->setInfectedCount(e->getInfectedCount() - 1);
 
-			}
-			else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20) {
+					attackedUnit->set_distructionTime(g->getCurrTimeStep());
+					g->insertKilled(attackedUnit);
+				}
+				else if ((attackedUnit->get_health() * 100 / attackedUnit->get_initial_health()) <= 20) {
 
-				g->insertUml(attackedUnit);
-				attackedUnit->setUMLtime(g->getCurrTimeStep());
-			}
-			else {
+					g->insertUml(attackedUnit);
+					attackedUnit->setUMLtime(g->getCurrTimeStep());
+					if (attackedUnit->get_type() == ES)
+						if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
+							e->setInfectedCount(e->getInfectedCount() - 1);
+				}
+				else {
 
-				tmp2.insert(attackedUnit);
+					tmp2.insert(attackedUnit);
+				}
 			}
 		}
 		attackedUnit = nullptr;

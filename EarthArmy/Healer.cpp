@@ -1,11 +1,9 @@
 #include "Healer.h"
-#include "../game.h"
-#include "../tempList.h"
+#include"../Game/game.h"
 
 Healer::Healer(game* master) : unit(master)
 {
 	set_type(EH);
-	initialHealth = joinTime = health = power = attackCap = id = 0;
 }
 
 void Healer::attack()
@@ -13,6 +11,7 @@ void Healer::attack()
 	UML* uml = g->getUML();
 	unit* u = nullptr;
 	tempList tmp;
+	EarthArmy* e = g->getEarthArmy();
 	if (uml->get_curr_count() > 0) {
 
 		for (int i = 0; i < attackCap; i++) {
@@ -25,15 +24,26 @@ void Healer::attack()
 				}
 				else
 				{
-					this->set_attackpower(u);
-					u->set_health(u->get_health() + this->get_attackpower());//curStep-unlJOined>10=>killed
-					if ((u->get_health() * 100 / u->get_initial_health()) > 20)
+					if(u->get_type() == ES)
 					{
-						g->getEarthArmy()->addUnit(u);
-						uml->set_healed_count(uml->get_healed_count() + 1);
+						if ((dynamic_cast<EarthSoldier*>(u))->isInfected())
+						{
+							dynamic_cast<EarthSoldier*>(u)->setCured(true);
+							dynamic_cast<EarthSoldier*>(u)->setInfected(false);
+						}
 					}
-					else
-						tmp.insert(u);
+					else 
+					{
+						this->set_attackpower(u);
+						u->set_health(u->get_health() + this->get_attackpower());
+						if ((u->get_health() * 100 / u->get_initial_health()) > 20)
+						{
+							g->getEarthArmy()->addUnit(u);
+							uml->set_healed_count(uml->get_healed_count() + 1);
+						}
+						else
+							tmp.insert(u);
+					}
 				}
 			}
 		}

@@ -1,11 +1,8 @@
 #include "EarthGun.h"
-#include"../game.h"
-#include"../tempList.h"
-
+#include"../Game/game.h"
 EarthGun::EarthGun(game* master) : unit(master)
 {
 	set_type(EG);
-	initialHealth = joinTime = health = power = attackCap = id = 0 ;
 }
 
 void EarthGun::attack()
@@ -81,7 +78,7 @@ void EarthGun::attack()
 	}
 	attackedCnt = tmp.getCount();
 	if (g->get_mode() == 1)
-	tmp.print(get_type(), id);
+		tmp.print(this);
 
 	for (int i = 0; i < attackedCnt; i++)
 	{
