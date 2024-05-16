@@ -52,7 +52,7 @@ bool AlienArmy::peekSoldier(unit*& peekedUnit)
 
 bool AlienArmy::peekFrontDrone(unit*& peekedUnit)
 {
-	return droneList->peekFront(peekedUnit);
+	return droneList->frontPeek(peekedUnit);
 }
 
 bool AlienArmy::peekBackDrone(unit*& peekedUnit)

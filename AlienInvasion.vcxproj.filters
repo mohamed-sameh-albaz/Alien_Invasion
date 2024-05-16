@@ -172,8 +172,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="input_file.text" />
+    <None Include="Source.text" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="output_file.txt" />
+    <Text Include="in.txt" />
   </ItemGroup>
 </Project>

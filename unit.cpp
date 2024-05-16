@@ -34,6 +34,8 @@ void unit::disp()
 
 		case AM:cout << "Monster";
 			break;
+		case saver:cout << "Saver";
+			break;
 
 	}
 	cout << "\n Power: " << power
@@ -137,8 +139,14 @@ void unit::set_atackedTime(int a)
 void unit::set_distructionTime(int a)
 { 
 	td = a;
+	if(ta!=0)
 	df = ta - joinTime;
+	else
+	df =0;
+	if(ta !=0)
 	dd = td - ta;
+	else 
+		dd = td - joinTime;
 	db = df + dd;
 }
 

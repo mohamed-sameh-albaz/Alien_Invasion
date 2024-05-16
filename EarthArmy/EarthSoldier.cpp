@@ -62,7 +62,7 @@ void EarthSoldier::attack()
 			attackedUnit = nullptr;
 		}
 	}
-	if (g->get_mode() == 1)
+	if (g->get_mode() == 1)//change nums
 		tmp.print(this);
 	int attackedCnt = tmp.getCount();
 	for (int i = 0; i < attackedCnt; i++)
@@ -71,8 +71,8 @@ void EarthSoldier::attack()
 		if (attackedUnit->get_Noofattacked() == 0) 
 		{
 			attackedUnit->set_atackedTime(g->getCurrTimeStep());
-			attackedUnit->set_Noofattacked(1);
 		}
+		attackedUnit->set_Noofattacked(1 + attackedUnit->get_Noofattacked());
 		this->set_attackpower(attackedUnit);
 		attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 		

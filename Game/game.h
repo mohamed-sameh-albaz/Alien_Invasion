@@ -7,7 +7,6 @@
 #include"../ADTs/QueueList.h"
 #include<fstream>
 #include"randGen.h"
-//class randGen;
 using namespace std;
 enum mode {InterActive = 1,Silent};
 enum Winner {Earth,ALien,drawn};
@@ -16,7 +15,7 @@ class game
 	AlienArmy* aArmy;
 	EarthArmy* eArmy;
 	int Es, Et, Eg, SaverCount, InfectionProb, As, N, Am, Ad, Prob, Hu,
-		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
+		epower1, epower2, threshold, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2;
 	int earthCount, alienCount, timestep;
 	QueueList* dead;

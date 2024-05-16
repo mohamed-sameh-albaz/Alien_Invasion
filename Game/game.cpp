@@ -9,14 +9,12 @@ game::game() {
 	eArmy = new EarthArmy;
 	dead = new QueueList;
 	timestep = 1;
-	//m = 1;
 	GameMode = InterActive;
 	battleHero = drawn;
 }
 
 void game::set_mode(mode GameMode )
 {
-	//m =a ;
 	this->GameMode = GameMode;
 }
 
@@ -27,6 +25,7 @@ mode game::get_mode()
 
 void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
 {
+	/*
 	if(mode==1)
 	{
 		//srand(time(0));
@@ -94,7 +93,6 @@ void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
 		//uml->print();
 		//dead->print();
 		
-	/*
 	// Test New Monster
 
 	fillArmies();
@@ -544,7 +542,7 @@ void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
 
 	*/
 	
-		}
+		
 }
 
 void game::fight(mode CurMode)
@@ -601,6 +599,7 @@ void game::fight(mode CurMode)
 			//Start Fighting 
 			cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 			eArmy->attack();
+			aArmy->print();
 			aArmy->attack();
 			uml->print();
 			// Heal Units To Be Healed
@@ -713,7 +712,7 @@ void game::fight(mode CurMode)
 void game::inputFn()
 {
 	ifstream in_file("input_file.text");
-	in_file>> N >> Es >> Et >> Eg  >> Hu >> SaverCount >> As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
+	in_file >> N >> Es >> Et >> Eg >> Hu >> SaverCount >> threshold >> As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
 	ahealth2 = -1 * ahealth2;
@@ -721,43 +720,71 @@ void game::inputFn()
 	apower2 = -1 * apower2;
 	eattackcap2 = -1 * eattackcap2;
 	aattackcap2 = -1 * aattackcap2;
-	RG->setParams(Es, Et, Eg, Hu, SaverCount,As, Am, Ad, InfectionProb,Prob, 
+	RG->setParams(Es, Et, Eg, Hu, SaverCount, threshold, As, Am, Ad, InfectionProb, Prob,
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2
-		,N);
+		, N);
 }
-
 void game::outputFn()
 {
 	ofstream out_file("output_file.txt");
 	out_file.clear();
 	unit* killedunit;
 	unit* alliveunit;
-	QueueList temp;
-	int deadET,deadES, deadEG;
-	int ET, ES, EG;
+	tempList temp;
+	int deadET,deadES, deadEG,deadSU,deadHU;
+	int ET, ES, EG,SU,HU;
 	int df=0, dd=0, db=0;
-	ET = ES = EG = deadEG = deadES= deadET =0;
-	while (dead->remove(killedunit)) {
+	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =HU=deadHU=0;
+	out_file << "--------------------------:Earth army:----------------------------\n";
+		while (dead->remove(killedunit)) {
 		if (killedunit->get_id() >=2000)
 		{
 			temp.insert(killedunit);
 			continue;
 		}
-		if (killedunit->get_type() == 2)
+			
+		if (killedunit->get_type() == 2)//change nums to enum value
 			deadES++;
 		else if (killedunit->get_type() == 1)
 			deadET++;
 		else if (killedunit->get_type() == 0)
 			deadEG++;
-		df = df + killedunit->get_df();
-		dd = dd + killedunit->get_dd();
-		db = db + killedunit->get_db();
-		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "First attacked time: "
-			<< killedunit->get_ta() << "   \n"
-			<< "ID: " << killedunit->get_id() << "   \n" <<
-			"Type: "<<killedunit->get_type()<<"   \n"
-			"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
+		else if (killedunit->get_type() == saver)
+			deadSU++;
+		else if (killedunit->get_type() == 3)
+			deadHU++;
+		if (killedunit->get_type() != 3)
+		
+			df = df + killedunit->get_df();
+			dd = dd + killedunit->get_dd();
+			db = db + killedunit->get_db();
+		
+		out_file << "Distructed time: " << killedunit->get_td() << "   \n" <<
+			"First attacked time: "<< killedunit->get_ta() << "   \n"
+			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
+
+			<< "ID: " << killedunit->get_id() << "   \n";
+		
+		switch (killedunit->get_type())
+		{
+		case 0:out_file << "type:Gunnery\n";
+			break;
+		case 2:out_file << "type:Earth Soldier\n";
+			break;
+
+		case 3:out_file << "type:Earth Healer\n";
+			break;
+
+		case 1:out_file << "type:Tank\n";
+			break;
+
+		
+		case saver:out_file << "type:Saver\n";
+			break;
+
+		}
+		out_file<<	"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
 			"Destruction delay (Dd): "<<killedunit->get_dd() << "   \n" <<"Battle time(Db): " << killedunit->get_db() << "   \n"<<
 			"__________________________________________________________________\n";
 	}
@@ -768,64 +795,80 @@ void game::outputFn()
 			ES++;
 		else if (alliveunit->get_type() == ET)
 			ET++;
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 	}
 	while (eArmy->get_soldierList()->remove(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 			ES++;
 		
 	}
+	while (eArmy->get_healers()->remove(alliveunit)) {
+
+		HU++;
+
+	}
 	while (eArmy->get_tankList()->remove(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 		ET++;
 
 	}
 	while (eArmy->get_GunneryList()->remove(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 		EG++;
 
 	}
-	out_file << "Earth army:-\n";
-	out_file << "No of dead ES= " << deadES << "\n" << "No of dead ET= " << deadET << "\n" << "No of dead EG= " << deadEG << "\n";
+	while (eArmy->get_SaverList()->remove(alliveunit)) {
+		
+		SU++;
+
+	}
+	changeColor(9);
+
+	out_file 	 << "--------------------------:Earth army:----------------------------\n"
+
+		<<"------------------------------------------------------------------\nNo of  ES = " << deadES +ES<< "\n" << "No of  ET = " << deadET +ET<< "\n" << "No of  EG = " 
+		<< deadEG +EG<< "\n"<<"No of  SU="<<deadSU+SU<<"\n" << "No of  HU=" << deadHU + HU << "\n";
 	if ((deadES + ES) != 0)
 		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
 	if ((deadET + ET) != 0)
 		out_file<< "Precentage of dead ET relative to their total= " << float(deadET )/ (deadET + ET) * 100 << "%\n";
 	if((deadEG + EG)!=0)
 		out_file<< "Precentage of dead EG relative to their total= " << float(deadEG) / (deadEG + EG)* 100 << "%\n";
-	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
+	if ((deadSU + SU) != 0)
+		out_file << "Precentage of dead SU relative to their total= " << float(deadSU) / (deadSU + SU) * 100 << "%\n";
+	if ((deadHU + HU) != 0)
+		out_file << "Precentage of dead healers relative to their total= " << float(deadHU) / (deadHU + HU) * 100 << "%\n";
+	if((deadET + ES + deadES + ET + deadEG + EG+ deadSU+ SU+ deadHU + HU)!=0)
 	out_file << "Precentage of total earth destrcted unit relative to their total= " <<
-		float((deadES + deadET + deadEG) )/ (deadET + ES + deadES + ET + deadEG + EG) * 100 << "%\n";
-	if((deadES + deadET + deadEG)!=0)
+		float((deadES + deadET + deadEG+ deadSU+deadHU) )/ (deadET + ES + deadES + ET + deadEG + EG+deadSU + SU+deadHU+HU) * 100 << "%\n";
+	if ((deadES + deadET + deadEG + deadSU) != 0)
+
+		out_file << "Average Df= " << float(df) / (deadES + deadET + deadEG + deadSU) << "\n ";
+	if ((deadES + deadET + deadEG + deadSU+ deadHU) != 0)
+
 	{
-		out_file << "Average Df= " << float(df / (deadES + deadET + deadEG)) << "\n "
-			"Average Dd= " << float(dd )/ (deadES + deadET + deadEG) << "\n " <<
-			"Average Db= " << float(db) / (deadES + deadET + deadEG) << "\n";
+		out_file << "Average Dd= " << float(dd) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n ";
+		out_file << "Average Db= " << float(db) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n";
 	}
+	
 	if(db!=0)
-	out_file << "Df/Db%= " << float(df )/ db * 100 << "%\n" << "Dd/Db%= " << float(dd) / db * 100 << "%\n";
-	if((deadET + ES + deadES + ET + deadEG + EG)!=0)
+	out_file << "Df/Db%= " <<float(df) /  db * 100 << "%\n" << "Dd/Db%= " <<
+		float(dd) / db * 100 << "%\n";
+	if((deadET + ES + deadES + ET + deadEG + EG+deadSU + SU)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
-		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG) * 100<<"\n";
-	out_file << "Batle result: ";
+		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG+ deadSU + SU) * 100<<"%\n";
+	out_file << "-------------------------:Batle result:---------------------------\n";
 	if (battleHero == Earth)
-			out_file << "Win \n";
-	if (battleHero== drawn)
-		out_file << "Drawn\n";
+		out_file << "------------------------------:Win:-------------------------------\n";
+	if (battleHero == drawn)
+		out_file << "----------------------------:Drawn:-------------------------------\n";
 	if (battleHero == ALien)
-		out_file << "Loss \n";
+		out_file << "-----------------------------:Loss:-------------------------------\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
 	df =  dd =db = 0;
+	out_file << "--------------------------:Alien army:----------------------------\n";
 	while (dead->remove(killedunit)) {
 		
 		if (killedunit->get_type() == AS)
@@ -839,36 +882,44 @@ void game::outputFn()
 		db = db + killedunit->get_db();
 		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "ID: "
 			<< "First attacked time: " << killedunit->get_ta() << "   \n"
-			<< "Number of attacked: " << killedunit->get_Noofattacked()<<"   \n"
-			<<"ID: " << killedunit->get_id() << "   \n" <<
-			"Type: " << killedunit->get_type() << "   \n"
-			"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
+			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
+			<< "ID: " << killedunit->get_id() << "   \n";
+			switch (killedunit->get_type())
+			{
+			case 4:out_file << "type:Alien Soldier\n";
+				break;
+
+			case 6:out_file << "type:Alien Drone\n";
+				break;
+
+			case 5:out_file << "type:Monster\n";
+				break;
+
+			}
+		out_file<<"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
 			"Destruction delay (Dd): " << killedunit->get_dd() << "   \n" << "Battle time(Db): " << killedunit->get_db() << "   \n" <<
 			"__________________________________________________________________\n";
 	}
 	while (aArmy->get_soldierList()->remove(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 			AS++;
 		
 	}
 	while (aArmy->get_monsterList()->remove(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 		AM++;
 
 	}
 	while (aArmy->get_droneList()->removeFront(alliveunit)) {
-		df = df + alliveunit->get_df();
-		dd = dd + alliveunit->get_dd();
-		db = db + alliveunit->get_db();
+		
 		AD++;
 
 	}
-	out_file << "Alien army:-\n";
-	out_file << "No of dead AS= " << deadAS<<"\n" << "No of dead AM= " << deadAM << "\n" << "No of dead AD= " << deadAD << "\n";
+	changeColor(8);
+
+	out_file << "--------------------------:Alien army:----------------------------\n";
+
+	out_file << "__________________________________________________________________\nNo of  AS = " << deadAS+AS<<"\n" << "No of  AM = " << deadAM+AM << "\n" << "No of  AD = " << deadAD+AD << "\n";
 	if ((deadAS + AS) != 0)
 		out_file << "Precentage of dead AS relative to their total= " << float(deadAS )/ (deadAS + AS) * 100 << "%\n";
 	if ((deadAM + AM) != 0)
@@ -880,12 +931,12 @@ void game::outputFn()
 		float((deadAS + deadAM + deadAD) )/ (deadAM + AS + deadAS + AM + deadAD + AD) * 100 << "%\n";
 	if((deadAS + deadAM + deadAD)!=0)
 	{
-		out_file << "Average Df= " << float(df / (deadAS + deadAM + deadAD)) << "\n "
-			"Average Dd= " << float(dd )/ (deadAS + deadAM + deadAD)<< "\n " <<
+		out_file << "Average Df= " << float(df) / (deadAS + deadAM + deadAD) << "\n "
+			<<"Average Dd= " << float(dd )/ (deadAS + deadAM + deadAD) << "\n " <<
 			"Average Db= " << float(db )/ (deadAS + deadAM + deadAD) << "\n";
 	}
 	if(db!=0)
-	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n";
+	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n__________________________________________________________________\n";
 		
 
 }

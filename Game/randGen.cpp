@@ -1,6 +1,6 @@
 #include "randGen.h"
 #include"game.h"
-void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0,int SaverCount0 ,int As0, int Am0, int Ad0,int InfectionProb0, int Prob0,
+void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0,int SaverCount0,int threshold ,int As0, int Am0, int Ad0,int InfectionProb0, int Prob0,
 	int epower10, int epower20, int ehealth10, int ehealth20, int eattackcap10, int eattackcap20,
 	int apower10, int apower20, int ahealth10, int ahealth20, int aattackcap10, int aattackcap20, int N0) {
 	Es = Es0;
@@ -99,6 +99,11 @@ unit* randGen::generateAlienUnit(int id, int B) {
 	}
 }
 
+int randGen::get_threshold()
+{
+	return threshold;
+}
+
 bool randGen::fillEarthArmy(EarthArmy* army, int& count) {
 	int A = (rand() % 100) + 1;
 	if (A <= Prob) {
@@ -144,13 +149,14 @@ bool randGen::genAlliedArmy(EarthArmy* army)
 	if (SaverID < 2000) {
 
 		for (int i = 1; i <= SaverCount && SaverID < 2000; i++) {
-			SU* saver = new SU(g);
-			saver->set_id(SaverID++);
-			saver->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
-			saver->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
-			saver->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
-			saver->set_joinTime(g->getCurrTimeStep());
-			army->addUnit(saver);
+			SU* saver1 = new SU(g);
+			saver1->set_id(SaverID++);
+			saver1->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
+			saver1->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
+			saver1->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+			saver1->set_joinTime(g->getCurrTimeStep());
+			unit* u = saver1;
+			army->addUnit(saver1);
 		}
 		return true;
 	}

@@ -9,16 +9,56 @@ void AlienSoldier::attack()
 {
 	
 	EarthArmy * e  = g->getEarthArmy();
+	
 	unit* attackedUnit = nullptr;
 	tempList tmp,tmp2;
-	for (int i = 0; i < (attackCap); i++)
+	if(e->is_empty_saver())
 	{
-		e->pickSoldier(attackedUnit);
-		if (attackedUnit)
-			tmp.insert(attackedUnit);
-		else
-			break;
-		attackedUnit = nullptr;
+		for (int i = 0; i < (attackCap); i++)
+		{
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+				break;
+			attackedUnit = nullptr;
+		}
+	}
+	else {
+		for (int i = 0; i < (attackCap)/2; i++)
+		{
+			e->pickSaver(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+		for (int i = 0; i < (attackCap) -tmp.getCount(); i++)
+		{
+			e->pickSoldier(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+				break;
+			attackedUnit = nullptr;
+		}
+		if ( tmp.getCount() < attackCap) {
+			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+			{
+				e->pickSaver(attackedUnit);
+				if (attackedUnit)
+					tmp.insert(attackedUnit);
+				else
+				{
+					break;
+				}
+				attackedUnit = nullptr;
+			}
+		}
+
 	}
 	if (g->get_mode() == 1)
 		tmp.print(this);
@@ -27,8 +67,8 @@ void AlienSoldier::attack()
 		else {
 			if (attackedUnit->get_Noofattacked() == 0) {
 				attackedUnit->set_atackedTime(g->getCurrTimeStep());
-				attackedUnit->set_Noofattacked(1);
 			}
+				attackedUnit->set_Noofattacked(1 + attackedUnit->get_Noofattacked());
 			this->set_attackpower(attackedUnit);
 			attackedUnit->set_health(attackedUnit->get_health() - this->get_attackpower());
 			if (attackedUnit->get_health() <= 0)
@@ -47,6 +87,7 @@ void AlienSoldier::attack()
 				if ((dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()))
 					e->setInfectedCount(e->getInfectedCount() - 1);
 			}
+
 			else {
 
 				tmp2.insert(attackedUnit);
