@@ -32,11 +32,24 @@ void EarthSoldier::attack()
 	
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	EarthArmy* allies = g->getEarthArmy();
+	int tmpcnt=0;
 	unit* attackedUnit = nullptr;
 	tempList tmp;
 	if (this->isInfected())
 	{
-		for (int i = 0; i < attackCap; i++)
+		for (int i = 0; i < attackCap/2; i++)
+		{
+			allies->pickSaver(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				break;
+			}
+			attackedUnit = nullptr;
+		}
+		tmpcnt = tmp.getCount();
+		for (int i = 0; i < attackCap - tmpcnt; i++)
 		{
 			allies->pickSoldier(attackedUnit);
 			if (attackedUnit)
@@ -46,6 +59,18 @@ void EarthSoldier::attack()
 					tmp.insert(attackedUnit);
 			else
 				break;
+			attackedUnit = nullptr;
+		}
+		tmpcnt = tmp.getCount();
+		for (int i = 0; i < attackCap - tmpcnt; i++)
+		{
+			allies->pickSaver(attackedUnit);
+			if (attackedUnit)
+				tmp.insert(attackedUnit);
+			else
+			{
+				break;
+			}
 			attackedUnit = nullptr;
 		}
 		allies->addUnit(this);

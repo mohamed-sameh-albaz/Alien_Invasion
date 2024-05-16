@@ -45,6 +45,8 @@ void QueueList::print(type unitType)
 		break;
 	case AS:cout << " AS [";
 		break;
+	case saver:cout << " SU [";
+		break;
 	case Dead:cout << " units [";//killed list
 		break;
 	}
