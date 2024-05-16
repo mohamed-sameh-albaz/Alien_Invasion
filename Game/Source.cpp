@@ -10,9 +10,7 @@ int main() {
 	int mod;
 	int sel;
 	mode GameMode;
-	g->simulate(InterActive);
 	selector s;
-	cin>>mod;
 	do
 	{
 		system("cls");
