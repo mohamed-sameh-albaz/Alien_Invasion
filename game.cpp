@@ -805,8 +805,10 @@ void game::outputFn()
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "First attacked time: "
-			<< killedunit->get_ta() << "   \n"<<"No of times be attacked : "<< killedunit->get_Noofattacked()<<"   \n"
+		out_file << "Distructed time: " << killedunit->get_td() << "   \n" <<
+			"First attacked time: "<< killedunit->get_ta() << "   \n"
+			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
+
 			<< "ID: " << killedunit->get_id() << "   \n";
 		
 		switch (killedunit->get_type())
@@ -911,8 +913,8 @@ void game::outputFn()
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
 		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "ID: "
-			<< "First attacked time: " << killedunit->get_ta() << "   \n" << "No of times be attacked : " << killedunit->get_Noofattacked() << "   \n"
-			<< "Number of attacked: " << killedunit->get_Noofattacked() << "   \n"
+			<< "First attacked time: " << killedunit->get_ta() << "   \n"
+			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
 			<< "ID: " << killedunit->get_id() << "   \n";
 			switch (killedunit->get_type())
 			{
