@@ -630,7 +630,8 @@ void game::fight(mode CurMode)
 				system("cls");
 				if (!eArmy->getInfectedCount())
 				{
-					while (eArmy->get_SaverList()->remove(destroing));
+					while (eArmy->get_SaverList()->remove(destroing))
+						insertKilled(destroing);
 				}
 			}
 		}
@@ -689,7 +690,8 @@ void game::fight(mode CurMode)
 
 				if (!eArmy->getInfectedCount())
 				{
-					while (eArmy->get_SaverList()->remove(destroing));
+					while (eArmy->get_SaverList()->remove(destroing))
+						insertKilled(destroing);
 				}
 				timestep++;
 				//if (timestep > 100)
@@ -700,64 +702,63 @@ void game::fight(mode CurMode)
 			cout << "Simulation ends....\n";
 		}
 		tempList temp;
-		unit* temp_unit;
+		unit* temp_unit;//destructor
 			while (aArmy->get_droneList()->removeFront(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				aArmy->addUnit(temp_unit);
 			}
 			while (aArmy->get_soldierList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				aArmy->addUnit(temp_unit);
 			}
 			while (aArmy->get_monsterList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				aArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_soldierList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_SaverList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.insert(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_GunneryList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_tankList()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_healers()->remove(temp_unit)) {
 				temp_unit->set_distructionTime(timestep);
-				temp.enqueue(temp_unit);
+				temp.insert(temp_unit);
 			}
-			while (temp.dequeue(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
-
 		outputFn();
 }
 
@@ -774,11 +775,10 @@ void game::inputFn()
 	aattackcap2 = -1 * aattackcap2;
 	RG->setParams(Es, Et, Eg, Hu, SaverCount,threshold,As, Am, Ad, InfectionProb,Prob, 
 		epower1, epower2, ehealth1, ehealth2, eattackcap1, eattackcap2,
-		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2
-		,N);
+		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2,N);
 }
 
-void game::outputFn()
+void game::outputFn()///////////////////modify using Enum
 {
 	ofstream out_file("output_file.txt");
 	out_file.clear();
