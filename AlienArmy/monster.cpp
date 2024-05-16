@@ -32,12 +32,6 @@ void monster::attack()
 			e->pickSoldier(attackedUnit);
 			if (attackedUnit)
 			{
-				int A = (rand() % 100) + 1;
-				int B = (rand() % 100) + 1;
-				int randomSoldierNum = -1;
-				if (e->get_soldierList()->getCount() > 0)
-					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
-				infectSoldier(attackedUnit, A, B, randomSoldierNum);
 				tmp.insert(attackedUnit);
 			}
 			else
@@ -84,12 +78,6 @@ void monster::attack()
 			e->pickSoldier(attackedUnit);
 			if (attackedUnit)
 			{
-				int A = (rand() % 100) + 1;
-				int B = (rand() % 100) + 1;
-				int randomSoldierNum = -1;
-				if (e->get_soldierList()->getCount() > 0)
-					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
-				infectSoldier(attackedUnit, A, B, randomSoldierNum);
 				tmp.insert(attackedUnit);
 			}
 			else
@@ -145,9 +133,9 @@ void monster::attack()
 				int randomSoldierNum = -1;
 				if (e->get_soldierList()->getCount() > 0)
 					randomSoldierNum = (rand() % e->get_soldierList()->getCount());
-				infectSoldier(attackedUnit, A, B, randomSoldierNum);
 
-				if (dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {
+				if (!dynamic_cast<EarthSoldier*>(attackedUnit)->isInfected()) {
+					infectSoldier(attackedUnit, A, B, randomSoldierNum);
 					tmp2.enqueue(attackedUnit);
 					attackedUnit = nullptr;
 					continue;

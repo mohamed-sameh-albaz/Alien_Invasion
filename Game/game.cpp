@@ -30,6 +30,22 @@ void game::set_file_mode(selector s)
 void game::simulate(int mode)
 {
 	//phase 1.2 simualation code or delete the function
+	EarthSoldier* ptr = new EarthSoldier(this);
+	//ptr->setInfected(true);
+	ptr->set_health(10);
+	eArmy->addUnit(ptr);
+	ptr->setInfected(true);
+	monster m(this);
+	m.set_power(100);
+	m.set_attackCap(5);
+	m.set_health(100);
+	while(ptr->get_health()>0)
+	{
+		m.attack();
+	}
+	dead->print(Dead);
+	eArmy->print();
+
 }
 
 void game::fight(mode CurMode,selector s)
