@@ -181,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="output.txt" />
+    <Text Include="output_Strong_moderate.txt" />
+    <Text Include="output_Strong_Strong.txt" />
+    <Text Include="output_Strong_weak.txt" />
+    <Text Include="output_weak_moderate.txt" />
+    <Text Include="output_Weak_Weak.txt" />
+    <Text Include="output_week_strong.txt" />
     <Text Include="StrongEarth_ModerateAliens.txt" />
     <Text Include="StrongEarth_StrongAliens.txt" />
     <Text Include="StrongEarth_WeakAliens.txt" />

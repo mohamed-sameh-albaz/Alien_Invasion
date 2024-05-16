@@ -249,7 +249,7 @@ void game::inputFn(selector s)
 		apower1, apower2, ahealth1, ahealth2, aattackcap1, aattackcap2,N);
 }
 
-void game::outputFn()///////////////////modify using Enum
+void game::outputFn()
 {
 	ofstream out_file("output.txt");
 	out_file.clear();
@@ -270,56 +270,54 @@ void game::outputFn()///////////////////modify using Enum
 
 
 	out_file << "--------------------------:Earth army:----------------------------\n";
-		while (dead->remove(killedunit)) {
-		if (killedunit->get_id() >=2000)
+		while (dead->remove(killedunit)) 
 		{
-			temp.insert(killedunit);
-			continue;
-		}
+			if (killedunit->get_id() >=2000)
+			{
+				temp.insert(killedunit);
+				continue;
+			}
+			if (killedunit->get_type() == 2)
+				deadES++;
+			else if (killedunit->get_type() == 1)
+				deadET++;
+			else if (killedunit->get_type() == 0)
+				deadEG++;
+			else if (killedunit->get_type() == saver)
+				deadSU++;
+			else if (killedunit->get_type() == 3)
+				deadHU++;
+			if (killedunit->get_type() != 3)
 			
-		if (killedunit->get_type() == 2)//change nums to enum value
-			deadES++;
-		else if (killedunit->get_type() == 1)
-			deadET++;
-		else if (killedunit->get_type() == 0)
-			deadEG++;
-		else if (killedunit->get_type() == saver)
-			deadSU++;
-		else if (killedunit->get_type() == 3)
-			deadHU++;
-		if (killedunit->get_type() != 3)
-		
-			df = df + killedunit->get_df();
-			dd = dd + killedunit->get_dd();
-			db = db + killedunit->get_db();
-		
-		out_file << "Distructed time: " << killedunit->get_td() << "   \n" <<
-			"First attacked time: "<< killedunit->get_ta() << "   \n"
-			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
+				df = df + killedunit->get_df();
+				dd = dd + killedunit->get_dd();
+				db = db + killedunit->get_db();
+			
+			out_file << "Distructed time: " << killedunit->get_td() << "   \n" <<
+				"First attacked time: "<< killedunit->get_ta() << "   \n"
+				<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
+				<< "ID: " << killedunit->get_id() << "   \n";
+			switch (killedunit->get_type())
+			{
+			case 0:out_file << "type:Gunnery\n";
+				break;
+			case 2:out_file << "type:Earth Soldier\n";
+				break;
 
-			<< "ID: " << killedunit->get_id() << "   \n";
-		
-		switch (killedunit->get_type())
-		{
-		case 0:out_file << "type:Gunnery\n";
-			break;
-		case 2:out_file << "type:Earth Soldier\n";
-			break;
+			case 3:out_file << "type:Earth Healer\n";
+				break;
 
-		case 3:out_file << "type:Earth Healer\n";
-			break;
+			case 1:out_file << "type:Tank\n";
+				break;
 
-		case 1:out_file << "type:Tank\n";
-			break;
+			
+			case saver:out_file << "type:Saver\n";
+				break;
 
-		
-		case saver:out_file << "type:Saver\n";
-			break;
-
-		}
-		out_file<<	"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
-			"Destruction delay (Dd): "<<killedunit->get_dd() << "   \n" <<"Battle time(Db): " << killedunit->get_db() << "   \n"<<
-			"__________________________________________________________________\n";
+			}
+			out_file<<	"Jion time: " << killedunit->get_tj() << "   \n" << "First attacked delay (Df): " << killedunit->get_df() << "   \n" <<
+				"Destruction delay (Dd): "<<killedunit->get_dd() << "   \n" <<"Battle time(Db): " << killedunit->get_db() << "   \n"<<
+				"__________________________________________________________________\n";
 	}
 	while (temp.remove(killedunit))
 		dead->insert(killedunit);
@@ -464,8 +462,6 @@ void game::outputFn()///////////////////modify using Enum
 	}
 	if(db!=0)
 	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n__________________________________________________________________\n";
-		
-
 }
 
 void game::fillArmies()

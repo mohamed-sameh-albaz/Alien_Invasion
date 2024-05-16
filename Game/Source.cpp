@@ -27,7 +27,6 @@ int main() {
 			<<"\t5 for weak earth  strong aliens\n" 
 			<<"\t6 for weak earth  weak aliens\n";
 
-
 		cin >> sel;
 	} while (sel < 1 ||sel > 6);
 	GameMode = (mod == 1) ? InterActive : Silent;

@@ -178,5 +178,11 @@
     <Text Include="WeakEarth_ModerateAliens.txt" />
     <Text Include="WeakEarth_StrongAliens.txt" />
     <Text Include="WeakEarth_WeakAliens.txt" />
+    <Text Include="output_Strong_moderate.txt" />
+    <Text Include="output_Strong_Strong.txt" />
+    <Text Include="output_Strong_weak.txt" />
+    <Text Include="output_weak_moderate.txt" />
+    <Text Include="output_week_strong.txt" />
+    <Text Include="output_Weak_Weak.txt" />
   </ItemGroup>
 </Project>
