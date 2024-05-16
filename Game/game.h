@@ -31,7 +31,6 @@ public:
 	void set_mode(mode GameMode);
 	mode get_mode();
 	void set_file_mode(selector s);
-
 	void simulate(int mode);
 	void fight (mode CurMode,selector s);
 	void inputFn(selector s);
@@ -52,6 +51,8 @@ public:
 	int getAArmyCnt();
 	bool alienIsEmpty();
 	bool earthIsEmpty();
-
+	bool EarthWIns();
+	bool AlienWins();
+	bool Drawn();
 };
 

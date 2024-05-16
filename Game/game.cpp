@@ -554,47 +554,21 @@ void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
 
 void game::fight(mode CurMode,selector s)
 {
-	bool Esoldier_empty, Asoldier_empty, Etank_empty, Egunnery_empty,
-		Esu_empty, Ehealer_empty, Adrone_empty, Amonster_empty;
-	Esoldier_empty = Asoldier_empty = Etank_empty = Egunnery_empty =
-		Esu_empty = Ehealer_empty = Adrone_empty = Amonster_empty = 0;
 	inputFn( s);
 	bool fight = true;
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
 	if (CurMode==InterActive )
 	{
-
-
-
-
-
-
-
-
-
-		while (true) {
-			
+		while (true) 
+		{
 			if (timestep > 40)
 			{
-		Esoldier_empty = eArmy->get_soldierList()->isEmpty();
-		Etank_empty = eArmy->get_tankList()->isEmpty();
-		Egunnery_empty = eArmy->get_GunneryList()->isEmpty();
-		Esu_empty = eArmy->get_SaverList()->isEmpty();
-		Ehealer_empty = eArmy->get_healers()->isEmpty();
-		Asoldier_empty = aArmy->get_soldierList()->isEmpty();
-		Adrone_empty = aArmy->get_droneList()->isEmpty();
-		if (aArmy->get_monsterList()->getCount() == 0)
-			Amonster_empty = 1;
-		else Amonster_empty = 0;
-
 				if (alienIsEmpty() and !earthIsEmpty())
 				{
 					//earth winner
 					system("cls");
-
 					battleHero = Earth;
-
 					changeColor(messageColor);///////
 					cout << "**********		EARTH ARMY WINS		************";
 					changeColor(mainColor);
@@ -602,7 +576,6 @@ void game::fight(mode CurMode,selector s)
 				}
 				else if (!alienIsEmpty() and earthIsEmpty())
 				{
-
 					battleHero=ALien;
 					system("cls");
 					changeColor(messageColor);///////
@@ -612,7 +585,6 @@ void game::fight(mode CurMode,selector s)
 				}
 				else if(alienIsEmpty() and earthIsEmpty())
 				{
-
 					battleHero=drawn;
 					system("cls");
 					changeColor(messageColor);///////
@@ -635,8 +607,6 @@ void game::fight(mode CurMode,selector s)
 					RG->genAlliedArmy(eArmy);
 				unit* destroing;
 				eArmy->print();
-
-
 				aArmy->print();
 				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 				eArmy->attack();
@@ -649,156 +619,128 @@ void game::fight(mode CurMode,selector s)
 				dead->print(Dead);
 				cout << "\n============== Infected Units ==============" << endl;
 				cout << "Infected Percentage: ";
-				if (eArmy->get_soldierList()->getCount() > 0) cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
-				else cout << "0%" << endl;
+				if (eArmy->get_soldierList()->getCount() > 0) 
+					cout << float(eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount()) << "%" << endl;
+				else
+					cout << "0%" << endl;
 
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
 				//if (timestep > 100)
-					cin.get(); // Wait for user to press enter
+					//cin.get(); // Wait for user to press enter
 				system("cls");
 				if (!eArmy->getInfectedCount())
 				{
 					while (eArmy->get_SaverList()->remove(destroing))
 						insertKilled(destroing);
 				}
-			}
 		}
-		else {
-			set_mode(Silent);
-			changeColor(9);
+	}
+	else
+	{
+		set_mode(Silent);
+		changeColor(9);
 
-			cout << "Simulation starts...\n";
-			while (true) {
-				if (timestep > 40)
+		cout << "Simulation starts...\n";
+		while (true) 
+		{
+			if (timestep > 40)
+			{
+				if (alienIsEmpty() and !earthIsEmpty())
 				{
-					Esoldier_empty = eArmy->get_soldierList()->isEmpty();
-		Etank_empty = eArmy->get_tankList()->isEmpty();
-		Egunnery_empty = eArmy->get_GunneryList()->isEmpty();
-		Esu_empty = eArmy->get_SaverList()->isEmpty();
-		Ehealer_empty = eArmy->get_healers()->isEmpty();
-		Asoldier_empty = aArmy->get_soldierList()->isEmpty();
-		Adrone_empty = aArmy->get_droneList()->isEmpty();
-		if (aArmy->get_monsterList()->getCount() == 0)
-			Amonster_empty = 1;
-		else Amonster_empty = 0;
-		if (alienIsEmpty() and !earthIsEmpty())
-					{
-						//earth winner
-						battleHero = Earth;
-
-						
-						break;
-					}
-					else if (!alienIsEmpty() and earthIsEmpty())
-					{
-						battleHero = ALien;
-
-						
-						break;
-					}
-					else if (alienIsEmpty() and earthIsEmpty())
-					{
-						battleHero = drawn;
-
-						
-						break;
-					}
+					battleHero = Earth;
+					break;
 				}
-				
-
-				fillArmies();
-
-				// Print Armies
-
-				//Start Fighting 
-				if (eArmy->get_soldierList()->getCount() > 0)
-					if (eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount() >= RG->get_threshold())
-						RG->genAlliedArmy(eArmy);
-				unit* destroing;
-
-
-				eArmy->attack();
-				aArmy->attack();
-
-				// Heal Units To Be Healed
-				eArmy->heal();
-				
-				
-				
-
-				if (!eArmy->getInfectedCount())
+				else if (!alienIsEmpty() and earthIsEmpty())
 				{
-					while (eArmy->get_SaverList()->remove(destroing))
-						insertKilled(destroing);
+					battleHero = ALien;
+					break;
 				}
-				timestep++;
-				//if (timestep > 100)
-				
+				else if (Drawn())
+				{
+					battleHero = drawn;
+					break;
+				}
 			}
-			changeColor(10);
-
-			cout << "Simulation ends....\n";
+			fillArmies();
+			if (eArmy->get_soldierList()->getCount() > 0)
+				if (eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount() >= RG->get_threshold())
+					RG->genAlliedArmy(eArmy);
+			unit* destroing;
+			eArmy->attack();
+			aArmy->attack();
+			// Heal Units To Be Healed
+			eArmy->heal();
+			if (!eArmy->getInfectedCount())
+			{
+				while (eArmy->get_SaverList()->remove(destroing))
+					insertKilled(destroing);
+			}
+			timestep++;
 		}
-		tempList temp;
-		unit* temp_unit;//destructor
-			while (aArmy->get_droneList()->removeFront(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				aArmy->addUnit(temp_unit);
-			}
-			while (aArmy->get_soldierList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				aArmy->addUnit(temp_unit);
-			}
-			while (aArmy->get_monsterList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				aArmy->addUnit(temp_unit);
-			}
-			while (eArmy->get_soldierList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				eArmy->addUnit(temp_unit);
-			}
-			while (eArmy->get_SaverList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				eArmy->addUnit(temp_unit);
-			}
-			while (eArmy->get_GunneryList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				eArmy->addUnit(temp_unit);
-			}
-			while (eArmy->get_tankList()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				eArmy->addUnit(temp_unit);
-			}
-			while (eArmy->get_healers()->remove(temp_unit)) {
-				temp_unit->set_distructionTime(timestep);
-				temp.insert(temp_unit);
-			}
-			while (temp.remove(temp_unit)) {
-				eArmy->addUnit(temp_unit);
-			}
-		outputFn();
+		changeColor(10);
+		cout << "Simulation ends....\n";
+	}
+	tempList temp;
+	unit* temp_unit;//destructor
+	while (aArmy->get_droneList()->removeFront(temp_unit))
+	{
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		aArmy->addUnit(temp_unit);
+	}
+	while (aArmy->get_soldierList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		aArmy->addUnit(temp_unit);
+	}
+	while (aArmy->get_monsterList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		aArmy->addUnit(temp_unit);
+	}
+	while (eArmy->get_soldierList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		eArmy->addUnit(temp_unit);
+	}
+	while (eArmy->get_SaverList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		eArmy->addUnit(temp_unit);
+	}
+	while (eArmy->get_GunneryList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		eArmy->addUnit(temp_unit);
+	}
+	while (eArmy->get_tankList()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		eArmy->addUnit(temp_unit);
+	}
+	while (eArmy->get_healers()->remove(temp_unit)) {
+		temp_unit->set_distructionTime(timestep);
+		temp.insert(temp_unit);
+	}
+	while (temp.remove(temp_unit)) {
+		eArmy->addUnit(temp_unit);
+	}
+	outputFn();
 }
 
 void game::inputFn(selector s)
@@ -1136,5 +1078,40 @@ bool game::alienIsEmpty()
 bool game::earthIsEmpty()
 {
 	return !(eArmy->getListCnt(ES) + eArmy->getListCnt(ET) + eArmy->getListCnt(EG)+uml->get_curr_count());
+}
+
+bool game::Drawn()
+{
+	bool ES_empty, AS_empty, ET_empty, EG_empty,ESU_empty, EH_empty, AD_empty, AM_empty,UML_empty;
+	ES_empty = AS_empty = ET_empty = EG_empty = ESU_empty = EH_empty = AD_empty = AM_empty = UML_empty = false;
+
+	ES_empty = eArmy->getListCnt(ES) == 0;
+	AS_empty = aArmy->getListCnt(AS) == 0;
+	ET_empty = eArmy->getListCnt(ET) == 0;
+	EG_empty = eArmy->getListCnt(EG) == 0;
+	ESU_empty = eArmy->getListCnt(saver) == 0;
+	EH_empty = eArmy->getListCnt(EH) == 0;
+	AD_empty = aArmy->getListCnt(AD) == 0;
+	AM_empty = aArmy->getListCnt(AM) == 0;
+	UML_empty = uml->get_curr_count() == 0;
+
+	if (!EH_empty and !UML_empty)
+		return false;
+	else
+	{
+		if (ES_empty and AS_empty and ET_empty and EG_empty and !ESU_empty and !AD_empty and AM_empty)
+		{
+			return true;
+		}
+		else if (ES_empty and !AS_empty and ET_empty and !EG_empty and ESU_empty and AD_empty and AM_empty)
+		{
+			return true;
+		}
+		else if (!ES_empty and AS_empty and ET_empty and EG_empty and ESU_empty and !AD_empty and AM_empty)
+		{
+			return true;
+		}
+	}
+	return false;
 }
 

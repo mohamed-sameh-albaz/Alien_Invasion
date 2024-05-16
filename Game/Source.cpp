@@ -13,8 +13,6 @@ int main() {
 	selector s;
 	do
 	{
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
-
 		system("cls");
 		cout << "please enter 1 if you want interactive mode and 2 if you want silent mode\n";
 		cin >> mod;
@@ -22,8 +20,6 @@ int main() {
 	while (mod != 1 && mod != 2);
 	do
 	{
-
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
 		system("cls");
 		cout << "enter 1 if you want strong earth moderete aliens \n" <<
 			"or 2 if you want strong earth strong aliens \n" <<
@@ -35,17 +31,28 @@ int main() {
 
 		cin >> sel;
 	} while (sel < 1 ||sel > 6);
-	/*mod == 1 ? (GameMode = InterActive) : (GameMode = Silent);
-	sel == 1 ? (s = strong_moderete) : 2 ? (s = strong_strong) : 3 ? (s = strong_weak) : 4 ? (s = weak_moderete) : 5 ? (s = weak_strong) :  (s = weak_weak);*/
 	GameMode = (mod == 1) ? InterActive : Silent;
-	s = (sel == 1) ? strong_moderete : (sel == 2) ? strong_strong : (sel == 3) ? strong_weak : (sel == 4) ? weak_moderete : (sel == 5) ? weak_strong
-		: weak_weak;
+	switch (sel)
+	{
+	case 1: s= strong_moderete;
+		break;
+	case 2: s = strong_strong;
+		break;
+	case 3: s = strong_weak;
+		break;
+	case 4: s = weak_moderete;
+		break;
+	case 5: s = weak_strong;
+		break;
+	case 6: s = weak_weak;
+		break;
+	}
 	system("cls");
 	if (GameMode == InterActive) {
 		cout << "=================================== InterActive Mode =============================" << endl;
 	}
 	else {
-		cout << "=================================== Silent Mode =============================" << endl;
+		cout << "=================================== Silent Mode ===================================" << endl;
 	}
 	cin.get();
 	
