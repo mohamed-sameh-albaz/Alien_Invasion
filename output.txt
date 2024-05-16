@@ -7652,16 +7652,10 @@ Battle time(Db): 450
 __________________________________________________________________
 --------------------------:Alien army:----------------------------
 __________________________________________________________________
-No of  AS = 420
-No of  AM = 298
-No of  AD = 282
-Precentage of dead AS relative to their total= 13.5714%
-Precentage of dead AM relative to their total= 67.7852%
-Precentage of dead AD relative to their total= 4.96454%
-Precentage of total alien destrcted unit relative to their total= 27.3%
-Average Df= 7.31136
- Average Dd= 118.231
- Average Db= 125.542
-Df/Db%= 5.82383%
-Dd/Db%= 94.1762%
-__________________________________________________________________
+No of  AS = 367
+No of  AM = 289
+No of  AD = 154
+Precentage of dead AS relative to their total= 0%
+Precentage of dead AM relative to their total= 0%
+Precentage of dead AD relative to their total= 0%
+Precentage of total alien destrcted unit relative to their total= 0%
