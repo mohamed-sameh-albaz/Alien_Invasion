@@ -627,7 +627,7 @@ void game::fight(mode CurMode,selector s)
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
 				//if (timestep > 100)
-					//cin.get(); // Wait for user to press enter
+					cin.get(); // Wait for user to press enter
 				system("cls");
 				if (!eArmy->getInfectedCount())
 				{
@@ -757,7 +757,7 @@ void game::inputFn(selector s)
 	else if (s == weak_strong)
 		in_file.open("WeakEarth_StrongAliens.txt");
 	else if (s == weak_weak)
-		in_file.open("WeakEarth_StrongAliens.txt");
+		in_file.open("WeakEarth_WeakAliens.txt");
 	in_file>> N >> Es >> Et >> Eg  >> Hu >> SaverCount >> threshold >>As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
