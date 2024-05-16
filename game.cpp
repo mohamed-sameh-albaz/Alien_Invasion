@@ -29,18 +29,21 @@ void game::simulate(int mode)
 	if(mode==1)
 	{
 		srand(time(0));
+		SU s1(this),s2(this),s3(this);
+		monster m1(this);
+		EarthSoldier
 		int mainColor = 7, messageColor = 6;
 		inputFn();
 		//testing drone
 
-		monster* AM = new monster(this);
-		AM->set_power(10);
-		AM->set_attackCap(10);
-		AM->set_health(100);
-		AM->disp();
+		SU* save = new SU(this);
+		save->set_power(10);
+		save->set_attackCap(10);
+		save->set_health(100);
+		save->disp();
 
-		EarthTank t1(this), t2(this), t3(this);
-		EarthSoldier g1(this), g2(this), g3(this);
+		AlienSoldier t1(this), t2(this), t3(this);
+		SU g1(this), g2(this), g3(this);
 
 		t1.set_id(1);
 		t1.set_health(100);

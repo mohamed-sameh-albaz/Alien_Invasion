@@ -66,7 +66,9 @@ void monster::attack()
 		}
 	}
 	else {
-		for (int i = 0; i < (attackCap-tmp.getCount())/2 ; i++)
+		attackedCnt = tmp.getCount();
+
+		for (int i = 0; i < (attackCap- attackedCnt)/2 ; i++)
 		{
 			e->pickSaver(attackedUnit);
 			if (attackedUnit)
@@ -77,7 +79,8 @@ void monster::attack()
 			}
 			attackedUnit = nullptr;
 		}
-		for (int i = 0; i < (attackCap - tmp.getCount()); i++)
+		attackedCnt = tmp.getCount();
+		for (int i = 0; i < (attackCap - attackedCnt); i++)
 		{
 			e->pickSoldier(attackedUnit);
 			if (attackedUnit)
@@ -100,7 +103,7 @@ void monster::attack()
 		if ( attackedCnt < attackCap) {
 			for (int i = 0; i < attackCap - attackedCnt; i++)
 			{
-				e->pickSoldier(attackedUnit);
+				e->pickSaver(attackedUnit);
 				if (attackedUnit)
 					tmp.insert(attackedUnit);
 				else

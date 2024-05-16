@@ -11,7 +11,7 @@ void AlienSoldier::attack()
 {
 	
 	EarthArmy * e  = g->getEarthArmy();
-	
+	int attackedCnt = 0;
 	unit* attackedUnit = nullptr;
 	tempList tmp,tmp2;
 	if(e->is_empty_saver())
@@ -27,6 +27,7 @@ void AlienSoldier::attack()
 		}
 	}
 	else {
+
 		for (int i = 0; i < (attackCap)/2; i++)
 		{
 			e->pickSaver(attackedUnit);
@@ -38,7 +39,8 @@ void AlienSoldier::attack()
 			}
 			attackedUnit = nullptr;
 		}
-		for (int i = 0; i < (attackCap) -tmp.getCount(); i++)
+		attackedCnt = tmp.getCount();
+		for (int i = 0; i < (attackCap) -attackedCnt; i++)
 		{
 			e->pickSoldier(attackedUnit);
 			if (attackedUnit)
@@ -47,8 +49,10 @@ void AlienSoldier::attack()
 				break;
 			attackedUnit = nullptr;
 		}
-		if ( tmp.getCount() < attackCap) {
-			for (int i = 0; i < attackCap - tmp.getCount(); i++)
+		attackedCnt = tmp.getCount();
+
+		if (attackedCnt < attackCap) {
+			for (int i = 0; i < attackCap - attackedCnt; i++)
 			{
 				e->pickSaver(attackedUnit);
 				if (attackedUnit)
