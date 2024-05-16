@@ -1,5 +1,7 @@
 #include <iostream>
+#include <Windows.h>
 #include "game.h"
+
 using namespace std;
 
 
@@ -11,6 +13,8 @@ int main() {
 	selector s;
 	do
 	{
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+
 		system("cls");
 		cout << "please enter 1 if you want interactive mode and 2 if you want silent mode\n";
 		cin >> mod;
@@ -18,13 +22,15 @@ int main() {
 	while (mod != 1 && mod != 2);
 	do
 	{
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
 		system("cls");
 		cout << "enter 1 if you want strong earth moderete aliens \n" <<
 			"or 2 if you want strong earth strong aliens \n" <<
-			"or 3 if you want strong earth strong weak aliens \n" <<
-			"or 4 if you want weak earth strong moderete aliens\n" <<
-			"or 5 if you want weak earth strong strong aliens\n" <<
-			"or 6 if you want weak earth strong weak aliens\n";
+			"or 3 if you want strong earth  weak aliens \n" <<
+			"or 4 if you want weak earth  moderete aliens\n" <<
+			"or 5 if you want weak earth  strong aliens\n" <<
+			"or 6 if you want weak earth  weak aliens\n";
 
 
 		cin >> sel;

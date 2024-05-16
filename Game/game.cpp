@@ -584,7 +584,9 @@ void game::fight(mode CurMode,selector s)
 		Ehealer_empty = eArmy->get_healers()->isEmpty();
 		Asoldier_empty = aArmy->get_soldierList()->isEmpty();
 		Adrone_empty = aArmy->get_droneList()->isEmpty();
-		Amonster_empty = aArmy->get_monsterList()->getCount();
+		if (aArmy->get_monsterList()->getCount() == 0)
+			Amonster_empty = 1;
+		else Amonster_empty = 0;
 
 				if (alienIsEmpty() and !earthIsEmpty())
 				{
@@ -593,7 +595,7 @@ void game::fight(mode CurMode,selector s)
 
 					battleHero = Earth;
 
-					changeColor(messageColor);///////
+					changeColor(245);
 					cout << "**********		EARTH ARMY WINS		************";
 					changeColor(mainColor);
 					break;
@@ -603,25 +605,26 @@ void game::fight(mode CurMode,selector s)
 
 					battleHero=ALien;
 					system("cls");
-					changeColor(messageColor);///////
+					changeColor(245);///////
 					cout << "**********		ALIEN ARMY WINS		************";
-					changeColor(mainColor);
+					changeColor(245);
 					break;
 				}
-				else if((alienIsEmpty() and earthIsEmpty() ))
+				else if((alienIsEmpty() and earthIsEmpty() )or
+					(Etank_empty&& Egunnery_empty&& Esu_empty&& Asoldier_empty&& Amonster_empty))
 				{
 
 					battleHero=drawn;
 					system("cls");
-					changeColor(messageColor);///////
+					changeColor(245);
 					cout << "**********		DRAW NO ONE WIN		************";
 					changeColor(mainColor);
 					break;
 				}
 			}
-			changeColor(12);
+			changeColor(240);
 			cout << endl << " Current Timestep: " << timestep << endl;
-			changeColor(mainColor);
+			changeColor(240);
 
 			fillArmies();
 
@@ -664,7 +667,6 @@ void game::fight(mode CurMode,selector s)
 		}
 		else {
 			set_mode(Silent);
-			changeColor(9);
 
 			cout << "Simulation starts...\n";
 			while (true) {
@@ -677,8 +679,9 @@ void game::fight(mode CurMode,selector s)
 					Ehealer_empty = eArmy->get_healers()->isEmpty();
 					Asoldier_empty = aArmy->get_soldierList()->isEmpty();
 					Adrone_empty = aArmy->get_droneList()->isEmpty();
-					Amonster_empty = aArmy->get_monsterList()->getCount();
-					if (alienIsEmpty() and !earthIsEmpty())
+					if (aArmy->get_monsterList()->getCount() == 0)
+						Amonster_empty = 1;
+					else Amonster_empty = 0;					if (alienIsEmpty() and !earthIsEmpty())
 					{
 						//earth winner
 						battleHero = Earth;
@@ -732,7 +735,7 @@ void game::fight(mode CurMode,selector s)
 				//if (timestep > 100)
 				
 			}
-			changeColor(10);
+			changeColor(245);
 
 			cout << "Simulation ends....\n";
 		}
@@ -922,7 +925,6 @@ void game::outputFn()///////////////////modify using Enum
 		SU++;
 
 	}
-	changeColor(9);
 
 	out_file 	 << "--------------------------:Earth army:----------------------------\n"
 
@@ -961,9 +963,9 @@ void game::outputFn()///////////////////modify using Enum
 	if (battleHero == Earth)
 		out_file << "------------------------------:Win:-------------------------------\n";
 	if (battleHero == ALien)
-		out_file << "----------------------------:Drawn:-------------------------------\n";
+		out_file << "----------------------------:Loss:-------------------------------\n";
 	if (battleHero == drawn)
-		out_file << "-----------------------------:Loss:-------------------------------\n";
+		out_file << "-----------------------------:Drawn:-------------------------------\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
@@ -1015,7 +1017,6 @@ void game::outputFn()///////////////////modify using Enum
 		AD++;
 
 	}
-	changeColor(8);
 
 	out_file << "--------------------------:Alien army:----------------------------\n";
 
