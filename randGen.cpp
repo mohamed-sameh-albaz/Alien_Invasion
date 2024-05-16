@@ -149,13 +149,14 @@ bool randGen::genAlliedArmy(EarthArmy* army)
 	if (SaverID < 2000) {
 
 		for (int i = 1; i <= SaverCount && SaverID < 2000; i++) {
-			SU* saver = new SU(g);
-			saver->set_id(SaverID++);
-			saver->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
-			saver->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
-			saver->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
-			saver->set_joinTime(g->getCurrTimeStep());
-			army->addUnit(saver);
+			SU* saver1 = new SU(g);
+			saver1->set_id(SaverID++);
+			saver1->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
+			saver1->set_power((rand() % (epower2 - epower1 + 1)) + epower1);
+			saver1->set_attackCap((rand() % (eattackcap2 - eattackcap1 + 1)) + eattackcap1);
+			saver1->set_joinTime(g->getCurrTimeStep());
+			unit* u = saver1;
+			army->addUnit(saver1);
 		}
 		return true;
 	}

@@ -597,8 +597,6 @@ void game::fight(int mode)
 				fillArmies();
 
 				// Print Armies
-				eArmy->print();
-				aArmy->print();
 				
 				//Start Fighting 
 				cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
@@ -608,8 +606,12 @@ void game::fight(int mode)
 				unit* destroing;
 				if (!eArmy->getInfectedCount())
 				{
-					while (eArmy->get_SaverList()->dequeue(destroing));
+					while (eArmy->get_SaverList()->remove(destroing));
 				}
+				eArmy->print();
+
+
+				aArmy->print();
 				eArmy->attack();
 				aArmy->attack();
 
@@ -631,42 +633,68 @@ void game::fight(int mode)
 			}
 		}
 		else {
-			set_mode(2); 
-			cout << "Simulation starts ....\n";
-			while (fight) {
+			set_mode(2);
+			changeColor(9);
+
+			cout << "Simulation starts...\n";
+			while (true) {
 				if (timestep > 40)
 				{
 					if (alienIsEmpty() and !earthIsEmpty())
 					{
 						//earth winner
 						result = 1;
+
+						
 						break;
 					}
 					else if (!alienIsEmpty() and earthIsEmpty())
 					{
 						result = -1;
+
+						
 						break;
 					}
 					else if (alienIsEmpty() and earthIsEmpty())
 					{
 						result = 0;
+
+						
 						break;
 					}
 				}
-			
+				
 
 				fillArmies();
 
 				// Print Armies
-				
+
+				//Start Fighting 
+				if (eArmy->get_soldierList()->getCount() > 0)
+					if (eArmy->getInfectedCount() * 100 / eArmy->get_soldierList()->getCount() >= RG->get_threshold())
+						RG->genAlliedArmy(eArmy);
+				unit* destroing;
+				if (!eArmy->getInfectedCount())
+				{
+					while (eArmy->get_SaverList()->remove(destroing));
+				}
 
 
-				//Start Fighting
 				eArmy->attack();
 				aArmy->attack();
+
+				// Heal Units To Be Healed
+				eArmy->heal();
+				
+				
+				
+
 				timestep++;
+				//if (timestep > 100)
 				
 			}
+			changeColor(10);
+
 			cout << "Simulation ends....\n";
 		}
 		tempList temp;
@@ -759,7 +787,8 @@ void game::outputFn()
 	int ET, ES, EG,SU;
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =0;
-	while (dead->remove(killedunit)) {
+	out_file << "--------------------------:Earth army:----------------------------\n";
+		while (dead->remove(killedunit)) {
 		if (killedunit->get_id() >=2000)
 		{
 			temp.insert(killedunit);
@@ -831,8 +860,9 @@ void game::outputFn()
 		SU++;
 
 	}
-	out_file << "Earth army:-\n";
-	out_file << "No of  ES= " << deadES +ES<< "\n" << "No of  ET= " << deadET +ET<< "\n" << "No of  EG= " 
+	out_file 	 << "--------------------------:Earth army:----------------------------\n"
+
+		<<"__________________________________________________________________\nNo of  ES = " << deadES +ES<< "\n" << "No of  ET = " << deadET +ET<< "\n" << "No of  EG = " 
 		<< deadEG +EG<< "\n"<<"No of dead SU="<<deadSU+SU<<"\n";
 	if ((deadES + ES) != 0)
 		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
@@ -856,18 +886,19 @@ void game::outputFn()
 		float(dd) / db * 100 << "%\n";
 	if((deadET + ES + deadES + ET + deadEG + EG+deadSU + SU)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
-		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG+ deadSU + SU) * 100<<"\n";
+		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG+ deadSU + SU) * 100<<"%\n";
 	out_file << "Batle result: ";
 	if (result == 1)
 			out_file << "Win \n";
 	if (result == 0)
 		out_file << "Drawn\n";
 	if (result == -1)
-		out_file << "Loss \n";
+		out_file << "Loss \n__________________________________________________________________\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
 	df =  dd =db = 0;
+	out_file << "--------------------------:Alien army:----------------------------\n";
 	while (dead->remove(killedunit)) {
 		
 		if (killedunit->get_type() == 4)
@@ -914,8 +945,9 @@ void game::outputFn()
 		AD++;
 
 	}
-	out_file << "Alien army:-\n";
-	out_file << "No of  AS= " << deadAS+AS<<"\n" << "No of  AM= " << deadAM+AM << "\n" << "No of  AD= " << deadAD+AD << "\n";
+	out_file << "--------------------------:Alien army:----------------------------\n";
+
+	out_file << "__________________________________________________________________\nNo of  AS = " << deadAS+AS<<"\n" << "No of  AM = " << deadAM+AM << "\n" << "No of  AD = " << deadAD+AD << "\n";
 	if ((deadAS + AS) != 0)
 		out_file << "Precentage of dead AS relative to their total= " << float(deadAS )/ (deadAS + AS) * 100 << "%\n";
 	if ((deadAM + AM) != 0)
@@ -932,7 +964,7 @@ void game::outputFn()
 			"Average Db= " << float(db )/ (deadAS + deadAM + deadAD) << "\n";
 	}
 	if(db!=0)
-	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n";
+	out_file <<"Df/Db%= " << float(df )/ db* 100 << "%\n"<<"Dd/Db%= " << float(dd )/ db * 100 << "%\n__________________________________________________________________\n";
 		
 
 }

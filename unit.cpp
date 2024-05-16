@@ -137,8 +137,14 @@ void unit::set_atackedTime(int a)
 void unit::set_distructionTime(int a)
 { 
 	td = a;
+	if(ta!=0)
 	df = ta - joinTime;
+	else
+	df =0;
+	if(ta !=0)
 	dd = td - ta;
+	else 
+		dd = td - joinTime;
 	db = df + dd;
 
 }
@@ -160,8 +166,6 @@ int unit::get_td()
 
 int unit::get_df()
 {
-	if (df < 0)
-		return 0;
 	return df;
 }
 
