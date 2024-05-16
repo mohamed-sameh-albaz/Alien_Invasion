@@ -171,7 +171,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input_file.txt" />
     <Text Include="output.txt" />
     <Text Include="StrongEarth_ModerateAliens.txt" />
     <Text Include="StrongEarth_StrongAliens.txt" />

@@ -51,8 +51,6 @@ public:
 	int getAArmyCnt();
 	bool alienIsEmpty();
 	bool earthIsEmpty();
-	bool EarthWIns();
-	bool AlienWins();
 	bool Drawn();
 };
 
