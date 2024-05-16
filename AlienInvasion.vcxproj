@@ -181,13 +181,13 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input_file.txt" />
-    <Text Include="IN_OUT\StrongEarth_ModerateAliens.txt" />
-    <Text Include="IN_OUT\StrongEarth_StrongAliens.txt" />
-    <Text Include="IN_OUT\StrongEarth_WeakAliens.txt" />
-    <Text Include="IN_OUT\WeakEarth_ModerateAliens.txt" />
-    <Text Include="IN_OUT\WeakEarth_StrongAliens.txt" />
-    <Text Include="IN_OUT\WeakEarth_WeakAliens.txt" />
     <Text Include="output.txt" />
+    <Text Include="StrongEarth_ModerateAliens.txt" />
+    <Text Include="StrongEarth_StrongAliens.txt" />
+    <Text Include="StrongEarth_WeakAliens.txt" />
+    <Text Include="WeakEarth_ModerateAliens.txt" />
+    <Text Include="WeakEarth_StrongAliens.txt" />
+    <Text Include="WeakEarth_WeakAliens.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

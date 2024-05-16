@@ -21,12 +21,13 @@ int main() {
 	do
 	{
 		system("cls");
-		cout << "enter 1 if you want strong earth moderete aliens \n" <<
-			"or 2 if you want strong earth strong aliens \n" <<
-			"or 3 if you want strong earth  weak aliens \n" <<
-			"or 4 if you want weak earth  moderete aliens\n" <<
-			"or 5 if you want weak earth  strong aliens\n" <<
-			"or 6 if you want weak earth  weak aliens\n";
+		cout<< "enter :\n"
+			<<"\t1 for strong earth moderete aliens \n" 
+			<<"\t2 for strong earth strong aliens \n"
+			<<"\t3 for strong earth  weak aliens \n"
+			<<"\t4 for weak earth  moderete aliens\n" 
+			<<"\t5 for weak earth  strong aliens\n" 
+			<<"\t6 for weak earth  weak aliens\n";
 
 
 		cin >> sel;

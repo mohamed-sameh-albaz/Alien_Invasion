@@ -627,7 +627,7 @@ void game::fight(mode CurMode,selector s)
 				timestep++;
 				cout << endl << "Press Enter To Continue" << endl;
 				//if (timestep > 100)
-					cin.get(); // Wait for user to press enter
+					//cin.get(); // Wait for user to press enter
 				system("cls");
 				if (!eArmy->getInfectedCount())
 				{

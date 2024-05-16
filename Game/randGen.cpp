@@ -147,9 +147,9 @@ bool randGen::fillAlienArmy(AlienArmy* army, int& count) {
 
 bool randGen::genAlliedArmy(EarthArmy* army)
 {
-	if (SaverID < 2000) {
+	if (SaverID < 1300) {
 
-		for (int i = 1; i <= SaverCount && SaverID < 2000; i++) {
+		for (int i = 1; i <= SaverCount && SaverID < 1300; i++) {
 			SU* saver1 = new SU(g);
 			saver1->set_id(SaverID++);
 			saver1->set_health((rand() % (ehealth2 - ehealth1 + 1)) + ehealth1);
