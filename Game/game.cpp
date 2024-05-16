@@ -782,6 +782,15 @@ void game::outputFn()///////////////////modify using Enum
 	int ET, ES, EG,SU,HU;
 	int df=0, dd=0, db=0;
 	ET = ES = EG = deadEG = deadES= deadET = deadSU = SU =HU=deadHU=0;
+	out_file << "-------------------------:Batle result:---------------------------\n";
+	if (battleHero == Earth)
+		out_file << "------------------------------:Win:-------------------------------\n";
+	if (battleHero == ALien)
+		out_file << "----------------------------:Loss:-------------------------------\n";
+	if (battleHero == drawn)
+		out_file << "-----------------------------:Drawn:-------------------------------\n";
+
+
 	out_file << "--------------------------:Earth army:----------------------------\n";
 		while (dead->remove(killedunit)) {
 		if (killedunit->get_id() >=2000)
@@ -903,13 +912,7 @@ void game::outputFn()///////////////////modify using Enum
 	if((deadET + ES + deadES + ET + deadEG + EG+deadSU + SU)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
 		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG+ deadSU + SU) * 100<<"%\n";
-	out_file << "-------------------------:Batle result:---------------------------\n";
-	if (battleHero == Earth)
-		out_file << "------------------------------:Win:-------------------------------\n";
-	if (battleHero == ALien)
-		out_file << "----------------------------:Loss:-------------------------------\n";
-	if (battleHero == drawn)
-		out_file << "-----------------------------:Drawn:-------------------------------\n";
+	
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
