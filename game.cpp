@@ -862,9 +862,11 @@ void game::outputFn()
 		SU++;
 
 	}
+	changeColor(9);
+
 	out_file 	 << "--------------------------:Earth army:----------------------------\n"
 
-		<<"__________________________________________________________________\nNo of  ES = " << deadES +ES<< "\n" << "No of  ET = " << deadET +ET<< "\n" << "No of  EG = " 
+		<<"------------------------------------------------------------------\nNo of  ES = " << deadES +ES<< "\n" << "No of  ET = " << deadET +ET<< "\n" << "No of  EG = " 
 		<< deadEG +EG<< "\n"<<"No of dead SU="<<deadSU+SU<<"\n";
 	if ((deadES + ES) != 0)
 		out_file << "Precentage of dead ES relative to their total= " << float(deadES )/ (deadES + ES) * 100 << "%\n";
@@ -889,13 +891,13 @@ void game::outputFn()
 	if((deadET + ES + deadES + ET + deadEG + EG+deadSU + SU)!=0)
 	out_file << "Precentage of units healed successfully relative to all units= " <<
 		float(uml->get_healed_count() )/ (deadET + ES + deadES + ET + deadEG + EG+ deadSU + SU) * 100<<"%\n";
-	out_file << "Batle result: ";
+	out_file << "-------------------------:Batle result:---------------------------\n";
 	if (result == 1)
-			out_file << "Win \n";
+		out_file << "------------------------------:Win:-------------------------------\n";
 	if (result == 0)
-		out_file << "Drawn\n";
+		out_file << "----------------------------:Drawn:-------------------------------\n";
 	if (result == -1)
-		out_file << "Loss \n__________________________________________________________________\n";
+		out_file << "-----------------------------:Loss:-------------------------------\n";
 	int deadAS, deadAM, deadAD;
 	int AS, AM, AD;
 	AS = AM = AD = deadAS = deadAM = deadAD = 0;
@@ -947,6 +949,8 @@ void game::outputFn()
 		AD++;
 
 	}
+	changeColor(8);
+
 	out_file << "--------------------------:Alien army:----------------------------\n";
 
 	out_file << "__________________________________________________________________\nNo of  AS = " << deadAS+AS<<"\n" << "No of  AM = " << deadAM+AM << "\n" << "No of  AD = " << deadAD+AD << "\n";
