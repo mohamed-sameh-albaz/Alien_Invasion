@@ -27,6 +27,7 @@ public:
 	game();
 	void set_mode(mode GameMode);
 	mode get_mode();
+
 	void simulate(int mode);
 	void fight (mode CurMode);
 	void inputFn();

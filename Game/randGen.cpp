@@ -27,6 +27,7 @@ void randGen::setParams(int Es0, int Et0, int Eg0,int Hu0,int SaverCount0,int th
 	aattackcap2 = aattackcap20;
 	N = N0;
 	SaverID = 1001;
+	this->threshold = threshold;
 }
 
 

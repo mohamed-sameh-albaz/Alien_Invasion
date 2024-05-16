@@ -30,6 +30,6 @@ public:
 	bool fillEarthArmy(EarthArmy* army, int& count); 
 	bool fillAlienArmy(AlienArmy* army, int& count);
 	bool genAlliedArmy(EarthArmy* army);
-	randGen(game* master) { g = master; }
+    randGen(game* master) { g = master; }
 };
 
