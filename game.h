@@ -23,6 +23,7 @@ public:
 	game();
 	void set_mode(int a);
 	int get_mode();
+
 	void simulate(int mode);
 	void fight (int mode);
 	void inputFn();
