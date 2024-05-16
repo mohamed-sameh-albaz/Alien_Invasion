@@ -735,7 +735,7 @@ void game::fight(mode CurMode)
 				temp_unit->set_distructionTime(timestep);
 				temp.insert(temp_unit);
 			}
-			while (temp.insert(temp_unit)) {
+			while (temp.remove(temp_unit)) {
 				eArmy->addUnit(temp_unit);
 			}
 			while (eArmy->get_GunneryList()->remove(temp_unit)) {
@@ -896,11 +896,11 @@ void game::outputFn()///////////////////modify using Enum
 		float((deadES + deadET + deadEG+ deadSU+deadHU) )/ (deadET + ES + deadES + ET + deadEG + EG+deadSU + SU+deadHU+HU) * 100 << "%\n";
 	if ((deadES + deadET + deadEG + deadSU) != 0)
 
-		out_file << "Average Df= " << float(df) / (deadES + deadET + deadEG + deadSU) << "\n ";
+		out_file << "Average Df= " << float(df) / (deadES + deadET + deadEG + deadSU) << "\n";
 	if ((deadES + deadET + deadEG + deadSU+ deadHU) != 0)
 
 	{
-		out_file << "Average Dd= " << float(dd) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n ";
+		out_file << "Average Dd= " << float(dd) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n";
 		out_file << "Average Db= " << float(db) / (deadES + deadET + deadEG + deadSU + deadHU) << "\n";
 	}
 	
@@ -933,7 +933,7 @@ void game::outputFn()///////////////////modify using Enum
 		df = df + killedunit->get_df();
 		dd = dd + killedunit->get_dd();
 		db = db + killedunit->get_db();
-		out_file << "Distructed time: " << killedunit->get_td() << "   \n" << "ID: "
+		out_file << "Distructed time: " << killedunit->get_td() << "   \n"
 			<< "First attacked time: " << killedunit->get_ta() << "   \n"
 			<< "Number of times be attacked: " << killedunit->get_Noofattacked() << "   \n"
 			<< "ID: " << killedunit->get_id() << "   \n";

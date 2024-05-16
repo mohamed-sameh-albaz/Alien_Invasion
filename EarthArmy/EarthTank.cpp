@@ -12,8 +12,6 @@ void EarthTank::attack()
 	
 	AlienArmy* attackedArmy = g->getAlienArmy();
 	EarthArmy* attackingArmy = g->getEarthArmy();
-	int armyCnt = g->getEArmyCnt();//for what?
-	int enemyCnt = g->getAArmyCnt();
 	int ASCnt = attackedArmy->getListCnt(AS);
 	int armySolsPerc = 0;
 	if(ASCnt)
@@ -90,7 +88,7 @@ void EarthTank::attack()
 		}
 	}
 	attackedCnt = tmp.getCount();
-	if (g->get_mode() == 1)
+	if (g->get_mode() == InterActive)//change num
 		tmp.print(this);
 	for (int i = 0; i < attackedCnt; i++)
 	{
