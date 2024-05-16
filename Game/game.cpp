@@ -599,7 +599,7 @@ void game::fight(mode CurMode)
 			//Start Fighting 
 			cout << "\n============== Units fighting at current step ==============" << endl;//must be changed with current step 
 			eArmy->attack();
-			aArmy->print();
+			//aArmy->print();
 			aArmy->attack();
 			uml->print();
 			// Heal Units To Be Healed
