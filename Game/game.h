@@ -9,6 +9,8 @@
 #include"randGen.h"
 using namespace std;
 enum mode {InterActive = 1,Silent};
+enum selector { strong_moderete = 1, strong_strong, strong_weak,weak_moderete,weak_strong,weak_weak};
+
 enum Winner {Earth,ALien,drawn};
 class game
 {
@@ -20,6 +22,7 @@ class game
 	int earthCount, alienCount, timestep;
 	QueueList* dead;
 	mode GameMode;
+	selector file_mode;
 	Winner battleHero;
 	UML* uml;
 	randGen *RG;
@@ -27,10 +30,11 @@ public:
 	game();
 	void set_mode(mode GameMode);
 	mode get_mode();
+	void set_file_mode(selector s);
 
 	void simulate(int mode);
-	void fight (mode CurMode);
-	void inputFn();
+	void fight (mode CurMode,selector s);
+	void inputFn(selector s);
 	void outputFn();
 	void fillArmies();
 	AlienArmy* getAlienArmy();

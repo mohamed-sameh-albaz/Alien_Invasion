@@ -3,7 +3,6 @@ game::game() {
 	RG = new randGen(this);
 	earthCount = 1;
 	alienCount = 2000;
-	inputFn();
 	uml = new UML;
 	aArmy = new AlienArmy;
 	eArmy = new EarthArmy;
@@ -21,6 +20,11 @@ void game::set_mode(mode GameMode )
 mode game::get_mode()
 {
 	return GameMode;
+}
+
+void game::set_file_mode(selector s)
+{
+	file_mode = s;
 }
 
 void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
@@ -548,17 +552,40 @@ void game::simulate(int mode)//add phase 1.2 simualation code or delete the func
 		
 }
 
-void game::fight(mode CurMode)
+void game::fight(mode CurMode,selector s)
 {
-	inputFn();
+	bool Esoldier_empty, Asoldier_empty, Etank_empty, Egunnery_empty,
+		Esu_empty, Ehealer_empty, Adrone_empty, Amonster_empty;
+	Esoldier_empty = Asoldier_empty = Etank_empty = Egunnery_empty =
+		Esu_empty = Ehealer_empty = Adrone_empty = Amonster_empty = 0;
+	inputFn( s);
 	bool fight = true;
 	srand(time(0));
 	int mainColor = 7, messageColor = 6;
 	if (CurMode==InterActive )
 	{
+
+
+
+
+
+
+
+
+
 		while (true) {
+			
 			if (timestep > 40)
 			{
+		Esoldier_empty = eArmy->get_soldierList()->isEmpty();
+		Etank_empty = eArmy->get_tankList()->isEmpty();
+		Egunnery_empty = eArmy->get_GunneryList()->isEmpty();
+		Esu_empty = eArmy->get_SaverList()->isEmpty();
+		Ehealer_empty = eArmy->get_healers()->isEmpty();
+		Asoldier_empty = aArmy->get_soldierList()->isEmpty();
+		Adrone_empty = aArmy->get_droneList()->isEmpty();
+		Amonster_empty = aArmy->get_monsterList()->getCount();
+
 				if (alienIsEmpty() and !earthIsEmpty())
 				{
 					//earth winner
@@ -581,7 +608,7 @@ void game::fight(mode CurMode)
 					changeColor(mainColor);
 					break;
 				}
-				else if(alienIsEmpty() and earthIsEmpty())
+				else if((alienIsEmpty() and earthIsEmpty() ))
 				{
 
 					battleHero=drawn;
@@ -643,6 +670,14 @@ void game::fight(mode CurMode)
 			while (true) {
 				if (timestep > 40)
 				{
+					Esoldier_empty = eArmy->get_soldierList()->isEmpty();
+					Etank_empty = eArmy->get_tankList()->isEmpty();
+					Egunnery_empty = eArmy->get_GunneryList()->isEmpty();
+					Esu_empty = eArmy->get_SaverList()->isEmpty();
+					Ehealer_empty = eArmy->get_healers()->isEmpty();
+					Asoldier_empty = aArmy->get_soldierList()->isEmpty();
+					Adrone_empty = aArmy->get_droneList()->isEmpty();
+					Amonster_empty = aArmy->get_monsterList()->getCount();
 					if (alienIsEmpty() and !earthIsEmpty())
 					{
 						//earth winner
@@ -762,9 +797,21 @@ void game::fight(mode CurMode)
 		outputFn();
 }
 
-void game::inputFn()
+void game::inputFn(selector s)
 {
-	ifstream in_file("input_file.txt");
+	ifstream in_file;
+	if(s==strong_moderete)
+	 in_file.open("StrongEarth_ModerateAliens.txt");
+	else if (s == strong_strong)
+		in_file.open("StrongEarth_StrongAliens.txt");
+	else if (s == strong_weak)
+		in_file.open("StrongEarth_WeakAliens.txt");
+	else if (s == weak_moderete)
+		in_file.open("WeakEarth_ModerateAliens.txt");
+	else if (s == weak_strong)
+		in_file.open("WeakEarth_StrongAliens.txt");
+	else if (s == weak_weak)
+		in_file.open("WeakEarth_StrongAliens.txt");
 	in_file>> N >> Es >> Et >> Eg  >> Hu >> SaverCount >> threshold >>As >> Am >> Ad >> InfectionProb >> Prob >> epower1 >> epower2 >> ehealth1 >> ehealth2 >> eattackcap1
 		>> eattackcap2 >> apower1 >> apower2 >> ahealth1 >> ahealth2 >> aattackcap1 >> aattackcap2;
 	ehealth2 = -1 * ehealth2;
