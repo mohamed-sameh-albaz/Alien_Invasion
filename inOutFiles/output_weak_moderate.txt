@@ -1,0 +1,171 @@
+-------------------------:Batle result:---------------------------
+------------------------------:EARTH ARMY LOSSES:-------------------------------
+--------------------------:Earth army:----------------------------
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 1   
+ID: 7   
+type:Earth Soldier
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 1   
+ID: 15   
+type:Earth Soldier
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 2   
+ID: 13   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 1   
+ID: 4   
+type:Gunnery
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 2   
+ID: 14   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 1   
+Number of times be attacked: 2   
+ID: 8   
+type:Gunnery
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 1   
+First attacked time: 0   
+Number of times be attacked: 0   
+ID: 1   
+type:Earth Healer
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 0   
+Battle time(Db): 0   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 3   
+ID: 5   
+type:Earth Soldier
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 3   
+ID: 6   
+type:Earth Soldier
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 2   
+ID: 3   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 2   
+ID: 10   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 3   
+ID: 12   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 3   
+ID: 11   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+Distructed time: 2   
+First attacked time: 1   
+Number of times be attacked: 3   
+ID: 2   
+type:Tank
+Jion time: 1   
+First attacked delay (Df): 0   
+Destruction delay (Dd): 1   
+Battle time(Db): 1   
+__________________________________________________________________
+--------------------------:Earth army:----------------------------
+------------------------------------------------------------------
+No of  ES = 5
+No of  ET = 7
+No of  EG = 2
+No of  SU=0
+No of  HU=1
+Precentage of dead ES relative to their total= 80%
+Precentage of dead ET relative to their total= 100%
+Precentage of dead EG relative to their total= 100%
+Precentage of dead healers relative to their total= 100%
+Precentage of total earth destrcted unit relative to their total= 93.3333%
+Average Df= 0
+Average Dd= 0.5
+Average Db= 0.5
+Df/Db%= 0%
+Dd/Db%= 100%
+Precentage of units healed successfully relative to all units= 28.5714%
+--------------------------:Alien army:----------------------------
+--------------------------:Alien army:----------------------------
+__________________________________________________________________
+No of  AS = 9
+No of  AM = 11
+No of  AD = 10
+Precentage of dead AS relative to their total= 0%
+Precentage of dead AM relative to their total= 0%
+Precentage of dead AD relative to their total= 0%
+Precentage of total alien destrcted unit relative to their total= 0%
